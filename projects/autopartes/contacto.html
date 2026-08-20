@@ -1,0 +1,434 @@
+<!DOCTYPE html><html class="light" lang="es"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Contacto | AUTOINSUMO 2000</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-primary-fixed-variant": "#93000d",
+                      "on-background": "#181c1e",
+                      "tertiary-fixed": "#e2e2e2",
+                      "tertiary": "#5a5b5c",
+                      "surface-container": "#ebeef0",
+                      "secondary-fixed": "#d8e2ff",
+                      "on-primary-container": "#fff9f8",
+                      "on-tertiary-container": "#fbfbfb",
+                      "tertiary-fixed-dim": "#c6c6c7",
+                      "on-secondary": "#ffffff",
+                      "on-surface": "#181c1e",
+                      "on-error-container": "#93000a",
+                      "on-primary": "#ffffff",
+                      "primary-fixed-dim": "#ffb4ac",
+                      "inverse-on-surface": "#eef1f3",
+                      "on-secondary-fixed": "#061b3c",
+                      "on-tertiary": "#ffffff",
+                      "inverse-primary": "#ffb4ac",
+                      "background": "#f7fafc",
+                      "secondary-fixed-dim": "#b5c6f0",
+                      "surface-container-lowest": "#ffffff",
+                      "surface-container-highest": "#e0e3e5",
+                      "surface-bright": "#f7fafc",
+                      "primary-fixed": "#ffdad6",
+                      "on-secondary-fixed-variant": "#35466a",
+                      "surface-dim": "#d7dadc",
+                      "outline-variant": "#e7bdb8",
+                      "on-primary-fixed": "#410002",
+                      "outline": "#926e6b",
+                      "primary": "#b90014",
+                      "on-error": "#ffffff",
+                      "on-surface-variant": "#5d3f3c",
+                      "inverse-surface": "#2d3133",
+                      "surface": "#f7fafc",
+                      "surface-tint": "#c00015",
+                      "surface-variant": "#e0e3e5",
+                      "on-secondary-container": "#4a5b80",
+                      "secondary": "#4d5e83",
+                      "on-tertiary-fixed-variant": "#454747",
+                      "error-container": "#ffdad6",
+                      "surface-container-high": "#e5e9eb",
+                      "on-tertiary-fixed": "#1a1c1c",
+                      "error": "#ba1a1a",
+                      "primary-container": "#e31b23",
+                      "surface-container-low": "#f1f4f6",
+                      "secondary-container": "#c3d4ff",
+                      "tertiary-container": "#727474"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "stack-md": "16px",
+                      "gutter": "24px",
+                      "margin-desktop": "40px",
+                      "margin-mobile": "16px",
+                      "stack-lg": "32px",
+                      "container-max": "1280px",
+                      "base": "8px",
+                      "stack-sm": "8px"
+              },
+              "fontFamily": {
+                      "display-lg-mobile": ["Inter"],
+                      "headline-md": ["Inter"],
+                      "body-lg": ["Inter"],
+                      "label-md": ["Inter"],
+                      "display-lg": ["Inter"],
+                      "body-md": ["Inter"],
+                      "caption": ["Inter"],
+                      "headline-lg": ["Inter"]
+              },
+              "fontSize": {
+                      "display-lg-mobile": ["36px", {"lineHeight": "42px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                      "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                      "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                      "label-md": ["14px", {"lineHeight": "20px", "fontWeight": "600"}],
+                      "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                      "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                      "caption": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                      "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}]
+              }
+            }
+          }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .icon-fill {
+            font-variation-settings: 'FILL' 1;
+        }
+        body { background-color: #f7fafc; color: #181c1e; }
+        .shadow-level-1 { box-shadow: 0px 2px 4px rgba(10, 30, 63, 0.05), 0px 1px 2px rgba(10, 30, 63, 0.05); }
+        .shadow-level-2 { box-shadow: 0px 10px 15px -3px rgba(10, 30, 63, 0.1), 0px 4px 6px -2px rgba(10, 30, 63, 0.05); }
+        
+        /* Accordion Animations */
+        .accordion-content {
+            transition: max-height 0.3s ease-out, opacity 0.3s ease-out, padding 0.3s ease-out;
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+        .accordion-item.active .accordion-content {
+            max-height: 500px;
+            opacity: 1;
+            padding-top: theme('spacing.stack-md');
+            padding-bottom: theme('spacing.stack-md');
+        }
+        .accordion-icon {
+            transition: transform 0.3s ease;
+        }
+        .accordion-item.active .accordion-icon {
+            transform: rotate(180deg);
+        }
+    </style>
+</head>
+<body class="font-sans antialiased min-h-screen flex flex-col bg-background text-on-background">
+<!-- TopNavBar (Desktop) -->
+<nav class="hidden md:flex fixed top-0 w-full z-50 justify-between items-center px-margin-desktop py-4 bg-surface/95 backdrop-blur-md shadow-sm border-b border-outline-variant">
+<div class="flex items-center gap-8">
+<a class="text-headline-lg font-headline-lg font-black text-primary tracking-tight" href="index.html">AUTOINSUMO 2000</a>
+<ul class="flex items-center gap-6">
+<li>
+<a class="text-secondary font-medium hover:text-primary transition-colors hover:bg-surface-container-low transition-all duration-200 px-2 py-1 rounded text-label-md font-label-md" href="index.html">Inicio</a>
+</li>
+<li>
+<a class="text-secondary font-medium hover:text-primary transition-colors hover:bg-surface-container-low transition-all duration-200 px-2 py-1 rounded text-label-md font-label-md" href="productos.html">Productos</a>
+</li>
+<li>
+<a class="text-secondary font-medium hover:text-primary transition-colors hover:bg-surface-container-low transition-all duration-200 px-2 py-1 rounded text-label-md font-label-md" href="nosotros.html">Nosotros</a>
+</li>
+<li>
+<a class="text-primary border-b-2 border-primary font-bold pb-1 text-label-md font-label-md" href="contacto.html">Contacto</a>
+</li>
+</ul>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative group">
+<input class="bg-surface border border-outline-variant rounded-full px-4 py-2 text-body-md font-body-md focus:outline-none focus:border-secondary focus:ring-2 focus:ring-secondary/20 transition-all" placeholder="Buscar..." type="text">
+<span class="material-symbols-outlined absolute right-3 top-2.5 text-tertiary">search</span>
+</div>
+<a class="flex items-center gap-2 bg-primary text-on-primary px-4 py-2 rounded-lg font-label-md text-label-md shadow-[inset_0_1px_0_rgba(255,255,255,0.2)] hover:bg-primary/90 transition-colors focus:ring-2 focus:ring-offset-2 focus:ring-secondary" href="carrito.html">
+<span class="material-symbols-outlined icon-fill">shopping_cart</span>
+                Carrito
+            </a>
+</div>
+</nav>
+<!-- Mobile Header & SideNavBar Toggle -->
+<div class="md:hidden fixed top-0 w-full z-50 bg-surface shadow-sm border-b border-outline-variant flex justify-between items-center px-margin-mobile py-4">
+<a class="text-headline-md font-headline-md font-black text-primary tracking-tight" href="index.html">AUTOINSUMO 2000</a>
+<div class="flex items-center gap-4">
+<a class="text-on-surface" href="carrito.html">
+<span class="material-symbols-outlined">shopping_cart</span>
+</a>
+<button class="text-on-surface" id="mobile-menu-btn">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</div>
+<!-- SideNavBar (Mobile) -->
+<aside class="fixed inset-y-0 left-0 z-[60] flex flex-col py-6 bg-surface shadow-lg h-full w-64 md:hidden transform -translate-x-full transition-transform duration-300" id="mobile-sidebar">
+<div class="px-4 mb-6 flex justify-between items-center">
+<div>
+<h2 class="text-headline-md font-headline-md font-extrabold text-primary">AUTOINSUMO 2000</h2>
+<p class="text-caption font-caption text-on-surface-variant">Repuestos y más</p>
+</div>
+<button class="text-on-surface-variant" id="close-menu-btn">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<nav class="flex-1 overflow-y-auto">
+<ul class="flex flex-col gap-2">
+<li>
+<a class="text-on-surface-variant flex items-center gap-4 px-4 py-3 rounded-lg mx-2 hover:bg-surface-container-high transition-colors text-label-md font-label-md" href="index.html">
+<span class="material-symbols-outlined">home</span>
+                        Inicio
+                    </a>
+</li>
+<li>
+<a class="text-on-surface-variant flex items-center gap-4 px-4 py-3 rounded-lg mx-2 hover:bg-surface-container-high transition-colors text-label-md font-label-md" href="productos.html">
+<span class="material-symbols-outlined">settings_input_component</span>
+                        Productos
+                    </a>
+</li>
+<li>
+<a class="text-on-surface-variant flex items-center gap-4 px-4 py-3 rounded-lg mx-2 hover:bg-surface-container-high transition-colors text-label-md font-label-md" href="nosotros.html">
+<span class="material-symbols-outlined">groups</span>
+                        Nosotros
+                    </a>
+</li>
+<li>
+<a class="bg-primary-container text-on-primary-container flex items-center gap-4 px-4 py-3 rounded-lg mx-2 text-label-md font-label-md" href="contacto.html">
+<span class="material-symbols-outlined icon-fill">contact_support</span>
+                        Contacto
+                    </a>
+</li>
+<li>
+<a class="text-on-surface-variant flex items-center gap-4 px-4 py-3 rounded-lg mx-2 hover:bg-surface-container-high transition-colors text-label-md font-label-md" href="carrito.html">
+<span class="material-symbols-outlined">shopping_cart</span>
+                        Carrito
+                    </a>
+</li>
+</ul>
+</nav>
+<div class="px-4 mt-auto">
+<a class="w-full bg-[#25D366] text-white flex items-center justify-center gap-2 py-3 rounded-lg font-label-md text-label-md shadow-sm" href="https://wa.me/584149876543" target="_blank" rel="noopener">WhatsApp</a>
+</div>
+</aside>
+<!-- Overlay for Mobile Nav -->
+<div class="fixed inset-0 bg-black/50 z-[55] hidden md:hidden" id="sidebar-overlay"></div><!-- Main Content -->
+<main class="flex-grow pt-24 md:pt-32 pb-stack-lg px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto w-full flex flex-col gap-stack-lg">
+<!-- Hero Section -->
+<section class="text-center max-w-3xl mx-auto mb-stack-lg">
+<h1 class="text-display-lg-mobile md:text-display-lg font-display-lg-mobile md:font-display-lg text-[#0A1E3F] mb-stack-md">Estamos para ayudarte</h1>
+<p class="text-body-lg font-body-lg text-secondary">En AUTOINSUMO 2000 valoramos tu tiempo. Contáctanos para cotizaciones, disponibilidad de repuestos o soporte técnico en toda Venezuela.</p>
+</section>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<!-- Contact Info & Map Column -->
+<div class="lg:col-span-5 flex flex-col gap-gutter">
+<!-- Contact Cards -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-stack-md">
+<div class="bg-surface p-6 rounded-xl shadow-level-1 border border-surface-variant flex items-start gap-4 hover:shadow-level-2 transition-shadow">
+<div class="p-3 bg-[#E31B23]/10 rounded-lg text-primary">
+<span class="material-symbols-outlined icon-fill text-[32px]">location_on</span>
+</div>
+<div>
+<h3 class="text-headline-md font-headline-md text-[#0A1E3F] text-[20px] mb-1">Sede Principal</h3>
+<p class="text-body-md font-body-md text-secondary">Av. Rómulo Gallegos con 4ta Transversal, Edif. Autoinsumo. Los Dos Caminos, Caracas.</p>
+</div>
+</div>
+<div class="bg-surface p-6 rounded-xl shadow-level-1 border border-surface-variant flex items-start gap-4 hover:shadow-level-2 transition-shadow">
+<div class="p-3 bg-[#E31B23]/10 rounded-lg text-primary">
+<span class="material-symbols-outlined icon-fill text-[32px]">call</span>
+</div>
+<div>
+<h3 class="text-headline-md font-headline-md text-[#0A1E3F] text-[20px] mb-1">Teléfonos</h3>
+<p class="text-body-md font-body-md text-secondary mb-1">Master: 0212-555-4321</p>
+<p class="text-body-md font-body-md text-secondary">Ventas: 0414-987-6543</p>
+</div>
+</div>
+<div class="bg-surface p-6 rounded-xl shadow-level-1 border border-surface-variant flex items-start gap-4 hover:shadow-level-2 transition-shadow">
+<div class="p-3 bg-[#E31B23]/10 rounded-lg text-primary">
+<span class="material-symbols-outlined icon-fill text-[32px]">mail</span>
+</div>
+<div>
+<h3 class="text-headline-md font-headline-md text-[#0A1E3F] text-[20px] mb-1">Correo Electrónico</h3>
+<p class="text-body-md font-body-md text-secondary">ventas@autoinsumo2000.com.ve</p>
+<p class="text-body-md font-body-md text-secondary">soporte@autoinsumo2000.com.ve</p>
+</div>
+</div>
+</div>
+<!-- Map -->
+<div class="bg-surface rounded-xl overflow-hidden shadow-level-1 border border-surface-variant h-64 relative group">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="A highly detailed overhead map view of Caracas, Venezuela, showing major highways like Av Rómulo Gallegos. The map style is clean, modern, light-mode, and professional, using a cool blue and gray color palette with subtle red pins indicating business locations. Soft lighting and high resolution emphasize urban layout." data-location="Caracas, Venezuela" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCLYAgVovypO5QbV7CMWgY5T0BKJefDoWjYCWbIPbLTgkry4y6EWR44lO-Bi3VVPQrQJ9WBLG8KYg_IRK3chzTWjZqiHE5eyiwC9Yr7Id0wnPfmFi1stqEnqtZyB6C4BgsTs5EiHgjxATs4ejeMaS0PZ9C5AUXmzladEt_WmZ1y-qamMZi46D-hx33-Xn3fvqBt0ImzeE3-KqSmEp6U2HMWwZUoMFcjD2PK6vU3LnrBrq9YpCmroT7QJQ">
+<div class="absolute bottom-4 right-4 bg-surface/90 backdrop-blur px-4 py-2 rounded-lg shadow-sm">
+<span class="text-label-md font-label-md text-[#0A1E3F]">Abrir en Maps</span>
+</div>
+</div>
+</div>
+<!-- Contact Form Column -->
+<div class="lg:col-span-7 bg-surface rounded-xl shadow-level-1 border border-surface-variant p-6 md:p-8">
+<h2 class="text-headline-md font-headline-md text-[#0A1E3F] mb-6">Envíanos un mensaje</h2>
+<form class="flex flex-col gap-stack-md">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-stack-md">
+<div class="flex flex-col gap-2">
+<label class="text-label-md font-label-md text-[#0A1E3F]" for="nombre">Nombre Completo</label>
+<input class="w-full bg-white border border-[#E5E7EB] rounded-lg px-4 py-3 text-body-md focus:border-[#0A1E3F] focus:ring-2 focus:ring-[#0A1E3F]/20 transition-all outline-none" id="nombre" placeholder="Ej. Juan Pérez" type="text">
+</div>
+<div class="flex flex-col gap-2">
+<label class="text-label-md font-label-md text-[#0A1E3F]" for="empresa">Empresa / Taller (Opcional)</label>
+<input class="w-full bg-white border border-[#E5E7EB] rounded-lg px-4 py-3 text-body-md focus:border-[#0A1E3F] focus:ring-2 focus:ring-[#0A1E3F]/20 transition-all outline-none" id="empresa" placeholder="Nombre de su negocio" type="text">
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-stack-md">
+<div class="flex flex-col gap-2">
+<label class="text-label-md font-label-md text-[#0A1E3F]" for="email">Correo Electrónico</label>
+<input class="w-full bg-white border border-[#E5E7EB] rounded-lg px-4 py-3 text-body-md focus:border-[#0A1E3F] focus:ring-2 focus:ring-[#0A1E3F]/20 transition-all outline-none" id="email" placeholder="correo@ejemplo.com" type="email">
+</div>
+<div class="flex flex-col gap-2">
+<label class="text-label-md font-label-md text-[#0A1E3F]" for="telefono">Teléfono / WhatsApp</label>
+<input class="w-full bg-white border border-[#E5E7EB] rounded-lg px-4 py-3 text-body-md focus:border-[#0A1E3F] focus:ring-2 focus:ring-[#0A1E3F]/20 transition-all outline-none" id="telefono" placeholder="0414-0000000" type="tel">
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<label class="text-label-md font-label-md text-[#0A1E3F]" for="asunto">Asunto</label>
+<select class="w-full bg-white border border-[#E5E7EB] rounded-lg px-4 py-3 text-body-md focus:border-[#0A1E3F] focus:ring-2 focus:ring-[#0A1E3F]/20 transition-all outline-none appearance-none" id="asunto">
+<option value="">Seleccione el motivo de su consulta</option>
+<option value="cotizacion">Cotización de Repuestos</option>
+<option value="disponibilidad">Consultar Disponibilidad</option>
+<option value="mayor">Compras al Mayor</option>
+<option value="soporte">Soporte Técnico / Garantías</option>
+</select>
+</div>
+<div class="flex flex-col gap-2">
+<label class="text-label-md font-label-md text-[#0A1E3F]" for="mensaje">Mensaje (Incluya marca, modelo y año del vehículo)</label>
+<textarea class="w-full bg-white border border-[#E5E7EB] rounded-lg px-4 py-3 text-body-md focus:border-[#0A1E3F] focus:ring-2 focus:ring-[#0A1E3F]/20 transition-all outline-none resize-none" id="mensaje" placeholder="Detalle los repuestos que necesita..." rows="5"></textarea>
+</div>
+<button class="mt-4 bg-primary text-white font-label-md text-label-md py-4 px-8 rounded-lg shadow-level-1 hover:brightness-90 focus:ring-2 focus:ring-offset-2 focus:ring-[#0A1E3F] transition-all flex justify-center items-center gap-2 w-full md:w-auto self-end" type="button">
+<span class="material-symbols-outlined">send</span> Enviar Mensaje
+                    </button>
+</form>
+</div>
+</div>
+<!-- FAQ Section -->
+<section class="mt-stack-lg max-w-4xl mx-auto w-full">
+<h2 class="text-headline-md font-headline-md text-[#0A1E3F] text-center mb-stack-lg">Preguntas Frecuentes</h2>
+<div class="flex flex-col gap-4">
+<!-- Accordion Item 1 -->
+<div class="accordion-item bg-surface rounded-xl shadow-sm border border-surface-variant overflow-hidden">
+<button class="w-full px-6 py-4 flex justify-between items-center bg-surface hover:bg-surface-container-low transition-colors text-left focus:outline-none focus:bg-surface-container-low" onclick="this.parentElement.classList.toggle('active')">
+<span class="text-label-md font-label-md text-[#0A1E3F]">¿Hacen envíos a nivel nacional?</span>
+<span class="material-symbols-outlined accordion-icon text-secondary">expand_more</span>
+</button>
+<div class="accordion-content px-6 bg-surface-bright">
+<p class="text-body-md font-body-md text-secondary">Sí, realizamos envíos a todo el territorio nacional a través de las principales empresas de encomiendas del país (MRW, Zoom, Tealca). Los pedidos confirmados antes de las 2:00 PM se despachan el mismo día.</p>
+</div>
+</div>
+<!-- Accordion Item 2 -->
+<div class="accordion-item bg-surface rounded-xl shadow-sm border border-surface-variant overflow-hidden">
+<button class="w-full px-6 py-4 flex justify-between items-center bg-surface hover:bg-surface-container-low transition-colors text-left focus:outline-none focus:bg-surface-container-low" onclick="this.parentElement.classList.toggle('active')">
+<span class="text-label-md font-label-md text-[#0A1E3F]">¿Cuáles son sus métodos de pago?</span>
+<span class="material-symbols-outlined accordion-icon text-secondary">expand_more</span>
+</button>
+<div class="accordion-content px-6 bg-surface-bright">
+<p class="text-body-md font-body-md text-secondary">Aceptamos transferencias bancarias nacionales, pago móvil, Zelle, efectivo (en tienda) y tarjetas de débito/crédito internacionales. Los datos bancarios se proporcionan al momento de concretar la compra.</p>
+</div>
+</div>
+<!-- Accordion Item 3 -->
+<div class="accordion-item bg-surface rounded-xl shadow-sm border border-surface-variant overflow-hidden">
+<button class="w-full px-6 py-4 flex justify-between items-center bg-surface hover:bg-surface-container-low transition-colors text-left focus:outline-none focus:bg-surface-container-low" onclick="this.parentElement.classList.toggle('active')">
+<span class="text-label-md font-label-md text-[#0A1E3F]">¿Ofrecen garantía en los repuestos?</span>
+<span class="material-symbols-outlined accordion-icon text-secondary">expand_more</span>
+</button>
+<div class="accordion-content px-6 bg-surface-bright">
+<p class="text-body-md font-body-md text-secondary">Todos nuestros repuestos originales cuentan con 90 días de garantía por defectos de fábrica. Las partes eléctricas tienen políticas específicas que deben ser consultadas con su asesor de ventas. Es indispensable presentar la factura original.</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-inverse-surface py-stack-lg w-full px-margin-desktop flex flex-col md:flex-row justify-between items-start gap-gutter">
+<div class="flex flex-col gap-4">
+<span class="text-headline-md font-headline-md font-bold text-surface-bright">AUTOINSUMO 2000</span>
+<p class="text-body-md font-body-md text-on-primary-container max-w-sm">
+                Tu aliado confiable en repuestos automotrices a nivel nacional. Calidad y servicio garantizado.
+            </p>
+</div>
+<div class="flex flex-col gap-2">
+<h4 class="text-label-md font-label-md text-primary-fixed-dim font-bold mb-2">Enlaces</h4>
+<nav class="flex flex-col gap-2">
+<a class="text-surface-variant hover:text-primary-fixed hover:underline decoration-primary transition-all text-body-md font-body-md focus:ring-2 focus:ring-offset-2 focus:ring-primary" href="index.html">Inicio</a>
+<a class="text-surface-variant hover:text-primary-fixed hover:underline decoration-primary transition-all text-body-md font-body-md focus:ring-2 focus:ring-offset-2 focus:ring-primary" href="productos.html">Productos</a>
+<a class="text-surface-variant hover:text-primary-fixed hover:underline decoration-primary transition-all text-body-md font-body-md focus:ring-2 focus:ring-offset-2 focus:ring-primary" href="nosotros.html">Nosotros</a>
+<a class="text-primary-fixed-dim font-bold hover:underline decoration-primary transition-all text-body-md font-body-md focus:ring-2 focus:ring-offset-2 focus:ring-primary" href="contacto.html">Contacto</a>
+</nav>
+</div>
+<div class="flex flex-col gap-2">
+<h4 class="text-label-md font-label-md text-primary-fixed-dim font-bold mb-2">Legal</h4>
+<nav class="flex flex-col gap-2">
+<a class="text-surface-variant hover:text-primary-fixed hover:underline decoration-primary transition-all text-body-md font-body-md focus:ring-2 focus:ring-offset-2 focus:ring-primary" href="#">Política de Privacidad</a>
+<a class="text-surface-variant hover:text-primary-fixed hover:underline decoration-primary transition-all text-body-md font-body-md focus:ring-2 focus:ring-offset-2 focus:ring-primary" href="#">Términos de Servicio</a>
+</nav>
+</div>
+<div class="w-full md:w-auto mt-8 md:mt-0 pt-8 md:pt-0 border-t border-surface-variant/20 md:border-none flex justify-center md:justify-end">
+<span class="text-caption font-caption text-surface-variant">© 2024 AUTOINSUMO 2000. Todos los derechos reservados.</span>
+</div>
+</footer>
+<script>
+        // Mobile Sidebar Toggle Logic
+        document.addEventListener('DOMContentLoaded', () => {
+            const menuBtn = document.getElementById('mobile-menu-btn');
+            const closeBtn = document.getElementById('close-menu-btn');
+            const sidebar = document.getElementById('mobile-sidebar');
+            const overlay = document.getElementById('sidebar-overlay');
+
+            function toggleMenu() {
+                const isOpen = !sidebar.classList.contains('-translate-x-full');
+                if (isOpen) {
+                    sidebar.classList.add('-translate-x-full');
+                    overlay.classList.add('hidden');
+                    document.body.style.overflow = '';
+                } else {
+                    sidebar.classList.remove('-translate-x-full');
+                    overlay.classList.remove('hidden');
+                    document.body.style.overflow = 'hidden';
+                }
+            }
+
+            menuBtn.addEventListener('click', toggleMenu);
+            closeBtn.addEventListener('click', toggleMenu);
+            overlay.addEventListener('click', toggleMenu);
+        });
+    </script>
+
+<!-- CACIQUE GLOBAL ESC MODAL CLOSER -->
+<script>
+  (function() {
+    function handleEsc(e) {
+      if (e.key === 'Escape' || e.key === 'Esc' || e.keyCode === 27) {
+        try {
+          if (window.parent && typeof window.parent.closeDemoModal === 'function') {
+            window.parent.closeDemoModal();
+          }
+          if (window.parent && typeof window.parent.closeContactModal === 'function') {
+            window.parent.closeContactModal();
+          }
+        } catch (err) {}
+      }
+    }
+    window.addEventListener('keydown', handleEsc, true);
+    document.addEventListener('keydown', handleEsc, true);
+  })();
+</script></body></html>

@@ -1,0 +1,378 @@
+<!DOCTYPE html><html class="scroll-smooth" lang="es"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Nosotros - AUTOINSUMO 2000</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-fixed-variant": "#93000d",
+                        "on-background": "#181c1e",
+                        "tertiary-fixed": "#e2e2e2",
+                        "tertiary": "#5a5b5c",
+                        "surface-container": "#ebeef0",
+                        "secondary-fixed": "#d8e2ff",
+                        "on-primary-container": "#fff9f8",
+                        "on-tertiary-container": "#fbfbfb",
+                        "tertiary-fixed-dim": "#c6c6c7",
+                        "on-secondary": "#ffffff",
+                        "on-surface": "#181c1e",
+                        "on-error-container": "#93000a",
+                        "on-primary": "#ffffff",
+                        "primary-fixed-dim": "#ffb4ac",
+                        "inverse-on-surface": "#eef1f3",
+                        "on-secondary-fixed": "#061b3c",
+                        "on-tertiary": "#ffffff",
+                        "inverse-primary": "#ffb4ac",
+                        "background": "#f7fafc",
+                        "secondary-fixed-dim": "#b5c6f0",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-highest": "#e0e3e5",
+                        "surface-bright": "#f7fafc",
+                        "primary-fixed": "#ffdad6",
+                        "on-secondary-fixed-variant": "#35466a",
+                        "surface-dim": "#d7dadc",
+                        "outline-variant": "#e7bdb8",
+                        "on-primary-fixed": "#410002",
+                        "outline": "#926e6b",
+                        "primary": "#b90014",
+                        "on-error": "#ffffff",
+                        "on-surface-variant": "#5d3f3c",
+                        "inverse-surface": "#2d3133",
+                        "surface": "#f7fafc",
+                        "surface-tint": "#c00015",
+                        "surface-variant": "#e0e3e5",
+                        "on-secondary-container": "#4a5b80",
+                        "secondary": "#4d5e83",
+                        "on-tertiary-fixed-variant": "#454747",
+                        "error-container": "#ffdad6",
+                        "surface-container-high": "#e5e9eb",
+                        "on-tertiary-fixed": "#1a1c1c",
+                        "error": "#ba1a1a",
+                        "primary-container": "#e31b23",
+                        "surface-container-low": "#f1f4f6",
+                        "secondary-container": "#c3d4ff",
+                        "tertiary-container": "#727474"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "stack-md": "16px",
+                        "gutter": "24px",
+                        "margin-desktop": "40px",
+                        "margin-mobile": "16px",
+                        "stack-lg": "32px",
+                        "container-max": "1280px",
+                        "base": "8px",
+                        "stack-sm": "8px"
+                    },
+                    "fontFamily": {
+                        "display-lg-mobile": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "label-md": ["Inter"],
+                        "display-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "caption": ["Inter"],
+                        "headline-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "display-lg-mobile": ["36px", { "lineHeight": "42px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "fontWeight": "600" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "caption": ["12px", { "lineHeight": "16px", "fontWeight": "500" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background antialiased font-body-md text-body-md">
+<!-- TopNavBar (Desktop) -->
+<nav class="hidden md:flex fixed top-0 w-full z-50 justify-between items-center px-margin-desktop py-4 bg-surface/95 backdrop-blur-md shadow-sm border-b border-outline-variant">
+<div class="flex items-center gap-8">
+<a class="text-headline-lg font-headline-lg font-black text-primary tracking-tight" href="index.html">AUTOINSUMO 2000</a>
+<ul class="flex items-center gap-6">
+<li>
+<a class="text-secondary font-medium hover:text-primary transition-colors hover:bg-surface-container-low transition-all duration-200 px-2 py-1 rounded text-label-md font-label-md" href="index.html">Inicio</a>
+</li>
+<li>
+<a class="text-secondary font-medium hover:text-primary transition-colors hover:bg-surface-container-low transition-all duration-200 px-2 py-1 rounded text-label-md font-label-md" href="productos.html">Productos</a>
+</li>
+<li>
+<a class="text-primary border-b-2 border-primary font-bold pb-1 text-label-md font-label-md" href="nosotros.html">Nosotros</a>
+</li>
+<li>
+<a class="text-secondary font-medium hover:text-primary transition-colors hover:bg-surface-container-low transition-all duration-200 px-2 py-1 rounded text-label-md font-label-md" href="contacto.html">Contacto</a>
+</li>
+</ul>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative group">
+<input class="bg-surface border border-outline-variant rounded-full px-4 py-2 text-body-md font-body-md focus:outline-none focus:border-secondary focus:ring-2 focus:ring-secondary/20 transition-all" placeholder="Buscar..." type="text">
+<span class="material-symbols-outlined absolute right-3 top-2.5 text-tertiary">search</span>
+</div>
+<a class="flex items-center gap-2 bg-primary text-on-primary px-4 py-2 rounded-lg font-label-md text-label-md shadow-[inset_0_1px_0_rgba(255,255,255,0.2)] hover:bg-primary/90 transition-colors focus:ring-2 focus:ring-offset-2 focus:ring-secondary" href="carrito.html">
+<span class="material-symbols-outlined icon-fill">shopping_cart</span>
+                Carrito
+            </a>
+</div>
+</nav>
+<!-- Mobile Header & SideNavBar Toggle -->
+<div class="md:hidden fixed top-0 w-full z-50 bg-surface shadow-sm border-b border-outline-variant flex justify-between items-center px-margin-mobile py-4">
+<a class="text-headline-md font-headline-md font-black text-primary tracking-tight" href="index.html">AUTOINSUMO 2000</a>
+<div class="flex items-center gap-4">
+<a class="text-on-surface" href="carrito.html">
+<span class="material-symbols-outlined">shopping_cart</span>
+</a>
+<button class="text-on-surface" id="mobile-menu-btn">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</div>
+<!-- SideNavBar (Mobile) -->
+<aside class="fixed inset-y-0 left-0 z-[60] flex flex-col py-6 bg-surface shadow-lg h-full w-64 md:hidden transform -translate-x-full transition-transform duration-300" id="mobile-sidebar">
+<div class="px-4 mb-6 flex justify-between items-center">
+<div>
+<h2 class="text-headline-md font-headline-md font-extrabold text-primary">AUTOINSUMO 2000</h2>
+<p class="text-caption font-caption text-on-surface-variant">Repuestos y más</p>
+</div>
+<button class="text-on-surface-variant" id="close-menu-btn">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<nav class="flex-1 overflow-y-auto">
+<ul class="flex flex-col gap-2">
+<li>
+<a class="text-on-surface-variant flex items-center gap-4 px-4 py-3 rounded-lg mx-2 hover:bg-surface-container-high transition-colors text-label-md font-label-md" href="index.html">
+<span class="material-symbols-outlined">home</span>
+                        Inicio
+                    </a>
+</li>
+<li>
+<a class="text-on-surface-variant flex items-center gap-4 px-4 py-3 rounded-lg mx-2 hover:bg-surface-container-high transition-colors text-label-md font-label-md" href="productos.html">
+<span class="material-symbols-outlined">settings_input_component</span>
+                        Productos
+                    </a>
+</li>
+<li>
+<a class="bg-primary-container text-on-primary-container flex items-center gap-4 px-4 py-3 rounded-lg mx-2 text-label-md font-label-md" href="nosotros.html">
+<span class="material-symbols-outlined icon-fill">groups</span>
+                        Nosotros
+                    </a>
+</li>
+<li>
+<a class="text-on-surface-variant flex items-center gap-4 px-4 py-3 rounded-lg mx-2 hover:bg-surface-container-high transition-colors text-label-md font-label-md" href="contacto.html">
+<span class="material-symbols-outlined">contact_support</span>
+                        Contacto
+                    </a>
+</li>
+<li>
+<a class="text-on-surface-variant flex items-center gap-4 px-4 py-3 rounded-lg mx-2 hover:bg-surface-container-high transition-colors text-label-md font-label-md" href="carrito.html">
+<span class="material-symbols-outlined">shopping_cart</span>
+                        Carrito
+                    </a>
+</li>
+</ul>
+</nav>
+<div class="px-4 mt-auto">
+<a class="w-full bg-[#25D366] text-white flex items-center justify-center gap-2 py-3 rounded-lg font-label-md text-label-md shadow-sm" href="https://wa.me/584149876543" target="_blank" rel="noopener">WhatsApp</a>
+</div>
+</aside>
+<!-- Overlay for Mobile Nav -->
+<div class="fixed inset-0 bg-black/50 z-[55] hidden md:hidden" id="sidebar-overlay"></div><!-- Hero Section -->
+<section class="grid grid-cols-1 md:grid-cols-12 gap-gutter mb-stack-lg items-center">
+<div class="col-span-1 md:col-span-6 order-2 md:order-1">
+<h1 class="font-display-lg-mobile text-display-lg-mobile md:font-display-lg md:text-display-lg text-secondary mb-stack-md">
+                    Conduciendo la confianza desde <span class="text-primary">2008</span>.
+                </h1>
+<p class="font-body-lg text-body-lg text-tertiary mb-stack-lg">
+                    En AUTOINSUMO 2000, no solo vendemos repuestos; entregamos tranquilidad. Más de 15 años liderando el mercado venezolano con inventario de alta calidad y asesoría experta para que tu vehículo nunca se detenga.
+                </p>
+<div class="flex gap-4">
+<button onclick="window.location.href='productos.html'" class="bg-primary text-on-primary px-6 py-3 rounded-lg font-label-md text-label-md hover:bg-on-primary-fixed-variant transition-colors shadow-sm">
+                        Conoce Nuestro Catálogo
+                    </button>
+</div>
+</div>
+<div class="col-span-1 md:col-span-6 order-1 md:order-2 rounded-xl overflow-hidden shadow-lg relative h-[300px] md:h-[500px]">
+<img alt="Almacén de Autoinsumo 2000" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/AP1WRLsvk2tIZ6QpnXm2LD3ook88SzMphHvJM0BqqqEeF_msRdmGE0RnGSkGjynysoaG_1X3jc3Ihb2xVnpQDycoERpjKgzxHdxVz8Lzd-QY4H3Tn3AjM_QRVFZbeZQxNjKIhQA6G75gX1Wy2ASEqxkJSF68GAIcs2eRD6IfAJm9odVUf5cVBdwJ9YChc_XcxOdQPjp5ixFAFMN7yfjeQA804va-UAfg8SRyRkTUYkmHbU-KHgAZCZWQCh_HYC0J">
+<div class="absolute bottom-4 left-4 glass-card p-4 rounded-lg flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-3xl">verified</span>
+<div>
+<p class="font-label-md text-label-md text-secondary font-bold">15+ Años</p>
+<p class="font-caption text-caption text-tertiary">Experiencia comprobada</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Stats Bento Grid -->
+<section class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-gutter mb-stack-lg">
+<div class="bg-surface-container-low p-6 rounded-xl border border-surface-container-high text-center hover:shadow-md transition-shadow">
+<span class="material-symbols-outlined text-primary text-4xl mb-2">inventory_2</span>
+<h3 class="font-headline-lg text-headline-lg text-secondary font-bold">50k+</h3>
+<p class="font-body-md text-body-md text-tertiary">Repuestos en Stock</p>
+</div>
+<div class="bg-surface-container-low p-6 rounded-xl border border-surface-container-high text-center hover:shadow-md transition-shadow">
+<span class="material-symbols-outlined text-primary text-4xl mb-2">handshake</span>
+<h3 class="font-headline-lg text-headline-lg text-secondary font-bold">10k+</h3>
+<p class="font-body-md text-body-md text-tertiary">Clientes Satisfechos</p>
+</div>
+<div class="bg-surface-container-low p-6 rounded-xl border border-surface-container-high text-center hover:shadow-md transition-shadow">
+<span class="material-symbols-outlined text-primary text-4xl mb-2">location_city</span>
+<h3 class="font-headline-lg text-headline-lg text-secondary font-bold">3</h3>
+<p class="font-body-md text-body-md text-tertiary">Sucursales Nacionales</p>
+</div>
+<div class="bg-surface-container-low p-6 rounded-xl border border-surface-container-high text-center hover:shadow-md transition-shadow">
+<span class="material-symbols-outlined text-primary text-4xl mb-2">award_star</span>
+<h3 class="font-headline-lg text-headline-lg text-secondary font-bold">100%</h3>
+<p class="font-body-md text-body-md text-tertiary">Garantía de Origen</p>
+</div>
+</section>
+<!-- Mision / Vision Glassmorphism Cards -->
+<section class="grid grid-cols-1 md:grid-cols-2 gap-gutter mb-stack-lg relative">
+<div class="absolute inset-0 bg-secondary-container opacity-20 rounded-xl -z-10 blur-xl"></div>
+<div class="bg-surface p-8 rounded-xl border border-surface-container-high shadow-sm relative overflow-hidden group">
+<div class="absolute top-0 right-0 w-32 h-32 bg-primary-container rounded-full opacity-10 -mr-16 -mt-16 transition-transform group-hover:scale-150"></div>
+<div class="flex items-center gap-4 mb-4">
+<div class="p-3 bg-primary-container text-primary rounded-lg">
+<span class="material-symbols-outlined">flag</span>
+</div>
+<h2 class="font-headline-md text-headline-md text-secondary">Nuestra Misión</h2>
+</div>
+<p class="font-body-md text-body-md text-tertiary">
+                    Proveer soluciones integrales para el mantenimiento automotriz en Venezuela, ofreciendo un inventario robusto, repuestos originales y alternativos de alta calidad, acompañados de una asesoría técnica honesta y profesional que garantice la seguridad de cada conductor.
+                </p>
+</div>
+<div class="bg-surface p-8 rounded-xl border border-surface-container-high shadow-sm relative overflow-hidden group">
+<div class="absolute top-0 right-0 w-32 h-32 bg-secondary-fixed rounded-full opacity-20 -mr-16 -mt-16 transition-transform group-hover:scale-150"></div>
+<div class="flex items-center gap-4 mb-4">
+<div class="p-3 bg-secondary-container text-secondary rounded-lg">
+<span class="material-symbols-outlined">visibility</span>
+</div>
+<h2 class="font-headline-md text-headline-md text-secondary">Nuestra Visión</h2>
+</div>
+<p class="font-body-md text-body-md text-tertiary">
+                    Ser la red de distribución de autopartes más confiable y tecnológicamente avanzada del país, reconocida por la excelencia operativa, la innovación en la atención al cliente y nuestro firme compromiso con el desarrollo del sector comercial venezolano.
+                </p>
+</div>
+</section>
+<!-- Valores Core -->
+<section class="mb-stack-lg">
+<div class="text-center mb-stack-md">
+<h2 class="font-headline-lg text-headline-lg text-secondary mb-2">Nuestros Pilares</h2>
+<p class="font-body-md text-body-md text-tertiary max-w-2xl mx-auto">Los valores que sostienen la calidad de nuestro servicio día a día.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="p-6 border border-surface-container-high rounded-xl hover:border-primary transition-colors bg-surface text-center">
+<span class="material-symbols-outlined text-primary text-4xl mb-4">shield_locked</span>
+<h4 class="font-label-md text-label-md text-secondary font-bold uppercase mb-2">Confianza</h4>
+<p class="font-body-md text-body-md text-tertiary">Transparencia en cada transacción y garantía en cada pieza que entregamos.</p>
+</div>
+<div class="p-6 border border-surface-container-high rounded-xl hover:border-primary transition-colors bg-surface text-center">
+<span class="material-symbols-outlined text-primary text-4xl mb-4">precision_manufacturing</span>
+<h4 class="font-label-md text-label-md text-secondary font-bold uppercase mb-2">Especialización</h4>
+<p class="font-body-md text-body-md text-tertiary">Conocimiento técnico profundo para asegurar la compatibilidad exacta.</p>
+</div>
+<div class="p-6 border border-surface-container-high rounded-xl hover:border-primary transition-colors bg-surface text-center">
+<span class="material-symbols-outlined text-primary text-4xl mb-4">support_agent</span>
+<h4 class="font-label-md text-label-md text-secondary font-bold uppercase mb-2">Servicio</h4>
+<p class="font-body-md text-body-md text-tertiary">Atención personalizada, rápida y orientada a resolver el problema del cliente.</p>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full px-margin-mobile md:px-margin-desktop py-stack-lg flex flex-col md:flex-row justify-between items-start gap-gutter bg-inverse-surface text-on-primary-container">
+<div>
+<div class="text-headline-md font-headline-md font-bold text-surface-bright mb-2">
+                AUTOINSUMO 2000
+            </div>
+<p class="text-caption font-caption text-surface-variant max-w-xs">
+                Tu aliado estratégico en repuestos automotrices. Calidad y servicio que mantienen tu motor en marcha.
+            </p>
+</div>
+<div class="flex flex-col md:flex-row gap-8">
+<div class="flex flex-col gap-2">
+<a class="text-surface-variant hover:text-primary-fixed transition-colors text-body-md font-body-md hover:underline decoration-primary" href="index.html">Inicio</a>
+<a class="text-surface-variant hover:text-primary-fixed transition-colors text-body-md font-body-md hover:underline decoration-primary" href="productos.html">Productos</a>
+<a class="text-primary-fixed-dim font-bold text-body-md font-body-md focus:ring-2 focus:ring-offset-2 focus:ring-primary" href="nosotros.html">Nosotros</a>
+<a class="text-surface-variant hover:text-primary-fixed transition-colors text-body-md font-body-md hover:underline decoration-primary" href="contacto.html">Contacto</a>
+</div>
+<div class="flex flex-col gap-2">
+<a class="text-surface-variant hover:text-primary-fixed transition-colors text-caption font-caption hover:underline decoration-primary" href="#">Política de Privacidad</a>
+<a class="text-surface-variant hover:text-primary-fixed transition-colors text-caption font-caption hover:underline decoration-primary" href="#">Términos de Servicio</a>
+</div>
+</div>
+<div class="w-full md:w-auto text-center md:text-left pt-4 border-t border-surface-variant/20 md:border-t-0 md:pt-0">
+<p class="text-caption font-caption text-surface-variant">
+                © 2024 AUTOINSUMO 2000. Todos los derechos reservados.
+            </p>
+</div>
+</footer>
+<script>
+        // Mobile Sidebar Toggle Logic
+        document.addEventListener('DOMContentLoaded', () => {
+            const menuBtn = document.getElementById('mobile-menu-btn');
+            const closeBtn = document.getElementById('close-menu-btn');
+            const sidebar = document.getElementById('mobile-sidebar');
+            const overlay = document.getElementById('sidebar-overlay');
+
+            function toggleMenu() {
+                const isOpen = !sidebar.classList.contains('-translate-x-full');
+                if (isOpen) {
+                    sidebar.classList.add('-translate-x-full');
+                    overlay.classList.add('hidden');
+                    document.body.style.overflow = '';
+                } else {
+                    sidebar.classList.remove('-translate-x-full');
+                    overlay.classList.remove('hidden');
+                    document.body.style.overflow = 'hidden';
+                }
+            }
+
+            menuBtn.addEventListener('click', toggleMenu);
+            closeBtn.addEventListener('click', toggleMenu);
+            overlay.addEventListener('click', toggleMenu);
+        });
+    </script>
+
+<!-- CACIQUE GLOBAL ESC MODAL CLOSER -->
+<script>
+  (function() {
+    function handleEsc(e) {
+      if (e.key === 'Escape' || e.key === 'Esc' || e.keyCode === 27) {
+        try {
+          if (window.parent && typeof window.parent.closeDemoModal === 'function') {
+            window.parent.closeDemoModal();
+          }
+          if (window.parent && typeof window.parent.closeContactModal === 'function') {
+            window.parent.closeContactModal();
+          }
+        } catch (err) {}
+      }
+    }
+    window.addEventListener('keydown', handleEsc, true);
+    document.addEventListener('keydown', handleEsc, true);
+  })();
+</script></body></html>

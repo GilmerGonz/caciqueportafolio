@@ -1,0 +1,733 @@
+<!DOCTYPE html><html class="scroll-smooth" lang="es" style="scroll-behavior: smooth;"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>VenAventura - Descubre Venezuela</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700&amp;family=Work+Sans:wght@400;600&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+<!-- Tailwind -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-primary": "#b8c4ff",
+                        "on-primary-fixed": "#001355",
+                        "on-error": "#ffffff",
+                        "inverse-on-surface": "#f2f0f7",
+                        "surface-container-lowest": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "inverse-surface": "#303036",
+                        "surface-container-low": "#f5f2fa",
+                        "surface-container": "#efedf4",
+                        "secondary-fixed": "#baeaff",
+                        "background": "#fbf8ff",
+                        "on-surface": "#1b1b20",
+                        "on-primary": "#ffffff",
+                        "tertiary": "#431900",
+                        "on-secondary-container": "#39697b",
+                        "on-tertiary-fixed-variant": "#74340a",
+                        "outline-variant": "#c5c5d3",
+                        "on-tertiary-fixed": "#331100",
+                        "tertiary-container": "#652900",
+                        "on-surface-variant": "#454651",
+                        "primary-fixed": "#dde1ff",
+                        "on-error-container": "#93000a",
+                        "surface-bright": "#fbf8ff",
+                        "surface-variant": "#e3e1e9",
+                        "surface-container-highest": "#e3e1e9",
+                        "primary-fixed-dim": "#b8c4ff",
+                        "primary": "#011b6b",
+                        "on-secondary-fixed": "#001f29",
+                        "outline": "#757682",
+                        "secondary-container": "#b7e7fc",
+                        "tertiary-fixed": "#ffdbca",
+                        "primary-container": "#203481",
+                        "on-primary-container": "#8ea0f4",
+                        "surface-dim": "#dbd9e0",
+                        "on-tertiary-container": "#e78f5f",
+                        "tertiary-fixed-dim": "#ffb690",
+                        "on-primary-fixed-variant": "#2d418e",
+                        "secondary": "#356476",
+                        "surface-tint": "#4759a7",
+                        "error": "#ba1a1a",
+                        "secondary-fixed-dim": "#9ecee2",
+                        "on-secondary": "#ffffff",
+                        "surface": "#fbf8ff",
+                        "on-secondary-fixed-variant": "#194c5e",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-high": "#e9e7ee",
+                        "on-background": "#1b1b20",
+                        "accent1": "#4EAAFF",
+                        "accent2": "#0069F5",
+                        "accent3": "#678ABA",
+                        "text-main": "#1A1A2E"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px",
+                        "button": "50px",
+                        "card": "12px"
+                    },
+                    "spacing": {
+                        "sm": "12px",
+                        "container-max": "1280px",
+                        "xs": "4px",
+                        "xl": "80px",
+                        "lg": "48px",
+                        "base": "8px",
+                        "md": "24px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Work Sans", "sans-serif"],
+                        "headline-lg": ["Plus Jakarta Sans", "sans-serif"],
+                        "headline-md": ["Plus Jakarta Sans", "sans-serif"],
+                        "headline-xl": ["Plus Jakarta Sans", "sans-serif"],
+                        "label-bold": ["Work Sans", "sans-serif"],
+                        "body-md": ["Work Sans", "sans-serif"],
+                        "headline-xl-mobile": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                        "headline-md": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                        "headline-xl": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "label-bold": ["14px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "headline-xl-mobile": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}]
+                    },
+                    "boxShadow": {
+                        "ambient": "0 4px 20px rgba(32, 52, 129, 0.15)",
+                        "ambient-hover": "0 8px 25px rgba(32, 52, 129, 0.20)"
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .gsap-reveal { opacity: 0; transform: translateY(30px); }
+        .faq-answer { display: none; overflow: hidden; }
+        .scrolled-nav { background-color: rgba(1, 27, 107, 0.95) !important; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); padding-top: 0.5rem !important; padding-bottom: 0.5rem !important; }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-lg overflow-x-hidden antialiased">
+<!-- ====== TopNavBar ====== -->
+<nav class="fixed top-0 w-full z-50 flex justify-between items-center px-gutter py-4 bg-primary/40 backdrop-blur-md transition-all duration-300" id="main-nav">
+<div class="max-w-container-max mx-auto w-full flex justify-between items-center">
+<a class="font-headline-md text-headline-md font-bold text-white tracking-tight" href="#inicio">VenAventura</a>
+<div class="hidden md:flex space-x-md">
+<a class="font-body-lg text-body-lg text-white border-b-2 border-transparent hover:border-secondary-fixed pb-1 transition-all nav-link" href="#inicio">Inicio</a>
+<a class="font-body-lg text-body-lg text-white/80 hover:text-white border-b-2 border-transparent hover:border-secondary-fixed pb-1 transition-all nav-link" href="#destinos">Destinos</a>
+<a class="font-body-lg text-body-lg text-white/80 hover:text-white border-b-2 border-transparent hover:border-secondary-fixed pb-1 transition-all nav-link" href="#quienes-somos">Quiénes Somos</a>
+<a class="font-body-lg text-body-lg text-white/80 hover:text-white border-b-2 border-transparent hover:border-secondary-fixed pb-1 transition-all nav-link" href="#faq">FAQ</a>
+<a class="font-body-lg text-body-lg text-white/80 hover:text-white border-b-2 border-transparent hover:border-secondary-fixed pb-1 transition-all nav-link" href="#contacto">Contacto</a>
+</div>
+<button class="bg-white text-primary px-6 py-3 rounded-button font-label-bold text-label-bold hover:bg-secondary-fixed transition-colors shadow-ambient scale-95 active:scale-90 hidden md:block">Reservar</button>
+<button aria-label="Menu" class="md:hidden text-white" id="menu-btn">
+<span class="material-symbols-outlined text-3xl">menu</span>
+</button>
+</div>
+</nav>
+<!-- Mobile Nav Overlay -->
+<div class="fixed inset-0 bg-black/50 z-40 hidden opacity-0 transition-opacity duration-300" id="mobile-nav-overlay"></div>
+<!-- ====== SideNavBar (Mobile) ====== -->
+<nav class="flex flex-col p-md h-full w-64 fixed left-0 top-0 bg-surface dark:bg-surface-dim border-r border-outline-variant shadow-xl z-50 transform -translate-x-full transition-transform duration-300" id="mobile-nav">
+<div class="flex items-center gap-4 mb-lg">
+<div class="w-12 h-12 rounded-full bg-primary flex items-center justify-center text-white font-bold">VA</div>
+<div>
+<div class="font-headline-md text-headline-md font-bold text-primary">VenAventura</div>
+<div class="text-sm text-on-surface-variant">Descubre Venezuela</div>
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<a class="flex items-center gap-3 p-3 bg-primary-container text-on-primary-container font-bold rounded-lg transition-all duration-200 mobile-nav-link" href="#inicio">
+<span class="material-symbols-outlined" style="font-variation-settings: &quot;FILL&quot; 1;">home</span>
+<span class="font-body-lg text-body-lg">Inicio</span>
+</a>
+<a class="flex items-center gap-3 p-3 text-on-surface-variant hover:bg-surface-container-high rounded-lg transition-all duration-200 mobile-nav-link" href="#destinos">
+<span class="material-symbols-outlined">explore</span>
+<span class="font-body-lg text-body-lg">Destinos</span>
+</a>
+<a class="flex items-center gap-3 p-3 text-on-surface-variant hover:bg-surface-container-high rounded-lg transition-all duration-200 mobile-nav-link" href="#quienes-somos">
+<span class="material-symbols-outlined">groups</span>
+<span class="font-body-lg text-body-lg">Quiénes Somos</span>
+</a>
+<a class="flex items-center gap-3 p-3 text-on-surface-variant hover:bg-surface-container-high rounded-lg transition-all duration-200 mobile-nav-link" href="#faq">
+<span class="material-symbols-outlined">help</span>
+<span class="font-body-lg text-body-lg">FAQ</span>
+</a>
+<a class="flex items-center gap-3 p-3 text-on-surface-variant hover:bg-surface-container-high rounded-lg transition-all duration-200 mobile-nav-link" href="#contacto">
+<span class="material-symbols-outlined">mail</span>
+<span class="font-body-lg text-body-lg">Contacto</span>
+</a>
+</div>
+</nav>
+<main>
+<!-- ====== Hero Content ====== -->
+<section class="relative min-h-[921px] flex items-center justify-center overflow-hidden" id="inicio">
+<div class="absolute inset-0 z-0 bg-primary">
+<div class="bg-cover bg-center w-full h-full transition-opacity duration-1000 opacity-100" id="hero-bg" style="background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuBL0hiWyP6uGHNa8qhbULGKC71dFlNHXg0N9wI0u3JMzTbnd1_VBz4dTJ13S6vx81TGpO1s8wzh7eCDn3nc1zZ4KMgp8ewUm1zia1DuP2ix-zqSajQBLLgBHF-VWn2iyBwYrdQL7nqYlikUZuv1iGScR12_9f5eJjTcB8sBQ_8cGoHp3JGVbk2wBsTvRkSvrVTa5IEzspDcEfUCpTmYWqI90RbBRvkDHx9WY5jxKpihZ1SjyfOluxfZ4A&quot;); opacity: 1;"></div>
+<div class="absolute inset-0 bg-primary/40 backdrop-blur-[2px]"></div>
+</div>
+<div class="relative z-10 text-center px-gutter max-w-container-max mx-auto w-full">
+<div class="flex justify-between items-center absolute w-full top-1/2 -translate-y-1/2 left-0 px-4 z-20 pointer-events-none hidden md:flex">
+<button class="w-12 h-12 rounded-full bg-white/20 hover:bg-white/40 backdrop-blur-sm text-white flex items-center justify-center pointer-events-auto transition-colors" id="prev-slide">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="w-12 h-12 rounded-full bg-white/20 hover:bg-white/40 backdrop-blur-sm text-white flex items-center justify-center pointer-events-auto transition-colors" id="next-slide">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+
+<h1 class="font-headline-xl text-headline-xl-mobile md:text-headline-xl text-white mb-6 tracking-tight hero-title" style="translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 0px);">Venezuela te espera</h1>
+<p class="font-body-lg text-body-lg text-white/90 mb-10 max-w-2xl mx-auto hero-subtitle" style="translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 0px);">Descubre los paisajes más espectaculares de Suramérica con experiencias curadas y profesionales.</p>
+<!-- Counters -->
+<button class="bg-accent1 text-white px-8 py-4 rounded-button font-label-bold text-label-bold hover:bg-accent2 transition-colors shadow-ambient hover:shadow-ambient-hover transform hover:-translate-y-1 hero-btn inline-flex items-center gap-2" style="translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 0px);">
+                    Explorar destinos <span class="material-symbols-outlined">arrow_forward</span>
+</button><div class="mt-20 grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto border-t border-white/20 pt-8">
+
+<div class="text-white hero-subtitle" style="translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 0px);">
+<div class="text-4xl font-bold font-headline-lg counter" data-target="150">150</div>
+<div class="text-sm opacity-80 mt-1">Destinos</div>
+</div>
+<div class="text-white hero-subtitle" style="translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 0px);">
+<div class="text-4xl font-bold font-headline-lg counter" data-target="5000">5000</div>
+<div class="text-sm opacity-80 mt-1">Viajeros Felices</div>
+</div>
+<div class="text-white hero-subtitle" style="translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 0px);">
+<div class="text-4xl font-bold font-headline-lg counter" data-target="50">50</div>
+<div class="text-sm opacity-80 mt-1">Guías Expertos</div>
+</div>
+<div class="text-white hero-subtitle" style="translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 0px);">
+<div class="text-4xl font-bold font-headline-lg counter" data-target="15">15</div>
+<div class="text-sm opacity-80 mt-1">Años de Experiencia</div>
+</div></div>
+</div>
+</section>
+<!-- Highlights Grid (Bento) -->
+<section class="py-xl px-gutter max-w-container-max mx-auto" id="destinos">
+
+<div class="text-center mb-12 gsap-reveal" style="translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 0px);">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-4">Destinos Destacados</h2>
+<p class="text-on-surface-variant max-w-2xl mx-auto mb-8">Lugares icónicos que definen la belleza natural de nuestro país.</p>
+<!-- Category Filter -->
+<div class="flex flex-wrap justify-center gap-3 mb-10">
+<button class="filter-btn active px-6 py-2 rounded-full bg-primary text-white font-medium text-sm transition-colors" data-filter="all">Todos</button>
+<button class="filter-btn px-6 py-2 rounded-full bg-surface-container-high text-on-surface-variant hover:bg-surface-variant font-medium text-sm transition-colors" data-filter="playas">Playas</button>
+<button class="filter-btn px-6 py-2 rounded-full bg-surface-container-high text-on-surface-variant hover:bg-surface-variant font-medium text-sm transition-colors" data-filter="montanas">Montañas</button>
+<button class="filter-btn px-6 py-2 rounded-full bg-surface-container-high text-on-surface-variant hover:bg-surface-variant font-medium text-sm transition-colors" data-filter="selva">Ríos y Selva</button>
+</div>
+</div><div class="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[300px]" id="destinations-grid">
+<!-- Canaima (Selva) -->
+
+<!-- Los Roques (Playas) -->
+<div class="dest-card md:col-span-2 md:row-span-2 relative rounded-card overflow-hidden shadow-ambient hover:shadow-ambient-hover transition-all duration-300 group gsap-reveal cursor-pointer" data-category="selva" onclick="openModal('Canaima', 'Explora el salto de agua más alto del mundo en el corazón de la selva. Un viaje inolvidable a través de tepuyes y ríos caudalosos.', '$850')" style="translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 0px);">
+<img alt="Canaima" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBL0hiWyP6uGHNa8qhbULGKC71dFlNHXg0N9wI0u3JMzTbnd1_VBz4dTJ13S6vx81TGpO1s8wzh7eCDn3nc1zZ4KMgp8ewUm1zia1DuP2ix-zqSajQBLLgBHF-VWn2iyBwYrdQL7nqYlikUZuv1iGScR12_9f5eJjTcB8sBQ_8cGoHp3JGVbk2wBsTvRkSvrVTa5IEzspDcEfUCpTmYWqI90RbBRvkDHx9WY5jxKpihZ1SjyfOluxfZ4A">
+<div class="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/20 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-8 w-full">
+<span class="bg-secondary-fixed text-on-secondary-fixed px-3 py-1 rounded-[4px] text-xs font-bold mb-3 inline-block uppercase tracking-wider">Aventura</span>
+<h3 class="font-headline-md text-headline-md text-white mb-2">Canaima</h3>
+<p class="text-white/80 line-clamp-2 mb-4">Explora el salto de agua más alto del mundo en el corazón de la selva.</p>
+<button class="bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white px-4 py-2 rounded-button text-sm font-bold transition-colors">Ver detalles</button>
+</div>
+</div>
+<!-- Mérida (Montañas) -->
+<div class="dest-card relative rounded-card overflow-hidden shadow-ambient hover:shadow-ambient-hover transition-all duration-300 group gsap-reveal cursor-pointer" data-category="playas" onclick="openModal('Los Roques', 'Archipiélago de aguas cristalinas y arenas blancas. Ideal para el descanso y deportes acuáticos.', '$1200')" style="transition-delay: 100ms; translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 0px);">
+<img alt="Los Roques" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAgzcD7d6GYoGwbvbRQlVME9oEOs-FUtkMau0o0AtpXQYJmBc_HKFhJ--Q9rSa22oxaTesQm6I_XqhavajBZpWcwxUHrwrjO6YMuMqlqgocZGtWzOtwTcfdel2lP0Ne6pytLEVE4-nzyrmiZXk4LMUKia9vAn00y0C2U0Z07rzL6PZtqxnr1QttvwAjDz2TeLqWn3_PylrVhvbHPrq89SYEU4_wpcPCIVNqLoF_tyzgoG-57vAIcJZUAg">
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-6 w-full">
+<h3 class="font-headline-md text-headline-md text-white mb-2">Los Roques</h3>
+<button class="text-white/90 text-sm font-bold hover:text-white flex items-center gap-1"><span class="material-symbols-outlined text-[18px]">visibility</span> Detalles</button>
+</div>
+</div>
+<div class="dest-card relative rounded-card overflow-hidden shadow-ambient hover:shadow-ambient-hover transition-all duration-300 group gsap-reveal cursor-pointer" data-category="montanas" onclick="openModal('Mérida', 'Disfruta del teleférico más alto y largo del mundo, picos nevados y una rica cultura andina.', '$450')" style="transition-delay: 200ms; translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 0px);">
+<img alt="Mérida" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBYiUGJcKfKHbP290gO-qO7_uSQ7dwL0NuFX8FO4I1nZ72KqWGrRmefomFSTyc2j4-1vnTttxgmv6kgC-618xEEqgmf5AzGplodjEeOTaYh8SD6qNi3YYvffoKpV-SlDv8QG2u2tn_9OxEEmu8JDkd8GZw2tYcjWhBKt3BjDYnCzzSLKGuyWYVMgwarY74mpoE9SeKURB-2NmUHjfqeJJ6ebmo1zJtRGnq7K4-g67swfrd1hNhbGVDMyQ">
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-6 w-full">
+<h3 class="font-headline-md text-headline-md text-white mb-2">Mérida</h3>
+<button class="text-white/90 text-sm font-bold hover:text-white flex items-center gap-1"><span class="material-symbols-outlined text-[18px]">visibility</span> Detalles</button>
+</div>
+</div></div>
+</section>
+<!-- Quiénes Somos Section -->
+<section class="py-xl px-gutter max-w-container-max mx-auto bg-surface-container-lowest rounded-[32px] my-10 shadow-sm" id="quienes-somos">
+
+<div class="text-center mb-12 gsap-reveal" style="translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 0px);">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-4">Quiénes Somos</h2>
+<p class="text-on-surface-variant max-w-2xl mx-auto">Un equipo apasionado por mostrar la verdadera esencia de Venezuela.</p>
+</div><div class="grid md:grid-cols-2 gap-10 items-center mb-16">
+
+<div class="gsap-mission" style="translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 0px);">
+<h3 class="text-2xl font-bold text-primary mb-3">Nuestra Misión</h3>
+<p class="text-on-surface-variant mb-6">Proveer experiencias turísticas inolvidables y sostenibles que destaquen la belleza natural y cultural de Venezuela, garantizando seguridad y confort.</p>
+</div>
+<div class="gsap-mission" style="translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 0px);">
+<h3 class="text-2xl font-bold text-primary mb-3">Nuestra Visión</h3>
+<p class="text-on-surface-variant">Ser la agencia de viajes líder en ecoturismo y turismo de aventura en Venezuela, reconocida internacionalmente por nuestra calidad de servicio.</p>
+</div></div>
+
+<h3 class="text-center text-xl font-bold text-primary mb-8 gsap-reveal" style="translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 0px);">Nuestro Equipo</h3><div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+<!-- Team Cards with stagger class -->
+
+<div class="team-card bg-surface p-6 rounded-card shadow-sm text-center border border-surface-variant" style="translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 0px);"><div class="w-24 h-24 mx-auto rounded-full overflow-hidden mb-4"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuC7yARp995M510luYjVR9QwTl1gggA1vVD3hXs_6t7sqvSCCIzeeeFkVnRu_33j2r8l25u4XqrYenlVfEAvg0arUizLibwW0IA6z-v2sRYQE1JeXjOIU2CDoZMvrv3L601iBvLLy-ElQvb0pLpnZHgjDk57bgFFM2Ty57WEQwwmZwm0cPwyuGGPqiwxb9S-pAE60sISxk1jfWuDWFQF5LB-p9lhwGG9QI7jK-MFXLv5Gopwb_K8-deaPw" alt="Maria González" class="w-full h-full object-cover"></div><h4 class="font-bold text-primary">Maria González</h4><p class="text-sm text-on-surface-variant">Ecotourism Expert</p></div>
+<div class="team-card bg-surface p-6 rounded-card shadow-sm text-center border border-surface-variant" style="translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 0px);"><div class="w-24 h-24 mx-auto rounded-full overflow-hidden mb-4"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDwwQaMKLTwf8BZvOOTzrnPF_xgxGa3Y-yZB8aopVdpFNVQIMmCA7v5rJIPmvfP98RAWmZlNLd4pSvF8W4pk3__G0nH8lgvhzrmArxN1jLi39UWBdKa4uft-FwnI0qAo0qf7otgBvGt0PkaaduBIDLAYJCq582zgmMozmol9amdDqGn_SHoafeM4DBA31pTDXJPCvX707yjBthNGFe50BfQuD3CdTWb-akrYN3_wPIha3-wX0o9n4wcAQ" alt="Carlos Méndez" class="w-full h-full object-cover"></div><h4 class="font-bold text-primary">Carlos Méndez</h4><p class="text-sm text-on-surface-variant">Mountain Guide</p></div>
+<div class="team-card bg-surface p-6 rounded-card shadow-sm text-center border border-surface-variant" style="translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 0px);"><div class="w-24 h-24 mx-auto rounded-full overflow-hidden mb-4"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBNelqXfN1V_ZB6MI1G97TjqCDbrS7-S9Jj_iqBiubFQ42KdMzKu9AhMVvlNLKUbD-NKFvYYcWndgxZdCV80odeArwFWa0EJ2ojHNC7Dsq5hfKgCrHYsyaPMBN9p9-cT6ZRhgNbQ7tD2HvNOsARSHybvs1exf9IYVRbmVJgREEOgbAxuxC27MKwWpRRV8Jdq8JhDBK5Hg7IMJE5w9dtZ1CWyON78Qj83yMtBhd8HkQ281dY0nq4raTomw" alt="Ana Rojas" class="w-full h-full object-cover"></div><h4 class="font-bold text-primary">Ana Rojas</h4><p class="text-sm text-on-surface-variant">Beach Coordinator</p></div>
+<div class="team-card bg-surface p-6 rounded-card shadow-sm text-center border border-surface-variant" style="translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 0px);"><div class="w-24 h-24 mx-auto rounded-full overflow-hidden mb-4"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuApj33xyrmJbdPVm66sEJhoEUVezfyCLXpOWTYqb1JDelzcMVZmRHxDi_ZzbNQREQrCFX5jN1YQ4MVYSix9UQ3ZM2AwVZ2cq0NO2HH8pSCm_uuDHAXLBORliu1lUz9Kx1-fSJh65o8ifGu4bWkEuAI5AFA9a3PwWSQDWf11z123wTZNFY8ft83KTn1koJBP_cfa-GSGkW2j0RBfkE3IY8rqCcr7PtrpNw_2G6j3DuAJY4qpBAl-I-BvkQ" alt="Luis Fernández" class="w-full h-full object-cover"></div><h4 class="font-bold text-primary">Luis Fernández</h4><p class="text-sm text-on-surface-variant">Culture Expert</p></div></div>
+</section>
+<!-- FAQ Section -->
+<section class="py-xl px-gutter max-w-3xl mx-auto" id="faq">
+
+<div class="text-center mb-12 gsap-reveal" style="translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 0px);">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-4">Preguntas Frecuentes</h2>
+</div><div class="space-y-4">
+
+<div class="faq-item border border-surface-variant rounded-lg overflow-hidden gsap-reveal" style="translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 0px);">
+<button class="faq-question w-full text-left p-4 bg-surface hover:bg-surface-container-high flex justify-between items-center font-bold text-primary transition-colors">
+                        ¿Qué incluye el paquete de Canaima?
+                        <span class="material-symbols-outlined transform transition-transform duration-300">expand_more</span>
+</button>
+<div class="faq-answer p-4 bg-surface text-on-surface-variant">
+                        Incluye vuelos desde Caracas, alojamiento por 3 noches, todas las comidas, excursión a la base del Salto Ángel y guía bilingüe certificado.
+                    </div>
+</div>
+<div class="faq-item border border-surface-variant rounded-lg overflow-hidden gsap-reveal" style="translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 0px);">
+<button class="faq-question w-full text-left p-4 bg-surface hover:bg-surface-container-high flex justify-between items-center font-bold text-primary transition-colors">
+                        ¿Es seguro viajar en estos momentos?
+                        <span class="material-symbols-outlined transform transition-transform duration-300">expand_more</span>
+</button>
+<div class="faq-answer p-4 bg-surface text-on-surface-variant">
+                        Sí, trabajamos exclusivamente con operadores locales confiables y mantenemos protocolos de seguridad estrictos en todos nuestros destinos.
+                    </div>
+</div>
+<div class="faq-item border border-surface-variant rounded-lg overflow-hidden gsap-reveal" style="translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 0px);">
+<button class="faq-question w-full text-left p-4 bg-surface hover:bg-surface-container-high flex justify-between items-center font-bold text-primary transition-colors">
+                        ¿Cuáles son los métodos de pago?
+                        <span class="material-symbols-outlined transform transition-transform duration-300">expand_more</span>
+</button>
+<div class="faq-answer p-4 bg-surface text-on-surface-variant">
+                        Aceptamos transferencias internacionales, tarjetas de crédito principales, Zelle y pagos en criptomonedas seleccionadas.
+                    </div>
+</div></div>
+</section>
+<!-- Contacto Section -->
+<section class="py-xl px-gutter max-w-container-max mx-auto" id="contacto">
+
+<div class="bg-primary-container text-on-primary-container rounded-[32px] p-8 md:p-12 shadow-ambient gsap-reveal" style="translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 0px);">
+<div class="grid md:grid-cols-2 gap-12">
+<div>
+<h2 class="font-headline-lg text-headline-lg mb-4 text-white">Contáctanos</h2>
+<p class="mb-8 text-white/80">Estamos listos para planificar tu próxima aventura. Déjanos un mensaje y te responderemos en breve.</p>
+<div class="flex items-center gap-4 mb-4 text-white">
+<span class="material-symbols-outlined">mail</span>
+<span class="">info@venaventura.com</span>
+</div>
+<div class="flex items-center gap-4 mb-4 text-white">
+<span class="material-symbols-outlined">phone</span>
+<span class="">+58 412 123 4567</span>
+</div>
+</div>
+<form class="bg-surface rounded-card p-6 shadow-sm relative overflow-hidden" id="contact-form">
+<!-- Success Alert Overlay -->
+<div class="absolute inset-0 bg-secondary-fixed text-on-secondary-fixed flex flex-col items-center justify-center z-10 hidden opacity-0" id="form-alert">
+<span class="material-symbols-outlined text-5xl mb-2">check_circle</span>
+<h3 class="font-bold text-xl">¡Mensaje enviado!</h3>
+<p class="text-sm mt-2">Nos pondremos en contacto pronto.</p>
+<button class="mt-4 px-4 py-2 border border-current rounded-button text-sm font-bold" onclick="resetForm()" type="button">Volver</button>
+</div>
+<div class="mb-4">
+<label class="block text-sm font-bold text-on-surface mb-1" for="name">Nombre</label>
+<input class="w-full rounded-md border-outline-variant bg-surface-container-lowest p-3 text-on-surface focus:ring-primary focus:border-primary" id="name" required="" type="text">
+</div>
+<div class="mb-4">
+<label class="block text-sm font-bold text-on-surface mb-1" for="email">Correo</label>
+<input class="w-full rounded-md border-outline-variant bg-surface-container-lowest p-3 text-on-surface focus:ring-primary focus:border-primary" id="email" required="" type="email">
+<span class="text-error text-xs hidden mt-1" id="email-error">Ingrese un correo válido.</span>
+</div>
+<div class="mb-6">
+<label class="block text-sm font-bold text-on-surface mb-1" for="message">Mensaje</label>
+<textarea class="w-full rounded-md border-outline-variant bg-surface-container-lowest p-3 text-on-surface focus:ring-primary focus:border-primary" id="message" required="" rows="4"></textarea>
+</div>
+<button class="w-full bg-primary text-white py-3 rounded-button font-bold hover:bg-primary-container transition-colors shadow-sm" type="submit">Enviar mensaje</button>
+</form>
+</div>
+</div></section>
+</main>
+<!-- ====== Footer ====== -->
+<footer class="w-full py-xl px-gutter flex flex-col md:flex-row justify-between items-start gap-lg max-w-container-max mx-auto bg-primary dark:bg-surface-container-highest mt-20">
+<div class="flex flex-col gap-4 max-w-sm">
+<div class="font-headline-md text-headline-md font-bold text-white">VenAventura</div>
+<p class="font-body-md text-body-md text-white/80">Tu ventana a los paisajes más increíbles de Venezuela. Viajes seguros, profesionales y memorables.</p>
+<div class="text-white/70 font-body-md text-body-md mt-4">© 2024 VenAventura. Todos los derechos reservados.</div>
+</div>
+<div class="flex flex-col sm:flex-row gap-12 w-full md:w-auto">
+<div class="flex flex-col gap-3">
+<h4 class="text-white font-bold mb-2">Navegación</h4>
+<a class="font-body-md text-body-md text-white/70 hover:text-secondary-container transition-colors opacity-80 hover:opacity-100" href="#inicio">Inicio</a>
+<a class="font-body-md text-body-md text-white/70 hover:text-secondary-container transition-colors opacity-80 hover:opacity-100" href="#destinos">Destinos</a>
+<a class="font-body-md text-body-md text-white/70 hover:text-secondary-container transition-colors opacity-80 hover:opacity-100" href="#quienes-somos">Quiénes Somos</a>
+<a class="font-body-md text-body-md text-white/70 hover:text-secondary-container transition-colors opacity-80 hover:opacity-100" href="#faq">FAQ</a>
+<a class="font-body-md text-body-md text-white/70 hover:text-secondary-container transition-colors opacity-80 hover:opacity-100" href="#contacto">Contacto</a>
+</div>
+<div class="flex flex-col gap-3">
+<h4 class="text-white font-bold mb-2">Legal</h4>
+<a class="font-body-md text-body-md text-white/70 hover:text-secondary-container transition-colors opacity-80 hover:opacity-100" href="#">Términos y Condiciones</a>
+<a class="font-body-md text-body-md text-white/70 hover:text-secondary-container transition-colors opacity-80 hover:opacity-100" href="#">Política de Privacidad</a>
+</div>
+</div>
+</footer>
+<!-- Back to top button -->
+<button class="fixed bottom-8 right-8 bg-accent2 text-white w-12 h-12 rounded-full shadow-lg flex items-center justify-center z-40 opacity-0 transform translate-y-10 transition-all duration-300 pointer-events-none hover:bg-primary" id="back-to-top">
+<span class="material-symbols-outlined">arrow_upward</span>
+</button>
+<!-- Modal for Destinations -->
+<div class="fixed inset-0 z-[100] flex items-center justify-center hidden" id="dest-modal">
+<div class="absolute inset-0 bg-black/60 backdrop-blur-sm modal-bg" onclick="closeModal()"></div>
+<div class="bg-surface w-full max-w-lg rounded-card overflow-hidden shadow-2xl relative z-10 transform scale-95 opacity-0 transition-all duration-300" id="modal-content">
+<button class="absolute top-4 right-4 w-8 h-8 bg-black/20 hover:bg-black/40 rounded-full flex items-center justify-center text-white z-20 transition-colors" onclick="closeModal()">
+<span class="material-symbols-outlined text-sm">close</span>
+</button>
+<div class="h-48 bg-primary w-full flex items-end p-6 relative">
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+<h2 class="text-3xl font-bold text-white relative z-10" id="modal-title">Destino</h2>
+</div>
+<div class="p-6">
+<h3 class="text-lg font-bold text-primary mb-2">Descripción del Viaje</h3>
+<p class="text-on-surface-variant mb-4 text-sm leading-relaxed" id="modal-desc">Detalles aquí.</p>
+<div class="bg-surface-container-low p-4 rounded-lg mb-6">
+<div class="flex justify-between items-center">
+<span class="font-bold text-on-surface">Precio estimado:</span>
+<span class="text-xl font-bold text-primary" id="modal-price">$0</span>
+</div>
+<p class="text-xs text-on-surface-variant mt-1">*Precio por persona. Sujeto a cambios.</p>
+</div>
+<div class="flex gap-4">
+<button class="flex-1 py-3 px-4 border border-outline-variant text-on-surface rounded-button font-bold hover:bg-surface-container transition-colors" onclick="closeModal()">Cancelar</button>
+<button class="flex-1 py-3 px-4 bg-primary text-white rounded-button font-bold hover:bg-primary-container transition-colors shadow-sm" onclick="bookNow()">Reservar ahora</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Scripts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+<script>
+        gsap.registerPlugin(ScrollTrigger);
+
+        // --- 1. Navigation ---
+        const mainNav = document.getElementById('main-nav');
+        const backToTop = document.getElementById('back-to-top');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                mainNav.classList.add('scrolled-nav');
+                // Back to top
+                backToTop.classList.remove('opacity-0', 'translate-y-10', 'pointer-events-none');
+                backToTop.classList.add('opacity-100', 'translate-y-0', 'cursor-pointer');
+            } else {
+                mainNav.classList.remove('scrolled-nav');
+                // Back to top
+                backToTop.classList.add('opacity-0', 'translate-y-10', 'pointer-events-none');
+                backToTop.classList.remove('opacity-100', 'translate-y-0', 'cursor-pointer');
+            }
+        });
+
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Mobile Nav
+        const mobileNav = document.getElementById('mobile-nav');
+        const mobileNavOverlay = document.getElementById('mobile-nav-overlay');
+        const menuBtn = document.getElementById('menu-btn');
+
+        function toggleMenu() {
+            mobileNav.classList.toggle('-translate-x-full');
+            if(mobileNav.classList.contains('-translate-x-full')) {
+                mobileNavOverlay.classList.add('hidden');
+                setTimeout(() => mobileNavOverlay.classList.remove('opacity-100'), 10);
+            } else {
+                mobileNavOverlay.classList.remove('hidden');
+                setTimeout(() => mobileNavOverlay.classList.add('opacity-100'), 10);
+            }
+        }
+        
+        menuBtn.addEventListener('click', toggleMenu);
+        mobileNavOverlay.addEventListener('click', toggleMenu);
+        
+        document.querySelectorAll('.mobile-nav-link').forEach(link => {
+            link.addEventListener('click', toggleMenu);
+        });
+
+        // --- 2. Carousel ---
+        const heroImages = [
+            "url('https://lh3.googleusercontent.com/aida-public/AB6AXuDvJ13F7XcF7dbtwVoG8StFL1yyi9Rn-k13B2vAdI7GfK4GbclivU67HLni4_Y7V-oQecs_9MrG2ypTWtjm5YmS70H_29uJqh-HsjdIYISiuCnMs-02bH66bRLTAOUoE38MpVgj7qgLWmXrZ2rxlILtYfYAyS5GMY-sr6Dskn5PKiJF601q67XEMVbSAbJ2idy-vp3_DXePcgJst6RIGgyNjDgnxcODLk5wbvWlD9wKupfQHyhvNmG9BQ')",
+            "url('https://lh3.googleusercontent.com/aida-public/AB6AXuBL0hiWyP6uGHNa8qhbULGKC71dFlNHXg0N9wI0u3JMzTbnd1_VBz4dTJ13S6vx81TGpO1s8wzh7eCDn3nc1zZ4KMgp8ewUm1zia1DuP2ix-zqSajQBLLgBHF-VWn2iyBwYrdQL7nqYlikUZuv1iGScR12_9f5eJjTcB8sBQ_8cGoHp3JGVbk2wBsTvRkSvrVTa5IEzspDcEfUCpTmYWqI90RbBRvkDHx9WY5jxKpihZ1SjyfOluxfZ4A')",
+            "url('https://lh3.googleusercontent.com/aida-public/AB6AXuBYiUGJcKfKHbP290gO-qO7_uSQ7dwL0NuFX8FO4I1nZ72KqWGrRmefomFSTyc2j4-1vnTttxgmv6kgC-618xEEqgmf5AzGplodjEeOTaYh8SD6qNi3YYvffoKpV-SlDv8QG2u2tn_9OxEEmu8JDkd8GZw2tYcjWhBKt3BjDYnCzzSLKGuyWYVMgwarY74mpoE9SeKURB-2NmUHjfqeJJ6ebmo1zJtRGnq7K4-g67swfrd1hNhbGVDMyQ')"
+        ];
+        let currentImgIdx = 0;
+        const heroBg = document.getElementById('hero-bg');
+        
+        function setHeroImg(idx) {
+            heroBg.style.opacity = 0;
+            setTimeout(() => {
+                heroBg.style.backgroundImage = heroImages[idx];
+                heroBg.style.opacity = 1;
+            }, 500);
+        }
+
+        document.getElementById('next-slide')?.addEventListener('click', () => {
+            currentImgIdx = (currentImgIdx + 1) % heroImages.length;
+            setHeroImg(currentImgIdx);
+        });
+        document.getElementById('prev-slide')?.addEventListener('click', () => {
+            currentImgIdx = (currentImgIdx - 1 + heroImages.length) % heroImages.length;
+            setHeroImg(currentImgIdx);
+        });
+        
+        setInterval(() => {
+            currentImgIdx = (currentImgIdx + 1) % heroImages.length;
+            setHeroImg(currentImgIdx);
+        }, 6000);
+
+        // --- 3. Counters ---
+        const counters = document.querySelectorAll('.counter');
+        counters.forEach(counter => {
+            ScrollTrigger.create({
+                trigger: counter,
+                start: "top 90%",
+                once: true,
+                onEnter: () => {
+                    const target = +counter.getAttribute('data-target');
+                    gsap.to(counter, {
+                        innerHTML: target,
+                        duration: 2,
+                        snap: { innerHTML: 1 },
+                        ease: "power2.out"
+                    });
+                }
+            });
+        });
+
+        // --- 4. Filter logic ---
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const destCards = document.querySelectorAll('.dest-card');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Update active state
+                filterBtns.forEach(b => {
+                    b.classList.remove('bg-primary', 'text-white');
+                    b.classList.add('bg-surface-container-high', 'text-on-surface-variant');
+                });
+                btn.classList.remove('bg-surface-container-high', 'text-on-surface-variant');
+                btn.classList.add('bg-primary', 'text-white');
+
+                const filterValue = btn.getAttribute('data-filter');
+
+                // Animate out
+                gsap.to(destCards, {
+                    scale: 0.8,
+                    opacity: 0,
+                    duration: 0.3,
+                    onComplete: () => {
+                        destCards.forEach(card => {
+                            if(filterValue === 'all' || card.getAttribute('data-category') === filterValue) {
+                                card.style.display = 'block';
+                            } else {
+                                card.style.display = 'none';
+                            }
+                        });
+                        // Animate in
+                        gsap.to(destCards, {
+                            scale: 1,
+                            opacity: 1,
+                            duration: 0.4,
+                            stagger: 0.1,
+                            clearProps: "all" // clear scale/opacity to prevent hover issues
+                        });
+                    }
+                });
+            });
+        });
+
+        // --- 5. Modal Logic ---
+        const modal = document.getElementById('dest-modal');
+        const modalContent = document.getElementById('modal-content');
+        const modalTitle = document.getElementById('modal-title');
+        const modalDesc = document.getElementById('modal-desc');
+        const modalPrice = document.getElementById('modal-price');
+
+        window.openModal = function(title, desc, price) {
+            modalTitle.textContent = title;
+            modalDesc.textContent = desc;
+            modalPrice.textContent = price;
+            
+            modal.classList.remove('hidden');
+            // small delay to allow display:block to apply before animating opacity
+            setTimeout(() => {
+                modalContent.classList.remove('scale-95', 'opacity-0');
+                modalContent.classList.add('scale-100', 'opacity-100');
+            }, 10);
+        }
+
+        window.closeModal = function() {
+            modalContent.classList.remove('scale-100', 'opacity-100');
+            modalContent.classList.add('scale-95', 'opacity-0');
+            setTimeout(() => {
+                modal.classList.add('hidden');
+            }, 300);
+        }
+
+        window.bookNow = function() {
+            alert(`¡Has iniciado la reserva para ${modalTitle.textContent}!`);
+            closeModal();
+        }
+
+        // --- 6. Form Validation & Submission ---
+        const form = document.getElementById('contact-form');
+        const emailInput = document.getElementById('email');
+        const emailError = document.getElementById('email-error');
+        const formAlert = document.getElementById('form-alert');
+
+        emailInput.addEventListener('input', () => {
+            const isValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailInput.value);
+            if (!isValid && emailInput.value.length > 0) {
+                emailError.classList.remove('hidden');
+                emailInput.classList.add('border-error');
+            } else {
+                emailError.classList.add('hidden');
+                emailInput.classList.remove('border-error');
+            }
+        });
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const isValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailInput.value);
+            if(isValid) {
+                // Show success
+                formAlert.classList.remove('hidden');
+                gsap.to(formAlert, {opacity: 1, duration: 0.3});
+            } else {
+                emailError.classList.remove('hidden');
+                emailInput.classList.add('border-error');
+                // Shake effect
+                gsap.fromTo(form, {x: -5}, {x: 5, duration: 0.1, yoyo: true, repeat: 3, onComplete: () => gsap.set(form, {x: 0})});
+            }
+        });
+
+        window.resetForm = function() {
+            form.reset();
+            gsap.to(formAlert, {opacity: 0, duration: 0.3, onComplete: () => formAlert.classList.add('hidden')});
+        }
+
+        // --- 7. FAQ Accordion ---
+        const faqQuestions = document.querySelectorAll('.faq-question');
+        faqQuestions.forEach(q => {
+            q.addEventListener('click', () => {
+                const answer = q.nextElementSibling;
+                const icon = q.querySelector('span');
+                const isOpen = answer.style.display === 'block';
+
+                // Close all others
+                document.querySelectorAll('.faq-answer').forEach(a => {
+                    if (a !== answer) {
+                        gsap.to(a, {height: 0, opacity: 0, duration: 0.3, onComplete: () => a.style.display = 'none'});
+                        a.previousElementSibling.querySelector('span').classList.remove('rotate-180');
+                    }
+                });
+
+                if (isOpen) {
+                    gsap.to(answer, {height: 0, opacity: 0, duration: 0.3, onComplete: () => answer.style.display = 'none'});
+                    icon.classList.remove('rotate-180');
+                } else {
+                    answer.style.display = 'block';
+                    gsap.fromTo(answer, {height: 0, opacity: 0}, {height: 'auto', opacity: 1, duration: 0.3});
+                    icon.classList.add('rotate-180');
+                }
+            });
+        });
+
+        // --- GSAP Animations ---
+        // Hero Animations
+        gsap.fromTo(".hero-title", {y: 50, opacity: 0}, {y: 0, opacity: 1, duration: 1, ease: "power3.out", delay: 0.2});
+        gsap.fromTo(".hero-subtitle", {y: 30, opacity: 0}, {y: 0, opacity: 1, duration: 1, ease: "power3.out", delay: 0.4});
+        gsap.fromTo(".hero-btn", {scale: 0.9, opacity: 0}, {scale: 1, opacity: 1, duration: 0.5, ease: "back.out(1.7)", delay: 0.6});
+
+        // Scroll Animations for generic elements
+        gsap.utils.toArray('.gsap-reveal').forEach(element => {
+            gsap.to(element, {
+                scrollTrigger: {
+                    trigger: element,
+                    start: "top 85%",
+                    toggleActions: "play none none reverse"
+                },
+                y: 0,
+                opacity: 1,
+                duration: 0.8,
+                ease: "power3.out"
+            });
+        });
+
+        // Stagger animations for Mission/Vision
+        gsap.from('.gsap-mission', {
+            scrollTrigger: {
+                trigger: '#quienes-somos',
+                start: "top 80%"
+            },
+            y: 40,
+            opacity: 0,
+            duration: 0.8,
+            stagger: 0.2,
+            ease: "power2.out"
+        });
+
+        // Stagger animations for Team Cards
+        gsap.from('.team-card', {
+            scrollTrigger: {
+                trigger: '.team-card',
+                start: "top 85%"
+            },
+            scale: 0.8,
+            y: 30,
+            opacity: 0,
+            duration: 0.6,
+            stagger: 0.15,
+            ease: "back.out(1.5)"
+        });
+
+    </script>
+
+
+
+<!-- CACIQUE GLOBAL ESC MODAL CLOSER -->
+<script>
+  (function() {
+    function handleEsc(e) {
+      if (e.key === 'Escape' || e.key === 'Esc' || e.keyCode === 27) {
+        try {
+          if (window.parent && typeof window.parent.closeDemoModal === 'function') {
+            window.parent.closeDemoModal();
+          }
+          if (window.parent && typeof window.parent.closeContactModal === 'function') {
+            window.parent.closeContactModal();
+          }
+        } catch (err) {}
+      }
+    }
+    window.addEventListener('keydown', handleEsc, true);
+    document.addEventListener('keydown', handleEsc, true);
+  })();
+</script>
+
+</body></html>

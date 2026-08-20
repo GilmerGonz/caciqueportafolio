@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Book Appointment - DENTAL PREMIUM</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-container": "#9ba3bb",
+                        "surface-container-high": "#e6e8ea",
+                        "on-surface": "#191c1e",
+                        "secondary-container": "#fedb9b",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-low": "#f2f4f6",
+                        "on-primary-fixed-variant": "#2d486d",
+                        "on-error-container": "#93000a",
+                        "secondary-fixed-dim": "#e4c285",
+                        "on-tertiary-fixed": "#131b2e",
+                        "on-primary": "#ffffff",
+                        "tertiary-fixed-dim": "#bec6e0",
+                        "surface-variant": "#e0e3e5",
+                        "tertiary": "#1c2337",
+                        "surface-dim": "#d8dadc",
+                        "on-surface-variant": "#43474e",
+                        "surface-bright": "#f7f9fb",
+                        "background": "#f7f9fb",
+                        "on-secondary-container": "#795f2b",
+                        "secondary": "#745a27",
+                        "on-primary-fixed": "#001c3b",
+                        "on-background": "#191c1e",
+                        "primary-fixed": "#d5e3ff",
+                        "surface-container-lowest": "#ffffff",
+                        "primary": "#022448",
+                        "outline-variant": "#c4c6cf",
+                        "surface": "#f7f9fb",
+                        "surface-container-highest": "#e0e3e5",
+                        "on-secondary-fixed": "#261900",
+                        "outline": "#74777f",
+                        "tertiary-fixed": "#dae2fd",
+                        "inverse-on-surface": "#eff1f3",
+                        "on-primary-container": "#8aa4cf",
+                        "error-container": "#ffdad6",
+                        "primary-container": "#1e3a5f",
+                        "surface-tint": "#455f87",
+                        "secondary-fixed": "#ffdea4",
+                        "on-error": "#ffffff",
+                        "inverse-primary": "#adc8f5",
+                        "on-secondary-fixed-variant": "#5a4312",
+                        "inverse-surface": "#2d3133",
+                        "tertiary-container": "#31394e",
+                        "on-secondary": "#ffffff",
+                        "error": "#ba1a1a",
+                        "on-tertiary-fixed-variant": "#3f465c",
+                        "primary-fixed-dim": "#adc8f5",
+                        "surface-container": "#eceef0"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "16px",
+                        "unit": "4px",
+                        "stack-lg": "32px",
+                        "section-gap": "80px",
+                        "container-padding": "24px",
+                        "stack-sm": "8px",
+                        "stack-md": "16px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "data-label": ["JetBrains Mono"],
+                        "display-lg": ["Inter"],
+                        "headline-sm": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "display-lg-mobile": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "data-label": ["12px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                        "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                        "headline-sm": ["24px", {"lineHeight": "1.3", "fontWeight": "700"}],
+                        "headline-md": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "display-lg-mobile": ["36px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "800"}]
+                    }
+                }
+            }
+        };
+    </script>
+<style>
+        .glass-panel {
+            background: rgba(248, 250, 252, 0.7);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+        }
+        .micro-dot-bg {
+            background-image: radial-gradient(circle, #e0e3e5 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+        .neumorphic-input {
+            background-color: #F8FAFC;
+            border: 1px solid transparent;
+            box-shadow: inset 0 2px 4px rgba(0,0,0,0.02);
+            transition: all 0.3s ease;
+        }
+        .neumorphic-input:focus {
+            border-color: #022448;
+            box-shadow: 0 0 0 4px rgba(2, 36, 72, 0.1), inset 0 2px 4px rgba(0,0,0,0.02);
+            outline: none;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen pt-[88px] flex flex-col antialiased selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- TopNavBar Component -->
+<nav class="bg-surface-container-lowest fixed top-0 w-full z-50 border-b border-outline-variant shadow-sm transition-all duration-300 ease-in-out">
+<div class="max-w-[1280px] mx-auto flex justify-between items-center px-container-padding py-stack-md">
+<a href="index.html" class="text-headline-sm font-headline-sm tracking-tight text-primary font-bold">
+    DENTAL PREMIUM
+</a>
+<div class="hidden md:flex space-x-8 items-center">
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md px-3 py-2 rounded-lg" href="index.html">Home</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md px-3 py-2 rounded-lg" href="index.html#services">Services</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md px-3 py-2 rounded-lg" href="equipo.html">Team</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md px-3 py-2 rounded-lg" href="casos.html">Cases</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md px-3 py-2 rounded-lg" href="dashboard.html">Dashboard</a>
+</div>
+<div class="flex items-center space-x-4">
+<a href="citas.html" class="hidden md:inline-block bg-primary text-on-primary font-body-md text-body-md px-6 py-2 rounded-lg hover:bg-primary-container transition-all font-bold">
+    Book Appointment
+</a>
+<div class="w-10 h-10 rounded-full overflow-hidden border border-outline-variant">
+<img alt="Sarah Jenkins" class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=400&q=80"/>
+</div>
+</div>
+</div>
+</nav>
+
+<!-- Main Content Canvas -->
+<main class="flex-grow w-full max-w-[1280px] mx-auto px-container-padding py-section-gap flex flex-col items-center justify-center relative micro-dot-bg">
+<!-- Background decorative blur -->
+<div class="fixed top-20 right-20 w-96 h-96 bg-primary-fixed/20 rounded-full blur-[100px] pointer-events-none -z-10"></div>
+<div class="fixed bottom-20 left-20 w-[500px] h-[500px] bg-secondary-container/10 rounded-full blur-[120px] pointer-events-none -z-10"></div>
+<div class="w-full max-w-4xl glass-panel rounded-xl p-stack-lg relative overflow-hidden">
+<!-- Header & Progress -->
+<div class="text-center mb-stack-lg relative z-10">
+<span class="font-data-label text-data-label text-primary mb-stack-sm block uppercase tracking-wider">Appointment Scheduler</span>
+<h1 class="font-headline-md text-headline-md text-on-surface mb-stack-md">Book your appointment in 1 minute</h1>
+<div class="flex items-center justify-center gap-gutter max-w-md mx-auto mt-stack-md">
+<div class="flex-1">
+<div class="h-2 rounded-full bg-primary relative overflow-hidden">
+<div class="absolute inset-y-0 left-0 bg-white/20 w-full animate-[shimmer_2s_infinite]"></div>
+</div>
+<span class="font-data-label text-data-label text-primary mt-unit block">Select Date</span>
+</div>
+<div class="flex-1">
+<div class="h-2 rounded-full bg-surface-variant relative"></div>
+<span class="font-data-label text-data-label text-on-surface-variant mt-unit block">Choose Time</span>
+</div>
+<div class="flex-1">
+<div class="h-2 rounded-full bg-surface-variant relative"></div>
+<span class="font-data-label text-data-label text-on-surface-variant mt-unit block">Confirm</span>
+</div>
+</div>
+</div>
+<!-- Bento Grid Layout for Booking -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter relative z-10">
+<!-- Left Column: Calendar & Time -->
+<div class="md:col-span-7 flex flex-col gap-gutter">
+<!-- Calendar Card -->
+<div class="bg-surface-container-lowest rounded-lg p-container-padding shadow-sm border border-outline-variant/30">
+<div class="flex justify-between items-center mb-stack-md">
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Select Date</h2>
+<div class="flex gap-2">
+<button class="p-2 rounded-full hover:bg-surface-container-low text-on-surface-variant transition-colors">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<span class="font-body-md text-body-md font-bold text-on-surface flex items-center">October 2024</span>
+<button class="p-2 rounded-full hover:bg-surface-container-low text-on-surface-variant transition-colors">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+<!-- Days Header -->
+<div class="grid grid-cols-7 gap-unit mb-stack-sm text-center">
+<span class="font-data-label text-data-label text-on-surface-variant">S</span>
+<span class="font-data-label text-data-label text-on-surface-variant">M</span>
+<span class="font-data-label text-data-label text-on-surface-variant">T</span>
+<span class="font-data-label text-data-label text-on-surface-variant">W</span>
+<span class="font-data-label text-data-label text-on-surface-variant">T</span>
+<span class="font-data-label text-data-label text-on-surface-variant">F</span>
+<span class="font-data-label text-data-label text-on-surface-variant">S</span>
+</div>
+<!-- Days Grid -->
+<div class="grid grid-cols-7 gap-unit text-center">
+<div class="aspect-square"></div>
+<div class="aspect-square"></div>
+<button class="aspect-square rounded-full flex items-center justify-center font-body-md text-body-md text-outline-variant cursor-not-allowed">1</button>
+<button class="aspect-square rounded-full flex items-center justify-center font-body-md text-body-md text-outline-variant cursor-not-allowed">2</button>
+<button class="aspect-square rounded-full flex items-center justify-center font-body-md text-body-md text-primary bg-primary-fixed hover:bg-primary hover:text-on-primary transition-colors">3</button>
+<button class="aspect-square rounded-full flex items-center justify-center font-body-md text-body-md text-primary bg-primary-fixed hover:bg-primary hover:text-on-primary transition-colors">4</button>
+<button class="aspect-square rounded-full flex items-center justify-center font-body-md text-body-md text-outline-variant cursor-not-allowed">5</button>
+<button class="aspect-square rounded-full flex items-center justify-center font-body-md text-body-md text-outline-variant cursor-not-allowed">6</button>
+<button class="aspect-square rounded-full flex items-center justify-center font-body-md text-body-md text-primary bg-primary-fixed hover:bg-primary hover:text-on-primary transition-colors">7</button>
+<button class="aspect-square rounded-full flex items-center justify-center font-body-md text-body-md text-primary bg-primary-fixed hover:bg-primary hover:text-on-primary transition-colors">8</button>
+<button class="aspect-square rounded-full flex items-center justify-center font-body-md text-body-md text-primary bg-primary-fixed hover:bg-primary hover:text-on-primary transition-colors border-2 border-secondary text-secondary font-bold">9</button>
+<button class="aspect-square rounded-full flex items-center justify-center font-body-md text-body-md text-primary bg-primary-fixed hover:bg-primary hover:text-on-primary transition-colors">10</button>
+<button class="aspect-square rounded-full flex items-center justify-center font-body-md text-body-md text-primary bg-primary-fixed hover:bg-primary hover:text-on-primary transition-colors">11</button>
+<button class="aspect-square rounded-full flex items-center justify-center font-body-md text-body-md text-outline-variant cursor-not-allowed">12</button>
+<button class="aspect-square rounded-full flex items-center justify-center font-body-md text-body-md text-outline-variant cursor-not-allowed">13</button>
+<button class="aspect-square rounded-full flex items-center justify-center font-body-md text-body-md text-primary bg-primary hover:bg-primary-container text-on-primary shadow-sm transition-all transform scale-110">14</button>
+<button class="aspect-square rounded-full flex items-center justify-center font-body-md text-body-md text-primary bg-primary-fixed hover:bg-primary hover:text-on-primary transition-colors">15</button>
+</div>
+</div>
+<!-- Time Slots Card -->
+<div class="bg-surface-container-lowest rounded-lg p-container-padding shadow-sm border border-outline-variant/30">
+<h2 class="font-headline-sm text-headline-sm text-on-surface mb-stack-md">Available Times <span class="font-body-md text-body-md font-normal text-on-surface-variant block mt-1">Oct 14, 2024</span></h2>
+<div class="grid grid-cols-3 gap-stack-sm">
+<button class="py-2 px-4 rounded-md border border-outline-variant text-center font-body-md text-body-md text-on-surface hover:border-primary hover:bg-surface-container-low transition-all">
+    09:00 AM
+    <div class="w-2 h-2 rounded-full bg-[#10b981] mx-auto mt-1"></div>
+</button>
+<button class="py-2 px-4 rounded-md border border-outline-variant text-center font-body-md text-body-md text-on-surface hover:border-primary hover:bg-surface-container-low transition-all">
+    09:30 AM
+    <div class="w-2 h-2 rounded-full bg-[#10b981] mx-auto mt-1"></div>
+</button>
+<button class="py-2 px-4 rounded-md border border-outline-variant text-center font-body-md text-body-md text-on-surface hover:border-primary hover:bg-surface-container-low transition-all">
+    10:00 AM
+    <div class="w-2 h-2 rounded-full bg-[#f59e0b] mx-auto mt-1"></div>
+</button>
+<button class="py-2 px-4 rounded-md border border-primary bg-primary-fixed text-center font-body-md text-body-md text-primary font-bold shadow-sm transition-all">
+    10:30 AM
+    <div class="w-2 h-2 rounded-full bg-[#10b981] mx-auto mt-1"></div>
+</button>
+<button class="py-2 px-4 rounded-md border border-outline-variant/30 bg-surface-container text-center font-body-md text-body-md text-outline-variant cursor-not-allowed">
+    11:00 AM
+    <div class="w-2 h-2 rounded-full bg-[#ef4444] mx-auto mt-1 opacity-50"></div>
+</button>
+<button class="py-2 px-4 rounded-md border border-outline-variant text-center font-body-md text-body-md text-on-surface hover:border-primary hover:bg-surface-container-low transition-all">
+    11:30 AM
+    <div class="w-2 h-2 rounded-full bg-[#10b981] mx-auto mt-1"></div>
+</button>
+</div>
+</div>
+</div>
+<!-- Right Column: Form -->
+<div class="md:col-span-5 flex flex-col gap-gutter">
+<div class="bg-surface-container-lowest rounded-lg p-container-padding shadow-sm border border-outline-variant/30 flex-grow flex flex-col">
+<h2 class="font-headline-sm text-headline-sm text-on-surface mb-stack-md">Patient Details</h2>
+<form class="flex flex-col gap-stack-md flex-grow" onsubmit="event.preventDefault(); document.getElementById('success-modal').classList.replace('hidden', 'flex');">
+<div>
+<label class="block font-data-label text-data-label text-on-surface-variant mb-unit">Reason for Visit</label>
+<div class="relative">
+<select class="w-full neumorphic-input rounded-md py-3 px-4 font-body-md text-body-md text-on-surface appearance-none pr-10">
+<option>General Check-up</option>
+<option>Emergency</option>
+<option>Orthodontics Consultation</option>
+<option>Whitening</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 transform -translate-y-1/2 text-on-surface-variant pointer-events-none">expand_more</span>
+</div>
+</div>
+<div>
+<label class="block font-data-label text-data-label text-on-surface-variant mb-unit">Full Name</label>
+<input class="w-full neumorphic-input rounded-md py-3 px-4 font-body-md text-body-md text-on-surface" placeholder="John Doe" type="text" required/>
+</div>
+<div class="grid grid-cols-2 gap-stack-sm">
+<div>
+<label class="block font-data-label text-data-label text-on-surface-variant mb-unit">Phone</label>
+<input class="w-full neumorphic-input rounded-md py-3 px-4 font-body-md text-body-md text-on-surface" placeholder="+1 (555) 000-0000" type="tel" required/>
+</div>
+<div>
+<label class="block font-data-label text-data-label text-on-surface-variant mb-unit">Email</label>
+<input class="w-full neumorphic-input rounded-md py-3 px-4 font-body-md text-body-md text-on-surface" placeholder="john@example.com" type="email" required/>
+</div>
+</div>
+<div class="mt-auto pt-stack-md">
+<label class="flex items-start gap-3 cursor-pointer group mb-stack-lg">
+<div class="relative flex items-center justify-center mt-1">
+<input class="sr-only peer" type="checkbox" required/>
+<div class="w-5 h-5 border-2 border-outline rounded-sm peer-checked:bg-primary peer-checked:border-primary transition-colors"></div>
+<span class="material-symbols-outlined absolute text-white opacity-0 peer-checked:opacity-100 text-[16px] pointer-events-none">check</span>
+</div>
+<span class="font-body-md text-body-md text-on-surface-variant text-sm group-hover:text-on-surface transition-colors">
+    I agree to the privacy policy and consent to being contacted regarding this appointment.
+</span>
+</label>
+<button class="w-full bg-primary hover:bg-primary-container text-on-primary font-headline-sm text-headline-sm py-4 px-6 rounded-lg shadow-sm hover:shadow-md transition-all flex items-center justify-center gap-2 relative overflow-hidden group" type="submit">
+<span class="material-symbols-outlined transition-transform group-hover:-translate-y-1">calendar_month</span>
+    Confirm Appointment
+</button>
+</div>
+</form>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer Component -->
+<footer class="bg-surface-container-highest w-full mt-section-gap">
+<div class="max-w-[1280px] mx-auto grid grid-cols-1 md:grid-cols-4 gap-gutter px-container-padding py-section-gap">
+<div class="md:col-span-1">
+<span class="text-headline-sm font-headline-sm font-bold text-primary">DENTAL PREMIUM</span>
+<p class="font-body-md text-body-md text-on-surface-variant mt-stack-sm">© 2024 DENTAL PREMIUM. Surgical Excellence &amp; Premium Hospitality.</p>
+</div>
+<div class="md:col-span-3 flex flex-wrap gap-gutter justify-start md:justify-end items-center">
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary opacity-90 hover:opacity-100 transition-colors" href="#">Privacy Policy</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary opacity-90 hover:opacity-100 transition-colors" href="#">Terms of Service</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary opacity-90 hover:opacity-100 transition-colors" href="#">Clinic Hours</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary opacity-90 hover:opacity-100 transition-colors" href="#">Contact Us</a>
+</div>
+</div>
+</footer>
+
+<!-- Success Modal -->
+<div class="fixed inset-0 z-[100] hidden items-center justify-center bg-inverse-surface/40 backdrop-blur-sm p-container-padding" id="success-modal">
+<div class="bg-surface-container-lowest rounded-xl shadow-[0_8px_30px_rgba(0,0,0,0.12)] max-w-md w-full p-section-gap text-center relative overflow-hidden">
+<div class="w-16 h-16 bg-[#10b981]/10 text-[#10b981] rounded-full flex items-center justify-center mx-auto mb-stack-md">
+<span class="material-symbols-outlined text-4xl">check_circle</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-stack-sm">Appointment Confirmed!</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-stack-lg">We look forward to seeing you on Oct 14th at 10:30 AM. A confirmation email has been sent to your address.</p>
+<div class="flex flex-col gap-stack-sm">
+<a href="dashboard.html" class="w-full py-3 px-4 bg-primary text-on-primary rounded-md font-body-md text-body-md hover:bg-primary-container transition-colors flex items-center justify-center gap-2 font-bold">
+    Go to Patient Dashboard
+</a>
+<button class="mt-stack-sm font-data-label text-data-label text-primary uppercase tracking-wider hover:underline" onclick="document.getElementById('success-modal').classList.replace('flex', 'hidden')">Close</button>
+</div>
+</div>
+</div>
+
+<!-- CACIQUE GLOBAL ESC MODAL CLOSER -->
+<script>
+  (function() {
+    function handleEsc(e) {
+      if (e.key === 'Escape' || e.key === 'Esc' || e.keyCode === 27) {
+        try {
+          if (window.parent && typeof window.parent.closeDemoModal === 'function') {
+            window.parent.closeDemoModal();
+          }
+          if (window.parent && typeof window.parent.closeContactModal === 'function') {
+            window.parent.closeContactModal();
+          }
+        } catch (err) {}
+      }
+    }
+    window.addEventListener('keydown', handleEsc, true);
+    document.addEventListener('keydown', handleEsc, true);
+  })();
+</script>
+</body>
+</html>

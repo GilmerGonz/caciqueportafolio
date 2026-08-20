@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+
+<html class="dark scroll-smooth" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>CodeNova Academy | Domina el código. Construye tu futuro.</title>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@500;600;700&amp;family=JetBrains+Mono:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "inverse-primary": "#00677e",
+                    "secondary": "#afffd1",
+                    "tertiary": "#ffd5cc",
+                    "primary-fixed": "#b4ebff",
+                    "tertiary-container": "#ffaf9d",
+                    "on-secondary-fixed-variant": "#005234",
+                    "on-tertiary-fixed": "#3d0600",
+                    "on-primary": "#003642",
+                    "on-primary-fixed": "#001f27",
+                    "outline": "#859398",
+                    "on-primary-fixed-variant": "#004e5f",
+                    "surface-dim": "#071325",
+                    "secondary-container": "#00ef9f",
+                    "on-background": "#d7e3fc",
+                    "background": "#071325",
+                    "surface-bright": "#2e394d",
+                    "inverse-on-surface": "#253144",
+                    "surface-container-low": "#101c2e",
+                    "on-error-container": "#ffdad6",
+                    "surface": "#071325",
+                    "surface-container": "#142032",
+                    "tertiary-fixed": "#ffdad2",
+                    "inverse-surface": "#d7e3fc",
+                    "on-error": "#690005",
+                    "on-tertiary": "#630f00",
+                    "on-tertiary-fixed-variant": "#8c1900",
+                    "on-surface": "#d7e3fc",
+                    "surface-container-lowest": "#030e20",
+                    "secondary-fixed": "#4dffb2",
+                    "outline-variant": "#3c494e",
+                    "tertiary-fixed-dim": "#ffb4a3",
+                    "primary": "#a8e8ff",
+                    "surface-variant": "#2a3548",
+                    "on-secondary-container": "#006742",
+                    "primary-fixed-dim": "#3cd7ff",
+                    "on-surface-variant": "#bbc9cf",
+                    "on-secondary-fixed": "#002112",
+                    "surface-container-high": "#1f2a3d",
+                    "error-container": "#93000a",
+                    "error": "#ffb4ab",
+                    "secondary-fixed-dim": "#00e296",
+                    "on-tertiary-container": "#992207",
+                    "on-secondary": "#003822",
+                    "on-primary-container": "#00586b",
+                    "primary-container": "#00d4ff",
+                    "surface-container-highest": "#2a3548",
+                    "surface-tint": "#3cd7ff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "stack-sm": "12px",
+                    "unit": "8px",
+                    "stack-xs": "4px",
+                    "stack-lg": "48px",
+                    "stack-md": "24px",
+                    "container-max": "1280px",
+                    "margin-mobile": "16px",
+                    "margin-desktop": "48px",
+                    "gutter": "24px",
+                    "stack-xl": "80px"
+            },
+            "fontFamily": {
+                    "h2": ["Space Grotesk"],
+                    "h3": ["Space Grotesk"],
+                    "h1-mobile": ["Space Grotesk"],
+                    "h1": ["Space Grotesk"],
+                    "body-md": ["Inter"],
+                    "body-sm": ["Inter"],
+                    "code-block": ["JetBrains Mono"],
+                    "body-lg": ["Inter"],
+                    "label-caps": ["JetBrains Mono"]
+            },
+            "fontSize": {
+                    "h2": ["40px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                    "h3": ["28px", {"lineHeight": "1.3", "fontWeight": "500"}],
+                    "h1-mobile": ["36px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "h1": ["56px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "body-sm": ["14px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                    "code-block": ["14px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "label-caps": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.1em", "fontWeight": "600"}]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        body {
+            background-color: #0A1628;
+            color: #d7e3fc;
+            overflow-x: hidden;
+        }
+        
+        .surface_card {
+            background: linear-gradient(180deg, rgba(20, 32, 50, 0.8) 0%, rgba(10, 22, 40, 0.9) 100%);
+            border: 1px solid #243B5A;
+        }
+        
+        .action_cta {
+            background: linear-gradient(90deg, #00D4FF 0%, #00F0A0 100%);
+            color: #1A2332;
+        }
+        
+        .glow-effect {
+            box-shadow: 0 0 40px rgba(0, 212, 255, 0.15);
+        }
+        
+        .hover-border-light:hover {
+            border-color: #00D4FF;
+            box-shadow: 0 0 20px rgba(0, 212, 255, 0.2);
+            transform: scale(1.02);
+        }
+        
+        /* Preloader */
+        #preloader {
+            position: fixed;
+            inset: 0;
+            background: #0A1628;
+            z-index: 9999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: opacity 0.5s ease;
+        }
+        
+        .loader {
+            width: 48px;
+            height: 48px;
+            border: 4px solid #1A2D47;
+            border-bottom-color: #00D4FF;
+            border-radius: 50%;
+            animation: rotation 1s linear infinite;
+        }
+        
+        @keyframes rotation {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        /* Scroll Progress */
+        #scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 4px;
+            background: linear-gradient(90deg, #00D4FF, #00F0A0);
+            z-index: 9999;
+            transition: width 0.1s ease;
+        }
+        
+        /* Animations */
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        
+        .fade-in-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Carousel */
+        .carousel-track {
+            display: flex;
+            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .carousel-item {
+            flex: 0 0 100%;
+            padding: 0 16px;
+        }
+        
+        @media (min-width: 768px) {
+            .carousel-item { flex: 0 0 50%; }
+        }
+        
+        @media (min-width: 1024px) {
+            .carousel-item { flex: 0 0 33.333%; }
+        }
+
+        .pulse-btn {
+            animation: pulse-ring 2s infinite;
+        }
+
+        @keyframes pulse-ring {
+            0% { box-shadow: 0 0 0 0 rgba(0, 239, 159, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(0, 239, 159, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(0, 239, 159, 0); }
+        }
+    </style>
+</head>
+<body class="font-body-md text-body-md antialiased selection:bg-primary-container selection:text-on-primary-container">
+<!-- Preloader -->
+<div id="preloader">
+<div class="loader"></div>
+</div>
+<!-- Scroll Progress -->
+<div id="scroll-progress"></div>
+<!-- TopNavBar -->
+<header class="bg-surface/80 backdrop-blur-md fixed top-0 w-full z-50 border-b border-outline-variant/30 shadow-sm">
+<div class="flex justify-between items-center px-margin-desktop py-unit max-w-container-max mx-auto">
+<div class="font-h3 text-h3 tracking-tighter uppercase flex items-center">
+<span class="text-primary-container">CODE</span><span class="text-on-background">NOVA</span>
+</div>
+<nav aria-label="Main Navigation" class="hidden md:flex space-x-8 items-center">
+<a aria-current="page" class="text-primary font-bold border-b-2 border-primary pb-1 hover:text-secondary-fixed transition-all duration-200" href="#home">Home</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors hover:text-secondary-fixed transition-all duration-200" href="#courses">Courses</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors hover:text-secondary-fixed transition-all duration-200" href="#benefits">Benefits</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors hover:text-secondary-fixed transition-all duration-200" href="#testimonials">Testimonials</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors hover:text-secondary-fixed transition-all duration-200" href="#contact">Contact</a>
+</nav>
+<button class="hidden md:block font-body-md text-body-md action_cta px-6 py-2 rounded-lg font-semibold scale-95 active:scale-90 transition-transform" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
+                Inscribirme
+            </button>
+<!-- Mobile Menu Toggle -->
+<button class="md:hidden text-on-surface-variant p-2" id="mobile-menu-btn">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+<!-- Mobile Menu -->
+<div class="hidden md:hidden bg-surface-container absolute top-full left-0 w-full border-b border-outline-variant/30 flex flex-col p-4 space-y-4" id="mobile-menu">
+<a class="text-primary font-bold py-2" href="#home">Home</a>
+<a class="text-on-surface-variant py-2" href="#courses">Courses</a>
+<a class="text-on-surface-variant py-2" href="#benefits">Benefits</a>
+<a class="text-on-surface-variant py-2" href="#testimonials">Testimonials</a>
+<a class="text-on-surface-variant py-2" href="#contact">Contact</a>
+<button class="action_cta w-full py-3 rounded-lg font-semibold mt-4" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Inscribirme</button>
+</div>
+</header>
+<main>
+<!-- Hero Section -->
+<section class="relative min-h-screen flex items-center pt-24 pb-16 overflow-hidden" id="home">
+<!-- Animation Background -->
+<div class="relative z-10 max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop w-full grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+<div class="lg:col-span-8 flex flex-col items-start fade-in-up">
+<div class="inline-flex items-center space-x-2 bg-surface-container-high px-4 py-1.5 rounded-full border border-outline-variant/50 mb-6">
+<span class="w-2 h-2 rounded-full bg-secondary-container animate-pulse"></span>
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Próximo cohorte: Octubre 2024</span>
+</div>
+<h1 class="font-h1-mobile text-h1-mobile lg:font-h1 lg:text-h1 text-on-background mb-6 leading-tight">
+                        Domina el código.<br/>
+<span class="text-transparent bg-clip-text bg-gradient-to-r from-primary-container to-secondary-fixed">Construye tu futuro.</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-10 max-w-2xl">
+                        Conviértete en desarrollador profesional con nuestra metodología práctica, mentores expertos y proyectos reales que te preparan para la industria.
+                    </p>
+<div class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
+<a class="action_cta px-8 py-4 rounded-lg font-semibold flex items-center justify-center transition-transform hover:-translate-y-1 hover:shadow-[0_0_20px_rgba(0,212,255,0.4)]" href="#courses">
+<span class="material-symbols-outlined mr-2" style="font-variation-settings: 'FILL' 1;">menu_book</span>
+                            Explorar cursos
+                        </a>
+<button class="px-8 py-4 rounded-lg font-semibold text-primary-container border border-primary-container hover:bg-primary-container/10 transition-colors flex items-center justify-center">
+<span class="material-symbols-outlined mr-2" style="font-variation-settings: 'FILL' 1;">play_circle</span>
+                            Ver demo
+                        </button>
+</div>
+<div class="mt-12 flex items-center space-x-6 border-t border-outline-variant/30 pt-6">
+<div class="flex -space-x-3">
+<img class="w-10 h-10 rounded-full border-2 border-surface object-cover" data-alt="A portrait of a young professional in a modern, dark-themed office setting with subtle cyan backlighting, looking confident. High-quality corporate tech aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuABL13cC4ZMYfUxoDZdgANpCfB2OoWH4eq0uLUcYu-j81SPmSdzhix3q_4nrhD4-t7CkcGdDeKrNNb8F3tgSYRzhd6RqW16qVavx9UB9c7HBfRWIQ1Dp54hoRj1ws624pvWtQGerk2AxTOhgP2ktyijuvOSNbdWH4dz2hQZ8CPsWGfshUgSPcsVKty9B-Kigxv5aDiwYmzFxkL_dvS3w9WNqMyoZkAatqNV7mSNXd3N68up4y_sVjOfhQ"/>
+<img class="w-10 h-10 rounded-full border-2 border-surface object-cover" data-alt="A portrait of a female software engineer smiling in a sleek studio with deep blue and green neon accents. Cyber-premium style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfdxl1WJaZ1RCk9N2NjZunpvuN3ez7MiWucbDRCR9MGx55HhV3I5yXNpZmQoLRUuP479YBjiMJ-7wsppqYv50e59jaD0RIDPcz2CnFQ-ZLnAY_HDMtGCcHhPoHSZkkjbZh3HVm-MAsFnnpRpNTrWR-l0lpwjiho5urHYEyoYRl_4PZYPJMQVBFITJCtnF8t_vNFGuyUx8z0Lp-nHTstKdN6Gvx2bsF2W1agapUG-CA6o1cwejXKjfceg"/>
+<img class="w-10 h-10 rounded-full border-2 border-surface object-cover" data-alt="A close-up portrait of a diverse male developer against a dark minimalist background with soft architectural lighting. Professional and modern." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC0j3IN35f02SiQ7TDWT_DyrgHNSET3WWwMB8Ibw-V7myRQO5Bn2t-ulQv-qX1BaoXJmB13vZpRW6rdIq6H49wQP_Q9mDjWn0SdEwJ8o-93GeWbkPA5LlEDjrmlv0NWPScMKSvrMtI8_n8BLGv40EixnUifNCIVxjIJ32mGyfI99dTZs4HK6Fh02aYHIieQ4xduERM4TreA5aiSV2ZBZ1CY3Q4G3F3Lwq1TwgKr_kHs7IYy-s2D4hyGow"/>
+<div class="w-10 h-10 rounded-full border-2 border-surface bg-surface-container-high flex items-center justify-center font-label-caps text-xs">
+                                +5k
+                            </div>
+</div>
+<div class="text-sm">
+<div class="flex items-center text-secondary mb-1">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star_half</span>
+<span class="ml-2 font-bold">4.9/5</span>
+</div>
+<span class="text-on-surface-variant"><span class="font-bold text-on-background" id="student-counter">0</span> estudiantes formados</span>
+</div>
+</div>
+</div>
+<div class="hidden lg:block lg:col-span-4 relative fade-in-up" style="transition-delay: 0.2s">
+<!-- Decorative abstract code element -->
+<div class="surface_card rounded-xl p-6 glow-effect border-primary-container/30 relative overflow-hidden group">
+<div class="absolute inset-0 bg-gradient-to-br from-primary-container/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+<div class="flex items-center justify-between mb-4 border-b border-outline-variant/30 pb-4">
+<div class="flex space-x-2">
+<div class="w-3 h-3 rounded-full bg-error"></div>
+<div class="w-3 h-3 rounded-full bg-tertiary"></div>
+<div class="w-3 h-3 rounded-full bg-secondary-container"></div>
+</div>
+<span class="font-label-caps text-label-caps text-on-surface-variant">index.js</span>
+</div>
+<pre class="font-code-block text-code-block text-on-surface-variant overflow-x-auto"><code class="language-javascript">
+<span class="text-primary-container">const</span> future = <span class="text-secondary-fixed">new</span> <span class="text-tertiary-container">Developer</span>({
+  passion: <span class="text-secondary-container">true</span>,
+  skills: [<span class="text-secondary-fixed">'JS'</span>, <span class="text-secondary-fixed">'React'</span>, <span class="text-secondary-fixed">'Node'</span>]
+});
+
+<span class="text-primary-container">async function</span> <span class="text-tertiary-container">buildCareer</span>() {
+  <span class="text-primary-container">await</span> future.<span class="text-tertiary-container">learn</span>();
+  <span class="text-primary-container">return</span> <span class="text-secondary-fixed">"Success!"</span>;
+}
+                        </code></pre>
+</div>
+</div>
+</div>
+</section>
+<!-- Courses Section -->
+<section class="py-stack-xl relative" id="courses">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="text-center mb-16 fade-in-up">
+<h2 class="font-h2 text-h2 text-on-background mb-4">Nuestros Programas</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">Rutas de aprendizaje diseñadas por expertos para llevarte desde cero hasta la contratación.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Card 1 -->
+<div class="surface_card rounded-xl p-6 transition-all duration-300 hover-border-light relative overflow-hidden group fade-in-up">
+<div class="absolute top-0 right-0 bg-gradient-to-l from-primary-container/20 to-transparent w-32 h-32 rounded-bl-full -mr-16 -mt-16 transition-transform group-hover:scale-150 duration-500"></div>
+<div class="inline-flex items-center space-x-1 bg-surface-container-high px-2 py-1 rounded text-xs font-bold text-tertiary-container mb-4">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span>Más popular</span>
+</div>
+<div class="w-12 h-12 rounded-lg bg-surface-container-high border border-outline-variant flex items-center justify-center mb-6 group-hover:border-primary-container transition-colors">
+<span class="material-symbols-outlined text-primary-container text-2xl" style="font-variation-settings: 'FILL' 0;">laptop_mac</span>
+</div>
+<h3 class="font-h3 text-h3 text-on-background mb-2">Full Stack Web</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-6 min-h-[60px]">Domina el frontend con React y el backend con Node.js. Crea aplicaciones web completas y escalables.</p>
+<div class="space-y-3 mb-8">
+<div class="flex justify-between items-center text-sm">
+<span class="text-on-surface-variant">Nivel</span>
+<span class="font-semibold text-on-background">Intermedio</span>
+</div>
+<div class="flex justify-between items-center text-sm">
+<span class="text-on-surface-variant">Duración</span>
+<span class="font-semibold text-on-background">6 meses</span>
+</div>
+<div>
+<div class="flex justify-between items-center text-sm mb-1">
+<span class="text-on-surface-variant">Práctica</span>
+<span class="font-semibold text-primary-container">75%</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container-high rounded-full overflow-hidden">
+<div class="h-full bg-primary-container w-[75%] rounded-full"></div>
+</div>
+</div>
+</div>
+<button class="w-full py-3 rounded-lg border border-outline-variant text-on-background font-semibold hover:bg-surface-container-high active:scale-95 transition-all group-hover:border-primary-container">
+                            Ver temario
+                        </button>
+</div>
+<!-- Card 2 -->
+<div class="surface_card rounded-xl p-6 transition-all duration-300 hover-border-light relative overflow-hidden group fade-in-up" style="transition-delay: 0.1s">
+<div class="absolute top-0 right-0 bg-gradient-to-l from-secondary-fixed/20 to-transparent w-32 h-32 rounded-bl-full -mr-16 -mt-16 transition-transform group-hover:scale-150 duration-500"></div>
+<div class="w-12 h-12 rounded-lg bg-surface-container-high border border-outline-variant flex items-center justify-center mb-6 mt-10 group-hover:border-secondary-fixed transition-colors">
+<span class="material-symbols-outlined text-secondary-fixed text-2xl" style="font-variation-settings: 'FILL' 0;">database</span>
+</div>
+<h3 class="font-h3 text-h3 text-on-background mb-2">Data Science &amp; IA</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-6 min-h-[60px]">Aprende Python, Machine Learning y análisis de datos para tomar decisiones estratégicas.</p>
+<div class="space-y-3 mb-8">
+<div class="flex justify-between items-center text-sm">
+<span class="text-on-surface-variant">Nivel</span>
+<span class="font-semibold text-on-background">Avanzado</span>
+</div>
+<div class="flex justify-between items-center text-sm">
+<span class="text-on-surface-variant">Duración</span>
+<span class="font-semibold text-on-background">5 meses</span>
+</div>
+<div>
+<div class="flex justify-between items-center text-sm mb-1">
+<span class="text-on-surface-variant">Práctica</span>
+<span class="font-semibold text-secondary-fixed">80%</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container-high rounded-full overflow-hidden">
+<div class="h-full bg-secondary-fixed w-[80%] rounded-full"></div>
+</div>
+</div>
+</div>
+<button class="w-full py-3 rounded-lg border border-outline-variant text-on-background font-semibold hover:bg-surface-container-high active:scale-95 transition-all group-hover:border-secondary-fixed">
+                            Ver temario
+                        </button>
+</div>
+<!-- Card 3 -->
+<div class="surface_card rounded-xl p-6 transition-all duration-300 hover-border-light relative overflow-hidden group fade-in-up" style="transition-delay: 0.2s">
+<div class="absolute top-0 right-0 bg-gradient-to-l from-tertiary-container/20 to-transparent w-32 h-32 rounded-bl-full -mr-16 -mt-16 transition-transform group-hover:scale-150 duration-500"></div>
+<div class="w-12 h-12 rounded-lg bg-surface-container-high border border-outline-variant flex items-center justify-center mb-6 mt-10 group-hover:border-tertiary-container transition-colors">
+<span class="material-symbols-outlined text-tertiary-container text-2xl" style="font-variation-settings: 'FILL' 0;">smartphone</span>
+</div>
+<h3 class="font-h3 text-h3 text-on-background mb-2">Mobile App Dev</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-6 min-h-[60px]">Desarrolla aplicaciones nativas para iOS y Android utilizando tecnologías modernas como Flutter.</p>
+<div class="space-y-3 mb-8">
+<div class="flex justify-between items-center text-sm">
+<span class="text-on-surface-variant">Nivel</span>
+<span class="font-semibold text-on-background">Intermedio</span>
+</div>
+<div class="flex justify-between items-center text-sm">
+<span class="text-on-surface-variant">Duración</span>
+<span class="font-semibold text-on-background">4 meses</span>
+</div>
+<div>
+<div class="flex justify-between items-center text-sm mb-1">
+<span class="text-on-surface-variant">Práctica</span>
+<span class="font-semibold text-tertiary-container">70%</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container-high rounded-full overflow-hidden">
+<div class="h-full bg-tertiary-container w-[70%] rounded-full"></div>
+</div>
+</div>
+</div>
+<button class="w-full py-3 rounded-lg border border-outline-variant text-on-background font-semibold hover:bg-surface-container-high active:scale-95 transition-all group-hover:border-tertiary-container">
+                            Ver temario
+                        </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Benefits Section -->
+<section class="py-stack-xl relative bg-surface-container-lowest" id="benefits">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="text-center mb-16 fade-in-up">
+<h2 class="font-h2 text-h2 text-on-background mb-4">¿Por qué elegir CodeNova?</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">Te damos las herramientas y el soporte necesario para que logres tus metas profesionales.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+<div class="surface_card rounded-xl p-6 transition-all duration-300 hover-border-light text-center fade-in-up">
+<div class="w-16 h-16 rounded-full bg-surface-container-high border border-outline-variant flex items-center justify-center mx-auto mb-4 text-primary-container">
+<span class="material-symbols-outlined text-3xl">model_training</span>
+</div>
+<h3 class="font-h3 text-xl text-on-background mb-2">Mentores 1 a 1</h3>
+<p class="font-body-sm text-on-surface-variant">Sesiones personalizadas con expertos de la industria para resolver tus dudas.</p>
+</div>
+<div class="surface_card rounded-xl p-6 transition-all duration-300 hover-border-light text-center fade-in-up" style="transition-delay: 0.1s">
+<div class="w-16 h-16 rounded-full bg-surface-container-high border border-outline-variant flex items-center justify-center mx-auto mb-4 text-secondary-fixed">
+<span class="material-symbols-outlined text-3xl">work</span>
+</div>
+<h3 class="font-h3 text-xl text-on-background mb-2">Bolsa de Empleo</h3>
+<p class="font-body-sm text-on-surface-variant">Conexión directa con empresas tech en búsqueda de nuevo talento.</p>
+</div>
+<div class="surface_card rounded-xl p-6 transition-all duration-300 hover-border-light text-center fade-in-up" style="transition-delay: 0.2s">
+<div class="w-16 h-16 rounded-full bg-surface-container-high border border-outline-variant flex items-center justify-center mx-auto mb-4 text-tertiary-container">
+<span class="material-symbols-outlined text-3xl">code_blocks</span>
+</div>
+<h3 class="font-h3 text-xl text-on-background mb-2">Proyectos Reales</h3>
+<p class="font-body-sm text-on-surface-variant">Aprende construyendo aplicaciones que podrás incluir en tu portafolio.</p>
+</div>
+<div class="surface_card rounded-xl p-6 transition-all duration-300 hover-border-light text-center fade-in-up" style="transition-delay: 0.3s">
+<div class="w-16 h-16 rounded-full bg-surface-container-high border border-outline-variant flex items-center justify-center mx-auto mb-4 text-primary">
+<span class="material-symbols-outlined text-3xl">schedule</span>
+</div>
+<h3 class="font-h3 text-xl text-on-background mb-2">Flexibilidad</h3>
+<p class="font-body-sm text-on-surface-variant">Estudia a tu propio ritmo con acceso a los materiales 24/7.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Testimonials Section -->
+<section class="py-stack-xl relative" id="testimonials">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="text-center mb-16 fade-in-up">
+<h2 class="font-h2 text-h2 text-on-background mb-4">Lo que dicen nuestros estudiantes</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">Historias de éxito de quienes ya transformaron su carrera.</p>
+</div>
+<div class="relative overflow-hidden px-4" id="carousel-container">
+<div class="carousel-track" id="carousel-track">
+<div class="carousel-item">
+<div class="surface_card rounded-xl p-6 h-full flex flex-col">
+<div class="flex items-center mb-4">
+<img alt="Student" class="w-12 h-12 rounded-full mr-4" src="https://lh3.googleusercontent.com/aida-public/AB6AXuABL13cC4ZMYfUxoDZdgANpCfB2OoWH4eq0uLUcYu-j81SPmSdzhix3q_4nrhD4-t7CkcGdDeKrNNb8F3tgSYRzhd6RqW16qVavx9UB9c7HBfRWIQ1Dp54hoRj1ws624pvWtQGerk2AxTOhgP2ktyijuvOSNbdWH4dz2hQZ8CPsWGfshUgSPcsVKty9B-Kigxv5aDiwYmzFxkL_dvS3w9WNqMyoZkAatqNV7mSNXd3N68up4y_sVjOfhQ"/>
+<div>
+<h4 class="font-bold text-on-background">Carlos Rivera</h4>
+<p class="text-sm text-primary-container">Frontend Developer</p>
+</div>
+</div>
+<p class="text-on-surface-variant italic flex-grow">"El curso de Full Stack superó mis expectativas. Pude conseguir mi primer empleo tech en solo 4 meses después de graduarme."</p>
+</div>
+</div>
+<div class="carousel-item">
+<div class="surface_card rounded-xl p-6 h-full flex flex-col">
+<div class="flex items-center mb-4">
+<img alt="Student" class="w-12 h-12 rounded-full mr-4" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfdxl1WJaZ1RCk9N2NjZunpvuN3ez7MiWucbDRCR9MGx55HhV3I5yXNpZmQoLRUuP479YBjiMJ-7wsppqYv50e59jaD0RIDPcz2CnFQ-ZLnAY_HDMtGCcHhPoHSZkkjbZh3HVm-MAsFnnpRpNTrWR-l0lpwjiho5urHYEyoYRl_4PZYPJMQVBFITJCtnF8t_vNFGuyUx8z0Lp-nHTstKdN6Gvx2bsF2W1agapUG-CA6o1cwejXKjfceg"/>
+<div>
+<h4 class="font-bold text-on-background">Ana Martínez</h4>
+<p class="text-sm text-secondary-fixed">Data Analyst</p>
+</div>
+</div>
+<p class="text-on-surface-variant italic flex-grow">"Los mentores son excelentes. Siempre dispuestos a ayudar y explicar conceptos complejos de manera sencilla. Recomendadísimo."</p>
+</div>
+</div>
+<div class="carousel-item">
+<div class="surface_card rounded-xl p-6 h-full flex flex-col">
+<div class="flex items-center mb-4">
+<img alt="Student" class="w-12 h-12 rounded-full mr-4" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC0j3IN35f02SiQ7TDWT_DyrgHNSET3WWwMB8Ibw-V7myRQO5Bn2t-ulQv-qX1BaoXJmB13vZpRW6rdIq6H49wQP_Q9mDjWn0SdEwJ8o-93GeWbkPA5LlEDjrmlv0NWPScMKSvrMtI8_n8BLGv40EixnUifNCIVxjIJ32mGyfI99dTZs4HK6Fh02aYHIieQ4xduERM4TreA5aiSV2ZBZ1CY3Q4G3F3Lwq1TwgKr_kHs7IYy-s2D4hyGow"/>
+<div>
+<h4 class="font-bold text-on-background">Luis Gómez</h4>
+<p class="text-sm text-tertiary-container">Mobile Developer</p>
+</div>
+</div>
+<p class="text-on-surface-variant italic flex-grow">"Aprender Flutter aquí me abrió las puertas al mundo freelance. Ahora trabajo desde casa para clientes de todo el mundo."</p>
+</div>
+</div>
+<div class="carousel-item">
+<div class="surface_card rounded-xl p-6 h-full flex flex-col">
+<div class="flex items-center mb-4">
+<div class="w-12 h-12 rounded-full mr-4 bg-primary-container flex items-center justify-center text-on-primary-container font-bold text-xl">M</div>
+<div>
+<h4 class="font-bold text-on-background">María López</h4>
+<p class="text-sm text-primary">Backend Developer</p>
+</div>
+</div>
+<p class="text-on-surface-variant italic flex-grow">"El enfoque práctico de las clases hace que realmente aprendas a resolver problemas reales, no solo teoría."</p>
+</div>
+</div>
+</div>
+<button class="absolute left-0 top-1/2 -translate-y-1/2 bg-surface-container-highest p-2 rounded-full border border-outline-variant hover:bg-surface-bright transition-colors" id="prev-btn">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="absolute right-0 top-1/2 -translate-y-1/2 bg-surface-container-highest p-2 rounded-full border border-outline-variant hover:bg-surface-bright transition-colors" id="next-btn">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Form Section -->
+<section class="py-stack-xl bg-surface-container-low border-t border-b border-outline-variant/30" id="contact">
+<div class="max-w-4xl mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="surface_card rounded-2xl p-8 md:p-12 fade-in-up">
+<div class="text-center mb-10">
+<h2 class="font-h2 text-h2 text-on-background mb-4">¡Comienza tu viaje hoy!</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Déjanos tus datos y un asesor académico se pondrá en contacto contigo.</p>
+</div>
+<form class="space-y-6" id="contactForm" novalidate="">
+<div class="hidden bg-secondary-container/20 border border-secondary-container text-secondary px-4 py-3 rounded-lg text-center font-bold" id="form-success">
+    ¡Mensaje enviado con éxito! Nos contactaremos contigo pronto.
+</div>
+<div class="hidden bg-error-container/20 border border-error text-error px-4 py-3 rounded-lg text-center font-bold" id="form-error">
+    Por favor, corrige los errores en el formulario.
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div>
+<label class="block font-label-caps text-label-caps text-on-surface-variant mb-2" for="name">NOMBRE COMPLETO</label>
+<input class="w-full bg-[#1A2D47] border border-[#243B5A] rounded-lg px-4 py-3 text-[#F0F4FF] focus:outline-none focus:border-primary-container focus:ring-1 focus:ring-primary-container transition-colors placeholder-on-surface-variant/50" id="name" name="name" placeholder="Ej. Juan Pérez" required="" type="text"/>
+<p class="text-error text-xs mt-1 hidden" id="nameError">Por favor, ingresa al menos 2 caracteres.</p>
+</div>
+<div>
+<label class="block font-label-caps text-label-caps text-on-surface-variant mb-2" for="email">CORREO ELECTRÓNICO</label>
+<input class="w-full bg-[#1A2D47] border border-[#243B5A] rounded-lg px-4 py-3 text-[#F0F4FF] focus:outline-none focus:border-primary-container focus:ring-1 focus:ring-primary-container transition-colors placeholder-on-surface-variant/50" id="email" name="email" placeholder="tucorreo@ejemplo.com" required="" type="email"/>
+<p class="text-error text-xs mt-1 hidden" id="emailError">Ingresa un correo válido.</p>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div>
+<label class="block font-label-caps text-label-caps text-on-surface-variant mb-2" for="phone">TELÉFONO (10 DÍGITOS)</label>
+<input class="w-full bg-[#1A2D47] border border-[#243B5A] rounded-lg px-4 py-3 text-[#F0F4FF] focus:outline-none focus:border-primary-container focus:ring-1 focus:ring-primary-container transition-colors placeholder-on-surface-variant/50" id="phone" maxlength="10" name="phone" pattern="[0-9]{10}" placeholder="5551234567" required="" type="tel"/>
+<p class="text-error text-xs mt-1 hidden" id="phoneError">Ingresa exactamente 10 dígitos numéricos.</p>
+</div>
+<div>
+<label class="block font-label-caps text-label-caps text-on-surface-variant mb-2" for="course">CURSO DE INTERÉS</label>
+<select class="w-full bg-[#1A2D47] border border-[#243B5A] rounded-lg px-4 py-3 text-[#F0F4FF] focus:outline-none focus:border-primary-container focus:ring-1 focus:ring-primary-container transition-colors appearance-none" id="course" name="course" required="">
+<option disabled="" selected="" value="">Selecciona una opción</option>
+<option value="fullstack">Full Stack Web</option>
+<option value="data">Data Science &amp; IA</option>
+<option value="mobile">Mobile App Development</option>
+</select>
+<p class="text-error text-xs mt-1 hidden" id="courseError">Por favor, selecciona un curso.</p>
+</div>
+</div>
+<div>
+<label class="block font-label-caps text-label-caps text-on-surface-variant mb-2" for="message">MENSAJE (OPCIONAL)</label>
+<textarea class="w-full bg-[#1A2D47] border border-[#243B5A] rounded-lg px-4 py-3 text-[#F0F4FF] focus:outline-none focus:border-primary-container focus:ring-1 focus:ring-primary-container transition-colors placeholder-on-surface-variant/50" id="message" name="message" placeholder="¿Tienes alguna duda específica?" rows="4"></textarea>
+<p class="text-error text-xs mt-1 hidden" id="messageError">El mensaje debe tener al menos 10 caracteres si se proporciona.</p>
+</div>
+<button class="w-full action_cta py-4 rounded-lg font-bold text-lg hover:-translate-y-1 transition-transform shadow-lg shadow-primary-container/20 active:scale-95" type="submit">
+                            Enviar Solicitud
+                        </button>
+</form>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest w-full py-stack-lg border-t border-outline-variant flat">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter px-margin-desktop max-w-container-max mx-auto">
+<div class="flex flex-col space-y-4">
+<div class="font-h3 text-h3 text-primary tracking-tighter uppercase flex items-center">
+<span class="text-primary-container">CODE</span><span class="text-on-background">NOVA</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant max-w-xs">
+                    © 2024 CodeNova Academy. Donde el código se convierte en carrera.
+                </p>
+</div>
+<div class="flex flex-col space-y-2 font-body-sm text-body-sm">
+<h4 class="font-label-caps text-label-caps text-on-surface mb-2">LEGAL</h4>
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Privacidad</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Términos</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Cookies</a>
+</div>
+<div class="flex flex-col space-y-2 font-body-sm text-body-sm">
+<h4 class="font-label-caps text-label-caps text-on-surface mb-2">CONTACTO</h4>
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Soporte</a>
+<div class="flex space-x-4 mt-4">
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">public</span>
+</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">mail</span>
+</a>
+</div>
+</div>
+</div>
+</footer>
+<!-- WhatsApp Floating Button -->
+<a class="fixed bottom-6 right-6 z-50 bg-secondary-container text-on-secondary-container w-14 h-14 rounded-full flex items-center justify-center shadow-lg hover:bg-secondary transition-colors pulse-btn" href="https://wa.me/584124163681" target="_blank" rel="noopener" aria-label="Contacto por WhatsApp">
+<svg class="w-8 h-8" fill="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"></path>
+</svg>
+</a>
+<!-- Scripts -->
+<script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Preloader
+            const preloader = document.getElementById('preloader');
+            setTimeout(() => {
+                preloader.style.opacity = '0';
+                setTimeout(() => {
+                    preloader.style.display = 'none';
+                }, 500);
+            }, 800);
+
+            // Smooth Scroll Setup for Nav links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+
+            // Scroll Progress
+            const scrollProgress = document.getElementById('scroll-progress');
+            window.addEventListener('scroll', () => {
+                const totalScroll = document.documentElement.scrollTop;
+                const windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                const scroll = `${totalScroll / windowHeight * 100}%`;
+                scrollProgress.style.width = scroll;
+            });
+
+            // Mobile Menu
+            const menuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            menuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            // Intersection Observer for fade-in animations
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.fade-in-up').forEach(element => {
+                observer.observe(element);
+            });
+
+            // Student Counter Animation
+            const counterElement = document.getElementById('student-counter');
+            let hasCounted = false;
+
+            const counterObserver = new IntersectionObserver((entries) => {
+                if (entries[0].isIntersecting && !hasCounted) {
+                    hasCounted = true;
+                    let currentCount = 0;
+                    const targetCount = 500;
+                    const duration = 2000; // ms
+                    const interval = 20; // ms
+                    const step = targetCount / (duration / interval);
+
+                    const timer = setInterval(() => {
+                        currentCount += step;
+                        if (currentCount >= targetCount) {
+                            counterElement.innerText = '+500';
+                            clearInterval(timer);
+                        } else {
+                            counterElement.innerText = '+' + Math.floor(currentCount);
+                        }
+                    }, interval);
+                }
+            }, { threshold: 0.5 });
+
+            if(counterElement) counterObserver.observe(counterElement);
+
+            // Carousel Logic
+            const track = document.getElementById('carousel-track');
+            const items = document.querySelectorAll('.carousel-item');
+            const prevBtn = document.getElementById('prev-btn');
+            const nextBtn = document.getElementById('next-btn');
+            
+            if(track && items.length > 0) {
+                let currentIndex = 0;
+                let itemsPerView = window.innerWidth >= 1024 ? 3 : (window.innerWidth >= 768 ? 2 : 1);
+                
+                window.addEventListener('resize', () => {
+                    itemsPerView = window.innerWidth >= 1024 ? 3 : (window.innerWidth >= 768 ? 2 : 1);
+                    updateCarousel();
+                });
+
+                const maxIndex = () => Math.max(0, items.length - itemsPerView);
+
+                const updateCarousel = () => {
+                    if (currentIndex > maxIndex()) currentIndex = maxIndex();
+                    const percentage = -(currentIndex * (100 / itemsPerView));
+                    track.style.transform = `translateX(${percentage}%)`;
+                };
+
+                const goNext = () => {
+                    if (currentIndex < maxIndex()) {
+                        currentIndex++;
+                    } else {
+                        currentIndex = 0;
+                    }
+                    updateCarousel();
+                };
+
+                const goPrev = () => {
+                    if (currentIndex > 0) {
+                        currentIndex--;
+                    } else {
+                        currentIndex = maxIndex();
+                    }
+                    updateCarousel();
+                };
+
+                nextBtn.addEventListener('click', goNext);
+                prevBtn.addEventListener('click', goPrev);
+
+                // Auto-play
+                setInterval(goNext, 5000);
+            }
+
+            // Form Validation
+            const form = document.getElementById('contactForm');
+            const formSuccess = document.getElementById('form-success');
+            const formError = document.getElementById('form-error');
+            
+            if(form) {
+                form.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    let isValid = true;
+
+                    // Helper function to show/hide error
+                    const toggleError = (id, condition) => {
+                        const errorEl = document.getElementById(id + 'Error');
+                        const inputEl = document.getElementById(id);
+                        if (condition) {
+                            errorEl.classList.remove('hidden');
+                            inputEl.classList.add('border-error');
+                            isValid = false;
+                        } else {
+                            errorEl.classList.add('hidden');
+                            inputEl.classList.remove('border-error');
+                        }
+                    };
+
+                    // Validate Name
+                    const name = document.getElementById('name').value.trim();
+                    toggleError('name', name.length < 2);
+
+                    // Validate Email
+                    const email = document.getElementById('email').value.trim();
+                    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    toggleError('email', !emailRegex.test(email));
+
+                    // Validate Phone
+                    const phone = document.getElementById('phone').value.trim();
+                    const phoneRegex = /^[0-9]{10}$/;
+                    toggleError('phone', !phoneRegex.test(phone));
+
+                    // Validate Course
+                    const course = document.getElementById('course').value;
+                    toggleError('course', course === '');
+
+                    // Validate Message (if provided)
+                    const message = document.getElementById('message').value.trim();
+                    toggleError('message', message.length > 0 && message.length < 10);
+
+                    if (isValid) {
+                        formError.classList.add('hidden');
+                        // Simulate submission
+                        const btn = form.querySelector('button[type="submit"]');
+                        const originalText = btn.innerHTML;
+                        btn.innerHTML = '<span class="material-symbols-outlined animate-spin mr-2">refresh</span> Enviando...';
+                        btn.disabled = true;
+                        
+                        setTimeout(() => {
+                            btn.innerHTML = originalText;
+                            btn.disabled = false;
+                            form.reset();
+                            formSuccess.classList.remove('hidden');
+                            setTimeout(() => {
+                                formSuccess.classList.add('hidden');
+                            }, 5000);
+                        }, 1500);
+                    } else {
+                        formError.classList.remove('hidden');
+                        formSuccess.classList.add('hidden');
+                    }
+                });
+            }
+        });
+    </script>
+
+<!-- CACIQUE GLOBAL ESC MODAL CLOSER -->
+<script>
+  (function() {
+    function handleEsc(e) {
+      if (e.key === 'Escape' || e.key === 'Esc' || e.keyCode === 27) {
+        try {
+          if (window.parent && typeof window.parent.closeDemoModal === 'function') {
+            window.parent.closeDemoModal();
+          }
+          if (window.parent && typeof window.parent.closeContactModal === 'function') {
+            window.parent.closeContactModal();
+          }
+        } catch (err) {}
+      }
+    }
+    window.addEventListener('keydown', handleEsc, true);
+    document.addEventListener('keydown', handleEsc, true);
+  })();
+</script>
+
+</body></html>

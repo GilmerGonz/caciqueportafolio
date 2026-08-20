@@ -1,0 +1,465 @@
+<!DOCTYPE html><html class="light" lang="es"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>AUTOINSUMO 2000 - Inicio</title>
+<!-- Fonts: Inter -->
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-primary-fixed-variant": "#93000d",
+                        "on-background": "#181c1e",
+                        "tertiary-fixed": "#e2e2e2",
+                        "tertiary": "#5a5b5c",
+                        "surface-container": "#ebeef0",
+                        "secondary-fixed": "#d8e2ff",
+                        "on-primary-container": "#fff9f8",
+                        "on-tertiary-container": "#fbfbfb",
+                        "tertiary-fixed-dim": "#c6c6c7",
+                        "on-secondary": "#ffffff",
+                        "on-surface": "#181c1e",
+                        "on-error-container": "#93000a",
+                        "on-primary": "#ffffff",
+                        "primary-fixed-dim": "#ffb4ac",
+                        "inverse-on-surface": "#eef1f3",
+                        "on-secondary-fixed": "#061b3c",
+                        "on-tertiary": "#ffffff",
+                        "inverse-primary": "#ffb4ac",
+                        "background": "#f7fafc",
+                        "secondary-fixed-dim": "#b5c6f0",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-highest": "#e0e3e5",
+                        "surface-bright": "#f7fafc",
+                        "primary-fixed": "#ffdad6",
+                        "on-secondary-fixed-variant": "#35466a",
+                        "surface-dim": "#d7dadc",
+                        "outline-variant": "#e7bdb8",
+                        "on-primary-fixed": "#410002",
+                        "outline": "#926e6b",
+                        "primary": "#b90014",
+                        "on-error": "#ffffff",
+                        "on-surface-variant": "#5d3f3c",
+                        "inverse-surface": "#2d3133",
+                        "surface": "#f7fafc",
+                        "surface-tint": "#c00015",
+                        "surface-variant": "#e0e3e5",
+                        "on-secondary-container": "#4a5b80",
+                        "secondary": "#4d5e83",
+                        "on-tertiary-fixed-variant": "#454747",
+                        "error-container": "#ffdad6",
+                        "surface-container-high": "#e5e9eb",
+                        "on-tertiary-fixed": "#1a1c1c",
+                        "error": "#ba1a1a",
+                        "primary-container": "#e31b23",
+                        "surface-container-low": "#f1f4f6",
+                        "secondary-container": "#c3d4ff",
+                        "tertiary-container": "#727474"
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.25rem",
+                        lg: "0.5rem",
+                        xl: "0.75rem",
+                        full: "9999px"
+                    },
+                    spacing: {
+                        "stack-md": "16px",
+                        "gutter": "24px",
+                        "margin-desktop": "40px",
+                        "margin-mobile": "16px",
+                        "stack-lg": "32px",
+                        "container-max": "1280px",
+                        "base": "8px",
+                        "stack-sm": "8px"
+                    },
+                    fontFamily: {
+                        "display-lg-mobile": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "label-md": ["Inter"],
+                        "display-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "caption": ["Inter"],
+                        "headline-lg": ["Inter"]
+                    },
+                    fontSize: {
+                        "display-lg-mobile": ["36px", { lineHeight: "42px", letterSpacing: "-0.02em", fontWeight: "800" }],
+                        "headline-md": ["24px", { lineHeight: "32px", fontWeight: "700" }],
+                        "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }],
+                        "label-md": ["14px", { lineHeight: "20px", fontWeight: "600" }],
+                        "display-lg": ["48px", { lineHeight: "56px", letterSpacing: "-0.02em", fontWeight: "800" }],
+                        "body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+                        "caption": ["12px", { lineHeight: "16px", fontWeight: "500" }],
+                        "headline-lg": ["32px", { lineHeight: "40px", letterSpacing: "-0.01em", fontWeight: "700" }]
+                    },
+                    boxShadow: {
+                        'level-1': '0px 2px 4px rgba(10, 30, 63, 0.05), 0px 1px 2px rgba(10, 30, 63, 0.05)',
+                        'level-2': '0px 10px 15px -3px rgba(10, 30, 63, 0.1), 0px 4px 6px -2px rgba(10, 30, 63, 0.05)',
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .icon-fill {
+            font-variation-settings: 'FILL' 1;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md text-body-md antialiased pt-20 md:pt-24">
+<!-- TopNavBar (Desktop) -->
+<nav class="hidden md:flex fixed top-0 w-full z-50 justify-between items-center px-margin-desktop py-4 bg-surface/95 backdrop-blur-md shadow-sm border-b border-outline-variant">
+<div class="flex items-center gap-8">
+<a class="text-headline-lg font-headline-lg font-black text-primary tracking-tight" href="index.html">AUTOINSUMO 2000</a>
+<ul class="flex items-center gap-6">
+<li>
+<a class="text-primary border-b-2 border-primary font-bold pb-1 text-label-md font-label-md" href="index.html">Inicio</a>
+</li>
+<li>
+<a class="text-secondary font-medium hover:text-primary transition-colors hover:bg-surface-container-low transition-all duration-200 px-2 py-1 rounded text-label-md font-label-md" href="productos.html">Productos</a>
+</li>
+<li>
+<a class="text-secondary font-medium hover:text-primary transition-colors hover:bg-surface-container-low transition-all duration-200 px-2 py-1 rounded text-label-md font-label-md" href="nosotros.html">Nosotros</a>
+</li>
+<li>
+<a class="text-secondary font-medium hover:text-primary transition-colors hover:bg-surface-container-low transition-all duration-200 px-2 py-1 rounded text-label-md font-label-md" href="contacto.html">Contacto</a>
+</li>
+</ul>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative group">
+<input class="bg-surface border border-outline-variant rounded-full px-4 py-2 text-body-md font-body-md focus:outline-none focus:border-secondary focus:ring-2 focus:ring-secondary/20 transition-all" placeholder="Buscar..." type="text">
+<span class="material-symbols-outlined absolute right-3 top-2.5 text-tertiary">search</span>
+</div>
+<a class="flex items-center gap-2 bg-primary text-on-primary px-4 py-2 rounded-lg font-label-md text-label-md shadow-[inset_0_1px_0_rgba(255,255,255,0.2)] hover:bg-primary/90 transition-colors focus:ring-2 focus:ring-offset-2 focus:ring-secondary" href="carrito.html">
+<span class="material-symbols-outlined icon-fill">shopping_cart</span>
+                Carrito
+            </a>
+</div>
+</nav>
+<!-- Mobile Header & SideNavBar Toggle -->
+<div class="md:hidden fixed top-0 w-full z-50 bg-surface shadow-sm border-b border-outline-variant flex justify-between items-center px-margin-mobile py-4">
+<a class="text-headline-md font-headline-md font-black text-primary tracking-tight" href="index.html">AUTOINSUMO 2000</a>
+<div class="flex items-center gap-4">
+<a class="text-on-surface" href="carrito.html">
+<span class="material-symbols-outlined">shopping_cart</span>
+</a>
+<button class="text-on-surface" id="mobile-menu-btn">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</div>
+<!-- SideNavBar (Mobile) -->
+<aside class="fixed inset-y-0 left-0 z-[60] flex flex-col py-6 bg-surface shadow-lg h-full w-64 md:hidden transform -translate-x-full transition-transform duration-300" id="mobile-sidebar">
+<div class="px-4 mb-6 flex justify-between items-center">
+<div>
+<h2 class="text-headline-md font-headline-md font-extrabold text-primary">AUTOINSUMO 2000</h2>
+<p class="text-caption font-caption text-on-surface-variant">Repuestos y más</p>
+</div>
+<button class="text-on-surface-variant" id="close-menu-btn">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<nav class="flex-1 overflow-y-auto">
+<ul class="flex flex-col gap-2">
+<li>
+<a class="bg-primary-container text-on-primary-container flex items-center gap-4 px-4 py-3 rounded-lg mx-2 text-label-md font-label-md" href="index.html">
+<span class="material-symbols-outlined icon-fill">home</span>
+                        Inicio
+                    </a>
+</li>
+<li>
+<a class="text-on-surface-variant flex items-center gap-4 px-4 py-3 rounded-lg mx-2 hover:bg-surface-container-high transition-colors text-label-md font-label-md" href="productos.html">
+<span class="material-symbols-outlined">settings_input_component</span>
+                        Productos
+                    </a>
+</li>
+<li>
+<a class="text-on-surface-variant flex items-center gap-4 px-4 py-3 rounded-lg mx-2 hover:bg-surface-container-high transition-colors text-label-md font-label-md" href="nosotros.html">
+<span class="material-symbols-outlined">groups</span>
+                        Nosotros
+                    </a>
+</li>
+<li>
+<a class="text-on-surface-variant flex items-center gap-4 px-4 py-3 rounded-lg mx-2 hover:bg-surface-container-high transition-colors text-label-md font-label-md" href="contacto.html">
+<span class="material-symbols-outlined">contact_support</span>
+                        Contacto
+                    </a>
+</li>
+<li>
+<a class="text-on-surface-variant flex items-center gap-4 px-4 py-3 rounded-lg mx-2 hover:bg-surface-container-high transition-colors text-label-md font-label-md" href="carrito.html">
+<span class="material-symbols-outlined">shopping_cart</span>
+                        Carrito
+                    </a>
+</li>
+</ul>
+</nav>
+<div class="px-4 mt-auto">
+<a class="w-full bg-[#25D366] text-white flex items-center justify-center gap-2 py-3 rounded-lg font-label-md text-label-md shadow-sm" href="https://wa.me/584149876543" target="_blank" rel="noopener">WhatsApp</a>
+</div>
+</aside>
+<!-- Overlay for Mobile Nav -->
+<div class="fixed inset-0 bg-black/50 z-[55] hidden md:hidden" id="sidebar-overlay"></div>
+<main class="w-full flex flex-col">
+<!-- Hero Section -->
+<section class="relative w-full h-[600px] md:h-[700px] flex items-center justify-center px-margin-mobile md:px-margin-desktop overflow-hidden">
+<div class="absolute inset-0 w-full h-full bg-surface-dim z-0">
+<div class="absolute inset-0 w-full h-full bg-cover bg-center mix-blend-overlay opacity-60" data-alt="A highly detailed cinematic shot of a pristine modern automotive workshop. High-key lighting highlights metallic engine components and clean tools. The atmosphere is professional, reliable, and trustworthy, reflecting a premium commercial aesthetic with deep blacks, bright whites, and subtle navy and red accents." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCee2gLdKa9w4TjMmR4xMDQf4J34AmIrskeXDt0h35QhAavXXs7FgTggk9rkqPQkujvYLFEJKaj7A9TqUCdBX-rJGRPN-LW5Uy3n6RHaMhR1cEhe70Ie-HH-vuUJGlZHulB36_aR7BdUHZoikeE7UySoNMtb9-y9VgHHWuqMc_fDTzJEg5YxN7v2I-QQTzZL4RGknjSctwsLHj2CbyL1P-R4yRGsl4kLySRZfTPhrrKuhUsbyVisBClGg')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-transparent"></div>
+</div>
+<div class="relative z-10 w-full max-w-container-max mx-auto flex flex-col items-center text-center mt-8">
+<h1 class="text-display-lg-mobile md:text-display-lg font-display-lg-mobile md:font-display-lg text-on-surface mb-stack-md max-w-3xl">
+                    El corazón de tu vehículo merece lo <span class="text-primary">mejor</span>.
+                </h1>
+<p class="text-body-lg font-body-lg text-on-surface-variant mb-stack-lg max-w-2xl">
+                    Inventario nacional con calidad garantizada. Encuentra el repuesto exacto que necesitas de forma rápida y segura.
+                </p>
+<!-- Search Card -->
+<div class="w-full max-w-4xl bg-surface rounded-xl p-6 shadow-level-2 border border-outline-variant backdrop-blur-sm bg-white/95">
+<form class="flex flex-col md:flex-row gap-4 items-end" action="productos.html" onsubmit="window.location.href='productos.html'; return false;">
+<div class="w-full md:w-1/3 text-left">
+<label class="block text-label-md font-label-md text-on-surface-variant mb-2">Vehículo / Marca</label>
+<select class="w-full bg-surface border border-outline-variant rounded-lg px-4 py-3 text-body-md font-body-md focus:border-secondary focus:ring-2 focus:ring-secondary/20 transition-all outline-none">
+<option>Seleccionar Marca</option>
+<option>Toyota</option>
+<option>Ford</option>
+<option>Chevrolet</option>
+<option>Hyundai</option>
+</select>
+</div>
+<div class="w-full md:w-1/3 text-left">
+<label class="block text-label-md font-label-md text-on-surface-variant mb-2">Modelo / Año</label>
+<select class="w-full bg-surface border border-outline-variant rounded-lg px-4 py-3 text-body-md font-body-md focus:border-secondary focus:ring-2 focus:ring-secondary/20 transition-all outline-none disabled:opacity-50" disabled="">
+<option>Seleccionar Modelo</option>
+</select>
+</div>
+<div class="w-full md:w-1/3 text-left relative">
+<label class="block text-label-md font-label-md text-on-surface-variant mb-2">¿Qué buscas?</label>
+<input class="w-full bg-surface border border-outline-variant rounded-lg px-4 py-3 text-body-md font-body-md focus:border-secondary focus:ring-2 focus:ring-secondary/20 transition-all outline-none" placeholder="Ej: Pastillas de freno" type="text">
+</div>
+<button class="w-full md:w-auto bg-primary text-on-primary h-[48px] px-8 rounded-lg font-label-md text-label-md shadow-[inset_0_1px_0_rgba(255,255,255,0.2)] hover:bg-primary/90 transition-colors flex items-center justify-center gap-2" type="submit">
+<span class="material-symbols-outlined">search</span>
+<span class="md:hidden">Buscar</span>
+</button>
+</form>
+</div>
+</div>
+</section>
+<!-- Main Categories -->
+<section class="w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-stack-lg">
+<div class="flex items-center justify-between mb-stack-md">
+<h2 class="text-headline-md font-headline-md text-on-surface">Categorías Principales</h2>
+<a class="text-secondary font-label-md text-label-md hover:underline flex items-center gap-1" href="productos.html">Ver todas <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+<!-- Category Card -->
+<a class="group bg-surface rounded-xl p-6 border border-outline-variant shadow-level-1 hover:shadow-level-2 hover:-translate-y-1 transition-all duration-300 flex flex-col items-center text-center gap-4" href="productos.html">
+<div class="w-16 h-16 rounded-full bg-surface-container-low flex items-center justify-center text-secondary group-hover:bg-secondary-container group-hover:text-on-secondary-container transition-colors">
+<span class="material-symbols-outlined text-4xl">settings</span>
+</div>
+<span class="text-body-lg font-body-lg font-medium text-on-surface">Motor</span>
+</a>
+<!-- Category Card -->
+<a class="group bg-surface rounded-xl p-6 border border-outline-variant shadow-level-1 hover:shadow-level-2 hover:-translate-y-1 transition-all duration-300 flex flex-col items-center text-center gap-4" href="productos.html">
+<div class="w-16 h-16 rounded-full bg-surface-container-low flex items-center justify-center text-secondary group-hover:bg-secondary-container group-hover:text-on-secondary-container transition-colors">
+<span class="material-symbols-outlined text-4xl">tire_repair</span>
+</div>
+<span class="text-body-lg font-body-lg font-medium text-on-surface">Frenos</span>
+</a>
+<!-- Category Card -->
+<a class="group bg-surface rounded-xl p-6 border border-outline-variant shadow-level-1 hover:shadow-level-2 hover:-translate-y-1 transition-all duration-300 flex flex-col items-center text-center gap-4" href="productos.html">
+<div class="w-16 h-16 rounded-full bg-surface-container-low flex items-center justify-center text-secondary group-hover:bg-secondary-container group-hover:text-on-secondary-container transition-colors">
+<span class="material-symbols-outlined text-4xl">bolt</span>
+</div>
+<span class="text-body-lg font-body-lg font-medium text-on-surface">Eléctrico</span>
+</a>
+<!-- Category Card -->
+<a class="group bg-surface rounded-xl p-6 border border-outline-variant shadow-level-1 hover:shadow-level-2 hover:-translate-y-1 transition-all duration-300 flex flex-col items-center text-center gap-4" href="productos.html">
+<div class="w-16 h-16 rounded-full bg-surface-container-low flex items-center justify-center text-secondary group-hover:bg-secondary-container group-hover:text-on-secondary-container transition-colors">
+<span class="material-symbols-outlined text-4xl">water_drop</span>
+</div>
+<span class="text-body-lg font-body-lg font-medium text-on-surface">Lubricantes</span>
+</a>
+</div>
+</section>
+<!-- Featured Brands (Bento Grid Style) -->
+<section class="w-full bg-surface-container-low py-stack-lg mt-stack-md">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<h2 class="text-headline-md font-headline-md text-on-surface text-center mb-stack-lg">Marcas de Confianza</h2>
+<div class="grid grid-cols-2 md:grid-cols-5 gap-4">
+<div class="bg-surface rounded-lg p-4 shadow-sm border border-outline-variant/50 flex items-center justify-center h-24 grayscale hover:grayscale-0 transition-all opacity-70 hover:opacity-100">
+<img class="max-h-12 object-contain" data-alt="A clean, high-contrast, minimalist rendering of the Toyota brand logo in solid navy blue on a pure white background. The aesthetic is corporate and modern." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCQpRg-Cf1OA-ei2OcoYYabvj3RJ_A93sEQd-yECYK_TjCquy5sIcLFNlzjlpKt4OjOO9YVfqTxxDpN5JU1goGFfp7NP1rffyZRJclMCmKvT2oJHtXaobpey32Y62f-jZkg-GEbvYOiwI8W75xMeDzv0a19OOJafSzqQjhIWPiMU-R36KnRkeQ7AeOStqDX9CO3mLWeJTjXnht4f8xDMMiU1DKQ6kcLC0cFtbhaFOwFi35pWhZmn2Wbrg">
+</div>
+<div class="bg-surface rounded-lg p-4 shadow-sm border border-outline-variant/50 flex items-center justify-center h-24 grayscale hover:grayscale-0 transition-all opacity-70 hover:opacity-100">
+<img class="max-h-12 object-contain" data-alt="A clean, high-contrast, minimalist rendering of the Ford brand logo in solid navy blue on a pure white background. The aesthetic is corporate and modern." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBNH3E1IQQSs6Yfj5JD95nV1ueYzJmz_aZ02FABj3sNYoeIgATlASz0WgpUWil4TYOUFAn_yfIwO4FIMldbS_iFAJCdnnZAax__WBeQqtHsLTfJbGBCChNQ3qAOCvRQO-JfjHE2MqBT-pGXinkRf8S1Qd--LHtcTtmOfGbECAWlm0MFbb80bf5fcpJeMOU8HIhGvWR9ml9mtmH8hVI-9fd2OcS-Io20Bxf185j2eWoeaFLUe4knGUo5JQ">
+</div>
+<div class="bg-surface rounded-lg p-4 shadow-sm border border-outline-variant/50 flex items-center justify-center h-24 grayscale hover:grayscale-0 transition-all opacity-70 hover:opacity-100">
+<img class="max-h-12 object-contain" data-alt="A clean, high-contrast, minimalist rendering of the Chevrolet brand logo in solid navy blue on a pure white background. The aesthetic is corporate and modern." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD8UyGSktywaHh4lWC3bVzgYjwWAHS2rwu76CW86dc88bdnfM9ceKQTso6ob8ThB3LHQDf4z-utYAnKwrd2w6JqF3Vc3knEPJAF8ax1KvFfKaqbxTutryA3MvFjLnQ-aqOMaCfW5aVJ3BkJDox_8QIInT-Q3faY-lzVAmQYwQilqEpDHPjMO8sxEXgUU-baaattEdEyjT-hpnfrp2z_VS5Lj-rN56SJjJRPci2GzLEYfPQtWU0_YvsTyQ">
+</div>
+<div class="bg-surface rounded-lg p-4 shadow-sm border border-outline-variant/50 flex items-center justify-center h-24 grayscale hover:grayscale-0 transition-all opacity-70 hover:opacity-100">
+<img class="max-h-12 object-contain" data-alt="A clean, high-contrast, minimalist rendering of the Hyundai brand logo in solid navy blue on a pure white background. The aesthetic is corporate and modern." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB7AHOVDYXnDDNE8F4ojFwTP94DarSpmF5ZEWpZYIhiutvvjPGPIC6IGtLzHiQh48rgCrnQy02MNEjpOduecBDdmok6rwueTK8da_JZ3yhKROtBVGmdQdl6KmqU_jplKgx-8EZpERc2g_zq1cn9oyh0pV5wDatWzAyNNC_oYNGwX37MZ-uUPnb56aca34azLjh_Gr3_X78eaFY_lg848tKEeINZPIgX5RCMgcniTGiT5gKK83FylC3ZxQ">
+</div>
+<div class="col-span-2 md:col-span-1 bg-surface rounded-lg p-4 shadow-sm border border-outline-variant/50 flex items-center justify-center h-24 grayscale hover:grayscale-0 transition-all opacity-70 hover:opacity-100">
+<img class="max-h-12 object-contain" data-alt="A clean, high-contrast, minimalist rendering of the Jeep brand logo in solid navy blue on a pure white background. The aesthetic is corporate and modern." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfmujYQOFY8ozo5zmsnTg8qSK7XMsMESlRhJxLZBjkt4SMXOlJvHjicfQQriGf-dWRZYk4mlEEX7AoidJCGvm8w8AAWn982pxfmrXCpXtEtQAfbSpdpRuBMiXawa4Q4HG0jUFH142UkL9QHIjD34W_hL__gx8aflQ2UiwzNW31YcSoxCLg5hzzkfOymIZpy9sIkLr0X7AePeZRhyTgnv0EpayiZByyJ-aWvuW33BKlgxL1XA3866nXRg">
+</div>
+</div>
+</div>
+</section>
+<!-- Testimonials -->
+<section class="w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-stack-lg">
+<div class="text-center mb-stack-lg">
+<h2 class="text-headline-md font-headline-md text-on-surface">Lo que dicen nuestros clientes</h2>
+<p class="text-body-md font-body-md text-on-surface-variant mt-2">Calidad y servicio comprobado a nivel nacional.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Testimonial 1 -->
+<div class="bg-surface rounded-xl p-6 shadow-level-1 border border-outline-variant">
+<div class="flex items-center gap-1 text-[#FFB400] mb-4">
+<span class="material-symbols-outlined icon-fill text-lg">star</span>
+<span class="material-symbols-outlined icon-fill text-lg">star</span>
+<span class="material-symbols-outlined icon-fill text-lg">star</span>
+<span class="material-symbols-outlined icon-fill text-lg">star</span>
+<span class="material-symbols-outlined icon-fill text-lg">star</span>
+</div>
+<p class="text-body-md font-body-md text-on-surface-variant italic mb-4">
+                        "Excelente atención. Encontré el kit de tiempo para mi Corolla original y a muy buen precio. El envío fue rápido a Valencia."
+                    </p>
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container font-label-md">MR</div>
+<div>
+<p class="text-label-md font-label-md text-on-surface">Miguel Rodríguez</p>
+<p class="text-caption font-caption text-on-surface-variant">Cliente Verificado</p>
+</div>
+</div>
+</div>
+<!-- Testimonial 2 -->
+<div class="bg-surface rounded-xl p-6 shadow-level-1 border border-outline-variant">
+<div class="flex items-center gap-1 text-[#FFB400] mb-4">
+<span class="material-symbols-outlined icon-fill text-lg">star</span>
+<span class="material-symbols-outlined icon-fill text-lg">star</span>
+<span class="material-symbols-outlined icon-fill text-lg">star</span>
+<span class="material-symbols-outlined icon-fill text-lg">star</span>
+<span class="material-symbols-outlined icon-fill text-lg">star</span>
+</div>
+<p class="text-body-md font-body-md text-on-surface-variant italic mb-4">
+                        "La plataforma es súper fácil de usar. Busqué por el modelo de mi camioneta y me salió exactamente la bomba de agua que necesitaba."
+                    </p>
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center text-on-primary-container font-label-md">AG</div>
+<div>
+<p class="text-label-md font-label-md text-on-surface">Ana Gómez</p>
+<p class="text-caption font-caption text-on-surface-variant">Cliente Verificada</p>
+</div>
+</div>
+</div>
+<!-- Testimonial 3 -->
+<div class="bg-surface rounded-xl p-6 shadow-level-1 border border-outline-variant">
+<div class="flex items-center gap-1 text-[#FFB400] mb-4">
+<span class="material-symbols-outlined icon-fill text-lg">star</span>
+<span class="material-symbols-outlined icon-fill text-lg">star</span>
+<span class="material-symbols-outlined icon-fill text-lg">star</span>
+<span class="material-symbols-outlined icon-fill text-lg">star</span>
+<span class="material-symbols-outlined text-lg">star</span>
+</div>
+<p class="text-body-md font-body-md text-on-surface-variant italic mb-4">
+                        "Buena variedad de lubricantes y filtros. Compré los consumibles para el mantenimiento preventivo y todo llegó sellado y en perfecto estado."
+                    </p>
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-variant flex items-center justify-center text-on-surface-variant font-label-md">CP</div>
+<div>
+<p class="text-label-md font-label-md text-on-surface">Carlos Pérez</p>
+<p class="text-caption font-caption text-on-surface-variant">Taller Mecánico</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-inverse-surface dark:bg-surface-container-lowest w-full py-stack-lg">
+<div class="max-w-container-max mx-auto px-margin-desktop flex flex-col md:flex-row justify-between items-start gap-gutter">
+<div class="flex flex-col gap-4 max-w-sm">
+<span class="text-headline-md font-headline-md font-bold text-surface-bright">AUTOINSUMO 2000</span>
+<p class="text-body-md font-body-md text-on-primary-container dark:text-primary opacity-80">
+                    Soluciones confiables para el sector automotriz nacional. Calidad y servicio que impulsan tu camino.
+                </p>
+</div>
+<div class="flex flex-wrap gap-x-12 gap-y-6">
+<div class="flex flex-col gap-2">
+<h4 class="text-label-md font-label-md text-primary-fixed-dim font-bold mb-2">Navegación</h4>
+<a class="text-body-md font-body-md text-surface-variant dark:text-on-surface-variant hover:text-primary-fixed hover:underline decoration-primary transition-all focus:ring-2 focus:ring-offset-2 focus:ring-primary outline-none" href="index.html">Inicio</a>
+<a class="text-body-md font-body-md text-surface-variant dark:text-on-surface-variant hover:text-primary-fixed hover:underline decoration-primary transition-all focus:ring-2 focus:ring-offset-2 focus:ring-primary outline-none" href="productos.html">Productos</a>
+<a class="text-body-md font-body-md text-surface-variant dark:text-on-surface-variant hover:text-primary-fixed hover:underline decoration-primary transition-all focus:ring-2 focus:ring-offset-2 focus:ring-primary outline-none" href="nosotros.html">Nosotros</a>
+<a class="text-body-md font-body-md text-surface-variant dark:text-on-surface-variant hover:text-primary-fixed hover:underline decoration-primary transition-all focus:ring-2 focus:ring-offset-2 focus:ring-primary outline-none" href="contacto.html">Contacto</a>
+</div>
+<div class="flex flex-col gap-2">
+<h4 class="text-label-md font-label-md text-primary-fixed-dim font-bold mb-2">Legal</h4>
+<a class="text-body-md font-body-md text-surface-variant dark:text-on-surface-variant hover:text-primary-fixed hover:underline decoration-primary transition-all focus:ring-2 focus:ring-offset-2 focus:ring-primary outline-none" href="#">Política de Privacidad</a>
+<a class="text-body-md font-body-md text-surface-variant dark:text-on-surface-variant hover:text-primary-fixed hover:underline decoration-primary transition-all focus:ring-2 focus:ring-offset-2 focus:ring-primary outline-none" href="#">Términos de Servicio</a>
+</div>
+</div>
+</div>
+<div class="max-w-container-max mx-auto px-margin-desktop mt-stack-lg pt-stack-md border-t border-surface-variant/20">
+<p class="text-caption font-caption text-surface-variant/60">
+                © 2024 AUTOINSUMO 2000. Todos los derechos reservados.
+            </p>
+</div>
+</footer>
+<script>
+        // Mobile Sidebar Toggle Logic
+        document.addEventListener('DOMContentLoaded', () => {
+            const menuBtn = document.getElementById('mobile-menu-btn');
+            const closeBtn = document.getElementById('close-menu-btn');
+            const sidebar = document.getElementById('mobile-sidebar');
+            const overlay = document.getElementById('sidebar-overlay');
+
+            function toggleMenu() {
+                const isOpen = !sidebar.classList.contains('-translate-x-full');
+                if (isOpen) {
+                    sidebar.classList.add('-translate-x-full');
+                    overlay.classList.add('hidden');
+                    document.body.style.overflow = '';
+                } else {
+                    sidebar.classList.remove('-translate-x-full');
+                    overlay.classList.remove('hidden');
+                    document.body.style.overflow = 'hidden';
+                }
+            }
+
+            menuBtn.addEventListener('click', toggleMenu);
+            closeBtn.addEventListener('click', toggleMenu);
+            overlay.addEventListener('click', toggleMenu);
+        });
+    </script>
+
+<!-- CACIQUE GLOBAL ESC MODAL CLOSER -->
+<script>
+  (function() {
+    function handleEsc(e) {
+      if (e.key === 'Escape' || e.key === 'Esc' || e.keyCode === 27) {
+        try {
+          if (window.parent && typeof window.parent.closeDemoModal === 'function') {
+            window.parent.closeDemoModal();
+          }
+          if (window.parent && typeof window.parent.closeContactModal === 'function') {
+            window.parent.closeContactModal();
+          }
+        } catch (err) {}
+      }
+    }
+    window.addEventListener('keydown', handleEsc, true);
+    document.addEventListener('keydown', handleEsc, true);
+  })();
+</script></body></html>

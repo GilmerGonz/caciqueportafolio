@@ -1,0 +1,439 @@
+<!DOCTYPE html><html lang="es"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Catálogo de Productos - AUTOINSUMO 2000</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-fixed-variant": "#93000d",
+                        "on-background": "#181c1e",
+                        "tertiary-fixed": "#e2e2e2",
+                        "tertiary": "#5a5b5c",
+                        "surface-container": "#ebeef0",
+                        "secondary-fixed": "#d8e2ff",
+                        "on-primary-container": "#fff9f8",
+                        "on-tertiary-container": "#fbfbfb",
+                        "tertiary-fixed-dim": "#c6c6c7",
+                        "on-secondary": "#ffffff",
+                        "on-surface": "#181c1e",
+                        "on-error-container": "#93000a",
+                        "on-primary": "#ffffff",
+                        "primary-fixed-dim": "#ffb4ac",
+                        "inverse-on-surface": "#eef1f3",
+                        "on-secondary-fixed": "#061b3c",
+                        "on-tertiary": "#ffffff",
+                        "inverse-primary": "#ffb4ac",
+                        "background": "#f7fafc",
+                        "secondary-fixed-dim": "#b5c6f0",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-highest": "#e0e3e5",
+                        "surface-bright": "#f7fafc",
+                        "primary-fixed": "#ffdad6",
+                        "on-secondary-fixed-variant": "#35466a",
+                        "surface-dim": "#d7dadc",
+                        "outline-variant": "#e7bdb8",
+                        "on-primary-fixed": "#410002",
+                        "outline": "#926e6b",
+                        "primary": "#b90014",
+                        "on-error": "#ffffff",
+                        "on-surface-variant": "#5d3f3c",
+                        "inverse-surface": "#2d3133",
+                        "surface": "#f7fafc",
+                        "surface-tint": "#c00015",
+                        "surface-variant": "#e0e3e5",
+                        "on-secondary-container": "#4a5b80",
+                        "secondary": "#4d5e83",
+                        "on-tertiary-fixed-variant": "#454747",
+                        "error-container": "#ffdad6",
+                        "surface-container-high": "#e5e9eb",
+                        "on-tertiary-fixed": "#1a1c1c",
+                        "error": "#ba1a1a",
+                        "primary-container": "#e31b23",
+                        "surface-container-low": "#f1f4f6",
+                        "secondary-container": "#c3d4ff",
+                        "tertiary-container": "#727474"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "stack-md": "16px",
+                        "gutter": "24px",
+                        "margin-desktop": "40px",
+                        "margin-mobile": "16px",
+                        "stack-lg": "32px",
+                        "container-max": "1280px",
+                        "base": "8px",
+                        "stack-sm": "8px"
+                    },
+                    "fontFamily": {
+                        "display-lg-mobile": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "label-md": ["Inter"],
+                        "display-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "caption": ["Inter"],
+                        "headline-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "display-lg-mobile": ["36px", { "lineHeight": "42px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "fontWeight": "600" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "caption": ["12px", { "lineHeight": "16px", "fontWeight": "500" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .card-shadow { box-shadow: 0px 2px 4px rgba(10, 30, 63, 0.05), 0px 1px 2px rgba(10, 30, 63, 0.05); }
+        .card-hover-shadow { box-shadow: 0px 10px 15px -3px rgba(10, 30, 63, 0.1), 0px 4px 6px -2px rgba(10, 30, 63, 0.05); }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen flex flex-col">
+<!-- TopNavBar (Desktop) -->
+<nav class="hidden md:flex fixed top-0 w-full z-50 justify-between items-center px-margin-desktop py-4 bg-surface/95 backdrop-blur-md shadow-sm border-b border-outline-variant">
+<div class="flex items-center gap-8">
+<a class="text-headline-lg font-headline-lg font-black text-primary tracking-tight" href="index.html">AUTOINSUMO 2000</a>
+<ul class="flex items-center gap-6">
+<li>
+<a class="text-secondary font-medium hover:text-primary transition-colors hover:bg-surface-container-low transition-all duration-200 px-2 py-1 rounded text-label-md font-label-md" href="index.html">Inicio</a>
+</li>
+<li>
+<a class="text-primary border-b-2 border-primary font-bold pb-1 text-label-md font-label-md" href="productos.html">Productos</a>
+</li>
+<li>
+<a class="text-secondary font-medium hover:text-primary transition-colors hover:bg-surface-container-low transition-all duration-200 px-2 py-1 rounded text-label-md font-label-md" href="nosotros.html">Nosotros</a>
+</li>
+<li>
+<a class="text-secondary font-medium hover:text-primary transition-colors hover:bg-surface-container-low transition-all duration-200 px-2 py-1 rounded text-label-md font-label-md" href="contacto.html">Contacto</a>
+</li>
+</ul>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative group">
+<input class="bg-surface border border-outline-variant rounded-full px-4 py-2 text-body-md font-body-md focus:outline-none focus:border-secondary focus:ring-2 focus:ring-secondary/20 transition-all" placeholder="Buscar..." type="text">
+<span class="material-symbols-outlined absolute right-3 top-2.5 text-tertiary">search</span>
+</div>
+<a class="flex items-center gap-2 bg-primary text-on-primary px-4 py-2 rounded-lg font-label-md text-label-md shadow-[inset_0_1px_0_rgba(255,255,255,0.2)] hover:bg-primary/90 transition-colors focus:ring-2 focus:ring-offset-2 focus:ring-secondary" href="carrito.html">
+<span class="material-symbols-outlined icon-fill">shopping_cart</span>
+                Carrito
+            </a>
+</div>
+</nav>
+<!-- Mobile Header & SideNavBar Toggle -->
+<div class="md:hidden fixed top-0 w-full z-50 bg-surface shadow-sm border-b border-outline-variant flex justify-between items-center px-margin-mobile py-4">
+<a class="text-headline-md font-headline-md font-black text-primary tracking-tight" href="index.html">AUTOINSUMO 2000</a>
+<div class="flex items-center gap-4">
+<a class="text-on-surface" href="carrito.html">
+<span class="material-symbols-outlined">shopping_cart</span>
+</a>
+<button class="text-on-surface" id="mobile-menu-btn">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</div>
+<!-- SideNavBar (Mobile) -->
+<aside class="fixed inset-y-0 left-0 z-[60] flex flex-col py-6 bg-surface shadow-lg h-full w-64 md:hidden transform -translate-x-full transition-transform duration-300" id="mobile-sidebar">
+<div class="px-4 mb-6 flex justify-between items-center">
+<div>
+<h2 class="text-headline-md font-headline-md font-extrabold text-primary">AUTOINSUMO 2000</h2>
+<p class="text-caption font-caption text-on-surface-variant">Repuestos y más</p>
+</div>
+<button class="text-on-surface-variant" id="close-menu-btn">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<nav class="flex-1 overflow-y-auto">
+<ul class="flex flex-col gap-2">
+<li>
+<a class="text-on-surface-variant flex items-center gap-4 px-4 py-3 rounded-lg mx-2 hover:bg-surface-container-high transition-colors text-label-md font-label-md" href="index.html">
+<span class="material-symbols-outlined">home</span>
+                        Inicio
+                    </a>
+</li>
+<li>
+<a class="bg-primary-container text-on-primary-container flex items-center gap-4 px-4 py-3 rounded-lg mx-2 text-label-md font-label-md" href="productos.html">
+<span class="material-symbols-outlined icon-fill">settings_input_component</span>
+                        Productos
+                    </a>
+</li>
+<li>
+<a class="text-on-surface-variant flex items-center gap-4 px-4 py-3 rounded-lg mx-2 hover:bg-surface-container-high transition-colors text-label-md font-label-md" href="nosotros.html">
+<span class="material-symbols-outlined">groups</span>
+                        Nosotros
+                    </a>
+</li>
+<li>
+<a class="text-on-surface-variant flex items-center gap-4 px-4 py-3 rounded-lg mx-2 hover:bg-surface-container-high transition-colors text-label-md font-label-md" href="contacto.html">
+<span class="material-symbols-outlined">contact_support</span>
+                        Contacto
+                    </a>
+</li>
+<li>
+<a class="text-on-surface-variant flex items-center gap-4 px-4 py-3 rounded-lg mx-2 hover:bg-surface-container-high transition-colors text-label-md font-label-md" href="carrito.html">
+<span class="material-symbols-outlined">shopping_cart</span>
+                        Carrito
+                    </a>
+</li>
+</ul>
+</nav>
+<div class="px-4 mt-auto">
+<a class="w-full bg-[#25D366] text-white flex items-center justify-center gap-2 py-3 rounded-lg font-label-md text-label-md shadow-sm" href="https://wa.me/584149876543" target="_blank" rel="noopener">WhatsApp</a>
+</div>
+</aside>
+<!-- Overlay for Mobile Nav -->
+<div class="fixed inset-0 bg-black/50 z-[55] hidden md:hidden" id="sidebar-overlay"></div><!-- Main Content -->
+<main class="flex-grow pt-[80px] md:pt-[104px] px-margin-mobile md:px-margin-desktop py-stack-lg max-w-container-max mx-auto w-full">
+<div class="mb-stack-lg">
+<h1 class="text-display-lg-mobile md:text-display-lg font-display-lg-mobile md:font-display-lg text-secondary mb-2">Catálogo de Productos</h1>
+<p class="text-body-lg font-body-lg text-tertiary">Encuentra los mejores repuestos para tu vehículo.</p>
+</div>
+<div class="flex flex-col lg:flex-row gap-gutter">
+<!-- Sidebar Filters -->
+<aside class="w-full lg:w-64 flex-shrink-0">
+<div class="bg-surface rounded-xl card-shadow p-6 sticky top-[120px]">
+<div class="flex items-center gap-2 mb-6 border-b border-surface-variant pb-4">
+<span class="material-symbols-outlined text-secondary">tune</span>
+<h2 class="text-headline-md font-headline-md text-secondary">Filtros</h2>
+</div>
+<!-- Category Filter -->
+<div class="mb-6">
+<h3 class="text-label-md font-label-md text-secondary mb-3 uppercase tracking-wider">Categoría</h3>
+<div class="flex flex-col gap-2">
+<label class="flex items-center gap-3 cursor-pointer group">
+<input checked="" class="rounded border-outline-variant text-primary focus:ring-primary" type="checkbox">
+<span class="text-body-md text-tertiary group-hover:text-secondary transition-colors">Suspensión</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="rounded border-outline-variant text-primary focus:ring-primary" type="checkbox">
+<span class="text-body-md text-tertiary group-hover:text-secondary transition-colors">Frenos</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="rounded border-outline-variant text-primary focus:ring-primary" type="checkbox">
+<span class="text-body-md text-tertiary group-hover:text-secondary transition-colors">Electricidad</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="rounded border-outline-variant text-primary focus:ring-primary" type="checkbox">
+<span class="text-body-md text-tertiary group-hover:text-secondary transition-colors">Motor</span>
+</label>
+</div>
+</div>
+<!-- Brand Filter -->
+<div class="mb-6">
+<h3 class="text-label-md font-label-md text-secondary mb-3 uppercase tracking-wider">Marca</h3>
+<div class="flex flex-col gap-2">
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="rounded border-outline-variant text-primary focus:ring-primary" type="checkbox">
+<span class="text-body-md text-tertiary group-hover:text-secondary transition-colors">Bosch</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="rounded border-outline-variant text-primary focus:ring-primary" type="checkbox">
+<span class="text-body-md text-tertiary group-hover:text-secondary transition-colors">Monroe</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="rounded border-outline-variant text-primary focus:ring-primary" type="checkbox">
+<span class="text-body-md text-tertiary group-hover:text-secondary transition-colors">Brembo</span>
+</label>
+</div>
+</div>
+<!-- Price Filter -->
+<div>
+<h3 class="text-label-md font-label-md text-secondary mb-3 uppercase tracking-wider">Precio Máximo</h3>
+<input class="w-full accent-primary" max="500" min="0" type="range" value="250">
+<div class="flex justify-between text-caption font-caption text-tertiary mt-2">
+<span>$0</span>
+<span>$500</span>
+</div>
+</div>
+<button class="w-full mt-8 bg-surface border border-secondary text-secondary px-4 py-2 rounded-lg hover:bg-surface-container-low transition-colors text-label-md font-label-md focus:ring-2 focus:ring-offset-2 focus:ring-secondary">
+                        Limpiar Filtros
+                    </button>
+</div>
+</aside>
+<!-- Product Grid -->
+<div class="flex-grow">
+<div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
+<!-- Product Card 1 -->
+<article class="bg-surface rounded-xl card-shadow hover:card-hover-shadow transition-shadow duration-300 overflow-hidden border border-surface-variant flex flex-col group relative">
+<div class="absolute top-4 left-4 z-10 bg-primary/15 text-primary px-3 py-1 rounded-full text-caption font-caption font-bold backdrop-blur-sm">
+                            Oferta
+                        </div>
+<div class="aspect-w-4 aspect-h-3 bg-white p-4 flex items-center justify-center">
+<img alt="Amortiguador de Suspensión" class="object-contain w-full h-48 group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida/AP1WRLvh6eQ3Voo2PnI2SUCaOep-NIUy5tmtMSgZbEnqpZ4zMsrIdnBmfLmjqVm7DPZgosL9M_IkUfrlFj22tP3u2dz5q-Ay_3h9Ylvzb82GvF4YvCLDwttOGSMmMF33bFt16DWfKwIWySdeXcAr4Bgjv3d89gJnMiwe4luVIBNY-32ZOkN8qTHgkjNgS6L4tSF2NwLE6MViZYNxsKVw0mgLjbEuzYtfgT9rquqNnmUcdEHeP0Ya9vADR6XBvE4">
+</div>
+<div class="p-5 flex flex-col flex-grow bg-surface-bright border-t border-surface-variant">
+<span class="text-caption font-caption text-tertiary mb-1">Monroe • Suspensión</span>
+<h3 class="text-body-lg font-body-lg text-secondary font-bold mb-2 line-clamp-2">Amortiguador a Gas Delantero Toyota Hilux</h3>
+<div class="mt-auto pt-4 flex items-end justify-between">
+<div>
+<p class="text-headline-md font-headline-md text-primary">$45.00</p>
+<p class="text-caption font-caption text-tertiary">Ref: Bs. 1,620.00</p>
+</div>
+<button onclick="window.location.href='carrito.html'" aria-label="Añadir al carrito" class="bg-surface border border-secondary text-secondary p-2 rounded-lg hover:bg-secondary hover:text-white transition-colors focus:ring-2 focus:ring-offset-2 focus:ring-secondary">
+<span class="material-symbols-outlined">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Product Card 2 -->
+<article class="bg-surface rounded-xl card-shadow hover:card-hover-shadow transition-shadow duration-300 overflow-hidden border border-surface-variant flex flex-col group relative">
+<div class="absolute top-4 left-4 z-10 bg-[#25D366]/15 text-[#0F8A3A] px-3 py-1 rounded-full text-caption font-caption font-bold backdrop-blur-sm">
+                            Disponible
+                        </div>
+<div class="aspect-w-4 aspect-h-3 bg-white p-4 flex items-center justify-center">
+<img alt="Batería 12V 70Ah" class="object-contain w-full h-48 group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida/AP1WRLu-vs-CJStaZ52lX1GyNmEx7t3wdtI-h9VTxI06m8YXgz48f2dpMsPlR4NY21ofWUxtpr_TMgh6SOGn3KHenUsz0v9aNlSu6Wly1RXEjjaxV7pfl5XGhduwfpxcHIAyI5eXnMpTZEgD_H-N5o_cI5E-C_5s7NvU8s3KvTOjkkKQMkJFQD5wstj52z6tJlGlU4CoppL6sqlssmgJeIKwb7xJBeMbIWOhOY92R761ddXFn1yuOWghsEKi0mI">
+</div>
+<div class="p-5 flex flex-col flex-grow bg-surface-bright border-t border-surface-variant">
+<span class="text-caption font-caption text-tertiary mb-1">Bosch • Electricidad</span>
+<h3 class="text-body-lg font-body-lg text-secondary font-bold mb-2 line-clamp-2">Batería S4 12V 70Ah Libre de Mantenimiento</h3>
+<div class="mt-auto pt-4 flex items-end justify-between">
+<div>
+<p class="text-headline-md font-headline-md text-primary">$85.00</p>
+<p class="text-caption font-caption text-tertiary">Ref: Bs. 3,060.00</p>
+</div>
+<button onclick="window.location.href='carrito.html'" aria-label="Añadir al carrito" class="bg-surface border border-secondary text-secondary p-2 rounded-lg hover:bg-secondary hover:text-white transition-colors focus:ring-2 focus:ring-offset-2 focus:ring-secondary">
+<span class="material-symbols-outlined">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Product Card 3 -->
+<article class="bg-surface rounded-xl card-shadow hover:card-hover-shadow transition-shadow duration-300 overflow-hidden border border-surface-variant flex flex-col group">
+<div class="aspect-w-4 aspect-h-3 bg-white p-4 flex items-center justify-center">
+<img alt="Kit de Frenos" class="object-contain w-full h-48 group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida/AP1WRLvR-ht5NVEzOhE7Ze_LFl2jPiw165ynP9-zvEbDfpVxGjo8THXHjaspXzSvzYnckobnP0HQFv3Xeeuxmjtjb_PqXdagwt-XBfIbeBaJKSY2vDLvYGvTf1UjHcrOy2JjM4Z7oORznvgIeUn3_4wDj8tOjePTMNMvvAQ5GAN-h0O9aMNDnMk8N96hEUloi28im1iE8VXrAmD6wAPpt9LKjhITvucQmxb6gY5_s4BmQdplLyxngPWLzCz2KAI">
+</div>
+<div class="p-5 flex flex-col flex-grow bg-surface-bright border-t border-surface-variant">
+<span class="text-caption font-caption text-tertiary mb-1">Brembo • Frenos</span>
+<h3 class="text-body-lg font-body-lg text-secondary font-bold mb-2 line-clamp-2">Kit Discos y Pastillas de Freno Cerámicas</h3>
+<div class="mt-auto pt-4 flex items-end justify-between">
+<div>
+<p class="text-headline-md font-headline-md text-primary">$120.00</p>
+<p class="text-caption font-caption text-tertiary">Ref: Bs. 4,320.00</p>
+</div>
+<button onclick="window.location.href='carrito.html'" aria-label="Añadir al carrito" class="bg-surface border border-secondary text-secondary p-2 rounded-lg hover:bg-secondary hover:text-white transition-colors focus:ring-2 focus:ring-offset-2 focus:ring-secondary">
+<span class="material-symbols-outlined">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Product Card 4 -->
+<article class="bg-surface rounded-xl card-shadow hover:card-hover-shadow transition-shadow duration-300 overflow-hidden border border-surface-variant flex flex-col group">
+<div class="aspect-w-4 aspect-h-3 bg-white p-4 flex items-center justify-center">
+<img alt="Componente de Motor" class="object-contain w-full h-48 group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida/AP1WRLvoBFA8NRh-myFKNR6ghXGw0YnIfuXB1Fte-nKcXPfGY7NFvUpdefsXni7dLfjhQYyrU2k2ooa6YI0wRmiGxBeNXQmf0IAdh78dmFLDZTzMytCxu28a12OesO4AJYZGNFP88d9fH_jKljAZhGhYdGlJrkHI3vgBOPAwetsEhCfI7vdDtFrHVw8mCccn505P4x8kERgSBZoyZCF92advo_4-3-3sOVzyeUAi-lVo5aNs6TWCP_5TFtmRtVfy">
+</div>
+<div class="p-5 flex flex-col flex-grow bg-surface-bright border-t border-surface-variant">
+<span class="text-caption font-caption text-tertiary mb-1">Genuino • Motor</span>
+<h3 class="text-body-lg font-body-lg text-secondary font-bold mb-2 line-clamp-2">Bomba de Aceite Alta Presión V8</h3>
+<div class="mt-auto pt-4 flex items-end justify-between">
+<div>
+<p class="text-headline-md font-headline-md text-primary">$65.00</p>
+<p class="text-caption font-caption text-tertiary">Ref: Bs. 2,340.00</p>
+</div>
+<button onclick="window.location.href='carrito.html'" aria-label="Añadir al carrito" class="bg-surface border border-secondary text-secondary p-2 rounded-lg hover:bg-secondary hover:text-white transition-colors focus:ring-2 focus:ring-offset-2 focus:ring-secondary">
+<span class="material-symbols-outlined">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</article>
+</div>
+<!-- Pagination (Placeholder) -->
+<div class="mt-stack-lg flex justify-center">
+<nav class="flex gap-2">
+<button class="w-10 h-10 flex items-center justify-center rounded-lg border border-outline-variant text-tertiary hover:bg-surface-container-low transition-colors disabled:opacity-50">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg bg-primary text-white font-bold">1</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg border border-outline-variant text-secondary hover:bg-surface-container-low transition-colors">2</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg border border-outline-variant text-secondary hover:bg-surface-container-low transition-colors">3</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg border border-outline-variant text-tertiary hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</nav>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="mt-auto bg-inverse-surface py-stack-lg w-full px-margin-desktop flex flex-col md:flex-row justify-between items-start gap-gutter">
+<div class="flex flex-col gap-4">
+<span class="text-headline-md font-headline-md font-bold text-surface-bright">AUTOINSUMO 2000</span>
+<p class="text-body-md font-body-md text-on-primary-container max-w-xs">Tu aliado de confianza en repuestos automotrices de calidad en toda Venezuela.</p>
+</div>
+<div class="flex flex-col gap-2">
+<h4 class="text-label-md font-label-md text-surface-bright mb-2">Enlaces Rápidos</h4>
+<a class="text-surface-variant hover:text-primary-fixed hover:underline decoration-primary transition-all text-body-md font-body-md focus:ring-2 focus:ring-offset-2 focus:ring-primary" href="index.html">Inicio</a>
+<a class="text-primary-fixed-dim font-bold text-body-md font-body-md focus:ring-2 focus:ring-offset-2 focus:ring-primary" href="productos.html">Productos</a>
+<a class="text-surface-variant hover:text-primary-fixed hover:underline decoration-primary transition-all text-body-md font-body-md focus:ring-2 focus:ring-offset-2 focus:ring-primary" href="nosotros.html">Nosotros</a>
+<a class="text-surface-variant hover:text-primary-fixed hover:underline decoration-primary transition-all text-body-md font-body-md focus:ring-2 focus:ring-offset-2 focus:ring-primary" href="contacto.html">Contacto</a>
+</div>
+<div class="flex flex-col gap-2">
+<h4 class="text-label-md font-label-md text-surface-bright mb-2">Legal</h4>
+<a class="text-surface-variant hover:text-primary-fixed hover:underline decoration-primary transition-all text-body-md font-body-md focus:ring-2 focus:ring-offset-2 focus:ring-primary" href="#">Política de Privacidad</a>
+<a class="text-surface-variant hover:text-primary-fixed hover:underline decoration-primary transition-all text-body-md font-body-md focus:ring-2 focus:ring-offset-2 focus:ring-primary" href="#">Términos de Servicio</a>
+</div>
+<div class="w-full md:w-auto mt-8 md:mt-0 pt-8 md:pt-0 border-t border-surface-variant/20 md:border-t-0 flex flex-col md:items-end justify-center">
+<span class="text-caption font-caption text-surface-variant">© 2024 AUTOINSUMO 2000. Todos los derechos reservados.</span>
+</div>
+</footer>
+<script>
+        // Mobile Sidebar Toggle Logic
+        document.addEventListener('DOMContentLoaded', () => {
+            const menuBtn = document.getElementById('mobile-menu-btn');
+            const closeBtn = document.getElementById('close-menu-btn');
+            const sidebar = document.getElementById('mobile-sidebar');
+            const overlay = document.getElementById('sidebar-overlay');
+
+            function toggleMenu() {
+                const isOpen = !sidebar.classList.contains('-translate-x-full');
+                if (isOpen) {
+                    sidebar.classList.add('-translate-x-full');
+                    overlay.classList.add('hidden');
+                    document.body.style.overflow = '';
+                } else {
+                    sidebar.classList.remove('-translate-x-full');
+                    overlay.classList.remove('hidden');
+                    document.body.style.overflow = 'hidden';
+                }
+            }
+
+            menuBtn.addEventListener('click', toggleMenu);
+            closeBtn.addEventListener('click', toggleMenu);
+            overlay.addEventListener('click', toggleMenu);
+        });
+    </script>
+
+<!-- CACIQUE GLOBAL ESC MODAL CLOSER -->
+<script>
+  (function() {
+    function handleEsc(e) {
+      if (e.key === 'Escape' || e.key === 'Esc' || e.keyCode === 27) {
+        try {
+          if (window.parent && typeof window.parent.closeDemoModal === 'function') {
+            window.parent.closeDemoModal();
+          }
+          if (window.parent && typeof window.parent.closeContactModal === 'function') {
+            window.parent.closeContactModal();
+          }
+        } catch (err) {}
+      }
+    }
+    window.addEventListener('keydown', handleEsc, true);
+    document.addEventListener('keydown', handleEsc, true);
+  })();
+</script>
+</body></html>

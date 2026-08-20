@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cacique CRM WhatsApp</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800;900&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; background-color: #0A0A0A; color: #F5F5F5; }
+    h1, h2, h3 { font-family: 'Barlow Condensed', sans-serif; }
+    .hard-shadow { box-shadow: 6px 6px 0px #000000; }
+  </style>
+</head>
+<body class="p-6 md:p-12">
+  <div class="max-w-4xl mx-auto border border-[#222] bg-[#111] p-8 rounded-lg hard-shadow">
+    <div class="flex items-center justify-between border-b border-[#222] pb-4 mb-6">
+      <div class="flex items-center gap-3">
+        <div class="w-3 h-3 rounded-full bg-emerald-500"></div>
+        <span class="text-xs font-mono uppercase tracking-widest text-[#888]">Cacique Software — Demo Activo</span>
+      </div>
+      <span class="bg-[#222] text-[#F5F5F5] text-xs px-3 py-1 uppercase tracking-wider rounded font-mono">CRM WhatsApp</span>
+    </div>
+    
+    <h1 class="text-4xl md:text-6xl font-black uppercase tracking-tight mb-4 text-[#F5F5F5]">
+      SISTEMA DE GESTIÓN Y AUTOMATIZACIÓN DE CHATS
+    </h1>
+    <p class="text-[#888] text-lg mb-8">
+      Captura automatizada de leads en tiempo real con integración de IA. Convierte conversaciones en ventas cerradas.
+    </p>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+      <div class="bg-[#0A0A0A] p-4 border border-[#222]">
+        <div class="text-3xl font-extrabold text-white mb-1">1,420+</div>
+        <div class="text-xs uppercase text-[#666] tracking-wider">Leads Procesados/Día</div>
+      </div>
+      <div class="bg-[#0A0A0A] p-4 border border-[#222]">
+        <div class="text-3xl font-extrabold text-white mb-1">&lt; 3 seg</div>
+        <div class="text-xs uppercase text-[#666] tracking-wider">Tiempo Resp. IA</div>
+      </div>
+      <div class="bg-[#0A0A0A] p-4 border border-[#222]">
+        <div class="text-3xl font-extrabold text-white mb-1">+45%</div>
+        <div class="text-xs uppercase text-[#666] tracking-wider">Tasa de Conversión</div>
+      </div>
+    </div>
+
+    <div class="border border-[#222] bg-[#0A0A0A] p-4 rounded mb-6">
+      <div class="text-xs text-[#666] uppercase mb-2 font-mono">// Consola de Simulación de Chat</div>
+      <div class="space-y-2 text-sm">
+        <div class="p-2 bg-[#181818] rounded text-[#ddd] text-xs"><strong>[Cliente]:</strong> Hola, quiero información de sus servicios de desarrollo web.</div>
+        <div class="p-2 bg-[#222] rounded text-white text-xs border-l-2 border-white"><strong>[Bot Cacique AI]:</strong> ¡Saludos! En Cacique construimos tu Landing Page o Sistema Web con entrega garantizada en 3 días. ¿Te gustaría agendar una demo sin compromiso?</div>
+      </div>
+    </div>
+  </div>
+
+<!-- CACIQUE GLOBAL ESC MODAL CLOSER -->
+<script>
+  (function() {
+    function handleEsc(e) {
+      if (e.key === 'Escape' || e.key === 'Esc' || e.keyCode === 27) {
+        try {
+          if (window.parent && typeof window.parent.closeDemoModal === 'function') {
+            window.parent.closeDemoModal();
+          }
+          if (window.parent && typeof window.parent.closeContactModal === 'function') {
+            window.parent.closeContactModal();
+          }
+        } catch (err) {}
+      }
+    }
+    window.addEventListener('keydown', handleEsc, true);
+    document.addEventListener('keydown', handleEsc, true);
+  })();
+</script>
+
+</body>
+</html>

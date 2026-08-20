@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CACIQUE — Software Development & Automatización | Portafolio Oficial</title>
+  <meta name="description" content="Agencia venezolana de desarrollo web y automatización de procesos. Estética suiza, entrega garantizada en 3 días y tecnología de vanguardia.">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow+Condensed:ital,wght@0,700;0,800;0,900;1,800&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <style>
+    :root {
+      --bg-dark: #0A0A0A;
+      --bg-light: #F5F5F5;
+      --text-gray: #555555;
+      --border-line: #1A1A1A;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #F5F5F5;
+      color: #0A0A0A;
+      overflow-x: hidden;
+    }
+
+    .font-display {
+      font-family: 'Barlow Condensed', 'Anton', sans-serif;
+      text-transform: uppercase;
+      letter-spacing: -0.02em;
+    }
+
+    .tracking-swiss {
+      letter-spacing: 0.18em;
+    }
+
+    .hard-shadow-dark {
+      box-shadow: 8px 8px 0px #000000;
+    }
+
+    .hard-shadow-light {
+      box-shadow: 8px 8px 0px #0A0A0A;
+    }
+
+    .hard-card-hover {
+      transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    
+    .hard-card-hover:hover {
+      transform: translate(-3px, -3px);
+      box-shadow: 11px 11px 0px #000000;
+    }
+
+    .pill-badge {
+      border: 1px solid #0A0A0A;
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+    }
+
+    .pill-badge-dark {
+      border: 1px solid #333333;
+      color: #E5E5E5;
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+    }
+
+    /* Modal styling */
+    #iframe-container.device-desktop { width: 100%; height: 100%; max-width: 100%; }
+    #iframe-container.device-tablet { width: 768px; height: 95%; max-width: 100%; }
+    #iframe-container.device-mobile { width: 375px; height: 667px; max-width: 100%; }
+
+    /* Custom scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #0A0A0A;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #333333;
+      border-radius: 0px;
+    }
+    /* Scroll reveal animations */
+    .reveal-on-scroll {
+      opacity: 0;
+      transform: translateY(35px);
+      transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: opacity, transform;
+    }
+    .reveal-on-scroll.revealed {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body class="selection:bg-[#0A0A0A] selection:text-[#F5F5F5]">
+
+  <!-- TOP BRAND STRIP -->
+  <div class="bg-[#0A0A0A] text-[#F5F5F5] py-2 px-4 border-b border-[#1A1A1A] text-xs font-mono uppercase tracking-widest flex justify-between items-center">
+    <span>VENEZUELA — 2025</span>
+    <span class="hidden md:inline">SISTEMA DE IDENTIDAD VISUAL & DESARROLLO WEB</span>
+    <span>BLANCO Y NEGRO — SIN EXCEPCIONES</span>
+  </div>
+
+  <!-- HEADER / NAVIGATION -->
+  <header class="sticky top-0 z-40 bg-[#F5F5F5]/90 backdrop-blur-md border-b-2 border-[#0A0A0A]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+      
+      <!-- LOGO -->
+      <a href="#" class="flex flex-col group">
+        <span class="font-display text-3xl md:text-4xl font-extrabold leading-none tracking-tight text-[#0A0A0A]">
+          CACIQUE
+        </span>
+        <span class="text-[9px] font-mono font-bold uppercase tracking-swiss text-[#555555]">
+          SOFTWARE DEVELOPMENT
+        </span>
+      </a>
+
+      <!-- NAV LINKS -->
+      <nav class="hidden md:flex items-center space-x-8 font-mono text-xs font-bold uppercase tracking-wider">
+        <a href="#proyectos" class="hover:underline underline-offset-4 decoration-2">01. PROYECTOS</a>
+        <a href="#servicios" class="hover:underline underline-offset-4 decoration-2">02. SERVICIOS</a>
+        <a href="#filosofia" class="hover:underline underline-offset-4 decoration-2">03. FILOSOFÍA</a>
+        <a href="#oferta" class="hover:underline underline-offset-4 decoration-2">04. OFERTA LÍDER</a>
+      </nav>
+
+      <!-- CTA BUTTON -->
+      <div class="flex items-center gap-3">
+        <button onclick="openContactModal()" class="bg-[#0A0A0A] text-[#F5F5F5] text-xs md:text-sm font-bold uppercase px-4 py-2.5 rounded-[6px] hard-shadow-dark hover:-translate-x-0.5 hover:-translate-y-0.5 transition-all">
+          HABLAR CON UN EXPERTO
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <main>
+
+    <!-- HERO SECTION -->
+    <section class="bg-[#0A0A0A] text-[#F5F5F5] py-16 md:py-24 px-4 sm:px-6 lg:px-8 border-b-2 border-[#0A0A0A] relative overflow-hidden">
+      
+      <!-- Grid pattern background -->
+      <div class="absolute inset-0 opacity-5 pointer-events-none bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:24px_24px]"></div>
+
+      <div class="max-w-7xl mx-auto relative z-10">
+        
+        <!-- BADGE -->
+        <div class="inline-block mb-6">
+          <span class="pill-badge-dark bg-[#111111]">
+            DESARROLLO DE SOFTWARE & AUTOMATIZACIÓN
+          </span>
+        </div>
+
+        <!-- MAIN TITLE -->
+        <h1 class="font-display text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-black uppercase leading-[0.9] tracking-tight mb-8 text-[#F5F5F5] max-w-5xl">
+          NUESTRO<br>PORTAFOLIO
+        </h1>
+
+        <!-- SUBTITLE -->
+        <p class="text-[#A0A0A0] text-lg sm:text-xl md:text-2xl font-light max-w-3xl mb-10 leading-relaxed">
+          Construimos la infraestructura digital que permite a los negocios venezolanos competir a nivel mundial — con la precisión suiza y la fuerza de quien guía hacia adelante
+        </p>
+
+        <!-- ACTION BUTTONS -->
+        <div class="flex flex-wrap gap-4 mb-16">
+          <a href="#proyectos" class="bg-[#F5F5F5] text-[#0A0A0A] text-sm font-extrabold uppercase px-8 py-4 rounded-[6px] hard-shadow-dark border-2 border-[#F5F5F5] hover:bg-white transition-all">
+            EXPLORAR PROYECTOS EN VIVO
+          </a>
+          <button onclick="openContactModal('Consulta de Página Web desde 180$')" class="bg-transparent text-[#F5F5F5] text-sm font-extrabold uppercase px-8 py-4 rounded-[6px] border-2 border-[#444444] hover:border-[#F5F5F5] transition-all">
+            PÁGINAS WEB DESDE 180$
+          </button>
+        </div>
+
+        <!-- METRICS STRIP -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-10 border-t border-[#1A1A1A] reveal-on-scroll">
+          <div class="border-l-2 border-[#F5F5F5] pl-6 py-2">
+            <span class="font-display text-5xl md:text-6xl font-extrabold leading-none text-white block">3 DÍAS</span>
+            <span class="text-xs uppercase text-[#888888] font-mono tracking-wider">Tiempo promedio de entrega</span>
+          </div>
+          <div class="border-l-2 border-[#F5F5F5] pl-6 py-2">
+            <span class="font-display text-5xl md:text-6xl font-extrabold leading-none text-white block">100%</span>
+            <span class="text-xs uppercase text-[#888888] font-mono tracking-wider">Garantía de devolución</span>
+          </div>
+          <div class="border-l-2 border-[#F5F5F5] pl-6 py-2">
+            <span class="font-display text-5xl md:text-6xl font-extrabold leading-none text-white block">2X</span>
+            <span class="text-xs uppercase text-[#888888] font-mono tracking-wider">Aumento promedio en captación</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION DIVIDER -->
+    <div class="h-2 bg-[#0A0A0A]"></div>
+
+    <!-- PROJECTS SECTION -->
+    <section id="proyectos" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+      
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 border-b-2 border-[#0A0A0A] pb-6 gap-6 reveal-on-scroll">
+        <div>
+          <span class="pill-badge mb-3 inline-block">PORTAFOLIO EN VIVO</span>
+          <h2 class="font-display text-5xl sm:text-6xl md:text-7xl font-black uppercase leading-none tracking-tight">
+            PROYECTOS Y SISTEMAS
+          </h2>
+          <p class="text-[#555555] text-base mt-2">Haz clic en "Ver Demo" para interactuar directamente con cada sitio en tiempo real.</p>
+        </div>
+
+        <!-- CATEGORY FILTERS -->
+        <div class="flex flex-wrap gap-2 font-mono text-xs font-bold uppercase" id="filter-buttons">
+          <button data-filter="all" class="filter-btn active bg-[#0A0A0A] text-white px-4 py-2 rounded-[4px] border border-[#0A0A0A]">TODOS</button>
+          <button data-filter="webapps" class="filter-btn bg-white text-[#0A0A0A] px-4 py-2 rounded-[4px] border border-[#0A0A0A] hover:bg-[#0A0A0A] hover:text-white transition-all">WEB APPS / E-COMMERCE</button>
+          <button data-filter="landings" class="filter-btn bg-white text-[#0A0A0A] px-4 py-2 rounded-[4px] border border-[#0A0A0A] hover:bg-[#0A0A0A] hover:text-white transition-all">LANDING PAGES</button>
+          <button data-filter="salud" class="filter-btn bg-white text-[#0A0A0A] px-4 py-2 rounded-[4px] border border-[#0A0A0A] hover:bg-[#0A0A0A] hover:text-white transition-all">SISTEMAS DE SALUD</button>
+          <button data-filter="automation" class="filter-btn bg-white text-[#0A0A0A] px-4 py-2 rounded-[4px] border border-[#0A0A0A] hover:bg-[#0A0A0A] hover:text-white transition-all">AUTOMATIZACIÓN / IA</button>
+        </div>
+      </div>
+
+      <!-- PROJECTS GRID -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8" id="projects-grid">
+        
+        <!-- PROJECT 1: AUTOINSUMO 2000 -->
+        <div onclick="openDemoModal('AutoInsumo 2000 — Portal Automotriz', './projects/autopartes/index.html')" class="project-card reveal-on-scroll border-2 border-[#0A0A0A] bg-white p-6 rounded-[6px] hard-shadow-dark hard-card-hover flex flex-col justify-between cursor-pointer group" data-category="webapps">
+          <div>
+            <div class="bg-[#0A0A0A] text-white p-6 rounded-[4px] mb-6 border border-[#222] relative group">
+              <div class="flex justify-between items-center mb-6">
+                <span class="font-mono text-[10px] uppercase text-[#888888] tracking-widest">// SECTOR AUTOMOTRIZ</span>
+                <span class="bg-white text-black text-[10px] font-mono px-2 py-0.5 rounded font-bold">PORTAL E-COMMERCE</span>
+              </div>
+              <h3 class="font-display text-3xl sm:text-4xl font-extrabold uppercase text-white mb-2">AUTOINSUMO 2000</h3>
+              <p class="text-xs text-[#AAAAAA] font-mono">Catálogo interactivo y búsqueda de repuestos</p>
+            </div>
+
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span class="pill-badge">E-COMMERCE</span>
+              <span class="pill-badge">CATÁLOGO WEB</span>
+              <span class="pill-badge">CARRITO DE COMPRAS</span>
+            </div>
+
+            <h4 class="font-display text-2xl font-bold uppercase mb-2">PORTAL DE REPUESTOS Y AUTOINSUMOS</h4>
+            <p class="text-[#555555] text-sm mb-6 leading-relaxed">
+              Plataforma digital optimizada para la venta y distribución de autopartes, accesorios y repuestos automotrices con navegación por categorías y cotización directa.
+            </p>
+          </div>
+
+          <div class="pt-4 border-t border-[#E5E5E5] flex justify-between items-center">
+            <span class="text-xs font-mono font-bold text-[#555555] uppercase">ENTREGA: 3 DÍAS</span>
+            <button onclick="event.stopPropagation(); openDemoModal('AutoInsumo 2000 — Portal Automotriz', './projects/autopartes/index.html')" class="bg-[#0A0A0A] text-white text-xs font-bold uppercase px-5 py-2.5 rounded-[6px] hover:bg-[#222222] transition-colors flex items-center gap-2">
+              VER DEMO EN VIVO <span>→</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- PROJECT 2: CODENOVA ACADEMY -->
+        <div onclick="openDemoModal('CodeNova Academy', './projects/codenova/index.html')" class="project-card reveal-on-scroll border-2 border-[#0A0A0A] bg-white p-6 rounded-[6px] hard-shadow-dark hard-card-hover flex flex-col justify-between cursor-pointer group" data-category="landings">
+          <div>
+            <div class="bg-[#0A0A0A] text-white p-6 rounded-[4px] mb-6 border border-[#222] relative group">
+              <div class="flex justify-between items-center mb-6">
+                <span class="font-mono text-[10px] uppercase text-[#888888] tracking-widest">// EDTECH & ACADEMIA</span>
+                <span class="bg-emerald-500/20 text-emerald-300 text-[10px] font-mono px-2 py-0.5 rounded border border-emerald-500/30">ALTA CONVERSIÓN</span>
+              </div>
+              <h3 class="font-display text-3xl sm:text-4xl font-extrabold uppercase text-white mb-2">CODENOVA ACADEMY</h3>
+              <p class="text-xs text-[#AAAAAA] font-mono">Domina el código. Construye tu futuro.</p>
+            </div>
+
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span class="pill-badge">LANDING PAGE</span>
+              <span class="pill-badge">ACADEMIA TECH</span>
+              <span class="pill-badge">CAPTACIÓN LEADS</span>
+            </div>
+
+            <h4 class="font-display text-2xl font-bold uppercase mb-2">PLATAFORMA EDUCATIVA DE PROGRAMACIÓN</h4>
+            <p class="text-[#555555] text-sm mb-6 leading-relaxed">
+              Landing page moderna para la venta de cursos de desarrollo web, bootcamp de software y formación profesional con inscripción directa.
+            </p>
+          </div>
+
+          <div class="pt-4 border-t border-[#E5E5E5] flex justify-between items-center">
+            <span class="text-xs font-mono font-bold text-[#555555] uppercase">ENTREGA: 3 DÍAS</span>
+            <button onclick="event.stopPropagation(); openDemoModal('CodeNova Academy', './projects/codenova/index.html')" class="bg-[#0A0A0A] text-white text-xs font-bold uppercase px-5 py-2.5 rounded-[6px] hover:bg-[#222222] transition-colors flex items-center gap-2">
+              VER DEMO EN VIVO <span>→</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- PROJECT 3: DENTAL PREMIUM UI SYSTEM -->
+        <div onclick="openDemoModal('Dental Premium UI System', './projects/dental/index.html')" class="project-card reveal-on-scroll border-2 border-[#0A0A0A] bg-white p-6 rounded-[6px] hard-shadow-dark hard-card-hover flex flex-col justify-between cursor-pointer group" data-category="salud webapps">
+          <div>
+            <div class="bg-[#0A0A0A] text-white p-6 rounded-[4px] mb-6 border border-[#222] relative group">
+              <div class="flex justify-between items-center mb-6">
+                <span class="font-mono text-[10px] uppercase text-[#888888] tracking-widest">// SALUD & CLÍNICA</span>
+                <span class="bg-white text-black text-[10px] font-mono px-2 py-0.5 rounded font-bold">SISTEMA UI PREMIUM</span>
+              </div>
+              <h3 class="font-display text-3xl sm:text-4xl font-extrabold uppercase text-white mb-2">DENTAL PREMIUM</h3>
+              <p class="text-xs text-[#AAAAAA] font-mono">Your smile, our maximum precision</p>
+            </div>
+
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span class="pill-badge">CLÍNICA MÉDICA</span>
+              <span class="pill-badge">AGENDAMIENTO</span>
+              <span class="pill-badge">PANEL PACIENTE</span>
+            </div>
+
+            <h4 class="font-display text-2xl font-bold uppercase mb-2">SISTEMA WEB DE ATENCIÓN ODONTOLÓGICA</h4>
+            <p class="text-[#555555] text-sm mb-6 leading-relaxed">
+              Plataforma digital para centro médico odontológico con reservación de citas en línea, equipo médico, galería de casos de éxito y área de pacientes.
+            </p>
+          </div>
+
+          <div class="pt-4 border-t border-[#E5E5E5] flex justify-between items-center">
+            <span class="text-xs font-mono font-bold text-[#555555] uppercase">ENTREGA: 4 DÍAS</span>
+            <button onclick="event.stopPropagation(); openDemoModal('Dental Premium UI System', './projects/dental/index.html')" class="bg-[#0A0A0A] text-white text-xs font-bold uppercase px-5 py-2.5 rounded-[6px] hover:bg-[#222222] transition-colors flex items-center gap-2">
+              VER DEMO EN VIVO <span>→</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- PROJECT 4: VENAVENTURA VIAJES -->
+        <div onclick="openDemoModal('VenAventura — Turismo Venezuela', './projects/viajes/index.html')" class="project-card reveal-on-scroll border-2 border-[#0A0A0A] bg-white p-6 rounded-[6px] hard-shadow-dark hard-card-hover flex flex-col justify-between cursor-pointer group" data-category="landings">
+          <div>
+            <div class="bg-[#0A0A0A] text-white p-6 rounded-[4px] mb-6 border border-[#222] relative group">
+              <div class="flex justify-between items-center mb-6">
+                <span class="font-mono text-[10px] uppercase text-[#888888] tracking-widest">// TURISMO & EXPEDICIONES</span>
+                <span class="bg-white text-black text-[10px] font-mono px-2 py-0.5 rounded font-bold">PORTAL DESTINOS</span>
+              </div>
+              <h3 class="font-display text-3xl sm:text-4xl font-extrabold uppercase text-white mb-2">VENAVENTURA</h3>
+              <p class="text-xs text-[#AAAAAA] font-mono">Descubre la majestuosidad de Venezuela</p>
+            </div>
+
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span class="pill-badge">TURISMO</span>
+              <span class="pill-badge">AGENCIA DE VIAJES</span>
+              <span class="pill-badge">RESERVAS EN LÍNEA</span>
+            </div>
+
+            <h4 class="font-display text-2xl font-bold uppercase mb-2">PLATAFORMA DE TURISMO NACIONAL</h4>
+            <p class="text-[#555555] text-sm mb-6 leading-relaxed">
+              Sitio web de impacto para agencia de expediciones turísticas por Venezuela (Canaima, Los Roques, Roraima) con paquetes y cotizaciones rápidas.
+            </p>
+          </div>
+
+          <div class="pt-4 border-t border-[#E5E5E5] flex justify-between items-center">
+            <span class="text-xs font-mono font-bold text-[#555555] uppercase">ENTREGA: 3 DÍAS</span>
+            <button onclick="event.stopPropagation(); openDemoModal('VenAventura — Turismo Venezuela', './projects/viajes/index.html')" class="bg-[#0A0A0A] text-white text-xs font-bold uppercase px-5 py-2.5 rounded-[6px] hover:bg-[#222222] transition-colors flex items-center gap-2">
+              VER DEMO EN VIVO <span>→</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- PROJECT 5: CACIQUE CRM WHATSAPP -->
+        <div onclick="openDemoModal('Cacique CRM WhatsApp System', './projects/crm-whatsapp/index.html')" class="project-card reveal-on-scroll border-2 border-[#0A0A0A] bg-white p-6 rounded-[6px] hard-shadow-dark hard-card-hover flex flex-col justify-between cursor-pointer group" data-category="automation">
+          <div>
+            <div class="bg-[#0A0A0A] text-white p-6 rounded-[4px] mb-6 border border-[#222] relative group">
+              <div class="flex justify-between items-center mb-6">
+                <span class="font-mono text-[10px] uppercase text-[#888888] tracking-widest">// SOFTWARE DE AUTOMATIZACIÓN</span>
+                <span class="bg-emerald-500/20 text-emerald-400 text-[10px] font-mono px-2 py-0.5 rounded border border-emerald-500/30">IA CONVERSACIONAL</span>
+              </div>
+              <h3 class="font-display text-3xl sm:text-4xl font-extrabold uppercase text-white mb-2">CACIQUE CRM WHATSAPP</h3>
+              <p class="text-xs text-[#AAAAAA] font-mono">Gestión masiva y calificación con Inteligencia Artificial</p>
+            </div>
+
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span class="pill-badge">WHATSAPP API</span>
+              <span class="pill-badge">OPENAI GPT-4</span>
+              <span class="pill-badge">AUTOMATIZACIÓN</span>
+            </div>
+
+            <h4 class="font-display text-2xl font-bold uppercase mb-2">GESTIÓN INTELIGENTE DE MENSAJES</h4>
+            <p class="text-[#555555] text-sm mb-6 leading-relaxed">
+              Plataforma centralizada para negocios que convierte chats entrantes en prospectos calificados automáticamente 24/7 sin demora humana.
+            </p>
+          </div>
+
+          <div class="pt-4 border-t border-[#E5E5E5] flex justify-between items-center">
+            <span class="text-xs font-mono font-bold text-[#555555] uppercase">ENTREGA: 4 DÍAS</span>
+            <button onclick="event.stopPropagation(); openDemoModal('Cacique CRM WhatsApp System', './projects/crm-whatsapp/index.html')" class="bg-[#0A0A0A] text-white text-xs font-bold uppercase px-5 py-2.5 rounded-[6px] hover:bg-[#222222] transition-colors flex items-center gap-2">
+              VER DEMO EN VIVO <span>→</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- PROJECT 6: LANDINGS EXPRESS -->
+        <div onclick="openDemoModal('Landings Express — Agencia Web', './projects/landings-express/index.html')" class="project-card reveal-on-scroll border-2 border-[#0A0A0A] bg-white p-6 rounded-[6px] hard-shadow-dark hard-card-hover flex flex-col justify-between cursor-pointer group" data-category="landings">
+          <div>
+            <div class="bg-[#0A0A0A] text-white p-6 rounded-[4px] mb-6 border border-[#222] relative group">
+              <div class="flex justify-between items-center mb-6">
+                <span class="font-mono text-[10px] uppercase text-[#888888] tracking-widest">// SERVICIOS DIGITALES</span>
+                <span class="bg-white text-black text-[10px] font-mono px-2 py-0.5 rounded font-bold">DESPLIEGUE EXPRESS</span>
+              </div>
+              <h3 class="font-display text-3xl sm:text-4xl font-extrabold uppercase text-white mb-2">LANDINGS EXPRESS</h3>
+              <p class="text-xs text-[#AAAAAA] font-mono">Presencia web profesional en tiempo récord</p>
+            </div>
+
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span class="pill-badge">LANDING PAGE</span>
+              <span class="pill-badge">ALTA CONVERSIÓN</span>
+              <span class="pill-badge">SWISS DESIGN</span>
+            </div>
+
+            <h4 class="font-display text-2xl font-bold uppercase mb-2">PLATAFORMA DE PÁGINAS DE ATERRIZAJE</h4>
+            <p class="text-[#555555] text-sm mb-6 leading-relaxed">
+              Solución web optimizada para empresas y profesionales que buscan captar prospectos rápidamente con diseño tipográfico suizo y rendimiento ultra-rápido.
+            </p>
+          </div>
+
+          <div class="pt-4 border-t border-[#E5E5E5] flex justify-between items-center">
+            <span class="text-xs font-mono font-bold text-[#555555] uppercase">ENTREGA: 2 DÍAS</span>
+            <button onclick="event.stopPropagation(); openDemoModal('Landings Express — Agencia Web', './projects/landings-express/index.html')" class="bg-[#0A0A0A] text-white text-xs font-bold uppercase px-5 py-2.5 rounded-[6px] hover:bg-[#222222] transition-colors flex items-center gap-2">
+              VER DEMO EN VIVO <span>→</span>
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- CONTENT PILLARS / SERVICES SECTION (Brand Book 06) -->
+    <section id="servicios" class="bg-[#0A0A0A] text-white py-20 px-4 sm:px-6 lg:px-8 border-t-2 border-[#0A0A0A]">
+      <div class="max-w-7xl mx-auto">
+        
+        <div class="mb-16 border-b border-[#222222] pb-6 reveal-on-scroll">
+          <span class="pill-badge-dark mb-3 inline-block">LO QUE CONSTRUIMOS</span>
+          <h2 class="font-display text-5xl sm:text-6xl md:text-7xl font-black uppercase leading-none tracking-tight text-white">
+            PILARES DE SERVICIO
+          </h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          
+          <!-- PILLAR 01 -->
+          <div class="reveal-on-scroll border border-[#222222] bg-[#111111] p-8 rounded-[6px] flex flex-col justify-between hover:border-white transition-colors">
+            <div>
+              <span class="font-display text-6xl font-black text-[#444444] block mb-4">01</span>
+              <h3 class="font-display text-3xl font-extrabold uppercase mb-4 text-white">DESARROLLO WEB</h3>
+              <p class="text-[#888888] text-sm mb-6 leading-relaxed">
+                Landing pages, sistemas web y tiendas en línea. Entrega garantizada en 3 días con garantía de devolución del 100%.
+              </p>
+            </div>
+            <ul class="text-xs font-mono text-[#AAAAAA] space-y-2 border-t border-[#222222] pt-4">
+              <li>✓ Landing Pages de Alta Conversión</li>
+              <li>✓ Plataformas Web a Medida</li>
+              <li>✓ Optimización Móvil Total</li>
+            </ul>
+          </div>
+
+          <!-- PILLAR 02 -->
+          <div class="reveal-on-scroll border border-[#222222] bg-[#111111] p-8 rounded-[6px] flex flex-col justify-between hover:border-white transition-colors">
+            <div>
+              <span class="font-display text-6xl font-black text-[#444444] block mb-4">02</span>
+              <h3 class="font-display text-3xl font-extrabold uppercase mb-4 text-white">AUTOMATIZACIÓN</h3>
+              <p class="text-[#888888] text-sm mb-6 leading-relaxed">
+                Eliminación de tareas repetitivas en procesos de negocio. Menos tiempo, dinero y personal invertido en lo operativo.
+              </p>
+            </div>
+            <ul class="text-xs font-mono text-[#AAAAAA] space-y-2 border-t border-[#222222] pt-4">
+              <li>✓ Integración WhatsApp & CRM</li>
+              <li>✓ Flujos de Facturación Automáticos</li>
+              <li>✓ Alertas y Reportes en Tiempo Real</li>
+            </ul>
+          </div>
+
+          <!-- PILLAR 03 -->
+          <div class="reveal-on-scroll border border-[#222222] bg-[#111111] p-8 rounded-[6px] flex flex-col justify-between hover:border-white transition-colors">
+            <div>
+              <span class="font-display text-6xl font-black text-[#444444] block mb-4">03</span>
+              <h3 class="font-display text-3xl font-extrabold uppercase mb-4 text-white">INTEGRACIÓN DE IA</h3>
+              <p class="text-[#888888] text-sm mb-6 leading-relaxed">
+                Negocios que trabajan en piloto automático — inteligencia artificial aplicada a ventas, calificación y captación de leads.
+              </p>
+            </div>
+            <ul class="text-xs font-mono text-[#AAAAAA] space-y-2 border-t border-[#222222] pt-4">
+              <li>✓ Agentes de Ventas 24/7</li>
+              <li>✓ Entrenamiento con Datos Propios</li>
+              <li>✓ Integración Multicanal</li>
+            </ul>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- BRAND PHILOSOPHY (Brand Book 01) -->
+    <section id="filosofia" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <div class="lg:col-span-5 reveal-on-scroll">
+          <span class="pill-badge mb-3 inline-block">MANIFESTO</span>
+          <h2 class="font-display text-5xl sm:text-6xl font-black uppercase leading-none tracking-tight mb-6">
+            LA AUTORIDAD SE CONSTRUYE.
+          </h2>
+          <p class="text-[#555555] text-base leading-relaxed mb-6">
+            Cacique Software Development se construye sobre dos pilares: las raíces indígenas venezolanas, representadas en la figura del cacique como símbolo de liderazgo y fuerza — y la tecnología moderna de vanguardia.
+          </p>
+          <p class="text-[#0A0A0A] font-bold text-sm uppercase font-mono tracking-wider border-l-4 border-[#0A0A0A] pl-4 py-1">
+            "No es una marca que pide permiso. Es una marca que lidera."
+          </p>
+        </div>
+
+        <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-3 gap-6">
+          <div class="reveal-on-scroll border-2 border-[#0A0A0A] p-6 bg-white hard-shadow-dark">
+            <span class="font-mono font-bold text-xs uppercase text-[#555555]">REGLA 01</span>
+            <h4 class="font-display text-2xl font-bold uppercase mt-2 mb-2">AUTORIDAD</h4>
+            <p class="text-xs text-[#555555] leading-relaxed">
+              El cacique lidera, no sugiere. Posicionamiento serio y profesional.
+            </p>
+          </div>
+
+          <div class="reveal-on-scroll border-2 border-[#0A0A0A] p-6 bg-white hard-shadow-dark">
+            <span class="font-mono font-bold text-xs uppercase text-[#555555]">REGLA 02</span>
+            <h4 class="font-display text-2xl font-bold uppercase mt-2 mb-2">PRECISIÓN</h4>
+            <p class="text-xs text-[#555555] leading-relaxed">
+              Estilo tipográfico suizo. Cada elemento se gana su lugar sin adornos.
+            </p>
+          </div>
+
+          <div class="reveal-on-scroll border-2 border-[#0A0A0A] p-6 bg-white hard-shadow-dark">
+            <span class="font-mono font-bold text-xs uppercase text-[#555555]">REGLA 03</span>
+            <h4 class="font-display text-2xl font-bold uppercase mt-2 mb-2">CERCANÍA</h4>
+            <p class="text-xs text-[#555555] leading-relaxed">
+              Humana pero poderosa. Mensajes directos al dueño de negocio.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ENTRY OFFER / PRICING SECTION -->
+    <section id="oferta" class="bg-[#0A0A0A] text-white py-20 px-4 sm:px-6 lg:px-8 border-t-2 border-b-2 border-[#0A0A0A]">
+      <div class="max-w-5xl mx-auto border-2 border-white p-8 sm:p-12 bg-[#111111] hard-shadow-dark relative reveal-on-scroll">
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 mb-8">
+          <div>
+            <span class="bg-white text-black font-mono text-xs font-bold px-3 py-1 uppercase tracking-widest">PROPUESTA DE VALOR</span>
+            <h3 class="font-display text-4xl sm:text-5xl md:text-6xl font-black uppercase text-white mt-4">
+              PÁGINA WEB DESDE 180$
+            </h3>
+          </div>
+          <span class="font-display text-6xl sm:text-7xl font-black text-white">180$</span>
+        </div>
+
+        <p class="text-[#AAAAAA] text-lg mb-8 leading-relaxed">
+          Construimos la infraestructura digital de tu negocio con diseño suizo de alta conversión, entrega garantizada en 3 días y 100% de garantía de devolución.
+        </p>
+
+        <div class="flex flex-wrap gap-4 items-center">
+          <button onclick="openContactModal('Solicitud de Página Web desde 180$')" class="bg-white text-black font-extrabold text-sm uppercase px-8 py-4 rounded-[6px] hard-shadow-dark hover:bg-neutral-200 transition-colors">
+            SOLICITAR MI WEB POR 180$
+          </button>
+          <span class="text-xs font-mono text-[#888888]">✓ Entrega garantizada en 3 días · 100% Garantía de devolución</span>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-[#0A0A0A] text-[#F5F5F5] py-16 px-4 sm:px-6 lg:px-8 border-t border-[#1A1A1A]">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
+      
+      <div class="md:col-span-2">
+        <a href="#" class="flex flex-col mb-4">
+          <span class="font-display text-4xl font-extrabold text-white">CACIQUE</span>
+          <span class="text-[10px] font-mono uppercase tracking-swiss text-[#888888]">SOFTWARE DEVELOPMENT</span>
+        </a>
+        <p class="text-xs text-[#888888] max-w-md leading-relaxed font-light">
+          Agencia venezolana de desarrollo web y automatización de procesos. Sistema de identidad visual y verbal rigurosamente monocromático.
+        </p>
+      </div>
+
+      <div>
+        <h5 class="font-mono text-xs font-bold uppercase tracking-widest text-[#888888] mb-4">NAVEGACIÓN</h5>
+        <ul class="space-y-2 text-xs font-mono uppercase text-[#CCCCCC]">
+          <li><a href="#proyectos" class="hover:text-white">Proyectos</a></li>
+          <li><a href="#servicios" class="hover:text-white">Servicios</a></li>
+          <li><a href="#filosofia" class="hover:text-white">Filosofía</a></li>
+          <li><a href="#oferta" class="hover:text-white">Oferta de Entrada</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h5 class="font-mono text-xs font-bold uppercase tracking-widest text-[#888888] mb-4">CONTACTO DIRECTO</h5>
+        <p class="text-xs font-mono text-[#CCCCCC] mb-2">Venezuela / Remoto Mundial</p>
+        <a href="https://wa.me/584124163681?text=Hola%20Cacique%2C%20quisiera%20recibir%20informaci%C3%B3n%20sobre%20sus%20servicios" target="_blank" class="text-xs font-mono underline uppercase text-white font-bold inline-flex items-center gap-1 hover:text-[#25D366] transition-colors">
+          Enviar Mensaje por WhatsApp →
+        </a>
+      </div>
+
+    </div>
+
+    <div class="max-w-7xl mx-auto pt-8 border-t border-[#1A1A1A] flex flex-col sm:flex-row justify-between items-center text-[11px] font-mono text-[#666666]">
+      <span>© 2025 CACIQUE SOFTWARE DEVELOPMENT. TODOS LOS DERECHOS RESERVADOS.</span>
+      <span>BLANCO Y NEGRO — SIN EXCEPCIONES</span>
+    </div>
+  </footer>
+
+
+  <!-- MODAL DE PREVISUALIZACIÓN DE DEMOS (IFRAME) -->
+  <div id="demo-modal" class="fixed inset-0 z-50 bg-black/90 backdrop-blur-sm hidden flex-col justify-between transition-opacity duration-300">
+    
+    <!-- TOP MODAL CONTROL BAR -->
+    <div class="bg-[#0A0A0A] border-b border-[#222222] px-6 py-4 flex items-center justify-between">
+      
+      <div class="flex items-center gap-4">
+        <span class="font-display text-2xl font-extrabold uppercase text-white" id="modal-project-title">DEMO PROYECTO</span>
+        <span class="pill-badge-dark text-[10px]" id="modal-project-badge">VISTA PREVIA INTERACTIVA</span>
+      </div>
+
+      <!-- DEVICE SWITCHER -->
+      <div class="hidden md:flex items-center bg-[#181818] border border-[#333] rounded-[6px] p-1 font-mono text-xs text-[#888]">
+        <button onclick="setDevice('desktop')" id="dev-desktop" class="px-3 py-1 rounded bg-[#333] text-white font-bold">Desktop</button>
+        <button onclick="setDevice('tablet')" id="dev-tablet" class="px-3 py-1 rounded hover:text-white">Tablet</button>
+        <button onclick="setDevice('mobile')" id="dev-mobile" class="px-3 py-1 rounded hover:text-white">Mobile</button>
+      </div>
+
+      <div class="flex items-center gap-3">
+        <a id="modal-external-link" href="#" target="_blank" class="hidden sm:inline-block text-xs font-mono uppercase bg-[#222] text-white px-3 py-2 rounded border border-[#444] hover:bg-white hover:text-black transition-colors">
+          Abrir en pestaña ↗
+        </a>
+        <button onclick="closeDemoModal()" class="text-white text-2xl font-bold px-3 py-1 hover:text-red-400">
+          ✕
+        </button>
+      </div>
+
+    </div>
+
+    <!-- IFRAME CONTAINER -->
+    <div class="flex-1 bg-[#1A1A1A] p-4 flex justify-center items-center overflow-hidden">
+      <div id="iframe-container" class="device-desktop transition-all duration-300 bg-white shadow-2xl rounded border border-[#444] overflow-hidden">
+        <iframe id="demo-iframe" src="" class="w-full h-full border-0"></iframe>
+      </div>
+    </div>
+
+    <!-- FOOTER BAR -->
+    <div class="bg-[#0A0A0A] border-t border-[#222222] px-6 py-2 text-center text-xs font-mono text-[#666]">
+      Presiona <kbd class="bg-[#222] text-white px-1.5 py-0.5 rounded text-[10px]">ESC</kbd> para cerrar la vista previa.
+    </div>
+
+  </div>
+
+  <!-- MODAL DE CONTACTO / SOLICITUD -->
+  <div id="contact-modal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden justify-center items-center p-4">
+    <div class="bg-[#0A0A0A] text-white border-2 border-white max-w-lg w-full p-8 rounded-[6px] hard-shadow-dark relative">
+      
+      <button onclick="closeContactModal()" class="absolute top-4 right-4 text-white text-xl font-bold hover:text-gray-400">✕</button>
+
+      <span class="pill-badge-dark mb-2 inline-block">CACIQUE DIRECTO</span>
+      <h3 class="font-display text-4xl font-extrabold uppercase mb-2 text-white" id="contact-modal-title">INICIAR PROYECTO</h3>
+      <p class="text-xs text-[#888888] font-mono mb-6">Déjanos tus datos y nos pondremos en contacto en menos de 2 horas.</p>
+
+      <form onsubmit="handleFormSubmit(event)" class="space-y-4 font-mono text-xs">
+        <div>
+          <label class="block text-[#888888] uppercase mb-1">Nombre Completo *</label>
+          <input type="text" required class="w-full bg-[#181818] border border-[#333333] text-white px-4 py-3 rounded focus:outline-none focus:border-white" placeholder="Ej: Carlos Mendoza">
+        </div>
+
+        <div>
+          <label class="block text-[#888888] uppercase mb-1">Empresa / Negocio *</label>
+          <input type="text" required class="w-full bg-[#181818] border border-[#333333] text-white px-4 py-3 rounded focus:outline-none focus:border-white" placeholder="Ej: Distribuidora Cacique">
+        </div>
+
+        <div>
+          <label class="block text-[#888888] uppercase mb-1">WhatsApp / Teléfono *</label>
+          <input type="tel" required class="w-full bg-[#181818] border border-[#333333] text-white px-4 py-3 rounded focus:outline-none focus:border-white" placeholder="+58 412 0000000">
+        </div>
+
+        <div>
+          <label class="block text-[#888888] uppercase mb-1">Servicio de Interés</label>
+          <select class="w-full bg-[#181818] border border-[#333333] text-white px-4 py-3 rounded focus:outline-none focus:border-white">
+            <option>Desarrollo Web (Entrega 3 Días)</option>
+            <option>Automatización de Procesos</option>
+            <option>Integración de Agente de IA</option>
+            <option>Página Web Profesional (Desde 180$)</option>
+          </select>
+        </div>
+
+        <button type="submit" class="w-full bg-white text-black font-extrabold text-sm uppercase py-4 rounded hard-shadow-dark hover:bg-neutral-200 transition-colors mt-2">
+          ENVIAR MENSAJE DIRECTO
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- JAVASCRIPT FOR INTERACTIVITY -->
+  <script>
+    // Project Category Filtering
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const projectCards = document.querySelectorAll('.project-card');
+
+    filterButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        // Active class toggle
+        filterButtons.forEach(b => {
+          b.classList.remove('active', 'bg-[#0A0A0A]', 'text-white');
+          b.classList.add('bg-white', 'text-[#0A0A0A]');
+        });
+        btn.classList.add('active', 'bg-[#0A0A0A]', 'text-white');
+        btn.classList.remove('bg-white', 'text-[#0A0A0A]');
+
+        const filter = btn.getAttribute('data-filter');
+
+        projectCards.forEach(card => {
+          const categories = card.getAttribute('data-category');
+          if (filter === 'all' || categories.includes(filter)) {
+            card.style.display = 'flex';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+
+    // Demo Modal Handlers
+    function openDemoModal(title, url) {
+      document.getElementById('modal-project-title').textContent = title;
+      const iframe = document.getElementById('demo-iframe');
+      iframe.src = url;
+      document.getElementById('modal-external-link').href = url;
+      const modal = document.getElementById('demo-modal');
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+      document.body.style.overflow = 'hidden';
+      setTimeout(() => { try { iframe.focus(); } catch(e){} }, 100);
+    }
+
+    function closeDemoModal() {
+      const modal = document.getElementById('demo-modal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+      document.getElementById('demo-iframe').src = '';
+      document.body.style.overflow = 'auto';
+    }
+
+    function setDevice(device) {
+      const container = document.getElementById('iframe-container');
+      container.className = `transition-all duration-300 bg-white shadow-2xl rounded border border-[#444] overflow-hidden device-${device}`;
+      
+      ['desktop', 'tablet', 'mobile'].forEach(d => {
+        const btn = document.getElementById(`dev-${d}`);
+        if (d === device) {
+          btn.classList.add('bg-[#333]', 'text-white', 'font-bold');
+        } else {
+          btn.classList.remove('bg-[#333]', 'text-white', 'font-bold');
+        }
+      });
+    }
+
+    // Contact Modal Handlers
+    function openContactModal(title) {
+      if (title) {
+        document.getElementById('contact-modal-title').textContent = title;
+      }
+      const modal = document.getElementById('contact-modal');
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    }
+
+    function closeContactModal() {
+      const modal = document.getElementById('contact-modal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
+
+    function handleFormSubmit(e) {
+      e.preventDefault();
+      const form = e.target;
+      const inputs = form.querySelectorAll('input');
+      const nombre = inputs[0] ? inputs[0].value : '';
+      const empresa = inputs[1] ? inputs[1].value : '';
+      const telefono = inputs[2] ? inputs[2].value : '';
+      const servicioSelect = form.querySelector('select');
+      const servicio = servicioSelect ? servicioSelect.value : 'Desarrollo Web';
+
+      const messageText = `Hola Cacique! Mi nombre es *${nombre}* (${empresa}).\n*Teléfono:* ${telefono}\n*Servicio de interés:* ${servicio}\nMe gustaría iniciar un proyecto con ustedes.`;
+      const whatsappUrl = `https://wa.me/584124163681?text=${encodeURIComponent(messageText)}`;
+
+      window.open(whatsappUrl, '_blank');
+      closeContactModal();
+    }
+
+    // Scroll reveal observer ("Cargando poco a poco al bajar")
+    document.addEventListener('DOMContentLoaded', () => {
+      const revealObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('revealed');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, {
+        threshold: 0.15,
+        rootMargin: '0px 0px -30px 0px'
+      });
+
+      document.querySelectorAll('.reveal-on-scroll').forEach(el => revealObserver.observe(el));
+    });
+
+    // Enhanced ESC Key Listener (Capturing phase + postMessage handler)
+    function handleGlobalEsc(e) {
+      if (e.key === 'Escape' || e.key === 'Esc' || e.keyCode === 27) {
+        closeDemoModal();
+        closeContactModal();
+      }
+    }
+
+    window.addEventListener('keydown', handleGlobalEsc, true);
+    document.addEventListener('keydown', handleGlobalEsc, true);
+
+    // Listen to messages from child iframes
+    window.addEventListener('message', (e) => {
+      if (e.data === 'close-modal' || e.data === 'closeDemoModal') {
+        closeDemoModal();
+        closeContactModal();
+      }
+    });
+
+    // Attach ESC listener inside iframe when loaded
+    document.getElementById('demo-iframe').addEventListener('load', function() {
+      try {
+        const iframeWin = this.contentWindow;
+        if (iframeWin) {
+          iframeWin.addEventListener('keydown', handleGlobalEsc, true);
+        }
+      } catch (err) {
+        // Cross-origin fallback handled by postMessage inside child pages
+      }
+    });
+  </script>
+
+  <!-- FLOATING BOTÓN WHATSAPP -->
+  <a href="https://wa.me/584124163681?text=Hola%20Cacique%2C%20quisiera%20consultar%20por%20sus%20servicios" target="_blank" aria-label="Contactar por WhatsApp" class="fixed bottom-6 right-6 z-40 bg-[#25D366] text-black font-mono font-bold text-xs px-4 py-3 rounded-full flex items-center gap-2 shadow-2xl hover:scale-105 active:scale-95 transition-all border-2 border-black">
+    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+    <span>WhatsApp Directo</span>
+  </a>
+
+</body>
+</html>
