@@ -793,19 +793,35 @@
 
     // Scroll reveal observer ("Cargando poco a poco al bajar")
     document.addEventListener('DOMContentLoaded', () => {
-      const revealObserver = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('revealed');
-            observer.unobserve(entry.target);
+      const revealAllInView = () => {
+        document.querySelectorAll('.reveal-on-scroll:not(.revealed)').forEach(el => {
+          const rect = el.getBoundingClientRect();
+          if (rect.top < window.innerHeight * 0.92 && rect.bottom > 0) {
+            el.classList.add('revealed');
           }
         });
-      }, {
-        threshold: 0.15,
-        rootMargin: '0px 0px -30px 0px'
-      });
+      };
 
-      document.querySelectorAll('.reveal-on-scroll').forEach(el => revealObserver.observe(el));
+      // Bulletproof fallback: simple scroll check (works even if IntersectionObserver fails)
+      window.addEventListener('scroll', revealAllInView, { passive: true });
+      window.addEventListener('resize', revealAllInView, { passive: true });
+      revealAllInView();
+
+      if ('IntersectionObserver' in window) {
+        const revealObserver = new IntersectionObserver((entries, observer) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('revealed');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, {
+          threshold: 0.15,
+          rootMargin: '0px 0px -30px 0px'
+        });
+
+        document.querySelectorAll('.reveal-on-scroll').forEach(el => revealObserver.observe(el));
+      }
     });
 
     // Enhanced ESC Key Listener (Capturing phase + postMessage handler)
