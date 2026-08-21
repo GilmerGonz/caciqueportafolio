@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html class="light" lang="en">
+<html class="light" lang="es">
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Patient Dashboard - Dental Premium</title>
+<title>Panel del Paciente - Dental Premium</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
@@ -128,35 +128,61 @@
     DENTAL PREMIUM
 </a>
 <div class="hidden md:flex space-x-8 items-center">
-<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md px-3 py-2 rounded-lg" href="index.html">Home</a>
-<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md px-3 py-2 rounded-lg" href="index.html#services">Services</a>
-<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md px-3 py-2 rounded-lg" href="equipo.html">Team</a>
-<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md px-3 py-2 rounded-lg" href="casos.html">Cases</a>
-<a class="text-primary font-bold border-b-2 border-primary pb-1 font-body-md text-body-md px-3 py-2" href="dashboard.html">Dashboard</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md px-3 py-2 rounded-lg" href="index.html">Inicio</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md px-3 py-2 rounded-lg" href="index.html#services">Servicios</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md px-3 py-2 rounded-lg" href="equipo.html">Equipo</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md px-3 py-2 rounded-lg" href="casos.html">Casos</a>
+<a class="text-primary font-bold border-b-2 border-primary pb-1 font-body-md text-body-md px-3 py-2" href="dashboard.html">Panel</a>
 </div>
 <div class="flex items-center space-x-4">
 <a href="citas.html" class="hidden md:inline-block bg-primary text-on-primary font-body-md text-body-md px-6 py-2 rounded-lg hover:bg-primary-container transition-all">
-    Book Appointment
+    Agendar Cita
 </a>
 <div class="w-10 h-10 rounded-full overflow-hidden border border-outline-variant">
 <img alt="Sarah Jenkins" class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=400&q=80"/>
 </div>
+<button id="mobile-menu-btn" aria-label="Abrir menú" class="md:hidden w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-container-high text-on-surface">
+<span class="material-symbols-outlined">menu</span>
+</button>
 </div>
 </div>
 </nav>
+<!-- Mobile Nav Drawer -->
+<div id="mobile-nav-overlay" class="hidden fixed inset-0 bg-black/50 z-[60] md:hidden"></div>
+<aside id="mobile-nav-drawer" class="fixed inset-y-0 right-0 z-[70] w-72 max-w-[80vw] bg-surface-container-lowest shadow-xl transform translate-x-full transition-transform duration-300 md:hidden flex flex-col">
+<div class="flex items-center justify-between px-6 py-5 border-b border-outline-variant">
+<span class="text-headline-sm font-headline-sm font-bold text-primary">DENTAL PREMIUM</span>
+<button id="mobile-menu-close-btn" aria-label="Cerrar menú" class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-container-high text-on-surface-variant">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<nav class="flex flex-col p-4 gap-1">
+<a href="index.html" class="px-4 py-3 rounded-lg text-on-surface font-body-md text-body-md hover:bg-surface-container-high transition-colors">Inicio</a>
+<a href="index.html#services" class="px-4 py-3 rounded-lg text-on-surface font-body-md text-body-md hover:bg-surface-container-high transition-colors">Servicios</a>
+<a href="equipo.html" class="px-4 py-3 rounded-lg text-on-surface font-body-md text-body-md hover:bg-surface-container-high transition-colors">Equipo</a>
+<a href="casos.html" class="px-4 py-3 rounded-lg text-on-surface font-body-md text-body-md hover:bg-surface-container-high transition-colors">Casos</a>
+<a href="dashboard.html" class="px-4 py-3 rounded-lg text-on-surface font-body-md text-body-md hover:bg-surface-container-high transition-colors">Panel</a>
+</nav>
+<div class="mt-auto p-4 border-t border-outline-variant flex flex-col gap-3">
+<a href="https://wa.me/584124163681?text=Hola%2C%20quisiera%20agendar%20una%20cita%20en%20Dental%20Premium" target="_blank" rel="noopener" class="flex items-center justify-center gap-2 text-on-surface-variant font-body-md text-body-md py-2">
+<span class="material-symbols-outlined text-[18px]">chat</span> +58 412 4163681
+</a>
+<a href="citas.html" class="bg-primary text-on-primary text-center px-6 py-3 rounded-lg font-body-md text-body-md font-bold hover:bg-primary-container transition-colors">Agendar Cita</a>
+</div>
+</aside>
 
 <!-- Main Canvas -->
 <main class="flex-grow w-full max-w-[1280px] mx-auto px-container-padding py-stack-lg">
 <!-- Header & Welcome Bar -->
 <div class="flex flex-col md:flex-row md:items-center justify-between mb-stack-lg gap-gutter">
 <div>
-<span class="font-data-label text-data-label text-primary uppercase tracking-wider block mb-1">Patient Portal</span>
-<h1 class="font-headline-md text-headline-md text-on-surface">Welcome back, Sarah</h1>
+<span class="font-data-label text-data-label text-primary uppercase tracking-wider block mb-1">Portal del Paciente</span>
+<h1 class="font-headline-md text-headline-md text-on-surface">Bienvenida de nuevo, Sarah</h1>
 </div>
 <div class="flex items-center gap-stack-sm">
 <div class="glass-panel px-4 py-2 rounded-lg flex items-center gap-3">
 <span class="w-2.5 h-2.5 rounded-full bg-[#10b981] animate-pulse"></span>
-<span class="font-body-md text-sm text-on-surface-variant">Next Sync: <strong class="text-on-surface font-semibold">Today, 4:00 PM</strong></span>
+<span class="font-body-md text-sm text-on-surface-variant">Próxima sincronización: <strong class="text-on-surface font-semibold">Hoy, 4:00 PM</strong></span>
 </div>
 </div>
 </div>
@@ -170,8 +196,8 @@
 <div class="absolute top-0 right-0 w-48 h-48 bg-primary-fixed/30 rounded-full blur-3xl pointer-events-none"></div>
 <div class="flex justify-between items-start mb-stack-md relative z-10">
 <div>
-<span class="font-data-label text-data-label bg-primary text-on-primary px-2.5 py-1 rounded uppercase tracking-wider">Confirmed Appointment</span>
-<h2 class="font-headline-sm text-headline-sm text-on-surface mt-2">Comprehensive Dental Check-up</h2>
+<span class="font-data-label text-data-label bg-primary text-on-primary px-2.5 py-1 rounded uppercase tracking-wider">Cita Confirmada</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface mt-2">Chequeo Dental Integral</h2>
 </div>
 <div class="text-right">
 <span class="font-data-label text-headline-sm text-primary font-bold block">OCT 14</span>
@@ -184,7 +210,7 @@
 <span class="material-symbols-outlined">person</span>
 </div>
 <div>
-<span class="font-data-label text-data-label text-on-surface-variant block">Attending Specialist</span>
+<span class="font-data-label text-data-label text-on-surface-variant block">Especialista Asignado</span>
 <span class="font-body-md text-on-surface font-semibold">Dr. Alistair Sterling</span>
 </div>
 </div>
@@ -193,19 +219,19 @@
 <span class="material-symbols-outlined">location_on</span>
 </div>
 <div>
-<span class="font-data-label text-data-label text-on-surface-variant block">Clinic Location</span>
-<span class="font-body-md text-on-surface font-semibold">Suite 402, Surgical Wing</span>
+<span class="font-data-label text-data-label text-on-surface-variant block">Ubicación de la Clínica</span>
+<span class="font-body-md text-on-surface font-semibold">Consultorio 402, Ala Quirúrgica</span>
 </div>
 </div>
 </div>
 <div class="flex flex-wrap gap-stack-sm justify-between items-center relative z-10">
 <span class="font-body-md text-sm text-on-surface-variant flex items-center gap-1">
 <span class="material-symbols-outlined text-sm text-secondary">info</span>
-                    Please arrive 15 minutes before your scheduled slot.
+                    Por favor llega 15 minutos antes de tu horario asignado.
                 </span>
 <div class="flex gap-2">
-<button class="px-4 py-2 rounded-lg border border-outline-variant text-on-surface font-body-md text-sm hover:bg-surface-container-high transition-colors">Reschedule</button>
-<a href="citas.html" class="px-4 py-2 rounded-lg bg-primary text-on-primary font-body-md text-sm hover:bg-primary-container transition-colors">View Details</a>
+<button class="px-4 py-2 rounded-lg border border-outline-variant text-on-surface font-body-md text-sm hover:bg-surface-container-high transition-colors">Reprogramar</button>
+<a href="citas.html" class="px-4 py-2 rounded-lg bg-primary text-on-primary font-body-md text-sm hover:bg-primary-container transition-colors">Ver Detalles</a>
 </div>
 </div>
 </div>
@@ -213,8 +239,8 @@
 <!-- Active Treatment Progress -->
 <div class="neumorphic-card rounded-xl p-stack-lg">
 <div class="flex justify-between items-center mb-stack-md">
-<h3 class="font-headline-sm text-headline-sm text-on-surface">Treatment Plan: Invisalign Alignment</h3>
-<span class="font-data-label text-data-label text-primary font-semibold">Stage 4 of 12</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Plan de Tratamiento: Alineación Invisalign</h3>
+<span class="font-data-label text-data-label text-primary font-semibold">Etapa 4 de 12</span>
 </div>
 <!-- Progress Bar -->
 <div class="w-full bg-surface-container-high h-3 rounded-full overflow-hidden mb-stack-md">
@@ -222,15 +248,15 @@
 </div>
 <div class="grid grid-cols-3 gap-stack-sm text-center">
 <div class="p-stack-sm rounded-lg bg-surface-container-low">
-<span class="font-data-label text-data-label text-on-surface-variant block">Aligner Tray</span>
-<span class="font-body-md text-on-surface font-bold">#4 Active</span>
+<span class="font-data-label text-data-label text-on-surface-variant block">Alineador Actual</span>
+<span class="font-body-md text-on-surface font-bold">N.º 4 Activo</span>
 </div>
 <div class="p-stack-sm rounded-lg bg-surface-container-low">
-<span class="font-data-label text-data-label text-on-surface-variant block">Days Remaining</span>
-<span class="font-body-md text-on-surface font-bold">6 Days</span>
+<span class="font-data-label text-data-label text-on-surface-variant block">Días Restantes</span>
+<span class="font-body-md text-on-surface font-bold">6 Días</span>
 </div>
 <div class="p-stack-sm rounded-lg bg-surface-container-low">
-<span class="font-data-label text-data-label text-on-surface-variant block">Next Change</span>
+<span class="font-data-label text-data-label text-on-surface-variant block">Próximo Cambio</span>
 <span class="font-body-md text-on-surface font-bold">Oct 20</span>
 </div>
 </div>
@@ -239,41 +265,41 @@
 <!-- Medical Records & History Table -->
 <div class="neumorphic-card rounded-xl p-stack-lg">
 <div class="flex justify-between items-center mb-stack-md">
-<h3 class="font-headline-sm text-headline-sm text-on-surface">Recent Dental History</h3>
-<a class="font-data-label text-data-label text-primary hover:underline uppercase" href="#">Download All (PDF)</a>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Historial Dental Reciente</h3>
+<a class="font-data-label text-data-label text-primary hover:underline uppercase" href="#">Descargar Todo (PDF)</a>
 </div>
 <div class="overflow-x-auto">
 <table class="w-full text-left border-collapse">
 <thead>
 <tr class="border-b border-outline-variant/50 font-data-label text-data-label text-on-surface-variant">
-<th class="py-3 px-2">DATE</th>
-<th class="py-3 px-2">PROCEDURE</th>
+<th class="py-3 px-2">FECHA</th>
+<th class="py-3 px-2">PROCEDIMIENTO</th>
 <th class="py-3 px-2">DOCTOR</th>
-<th class="py-3 px-2">STATUS</th>
-<th class="py-3 px-2 text-right">ACTION</th>
+<th class="py-3 px-2">ESTADO</th>
+<th class="py-3 px-2 text-right">ACCIÓN</th>
 </tr>
 </thead>
 <tbody class="divide-y divide-outline-variant/30 font-body-md text-sm">
 <tr>
 <td class="py-3 px-2 font-mono text-xs">Sep 12, 2024</td>
-<td class="py-3 px-2 font-semibold">Laser Teeth Whitening</td>
+<td class="py-3 px-2 font-semibold">Blanqueamiento Dental Láser</td>
 <td class="py-3 px-2">Dra. Vance</td>
-<td class="py-3 px-2"><span class="px-2 py-0.5 rounded text-xs bg-[#10b981]/10 text-[#10b981] font-semibold">Completed</span></td>
-<td class="py-3 px-2 text-right"><button class="text-primary hover:underline font-mono text-xs">View Report</button></td>
+<td class="py-3 px-2"><span class="px-2 py-0.5 rounded text-xs bg-[#10b981]/10 text-[#10b981] font-semibold">Completado</span></td>
+<td class="py-3 px-2 text-right"><button class="text-primary hover:underline font-mono text-xs">Ver Informe</button></td>
 </tr>
 <tr>
 <td class="py-3 px-2 font-mono text-xs">Jun 05, 2024</td>
-<td class="py-3 px-2 font-semibold">Panoramic X-Ray &amp; Scan</td>
+<td class="py-3 px-2 font-semibold">Radiografía Panorámica y Escaneo</td>
 <td class="py-3 px-2">Dr. Sterling</td>
-<td class="py-3 px-2"><span class="px-2 py-0.5 rounded text-xs bg-[#10b981]/10 text-[#10b981] font-semibold">Completed</span></td>
-<td class="py-3 px-2 text-right"><button class="text-primary hover:underline font-mono text-xs">View Report</button></td>
+<td class="py-3 px-2"><span class="px-2 py-0.5 rounded text-xs bg-[#10b981]/10 text-[#10b981] font-semibold">Completado</span></td>
+<td class="py-3 px-2 text-right"><button class="text-primary hover:underline font-mono text-xs">Ver Informe</button></td>
 </tr>
 <tr>
 <td class="py-3 px-2 font-mono text-xs">Jan 18, 2024</td>
-<td class="py-3 px-2 font-semibold">Routine Prophylaxis</td>
+<td class="py-3 px-2 font-semibold">Profilaxis de Rutina</td>
 <td class="py-3 px-2">Dra. Vance</td>
-<td class="py-3 px-2"><span class="px-2 py-0.5 rounded text-xs bg-[#10b981]/10 text-[#10b981] font-semibold">Completed</span></td>
-<td class="py-3 px-2 text-right"><button class="text-primary hover:underline font-mono text-xs">View Report</button></td>
+<td class="py-3 px-2"><span class="px-2 py-0.5 rounded text-xs bg-[#10b981]/10 text-[#10b981] font-semibold">Completado</span></td>
+<td class="py-3 px-2 text-right"><button class="text-primary hover:underline font-mono text-xs">Ver Informe</button></td>
 </tr>
 </tbody>
 </table>
@@ -292,11 +318,11 @@
 <span class="font-data-label text-data-label text-on-surface-variant block mb-stack-md">ID: #DP-892041</span>
 <div class="grid grid-cols-2 gap-stack-sm pt-stack-sm border-t border-outline-variant/40">
 <div>
-<span class="font-data-label text-data-label text-on-surface-variant block">Blood Type</span>
-<span class="font-body-md text-on-surface font-bold">O Positive</span>
+<span class="font-data-label text-data-label text-on-surface-variant block">Tipo de Sangre</span>
+<span class="font-body-md text-on-surface font-bold">O Positivo</span>
 </div>
 <div>
-<span class="font-data-label text-data-label text-on-surface-variant block">Primary Dentist</span>
+<span class="font-data-label text-data-label text-on-surface-variant block">Dentista Principal</span>
 <span class="font-body-md text-on-surface font-bold">Dr. Sterling</span>
 </div>
 </div>
@@ -305,28 +331,28 @@
 <!-- Prescriptions Card -->
 <div class="neumorphic-card rounded-xl p-stack-lg">
 <div class="flex justify-between items-center mb-stack-md">
-<h3 class="font-headline-sm text-headline-sm text-on-surface">Prescriptions</h3>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Recetas</h3>
 <span class="material-symbols-outlined text-primary">pill</span>
 </div>
 <div class="space-y-stack-sm">
 <div class="p-stack-sm rounded-lg bg-surface-container-low border border-outline-variant/30">
-<span class="font-body-md font-semibold text-on-surface block">Amoxicillin 500mg</span>
-<span class="font-data-label text-data-label text-on-surface-variant">1 Capsule every 8 hrs • 5 Days</span>
+<span class="font-body-md font-semibold text-on-surface block">Amoxicilina 500mg</span>
+<span class="font-data-label text-data-label text-on-surface-variant">1 cápsula cada 8 hrs • 5 días</span>
 </div>
 <div class="p-stack-sm rounded-lg bg-surface-container-low border border-outline-variant/30">
-<span class="font-body-md font-semibold text-on-surface block">Chlorhexidine Mouthrinse</span>
-<span class="font-data-label text-data-label text-on-surface-variant">Use twice daily after brushing</span>
+<span class="font-body-md font-semibold text-on-surface block">Enjuague de Clorhexidina</span>
+<span class="font-data-label text-data-label text-on-surface-variant">Usar dos veces al día después del cepillado</span>
 </div>
 </div>
 </div>
 
 <!-- Emergency Contact Box -->
 <div class="neumorphic-card rounded-xl p-stack-lg bg-primary text-on-primary border border-primary-container">
-<span class="font-data-label text-data-label text-primary-fixed uppercase tracking-wider block mb-2">Emergency Hotline</span>
-<h4 class="font-headline-sm text-headline-sm text-white mb-1">Dental Urgent Care 24/7</h4>
-<p class="font-body-md text-sm text-on-primary-container mb-stack-md">Direct access line for post-surgical emergencies.</p>
-<a class="w-full bg-white text-primary font-headline-sm text-sm py-3 px-4 rounded-lg flex items-center justify-center gap-2 hover:bg-surface-bright transition-colors font-bold" href="tel:+18005550199">
-<span class="material-symbols-outlined">call</span> Call +1 (800) 555-0199
+<span class="font-data-label text-data-label text-primary-fixed uppercase tracking-wider block mb-2">Línea de Emergencia</span>
+<h4 class="font-headline-sm text-headline-sm text-white mb-1">Urgencias Dentales 24/7</h4>
+<p class="font-body-md text-sm text-on-primary-container mb-stack-md">Línea directa para emergencias post-quirúrgicas.</p>
+<a class="w-full bg-white text-primary font-headline-sm text-sm py-3 px-4 rounded-lg flex items-center justify-center gap-2 hover:bg-surface-bright transition-colors font-bold" href="https://wa.me/584124163681" target="_blank" rel="noopener">
+<span class="material-symbols-outlined">call</span> Llamar +58 412 4163681
 </a>
 </div>
 </div>
@@ -339,17 +365,23 @@
 <div class="col-span-1 md:col-span-1 flex flex-col">
 <span class="text-headline-sm font-headline-sm font-bold text-primary mb-stack-sm">DENTAL PREMIUM</span>
 <p class="font-body-md text-body-md text-on-surface opacity-90 mt-auto">
-            © 2024 DENTAL PREMIUM. Surgical Excellence &amp; Premium Hospitality.
+            © 2024 DENTAL PREMIUM. Excelencia Quirúrgica y Hospitalidad Premium.
         </p>
 </div>
 <div class="col-span-1 md:col-span-3 flex flex-wrap gap-gutter justify-start md:justify-end items-center">
-<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary opacity-90 hover:opacity-100 transition-colors" href="#">Privacy Policy</a>
-<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary opacity-90 hover:opacity-100 transition-colors" href="#">Terms of Service</a>
-<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary opacity-90 hover:opacity-100 transition-colors" href="#">Clinic Hours</a>
-<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary opacity-90 hover:opacity-100 transition-colors" href="#">Contact Us</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary opacity-90 hover:opacity-100 transition-colors" href="#">Política de Privacidad</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary opacity-90 hover:opacity-100 transition-colors" href="#">Términos de Servicio</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary opacity-90 hover:opacity-100 transition-colors" href="#">Horario de Atención</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary opacity-90 hover:opacity-100 transition-colors" href="https://wa.me/584124163681" target="_blank" rel="noopener">Contáctanos</a>
 </div>
 </div>
 </footer>
+
+<script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="dental-motion.js"></script>
+<script src="dental-nav.js"></script>
 
 <!-- CACIQUE GLOBAL ESC MODAL CLOSER -->
 <script>

@@ -177,9 +177,10 @@
 <!-- ====== Hero Content ====== -->
 <section class="relative min-h-[921px] flex items-center justify-center overflow-hidden" id="inicio">
 <div class="absolute inset-0 z-0 bg-primary">
-<div class="bg-cover bg-center w-full h-full transition-opacity duration-1000 opacity-100" id="hero-bg" style="background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuBL0hiWyP6uGHNa8qhbULGKC71dFlNHXg0N9wI0u3JMzTbnd1_VBz4dTJ13S6vx81TGpO1s8wzh7eCDn3nc1zZ4KMgp8ewUm1zia1DuP2ix-zqSajQBLLgBHF-VWn2iyBwYrdQL7nqYlikUZuv1iGScR12_9f5eJjTcB8sBQ_8cGoHp3JGVbk2wBsTvRkSvrVTa5IEzspDcEfUCpTmYWqI90RbBRvkDHx9WY5jxKpihZ1SjyfOluxfZ4A&quot;); opacity: 1;"></div>
+<div class="bg-cover bg-center w-full h-full transition-opacity duration-1000 opacity-100" id="hero-bg" style="background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuBL0hiWyP6uGHNa8qhbULGKC71dFlNHXg0N9wI0u3JMzTbnd1_VBz4dTJ13S6vx81TGpO1s8wzh7eCDn3nc1zZ4KMgp8ewUm1zia1DuP2ix-zqSajQBLLgBHF-VWn2iyBwYrdQL7nqYlikUZuv1iGScR12_9f5eJjTcB8sBQ_8cGoHp3JGVbk2wBsTvRkSvrVTa5IEzspDcEfUCpTmYWqI90RbBRvkDHx9WY5jxKpihZ1SjyfOluxfZ4A=w1600&quot;); opacity: 1;"></div>
 <div class="absolute inset-0 bg-primary/40 backdrop-blur-[2px]"></div>
 </div>
+<canvas id="hero-3d-canvas" class="absolute inset-0 w-full h-full z-[5] pointer-events-none" aria-hidden="true"></canvas>
 <div class="relative z-10 text-center px-gutter max-w-container-max mx-auto w-full">
 <div class="flex justify-between items-center absolute w-full top-1/2 -translate-y-1/2 left-0 px-4 z-20 pointer-events-none hidden md:flex">
 <button class="w-12 h-12 rounded-full bg-white/20 hover:bg-white/40 backdrop-blur-sm text-white flex items-center justify-center pointer-events-auto transition-colors" id="prev-slide">
@@ -233,7 +234,7 @@
 
 <!-- Los Roques (Playas) -->
 <div class="dest-card md:col-span-2 md:row-span-2 relative rounded-card overflow-hidden shadow-ambient hover:shadow-ambient-hover transition-all duration-300 group gsap-reveal cursor-pointer" data-category="selva" onclick="openModal('Canaima', 'Explora el salto de agua más alto del mundo en el corazón de la selva. Un viaje inolvidable a través de tepuyes y ríos caudalosos.', '$850')" style="translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 0px);">
-<img alt="Canaima" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBL0hiWyP6uGHNa8qhbULGKC71dFlNHXg0N9wI0u3JMzTbnd1_VBz4dTJ13S6vx81TGpO1s8wzh7eCDn3nc1zZ4KMgp8ewUm1zia1DuP2ix-zqSajQBLLgBHF-VWn2iyBwYrdQL7nqYlikUZuv1iGScR12_9f5eJjTcB8sBQ_8cGoHp3JGVbk2wBsTvRkSvrVTa5IEzspDcEfUCpTmYWqI90RbBRvkDHx9WY5jxKpihZ1SjyfOluxfZ4A">
+<img alt="Canaima" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBL0hiWyP6uGHNa8qhbULGKC71dFlNHXg0N9wI0u3JMzTbnd1_VBz4dTJ13S6vx81TGpO1s8wzh7eCDn3nc1zZ4KMgp8ewUm1zia1DuP2ix-zqSajQBLLgBHF-VWn2iyBwYrdQL7nqYlikUZuv1iGScR12_9f5eJjTcB8sBQ_8cGoHp3JGVbk2wBsTvRkSvrVTa5IEzspDcEfUCpTmYWqI90RbBRvkDHx9WY5jxKpihZ1SjyfOluxfZ4A=w1600">
 <div class="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/20 to-transparent"></div>
 <div class="absolute bottom-0 left-0 p-8 w-full">
 <span class="bg-secondary-fixed text-on-secondary-fixed px-3 py-1 rounded-[4px] text-xs font-bold mb-3 inline-block uppercase tracking-wider">Aventura</span>
@@ -244,7 +245,7 @@
 </div>
 <!-- Mérida (Montañas) -->
 <div class="dest-card relative rounded-card overflow-hidden shadow-ambient hover:shadow-ambient-hover transition-all duration-300 group gsap-reveal cursor-pointer" data-category="playas" onclick="openModal('Los Roques', 'Archipiélago de aguas cristalinas y arenas blancas. Ideal para el descanso y deportes acuáticos.', '$1200')" style="transition-delay: 100ms; translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 0px);">
-<img alt="Los Roques" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAgzcD7d6GYoGwbvbRQlVME9oEOs-FUtkMau0o0AtpXQYJmBc_HKFhJ--Q9rSa22oxaTesQm6I_XqhavajBZpWcwxUHrwrjO6YMuMqlqgocZGtWzOtwTcfdel2lP0Ne6pytLEVE4-nzyrmiZXk4LMUKia9vAn00y0C2U0Z07rzL6PZtqxnr1QttvwAjDz2TeLqWn3_PylrVhvbHPrq89SYEU4_wpcPCIVNqLoF_tyzgoG-57vAIcJZUAg">
+<img alt="Los Roques" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAgzcD7d6GYoGwbvbRQlVME9oEOs-FUtkMau0o0AtpXQYJmBc_HKFhJ--Q9rSa22oxaTesQm6I_XqhavajBZpWcwxUHrwrjO6YMuMqlqgocZGtWzOtwTcfdel2lP0Ne6pytLEVE4-nzyrmiZXk4LMUKia9vAn00y0C2U0Z07rzL6PZtqxnr1QttvwAjDz2TeLqWn3_PylrVhvbHPrq89SYEU4_wpcPCIVNqLoF_tyzgoG-57vAIcJZUAg=w1600">
 <div class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent"></div>
 <div class="absolute bottom-0 left-0 p-6 w-full">
 <h3 class="font-headline-md text-headline-md text-white mb-2">Los Roques</h3>
@@ -252,7 +253,7 @@
 </div>
 </div>
 <div class="dest-card relative rounded-card overflow-hidden shadow-ambient hover:shadow-ambient-hover transition-all duration-300 group gsap-reveal cursor-pointer" data-category="montanas" onclick="openModal('Mérida', 'Disfruta del teleférico más alto y largo del mundo, picos nevados y una rica cultura andina.', '$450')" style="transition-delay: 200ms; translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 0px);">
-<img alt="Mérida" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBYiUGJcKfKHbP290gO-qO7_uSQ7dwL0NuFX8FO4I1nZ72KqWGrRmefomFSTyc2j4-1vnTttxgmv6kgC-618xEEqgmf5AzGplodjEeOTaYh8SD6qNi3YYvffoKpV-SlDv8QG2u2tn_9OxEEmu8JDkd8GZw2tYcjWhBKt3BjDYnCzzSLKGuyWYVMgwarY74mpoE9SeKURB-2NmUHjfqeJJ6ebmo1zJtRGnq7K4-g67swfrd1hNhbGVDMyQ">
+<img alt="Mérida" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBYiUGJcKfKHbP290gO-qO7_uSQ7dwL0NuFX8FO4I1nZ72KqWGrRmefomFSTyc2j4-1vnTttxgmv6kgC-618xEEqgmf5AzGplodjEeOTaYh8SD6qNi3YYvffoKpV-SlDv8QG2u2tn_9OxEEmu8JDkd8GZw2tYcjWhBKt3BjDYnCzzSLKGuyWYVMgwarY74mpoE9SeKURB-2NmUHjfqeJJ6ebmo1zJtRGnq7K4-g67swfrd1hNhbGVDMyQ=w1600">
 <div class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent"></div>
 <div class="absolute bottom-0 left-0 p-6 w-full">
 <h3 class="font-headline-md text-headline-md text-white mb-2">Mérida</h3>
@@ -280,10 +281,10 @@
 <h3 class="text-center text-xl font-bold text-primary mb-8 gsap-reveal" style="translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 0px);">Nuestro Equipo</h3><div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
 <!-- Team Cards with stagger class -->
 
-<div class="team-card bg-surface p-6 rounded-card shadow-sm text-center border border-surface-variant" style="translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 0px);"><div class="w-24 h-24 mx-auto rounded-full overflow-hidden mb-4"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuC7yARp995M510luYjVR9QwTl1gggA1vVD3hXs_6t7sqvSCCIzeeeFkVnRu_33j2r8l25u4XqrYenlVfEAvg0arUizLibwW0IA6z-v2sRYQE1JeXjOIU2CDoZMvrv3L601iBvLLy-ElQvb0pLpnZHgjDk57bgFFM2Ty57WEQwwmZwm0cPwyuGGPqiwxb9S-pAE60sISxk1jfWuDWFQF5LB-p9lhwGG9QI7jK-MFXLv5Gopwb_K8-deaPw" alt="Maria González" class="w-full h-full object-cover"></div><h4 class="font-bold text-primary">Maria González</h4><p class="text-sm text-on-surface-variant">Ecotourism Expert</p></div>
-<div class="team-card bg-surface p-6 rounded-card shadow-sm text-center border border-surface-variant" style="translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 0px);"><div class="w-24 h-24 mx-auto rounded-full overflow-hidden mb-4"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDwwQaMKLTwf8BZvOOTzrnPF_xgxGa3Y-yZB8aopVdpFNVQIMmCA7v5rJIPmvfP98RAWmZlNLd4pSvF8W4pk3__G0nH8lgvhzrmArxN1jLi39UWBdKa4uft-FwnI0qAo0qf7otgBvGt0PkaaduBIDLAYJCq582zgmMozmol9amdDqGn_SHoafeM4DBA31pTDXJPCvX707yjBthNGFe50BfQuD3CdTWb-akrYN3_wPIha3-wX0o9n4wcAQ" alt="Carlos Méndez" class="w-full h-full object-cover"></div><h4 class="font-bold text-primary">Carlos Méndez</h4><p class="text-sm text-on-surface-variant">Mountain Guide</p></div>
-<div class="team-card bg-surface p-6 rounded-card shadow-sm text-center border border-surface-variant" style="translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 0px);"><div class="w-24 h-24 mx-auto rounded-full overflow-hidden mb-4"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBNelqXfN1V_ZB6MI1G97TjqCDbrS7-S9Jj_iqBiubFQ42KdMzKu9AhMVvlNLKUbD-NKFvYYcWndgxZdCV80odeArwFWa0EJ2ojHNC7Dsq5hfKgCrHYsyaPMBN9p9-cT6ZRhgNbQ7tD2HvNOsARSHybvs1exf9IYVRbmVJgREEOgbAxuxC27MKwWpRRV8Jdq8JhDBK5Hg7IMJE5w9dtZ1CWyON78Qj83yMtBhd8HkQ281dY0nq4raTomw" alt="Ana Rojas" class="w-full h-full object-cover"></div><h4 class="font-bold text-primary">Ana Rojas</h4><p class="text-sm text-on-surface-variant">Beach Coordinator</p></div>
-<div class="team-card bg-surface p-6 rounded-card shadow-sm text-center border border-surface-variant" style="translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 0px);"><div class="w-24 h-24 mx-auto rounded-full overflow-hidden mb-4"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuApj33xyrmJbdPVm66sEJhoEUVezfyCLXpOWTYqb1JDelzcMVZmRHxDi_ZzbNQREQrCFX5jN1YQ4MVYSix9UQ3ZM2AwVZ2cq0NO2HH8pSCm_uuDHAXLBORliu1lUz9Kx1-fSJh65o8ifGu4bWkEuAI5AFA9a3PwWSQDWf11z123wTZNFY8ft83KTn1koJBP_cfa-GSGkW2j0RBfkE3IY8rqCcr7PtrpNw_2G6j3DuAJY4qpBAl-I-BvkQ" alt="Luis Fernández" class="w-full h-full object-cover"></div><h4 class="font-bold text-primary">Luis Fernández</h4><p class="text-sm text-on-surface-variant">Culture Expert</p></div></div>
+<div class="team-card bg-surface p-6 rounded-card shadow-sm text-center border border-surface-variant" style="translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 0px);"><div class="w-24 h-24 mx-auto rounded-full overflow-hidden mb-4"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuC7yARp995M510luYjVR9QwTl1gggA1vVD3hXs_6t7sqvSCCIzeeeFkVnRu_33j2r8l25u4XqrYenlVfEAvg0arUizLibwW0IA6z-v2sRYQE1JeXjOIU2CDoZMvrv3L601iBvLLy-ElQvb0pLpnZHgjDk57bgFFM2Ty57WEQwwmZwm0cPwyuGGPqiwxb9S-pAE60sISxk1jfWuDWFQF5LB-p9lhwGG9QI7jK-MFXLv5Gopwb_K8-deaPw=w400" alt="Maria González" class="w-full h-full object-cover"></div><h4 class="font-bold text-primary">Maria González</h4><p class="text-sm text-on-surface-variant">Experta en Ecoturismo</p></div>
+<div class="team-card bg-surface p-6 rounded-card shadow-sm text-center border border-surface-variant" style="translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 0px);"><div class="w-24 h-24 mx-auto rounded-full overflow-hidden mb-4"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDwwQaMKLTwf8BZvOOTzrnPF_xgxGa3Y-yZB8aopVdpFNVQIMmCA7v5rJIPmvfP98RAWmZlNLd4pSvF8W4pk3__G0nH8lgvhzrmArxN1jLi39UWBdKa4uft-FwnI0qAo0qf7otgBvGt0PkaaduBIDLAYJCq582zgmMozmol9amdDqGn_SHoafeM4DBA31pTDXJPCvX707yjBthNGFe50BfQuD3CdTWb-akrYN3_wPIha3-wX0o9n4wcAQ=w400" alt="Carlos Méndez" class="w-full h-full object-cover"></div><h4 class="font-bold text-primary">Carlos Méndez</h4><p class="text-sm text-on-surface-variant">Guía de Montaña</p></div>
+<div class="team-card bg-surface p-6 rounded-card shadow-sm text-center border border-surface-variant" style="translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 0px);"><div class="w-24 h-24 mx-auto rounded-full overflow-hidden mb-4"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBNelqXfN1V_ZB6MI1G97TjqCDbrS7-S9Jj_iqBiubFQ42KdMzKu9AhMVvlNLKUbD-NKFvYYcWndgxZdCV80odeArwFWa0EJ2ojHNC7Dsq5hfKgCrHYsyaPMBN9p9-cT6ZRhgNbQ7tD2HvNOsARSHybvs1exf9IYVRbmVJgREEOgbAxuxC27MKwWpRRV8Jdq8JhDBK5Hg7IMJE5w9dtZ1CWyON78Qj83yMtBhd8HkQ281dY0nq4raTomw=w400" alt="Ana Rojas" class="w-full h-full object-cover"></div><h4 class="font-bold text-primary">Ana Rojas</h4><p class="text-sm text-on-surface-variant">Coordinadora de Playas</p></div>
+<div class="team-card bg-surface p-6 rounded-card shadow-sm text-center border border-surface-variant" style="translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 0px);"><div class="w-24 h-24 mx-auto rounded-full overflow-hidden mb-4"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuApj33xyrmJbdPVm66sEJhoEUVezfyCLXpOWTYqb1JDelzcMVZmRHxDi_ZzbNQREQrCFX5jN1YQ4MVYSix9UQ3ZM2AwVZ2cq0NO2HH8pSCm_uuDHAXLBORliu1lUz9Kx1-fSJh65o8ifGu4bWkEuAI5AFA9a3PwWSQDWf11z123wTZNFY8ft83KTn1koJBP_cfa-GSGkW2j0RBfkE3IY8rqCcr7PtrpNw_2G6j3DuAJY4qpBAl-I-BvkQ=w400" alt="Luis Fernández" class="w-full h-full object-cover"></div><h4 class="font-bold text-primary">Luis Fernández</h4><p class="text-sm text-on-surface-variant">Experto en Cultura</p></div></div>
 </section>
 <!-- FAQ Section -->
 <section class="py-xl px-gutter max-w-3xl mx-auto" id="faq">
@@ -330,11 +331,11 @@
 <p class="mb-8 text-white/80">Estamos listos para planificar tu próxima aventura. Déjanos un mensaje y te responderemos en breve.</p>
 <div class="flex items-center gap-4 mb-4 text-white">
 <span class="material-symbols-outlined">mail</span>
-<span class="">info@venaventura.com</span>
+<a class="hover:underline" href="mailto:info@venaventura.com">info@venaventura.com</a>
 </div>
 <div class="flex items-center gap-4 mb-4 text-white">
 <span class="material-symbols-outlined">phone</span>
-<span class="">+58 412 123 4567</span>
+<a class="hover:underline" href="https://wa.me/584124163681" target="_blank" rel="noopener">+58 412 4163681</a>
 </div>
 </div>
 <form class="bg-surface rounded-card p-6 shadow-sm relative overflow-hidden" id="contact-form">
@@ -394,7 +395,7 @@
 <div class="fixed inset-0 z-[100] flex items-center justify-center hidden" id="dest-modal">
 <div class="absolute inset-0 bg-black/60 backdrop-blur-sm modal-bg" onclick="closeModal()"></div>
 <div class="bg-surface w-full max-w-lg rounded-card overflow-hidden shadow-2xl relative z-10 transform scale-95 opacity-0 transition-all duration-300" id="modal-content">
-<button class="absolute top-4 right-4 w-8 h-8 bg-black/20 hover:bg-black/40 rounded-full flex items-center justify-center text-white z-20 transition-colors" onclick="closeModal()">
+<button class="absolute top-4 right-4 w-10 h-10 bg-black/20 hover:bg-black/40 rounded-full flex items-center justify-center text-white z-20 transition-colors" onclick="closeModal()">
 <span class="material-symbols-outlined text-sm">close</span>
 </button>
 <div class="h-48 bg-primary w-full flex items-end p-6 relative">
@@ -421,6 +422,8 @@
 <!-- Scripts -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
+<script src="viajes-3d.js"></script>
 <script>
         gsap.registerPlugin(ScrollTrigger);
 
@@ -471,9 +474,9 @@
 
         // --- 2. Carousel ---
         const heroImages = [
-            "url('https://lh3.googleusercontent.com/aida-public/AB6AXuDvJ13F7XcF7dbtwVoG8StFL1yyi9Rn-k13B2vAdI7GfK4GbclivU67HLni4_Y7V-oQecs_9MrG2ypTWtjm5YmS70H_29uJqh-HsjdIYISiuCnMs-02bH66bRLTAOUoE38MpVgj7qgLWmXrZ2rxlILtYfYAyS5GMY-sr6Dskn5PKiJF601q67XEMVbSAbJ2idy-vp3_DXePcgJst6RIGgyNjDgnxcODLk5wbvWlD9wKupfQHyhvNmG9BQ')",
-            "url('https://lh3.googleusercontent.com/aida-public/AB6AXuBL0hiWyP6uGHNa8qhbULGKC71dFlNHXg0N9wI0u3JMzTbnd1_VBz4dTJ13S6vx81TGpO1s8wzh7eCDn3nc1zZ4KMgp8ewUm1zia1DuP2ix-zqSajQBLLgBHF-VWn2iyBwYrdQL7nqYlikUZuv1iGScR12_9f5eJjTcB8sBQ_8cGoHp3JGVbk2wBsTvRkSvrVTa5IEzspDcEfUCpTmYWqI90RbBRvkDHx9WY5jxKpihZ1SjyfOluxfZ4A')",
-            "url('https://lh3.googleusercontent.com/aida-public/AB6AXuBYiUGJcKfKHbP290gO-qO7_uSQ7dwL0NuFX8FO4I1nZ72KqWGrRmefomFSTyc2j4-1vnTttxgmv6kgC-618xEEqgmf5AzGplodjEeOTaYh8SD6qNi3YYvffoKpV-SlDv8QG2u2tn_9OxEEmu8JDkd8GZw2tYcjWhBKt3BjDYnCzzSLKGuyWYVMgwarY74mpoE9SeKURB-2NmUHjfqeJJ6ebmo1zJtRGnq7K4-g67swfrd1hNhbGVDMyQ')"
+            "url('https://lh3.googleusercontent.com/aida-public/AB6AXuDvJ13F7XcF7dbtwVoG8StFL1yyi9Rn-k13B2vAdI7GfK4GbclivU67HLni4_Y7V-oQecs_9MrG2ypTWtjm5YmS70H_29uJqh-HsjdIYISiuCnMs-02bH66bRLTAOUoE38MpVgj7qgLWmXrZ2rxlILtYfYAyS5GMY-sr6Dskn5PKiJF601q67XEMVbSAbJ2idy-vp3_DXePcgJst6RIGgyNjDgnxcODLk5wbvWlD9wKupfQHyhvNmG9BQ=w1600')",
+            "url('https://lh3.googleusercontent.com/aida-public/AB6AXuBL0hiWyP6uGHNa8qhbULGKC71dFlNHXg0N9wI0u3JMzTbnd1_VBz4dTJ13S6vx81TGpO1s8wzh7eCDn3nc1zZ4KMgp8ewUm1zia1DuP2ix-zqSajQBLLgBHF-VWn2iyBwYrdQL7nqYlikUZuv1iGScR12_9f5eJjTcB8sBQ_8cGoHp3JGVbk2wBsTvRkSvrVTa5IEzspDcEfUCpTmYWqI90RbBRvkDHx9WY5jxKpihZ1SjyfOluxfZ4A=w1600')",
+            "url('https://lh3.googleusercontent.com/aida-public/AB6AXuBYiUGJcKfKHbP290gO-qO7_uSQ7dwL0NuFX8FO4I1nZ72KqWGrRmefomFSTyc2j4-1vnTttxgmv6kgC-618xEEqgmf5AzGplodjEeOTaYh8SD6qNi3YYvffoKpV-SlDv8QG2u2tn_9OxEEmu8JDkd8GZw2tYcjWhBKt3BjDYnCzzSLKGuyWYVMgwarY74mpoE9SeKURB-2NmUHjfqeJJ6ebmo1zJtRGnq7K4-g67swfrd1hNhbGVDMyQ=w1600')"
         ];
         let currentImgIdx = 0;
         const heroBg = document.getElementById('hero-bg');
@@ -615,6 +618,12 @@
             e.preventDefault();
             const isValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailInput.value);
             if(isValid) {
+                // Envía el mensaje por WhatsApp en vez de solo simular el éxito
+                const name = document.getElementById('name').value;
+                const message = document.getElementById('message').value;
+                const text = `Hola VenAventura! Mi nombre es *${name}* (${emailInput.value}).\n\n${message}`;
+                window.open(`https://wa.me/584124163681?text=${encodeURIComponent(text)}`, '_blank');
+
                 // Show success
                 formAlert.classList.remove('hidden');
                 gsap.to(formAlert, {opacity: 1, duration: 0.3});

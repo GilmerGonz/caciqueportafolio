@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html class="light" lang="en">
+<html class="light" lang="es">
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Medical Team - Dental Premium</title>
+<title>Equipo Médico - Dental Premium</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
@@ -116,29 +116,52 @@
     DENTAL PREMIUM
 </a>
 <div class="hidden md:flex space-x-8 items-center">
-<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md px-3 py-2 rounded-lg" href="index.html">Home</a>
-<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md px-3 py-2 rounded-lg" href="index.html#services">Services</a>
-<a class="text-primary font-bold border-b-2 border-primary pb-1 font-body-md text-body-md px-3 py-2" href="equipo.html">Team</a>
-<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md px-3 py-2 rounded-lg" href="casos.html">Cases</a>
-<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md px-3 py-2 rounded-lg" href="dashboard.html">Dashboard</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md px-3 py-2 rounded-lg" href="index.html">Inicio</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md px-3 py-2 rounded-lg" href="index.html#services">Servicios</a>
+<a class="text-primary font-bold border-b-2 border-primary pb-1 font-body-md text-body-md px-3 py-2" href="equipo.html">Equipo</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md px-3 py-2 rounded-lg" href="casos.html">Casos</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md px-3 py-2 rounded-lg" href="dashboard.html">Panel</a>
 </div>
 <div class="flex items-center space-x-4">
 <a href="citas.html" class="hidden md:inline-block bg-primary text-on-primary font-body-md text-body-md px-6 py-2 rounded-lg hover:bg-primary-container transition-all font-bold">
-    Book Appointment
+    Agendar Cita
 </a>
-<div class="w-10 h-10 rounded-full overflow-hidden border border-outline-variant">
-<img alt="Sarah Jenkins" class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=400&q=80"/>
-</div>
+<button id="mobile-menu-btn" aria-label="Abrir menú" class="md:hidden w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-container-high text-on-surface">
+<span class="material-symbols-outlined">menu</span>
+</button>
 </div>
 </div>
 </nav>
+<!-- Mobile Nav Drawer -->
+<div id="mobile-nav-overlay" class="hidden fixed inset-0 bg-black/50 z-[60] md:hidden"></div>
+<aside id="mobile-nav-drawer" class="fixed inset-y-0 right-0 z-[70] w-72 max-w-[80vw] bg-surface-container-lowest shadow-xl transform translate-x-full transition-transform duration-300 md:hidden flex flex-col">
+<div class="flex items-center justify-between px-6 py-5 border-b border-outline-variant">
+<span class="text-headline-sm font-headline-sm font-bold text-primary">DENTAL PREMIUM</span>
+<button id="mobile-menu-close-btn" aria-label="Cerrar menú" class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-container-high text-on-surface-variant">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<nav class="flex flex-col p-4 gap-1">
+<a href="index.html" class="px-4 py-3 rounded-lg text-on-surface font-body-md text-body-md hover:bg-surface-container-high transition-colors">Inicio</a>
+<a href="index.html#services" class="px-4 py-3 rounded-lg text-on-surface font-body-md text-body-md hover:bg-surface-container-high transition-colors">Servicios</a>
+<a href="equipo.html" class="px-4 py-3 rounded-lg text-on-surface font-body-md text-body-md hover:bg-surface-container-high transition-colors">Equipo</a>
+<a href="casos.html" class="px-4 py-3 rounded-lg text-on-surface font-body-md text-body-md hover:bg-surface-container-high transition-colors">Casos</a>
+<a href="dashboard.html" class="px-4 py-3 rounded-lg text-on-surface font-body-md text-body-md hover:bg-surface-container-high transition-colors">Panel</a>
+</nav>
+<div class="mt-auto p-4 border-t border-outline-variant flex flex-col gap-3">
+<a href="https://wa.me/584124163681?text=Hola%2C%20quisiera%20agendar%20una%20cita%20en%20Dental%20Premium" target="_blank" rel="noopener" class="flex items-center justify-center gap-2 text-on-surface-variant font-body-md text-body-md py-2">
+<span class="material-symbols-outlined text-[18px]">chat</span> +58 412 4163681
+</a>
+<a href="citas.html" class="bg-primary text-on-primary text-center px-6 py-3 rounded-lg font-body-md text-body-md font-bold hover:bg-primary-container transition-colors">Agendar Cita</a>
+</div>
+</aside>
 
 <!-- Main Content -->
 <main class="flex-grow max-w-[1280px] w-full mx-auto px-container-padding py-section-gap">
 <header class="mb-16 text-center max-w-2xl mx-auto">
-<h1 class="font-display-lg text-display-lg text-primary mb-stack-md hidden md:block font-extrabold">Surgical Excellence</h1>
-<h1 class="font-display-lg-mobile text-display-lg-mobile text-primary mb-stack-md md:hidden font-extrabold">Surgical Excellence</h1>
-<p class="font-body-lg text-body-lg text-on-surface-variant">Our team of specialists brings decades of experience, precision, and a commitment to discreet luxury in dental care.</p>
+<h1 class="font-display-lg text-display-lg text-primary mb-stack-md hidden md:block font-extrabold">Excelencia Quirúrgica</h1>
+<h1 class="font-display-lg-mobile text-display-lg-mobile text-primary mb-stack-md md:hidden font-extrabold">Excelencia Quirúrgica</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Nuestro equipo de especialistas aporta décadas de experiencia, precisión y compromiso con un cuidado dental de lujo discreto.</p>
 </header>
 <!-- Bento Grid for Medical Team -->
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -149,7 +172,7 @@
 <div class="absolute inset-0 bg-primary/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
 <div class="text-center text-on-primary">
 <span class="font-headline-sm text-headline-sm block mb-2 font-bold">1,250+</span>
-<span class="font-data-label text-data-label uppercase tracking-widest text-primary-fixed">Successful Cases</span>
+<span class="font-data-label text-data-label uppercase tracking-widest text-primary-fixed">Casos Exitosos</span>
 </div>
 </div>
 </div>
@@ -157,7 +180,7 @@
 <div class="flex justify-between items-start mb-4">
 <div>
 <h2 class="font-headline-sm text-headline-sm text-on-surface mb-1 font-bold">Dr. Alistair Sterling</h2>
-<p class="font-body-md text-body-md text-primary font-medium">Chief Implantologist</p>
+<p class="font-body-md text-body-md text-primary font-medium">Implantólogo Jefe</p>
 </div>
 <div class="flex items-center text-secondary">
 <span class="material-symbols-outlined text-sm">star</span>
@@ -167,27 +190,27 @@
 <div class="space-y-2 mb-6 flex-grow">
 <div class="flex items-center text-on-surface-variant">
 <span class="material-symbols-outlined text-outline mr-2 text-sm">schedule</span>
-<span class="font-data-label text-data-label">20 Years Experience</span>
+<span class="font-data-label text-data-label">20 Años de Experiencia</span>
 </div>
 <div class="flex items-center text-on-surface-variant">
 <span class="material-symbols-outlined text-outline mr-2 text-sm">school</span>
-<span class="font-data-label text-data-label">Trained at Harvard</span>
+<span class="font-data-label text-data-label">Formado en Harvard</span>
 </div>
 </div>
 <a href="citas.html" class="w-full py-3 border border-outline-variant rounded-lg text-primary font-data-label text-data-label uppercase hover:bg-primary hover:text-on-primary transition-colors flex justify-center items-center font-bold">
 <span class="material-symbols-outlined mr-2 text-sm">calendar_month</span>
-    Book Consultation
+    Agendar Consulta
 </a>
 </div>
 </div>
 <!-- Doctor 2 -->
 <div class="group bg-surface-container-lowest rounded-xl shadow-neumorphic overflow-hidden hover:shadow-neumorphic-hover transition-all duration-300 flex flex-col relative border border-outline-variant/30">
 <div class="relative h-[300px] overflow-hidden bg-surface-container-low">
-<img alt="Dra. Elena Vance" class="w-full h-full object-cover doctor-image transition-all duration-500" src="https://images.unsplash.com/photo-1594824813566-78853677966b?auto=format&fit=crop&w=800&q=80"/>
+<img alt="Dra. Elena Vance" class="w-full h-full object-cover doctor-image transition-all duration-500" src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&q=80"/>
 <div class="absolute inset-0 bg-primary/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
 <div class="text-center text-on-primary">
 <span class="font-headline-sm text-headline-sm block mb-2 font-bold">800+</span>
-<span class="font-data-label text-data-label uppercase tracking-widest text-primary-fixed">Veneer Cases</span>
+<span class="font-data-label text-data-label uppercase tracking-widest text-primary-fixed">Casos de Carillas</span>
 </div>
 </div>
 </div>
@@ -195,7 +218,7 @@
 <div class="flex justify-between items-start mb-4">
 <div>
 <h2 class="font-headline-sm text-headline-sm text-on-surface mb-1 font-bold">Dra. Elena Vance</h2>
-<p class="font-body-md text-body-md text-primary font-medium">Cosmetic Dentistry</p>
+<p class="font-body-md text-body-md text-primary font-medium">Odontología Cosmética</p>
 </div>
 <div class="flex items-center text-secondary">
 <span class="material-symbols-outlined text-sm">star</span>
@@ -205,16 +228,16 @@
 <div class="space-y-2 mb-6 flex-grow">
 <div class="flex items-center text-on-surface-variant">
 <span class="material-symbols-outlined text-outline mr-2 text-sm">schedule</span>
-<span class="font-data-label text-data-label">15 Years Experience</span>
+<span class="font-data-label text-data-label">15 Años de Experiencia</span>
 </div>
 <div class="flex items-center text-on-surface-variant">
 <span class="material-symbols-outlined text-outline mr-2 text-sm">school</span>
-<span class="font-data-label text-data-label">Trained at King's College</span>
+<span class="font-data-label text-data-label">Formado en King's College</span>
 </div>
 </div>
 <a href="citas.html" class="w-full py-3 border border-outline-variant rounded-lg text-primary font-data-label text-data-label uppercase hover:bg-primary hover:text-on-primary transition-colors flex justify-center items-center font-bold">
 <span class="material-symbols-outlined mr-2 text-sm">calendar_month</span>
-    Book Consultation
+    Agendar Consulta
 </a>
 </div>
 </div>
@@ -225,7 +248,7 @@
 <div class="absolute inset-0 bg-primary/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
 <div class="text-center text-on-primary">
 <span class="font-headline-sm text-headline-sm block mb-2 font-bold">2,100+</span>
-<span class="font-data-label text-data-label uppercase tracking-widest text-primary-fixed">Micro-Surgeries</span>
+<span class="font-data-label text-data-label uppercase tracking-widest text-primary-fixed">Microcirugías</span>
 </div>
 </div>
 </div>
@@ -233,7 +256,7 @@
 <div class="flex justify-between items-start mb-4">
 <div>
 <h2 class="font-headline-sm text-headline-sm text-on-surface mb-1 font-bold">Dr. Julian Reed</h2>
-<p class="font-body-md text-body-md text-primary font-medium">Endodontics Specialist</p>
+<p class="font-body-md text-body-md text-primary font-medium">Especialista en Endodoncia</p>
 </div>
 <div class="flex items-center text-secondary">
 <span class="material-symbols-outlined text-sm">star</span>
@@ -243,16 +266,16 @@
 <div class="space-y-2 mb-6 flex-grow">
 <div class="flex items-center text-on-surface-variant">
 <span class="material-symbols-outlined text-outline mr-2 text-sm">schedule</span>
-<span class="font-data-label text-data-label">12 Years Experience</span>
+<span class="font-data-label text-data-label">12 Años de Experiencia</span>
 </div>
 <div class="flex items-center text-on-surface-variant">
 <span class="material-symbols-outlined text-outline mr-2 text-sm">school</span>
-<span class="font-data-label text-data-label">Trained at Penn Dental</span>
+<span class="font-data-label text-data-label">Formado en Penn Dental</span>
 </div>
 </div>
 <a href="citas.html" class="w-full py-3 border border-outline-variant rounded-lg text-primary font-data-label text-data-label uppercase hover:bg-primary hover:text-on-primary transition-colors flex justify-center items-center font-bold">
 <span class="material-symbols-outlined mr-2 text-sm">calendar_month</span>
-    Book Consultation
+    Agendar Consulta
 </a>
 </div>
 </div>
@@ -264,17 +287,23 @@
 <div class="col-span-1 md:col-span-1 flex flex-col">
 <span class="text-headline-sm font-headline-sm font-bold text-primary mb-stack-sm">DENTAL PREMIUM</span>
 <p class="font-body-md text-body-md text-on-surface opacity-90 mt-auto">
-            © 2024 DENTAL PREMIUM. Surgical Excellence &amp; Premium Hospitality.
+            © 2024 DENTAL PREMIUM. Excelencia Quirúrgica y Hospitalidad Premium.
         </p>
 </div>
 <div class="col-span-1 md:col-span-3 flex flex-wrap gap-gutter justify-start md:justify-end items-center">
-<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary opacity-90 hover:opacity-100 transition-colors" href="#">Privacy Policy</a>
-<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary opacity-90 hover:opacity-100 transition-colors" href="#">Terms of Service</a>
-<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary opacity-90 hover:opacity-100 transition-colors" href="#">Clinic Hours</a>
-<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary opacity-90 hover:opacity-100 transition-colors" href="#">Contact Us</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary opacity-90 hover:opacity-100 transition-colors" href="#">Política de Privacidad</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary opacity-90 hover:opacity-100 transition-colors" href="#">Términos de Servicio</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary opacity-90 hover:opacity-100 transition-colors" href="#">Horario de Atención</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary opacity-90 hover:opacity-100 transition-colors" href="https://wa.me/584124163681" target="_blank" rel="noopener">Contáctanos</a>
 </div>
 </div>
 </footer>
+
+<script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="dental-motion.js"></script>
+<script src="dental-nav.js"></script>
 
 <!-- CACIQUE GLOBAL ESC MODAL CLOSER -->
 <script>

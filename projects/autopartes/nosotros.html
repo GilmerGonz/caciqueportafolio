@@ -145,7 +145,7 @@
 <a class="text-on-surface" href="carrito.html">
 <span class="material-symbols-outlined">shopping_cart</span>
 </a>
-<button class="text-on-surface" id="mobile-menu-btn">
+<button class="text-on-surface p-2 -m-2" id="mobile-menu-btn">
 <span class="material-symbols-outlined">menu</span>
 </button>
 </div>
@@ -157,7 +157,7 @@
 <h2 class="text-headline-md font-headline-md font-extrabold text-primary">AUTOINSUMO 2000</h2>
 <p class="text-caption font-caption text-on-surface-variant">Repuestos y más</p>
 </div>
-<button class="text-on-surface-variant" id="close-menu-btn">
+<button class="text-on-surface-variant p-2 -m-2" id="close-menu-btn">
 <span class="material-symbols-outlined">close</span>
 </button>
 </div>
@@ -215,8 +215,8 @@
                     </button>
 </div>
 </div>
-<div class="col-span-1 md:col-span-6 order-1 md:order-2 rounded-xl overflow-hidden shadow-lg relative h-[300px] md:h-[500px]">
-<img alt="Almacén de Autoinsumo 2000" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/AP1WRLsvk2tIZ6QpnXm2LD3ook88SzMphHvJM0BqqqEeF_msRdmGE0RnGSkGjynysoaG_1X3jc3Ihb2xVnpQDycoERpjKgzxHdxVz8Lzd-QY4H3Tn3AjM_QRVFZbeZQxNjKIhQA6G75gX1Wy2ASEqxkJSF68GAIcs2eRD6IfAJm9odVUf5cVBdwJ9YChc_XcxOdQPjp5ixFAFMN7yfjeQA804va-UAfg8SRyRkTUYkmHbU-KHgAZCZWQCh_HYC0J">
+<div class="col-span-1 md:col-span-6 order-1 md:order-2 rounded-xl overflow-hidden shadow-lg relative h-[300px] md:h-[500px] bg-gradient-to-br from-[#1a1a1a] to-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-white/15" style="font-size: 260px;" aria-hidden="true">warehouse</span>
 <div class="absolute bottom-4 left-4 glass-card p-4 rounded-lg flex items-center gap-3">
 <span class="material-symbols-outlined text-primary text-3xl">verified</span>
 <div>
@@ -356,6 +356,11 @@
             overlay.addEventListener('click', toggleMenu);
         });
     </script>
+
+<script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="autopartes-motion.js"></script>
 
 <!-- CACIQUE GLOBAL ESC MODAL CLOSER -->
 <script>

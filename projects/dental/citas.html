@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html class="light" lang="en">
+<html class="light" lang="es">
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Book Appointment - DENTAL PREMIUM</title>
+<title>Agendar Cita - DENTAL PREMIUM</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
@@ -131,22 +131,45 @@
     DENTAL PREMIUM
 </a>
 <div class="hidden md:flex space-x-8 items-center">
-<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md px-3 py-2 rounded-lg" href="index.html">Home</a>
-<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md px-3 py-2 rounded-lg" href="index.html#services">Services</a>
-<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md px-3 py-2 rounded-lg" href="equipo.html">Team</a>
-<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md px-3 py-2 rounded-lg" href="casos.html">Cases</a>
-<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md px-3 py-2 rounded-lg" href="dashboard.html">Dashboard</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md px-3 py-2 rounded-lg" href="index.html">Inicio</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md px-3 py-2 rounded-lg" href="index.html#services">Servicios</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md px-3 py-2 rounded-lg" href="equipo.html">Equipo</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md px-3 py-2 rounded-lg" href="casos.html">Casos</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md px-3 py-2 rounded-lg" href="dashboard.html">Panel</a>
 </div>
 <div class="flex items-center space-x-4">
 <a href="citas.html" class="hidden md:inline-block bg-primary text-on-primary font-body-md text-body-md px-6 py-2 rounded-lg hover:bg-primary-container transition-all font-bold">
-    Book Appointment
+    Agendar Cita
 </a>
-<div class="w-10 h-10 rounded-full overflow-hidden border border-outline-variant">
-<img alt="Sarah Jenkins" class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=400&q=80"/>
-</div>
+<button id="mobile-menu-btn" aria-label="Abrir menú" class="md:hidden w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-container-high text-on-surface">
+<span class="material-symbols-outlined">menu</span>
+</button>
 </div>
 </div>
 </nav>
+<!-- Mobile Nav Drawer -->
+<div id="mobile-nav-overlay" class="hidden fixed inset-0 bg-black/50 z-[60] md:hidden"></div>
+<aside id="mobile-nav-drawer" class="fixed inset-y-0 right-0 z-[70] w-72 max-w-[80vw] bg-surface-container-lowest shadow-xl transform translate-x-full transition-transform duration-300 md:hidden flex flex-col">
+<div class="flex items-center justify-between px-6 py-5 border-b border-outline-variant">
+<span class="text-headline-sm font-headline-sm font-bold text-primary">DENTAL PREMIUM</span>
+<button id="mobile-menu-close-btn" aria-label="Cerrar menú" class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-container-high text-on-surface-variant">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<nav class="flex flex-col p-4 gap-1">
+<a href="index.html" class="px-4 py-3 rounded-lg text-on-surface font-body-md text-body-md hover:bg-surface-container-high transition-colors">Inicio</a>
+<a href="index.html#services" class="px-4 py-3 rounded-lg text-on-surface font-body-md text-body-md hover:bg-surface-container-high transition-colors">Servicios</a>
+<a href="equipo.html" class="px-4 py-3 rounded-lg text-on-surface font-body-md text-body-md hover:bg-surface-container-high transition-colors">Equipo</a>
+<a href="casos.html" class="px-4 py-3 rounded-lg text-on-surface font-body-md text-body-md hover:bg-surface-container-high transition-colors">Casos</a>
+<a href="dashboard.html" class="px-4 py-3 rounded-lg text-on-surface font-body-md text-body-md hover:bg-surface-container-high transition-colors">Panel</a>
+</nav>
+<div class="mt-auto p-4 border-t border-outline-variant flex flex-col gap-3">
+<a href="https://wa.me/584124163681?text=Hola%2C%20quisiera%20agendar%20una%20cita%20en%20Dental%20Premium" target="_blank" rel="noopener" class="flex items-center justify-center gap-2 text-on-surface-variant font-body-md text-body-md py-2">
+<span class="material-symbols-outlined text-[18px]">chat</span> +58 412 4163681
+</a>
+<a href="citas.html" class="bg-primary text-on-primary text-center px-6 py-3 rounded-lg font-body-md text-body-md font-bold hover:bg-primary-container transition-colors">Agendar Cita</a>
+</div>
+</aside>
 
 <!-- Main Content Canvas -->
 <main class="flex-grow w-full max-w-[1280px] mx-auto px-container-padding py-section-gap flex flex-col items-center justify-center relative micro-dot-bg">
@@ -156,22 +179,22 @@
 <div class="w-full max-w-4xl glass-panel rounded-xl p-stack-lg relative overflow-hidden">
 <!-- Header & Progress -->
 <div class="text-center mb-stack-lg relative z-10">
-<span class="font-data-label text-data-label text-primary mb-stack-sm block uppercase tracking-wider">Appointment Scheduler</span>
-<h1 class="font-headline-md text-headline-md text-on-surface mb-stack-md">Book your appointment in 1 minute</h1>
+<span class="font-data-label text-data-label text-primary mb-stack-sm block uppercase tracking-wider">Agenda de Citas</span>
+<h1 class="font-headline-md text-headline-md text-on-surface mb-stack-md">Agenda tu cita en 1 minuto</h1>
 <div class="flex items-center justify-center gap-gutter max-w-md mx-auto mt-stack-md">
 <div class="flex-1">
 <div class="h-2 rounded-full bg-primary relative overflow-hidden">
 <div class="absolute inset-y-0 left-0 bg-white/20 w-full animate-[shimmer_2s_infinite]"></div>
 </div>
-<span class="font-data-label text-data-label text-primary mt-unit block">Select Date</span>
+<span class="font-data-label text-data-label text-primary mt-unit block">Elegir Fecha</span>
 </div>
 <div class="flex-1">
 <div class="h-2 rounded-full bg-surface-variant relative"></div>
-<span class="font-data-label text-data-label text-on-surface-variant mt-unit block">Choose Time</span>
+<span class="font-data-label text-data-label text-on-surface-variant mt-unit block">Elegir Hora</span>
 </div>
 <div class="flex-1">
 <div class="h-2 rounded-full bg-surface-variant relative"></div>
-<span class="font-data-label text-data-label text-on-surface-variant mt-unit block">Confirm</span>
+<span class="font-data-label text-data-label text-on-surface-variant mt-unit block">Confirmar</span>
 </div>
 </div>
 </div>
@@ -182,12 +205,12 @@
 <!-- Calendar Card -->
 <div class="bg-surface-container-lowest rounded-lg p-container-padding shadow-sm border border-outline-variant/30">
 <div class="flex justify-between items-center mb-stack-md">
-<h2 class="font-headline-sm text-headline-sm text-on-surface">Select Date</h2>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Elegir Fecha</h2>
 <div class="flex gap-2">
 <button class="p-2 rounded-full hover:bg-surface-container-low text-on-surface-variant transition-colors">
 <span class="material-symbols-outlined">chevron_left</span>
 </button>
-<span class="font-body-md text-body-md font-bold text-on-surface flex items-center">October 2024</span>
+<span class="font-body-md text-body-md font-bold text-on-surface flex items-center">Octubre 2024</span>
 <button class="p-2 rounded-full hover:bg-surface-container-low text-on-surface-variant transition-colors">
 <span class="material-symbols-outlined">chevron_right</span>
 </button>
@@ -195,38 +218,38 @@
 </div>
 <!-- Days Header -->
 <div class="grid grid-cols-7 gap-unit mb-stack-sm text-center">
-<span class="font-data-label text-data-label text-on-surface-variant">S</span>
+<span class="font-data-label text-data-label text-on-surface-variant">D</span>
+<span class="font-data-label text-data-label text-on-surface-variant">L</span>
 <span class="font-data-label text-data-label text-on-surface-variant">M</span>
-<span class="font-data-label text-data-label text-on-surface-variant">T</span>
-<span class="font-data-label text-data-label text-on-surface-variant">W</span>
-<span class="font-data-label text-data-label text-on-surface-variant">T</span>
-<span class="font-data-label text-data-label text-on-surface-variant">F</span>
+<span class="font-data-label text-data-label text-on-surface-variant">M</span>
+<span class="font-data-label text-data-label text-on-surface-variant">J</span>
+<span class="font-data-label text-data-label text-on-surface-variant">V</span>
 <span class="font-data-label text-data-label text-on-surface-variant">S</span>
 </div>
 <!-- Days Grid -->
 <div class="grid grid-cols-7 gap-unit text-center">
 <div class="aspect-square"></div>
 <div class="aspect-square"></div>
-<button class="aspect-square rounded-full flex items-center justify-center font-body-md text-body-md text-outline-variant cursor-not-allowed">1</button>
-<button class="aspect-square rounded-full flex items-center justify-center font-body-md text-body-md text-outline-variant cursor-not-allowed">2</button>
+<button class="aspect-square rounded-full flex items-center justify-center font-body-md text-body-md text-on-surface-variant cursor-not-allowed opacity-70">1</button>
+<button class="aspect-square rounded-full flex items-center justify-center font-body-md text-body-md text-on-surface-variant cursor-not-allowed opacity-70">2</button>
 <button class="aspect-square rounded-full flex items-center justify-center font-body-md text-body-md text-primary bg-primary-fixed hover:bg-primary hover:text-on-primary transition-colors">3</button>
 <button class="aspect-square rounded-full flex items-center justify-center font-body-md text-body-md text-primary bg-primary-fixed hover:bg-primary hover:text-on-primary transition-colors">4</button>
-<button class="aspect-square rounded-full flex items-center justify-center font-body-md text-body-md text-outline-variant cursor-not-allowed">5</button>
-<button class="aspect-square rounded-full flex items-center justify-center font-body-md text-body-md text-outline-variant cursor-not-allowed">6</button>
+<button class="aspect-square rounded-full flex items-center justify-center font-body-md text-body-md text-on-surface-variant cursor-not-allowed opacity-70">5</button>
+<button class="aspect-square rounded-full flex items-center justify-center font-body-md text-body-md text-on-surface-variant cursor-not-allowed opacity-70">6</button>
 <button class="aspect-square rounded-full flex items-center justify-center font-body-md text-body-md text-primary bg-primary-fixed hover:bg-primary hover:text-on-primary transition-colors">7</button>
 <button class="aspect-square rounded-full flex items-center justify-center font-body-md text-body-md text-primary bg-primary-fixed hover:bg-primary hover:text-on-primary transition-colors">8</button>
 <button class="aspect-square rounded-full flex items-center justify-center font-body-md text-body-md text-primary bg-primary-fixed hover:bg-primary hover:text-on-primary transition-colors border-2 border-secondary text-secondary font-bold">9</button>
 <button class="aspect-square rounded-full flex items-center justify-center font-body-md text-body-md text-primary bg-primary-fixed hover:bg-primary hover:text-on-primary transition-colors">10</button>
 <button class="aspect-square rounded-full flex items-center justify-center font-body-md text-body-md text-primary bg-primary-fixed hover:bg-primary hover:text-on-primary transition-colors">11</button>
-<button class="aspect-square rounded-full flex items-center justify-center font-body-md text-body-md text-outline-variant cursor-not-allowed">12</button>
-<button class="aspect-square rounded-full flex items-center justify-center font-body-md text-body-md text-outline-variant cursor-not-allowed">13</button>
+<button class="aspect-square rounded-full flex items-center justify-center font-body-md text-body-md text-on-surface-variant cursor-not-allowed opacity-70">12</button>
+<button class="aspect-square rounded-full flex items-center justify-center font-body-md text-body-md text-on-surface-variant cursor-not-allowed opacity-70">13</button>
 <button class="aspect-square rounded-full flex items-center justify-center font-body-md text-body-md text-primary bg-primary hover:bg-primary-container text-on-primary shadow-sm transition-all transform scale-110">14</button>
 <button class="aspect-square rounded-full flex items-center justify-center font-body-md text-body-md text-primary bg-primary-fixed hover:bg-primary hover:text-on-primary transition-colors">15</button>
 </div>
 </div>
 <!-- Time Slots Card -->
 <div class="bg-surface-container-lowest rounded-lg p-container-padding shadow-sm border border-outline-variant/30">
-<h2 class="font-headline-sm text-headline-sm text-on-surface mb-stack-md">Available Times <span class="font-body-md text-body-md font-normal text-on-surface-variant block mt-1">Oct 14, 2024</span></h2>
+<h2 class="font-headline-sm text-headline-sm text-on-surface mb-stack-md">Horarios Disponibles <span class="font-body-md text-body-md font-normal text-on-surface-variant block mt-1">Oct 14, 2024</span></h2>
 <div class="grid grid-cols-3 gap-stack-sm">
 <button class="py-2 px-4 rounded-md border border-outline-variant text-center font-body-md text-body-md text-on-surface hover:border-primary hover:bg-surface-container-low transition-all">
     09:00 AM
@@ -244,7 +267,7 @@
     10:30 AM
     <div class="w-2 h-2 rounded-full bg-[#10b981] mx-auto mt-1"></div>
 </button>
-<button class="py-2 px-4 rounded-md border border-outline-variant/30 bg-surface-container text-center font-body-md text-body-md text-outline-variant cursor-not-allowed">
+<button class="py-2 px-4 rounded-md border border-outline-variant/30 bg-surface-container text-center font-body-md text-body-md text-on-surface-variant cursor-not-allowed opacity-70">
     11:00 AM
     <div class="w-2 h-2 rounded-full bg-[#ef4444] mx-auto mt-1 opacity-50"></div>
 </button>
@@ -258,32 +281,32 @@
 <!-- Right Column: Form -->
 <div class="md:col-span-5 flex flex-col gap-gutter">
 <div class="bg-surface-container-lowest rounded-lg p-container-padding shadow-sm border border-outline-variant/30 flex-grow flex flex-col">
-<h2 class="font-headline-sm text-headline-sm text-on-surface mb-stack-md">Patient Details</h2>
+<h2 class="font-headline-sm text-headline-sm text-on-surface mb-stack-md">Datos del Paciente</h2>
 <form class="flex flex-col gap-stack-md flex-grow" onsubmit="event.preventDefault(); document.getElementById('success-modal').classList.replace('hidden', 'flex');">
 <div>
-<label class="block font-data-label text-data-label text-on-surface-variant mb-unit">Reason for Visit</label>
+<label class="block font-data-label text-data-label text-on-surface-variant mb-unit">Motivo de la Visita</label>
 <div class="relative">
 <select class="w-full neumorphic-input rounded-md py-3 px-4 font-body-md text-body-md text-on-surface appearance-none pr-10">
-<option>General Check-up</option>
-<option>Emergency</option>
-<option>Orthodontics Consultation</option>
-<option>Whitening</option>
+<option>Chequeo General</option>
+<option>Emergencia</option>
+<option>Consulta de Ortodoncia</option>
+<option>Blanqueamiento</option>
 </select>
 <span class="material-symbols-outlined absolute right-3 top-1/2 transform -translate-y-1/2 text-on-surface-variant pointer-events-none">expand_more</span>
 </div>
 </div>
 <div>
-<label class="block font-data-label text-data-label text-on-surface-variant mb-unit">Full Name</label>
-<input class="w-full neumorphic-input rounded-md py-3 px-4 font-body-md text-body-md text-on-surface" placeholder="John Doe" type="text" required/>
+<label class="block font-data-label text-data-label text-on-surface-variant mb-unit">Nombre Completo</label>
+<input class="w-full neumorphic-input rounded-md py-3 px-4 font-body-md text-body-md text-on-surface" placeholder="Juan Pérez" type="text" required/>
 </div>
 <div class="grid grid-cols-2 gap-stack-sm">
 <div>
-<label class="block font-data-label text-data-label text-on-surface-variant mb-unit">Phone</label>
-<input class="w-full neumorphic-input rounded-md py-3 px-4 font-body-md text-body-md text-on-surface" placeholder="+1 (555) 000-0000" type="tel" required/>
+<label class="block font-data-label text-data-label text-on-surface-variant mb-unit">Teléfono</label>
+<input class="w-full neumorphic-input rounded-md py-3 px-4 font-body-md text-body-md text-on-surface" placeholder="+58 412 0000000" type="tel" required/>
 </div>
 <div>
-<label class="block font-data-label text-data-label text-on-surface-variant mb-unit">Email</label>
-<input class="w-full neumorphic-input rounded-md py-3 px-4 font-body-md text-body-md text-on-surface" placeholder="john@example.com" type="email" required/>
+<label class="block font-data-label text-data-label text-on-surface-variant mb-unit">Correo Electrónico</label>
+<input class="w-full neumorphic-input rounded-md py-3 px-4 font-body-md text-body-md text-on-surface" placeholder="juan@ejemplo.com" type="email" required/>
 </div>
 </div>
 <div class="mt-auto pt-stack-md">
@@ -294,12 +317,12 @@
 <span class="material-symbols-outlined absolute text-white opacity-0 peer-checked:opacity-100 text-[16px] pointer-events-none">check</span>
 </div>
 <span class="font-body-md text-body-md text-on-surface-variant text-sm group-hover:text-on-surface transition-colors">
-    I agree to the privacy policy and consent to being contacted regarding this appointment.
+    Acepto la política de privacidad y autorizo que me contacten sobre esta cita.
 </span>
 </label>
 <button class="w-full bg-primary hover:bg-primary-container text-on-primary font-headline-sm text-headline-sm py-4 px-6 rounded-lg shadow-sm hover:shadow-md transition-all flex items-center justify-center gap-2 relative overflow-hidden group" type="submit">
 <span class="material-symbols-outlined transition-transform group-hover:-translate-y-1">calendar_month</span>
-    Confirm Appointment
+    Confirmar Cita
 </button>
 </div>
 </form>
@@ -313,13 +336,13 @@
 <div class="max-w-[1280px] mx-auto grid grid-cols-1 md:grid-cols-4 gap-gutter px-container-padding py-section-gap">
 <div class="md:col-span-1">
 <span class="text-headline-sm font-headline-sm font-bold text-primary">DENTAL PREMIUM</span>
-<p class="font-body-md text-body-md text-on-surface-variant mt-stack-sm">© 2024 DENTAL PREMIUM. Surgical Excellence &amp; Premium Hospitality.</p>
+<p class="font-body-md text-body-md text-on-surface-variant mt-stack-sm">© 2024 DENTAL PREMIUM. Excelencia Quirúrgica y Hospitalidad Premium.</p>
 </div>
 <div class="md:col-span-3 flex flex-wrap gap-gutter justify-start md:justify-end items-center">
-<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary opacity-90 hover:opacity-100 transition-colors" href="#">Privacy Policy</a>
-<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary opacity-90 hover:opacity-100 transition-colors" href="#">Terms of Service</a>
-<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary opacity-90 hover:opacity-100 transition-colors" href="#">Clinic Hours</a>
-<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary opacity-90 hover:opacity-100 transition-colors" href="#">Contact Us</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary opacity-90 hover:opacity-100 transition-colors" href="#">Política de Privacidad</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary opacity-90 hover:opacity-100 transition-colors" href="#">Términos de Servicio</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary opacity-90 hover:opacity-100 transition-colors" href="#">Horario de Atención</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary opacity-90 hover:opacity-100 transition-colors" href="https://wa.me/584124163681" target="_blank" rel="noopener">Contáctanos</a>
 </div>
 </div>
 </footer>
@@ -330,16 +353,22 @@
 <div class="w-16 h-16 bg-[#10b981]/10 text-[#10b981] rounded-full flex items-center justify-center mx-auto mb-stack-md">
 <span class="material-symbols-outlined text-4xl">check_circle</span>
 </div>
-<h3 class="font-headline-md text-headline-md text-on-surface mb-stack-sm">Appointment Confirmed!</h3>
-<p class="font-body-md text-body-md text-on-surface-variant mb-stack-lg">We look forward to seeing you on Oct 14th at 10:30 AM. A confirmation email has been sent to your address.</p>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-stack-sm">¡Cita Confirmada!</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-stack-lg">Te esperamos el 14 de octubre a las 10:30 AM. Se ha enviado un correo de confirmación a tu dirección.</p>
 <div class="flex flex-col gap-stack-sm">
 <a href="dashboard.html" class="w-full py-3 px-4 bg-primary text-on-primary rounded-md font-body-md text-body-md hover:bg-primary-container transition-colors flex items-center justify-center gap-2 font-bold">
-    Go to Patient Dashboard
+    Ir al Panel del Paciente
 </a>
-<button class="mt-stack-sm font-data-label text-data-label text-primary uppercase tracking-wider hover:underline" onclick="document.getElementById('success-modal').classList.replace('flex', 'hidden')">Close</button>
+<button class="mt-stack-sm font-data-label text-data-label text-primary uppercase tracking-wider hover:underline" onclick="document.getElementById('success-modal').classList.replace('flex', 'hidden')">Cerrar</button>
 </div>
 </div>
 </div>
+
+<script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="dental-motion.js"></script>
+<script src="dental-nav.js"></script>
 
 <!-- CACIQUE GLOBAL ESC MODAL CLOSER -->
 <script>

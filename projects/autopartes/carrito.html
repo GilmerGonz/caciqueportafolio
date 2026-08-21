@@ -159,7 +159,7 @@
 <a class="text-on-surface" href="carrito.html">
 <span class="material-symbols-outlined">shopping_cart</span>
 </a>
-<button class="text-on-surface" id="mobile-menu-btn">
+<button class="text-on-surface p-2 -m-2" id="mobile-menu-btn">
 <span class="material-symbols-outlined">menu</span>
 </button>
 </div>
@@ -171,7 +171,7 @@
 <h2 class="text-headline-md font-headline-md font-extrabold text-primary">AUTOINSUMO 2000</h2>
 <p class="text-caption font-caption text-on-surface-variant">Repuestos y más</p>
 </div>
-<button class="text-on-surface-variant" id="close-menu-btn">
+<button class="text-on-surface-variant p-2 -m-2" id="close-menu-btn">
 <span class="material-symbols-outlined">close</span>
 </button>
 </div>
@@ -223,7 +223,16 @@
 <div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
 <!-- Products Table Section -->
 <div class="lg:col-span-8 space-y-stack-md">
-<div class="bg-surface rounded-xl shadow-level-1 overflow-hidden border border-outline-variant/30">
+<!-- Empty State -->
+<div id="cart-empty-state" class="hidden bg-surface rounded-xl shadow-level-1 border border-outline-variant/30 p-12 text-center">
+<span class="material-symbols-outlined text-[48px] text-outline-variant mb-4">remove_shopping_cart</span>
+<h3 class="text-headline-md font-headline-md text-on-secondary-fixed mb-2">Tu carrito está vacío</h3>
+<p class="text-body-md font-body-md text-on-surface-variant mb-6">Añade repuestos desde el catálogo para solicitar una cotización.</p>
+<a href="productos.html" class="inline-flex items-center gap-2 bg-primary text-white px-6 py-3 rounded-lg font-label-md text-label-md hover:bg-primary/90 transition-colors">
+<span class="material-symbols-outlined text-[18px]">arrow_back</span> Ver Catálogo
+</a>
+</div>
+<div id="cart-table-wrapper" class="bg-surface rounded-xl shadow-level-1 overflow-hidden border border-outline-variant/30">
 <div class="overflow-x-auto">
 <table class="w-full text-left border-collapse">
 <thead>
@@ -235,81 +244,7 @@
 <th class="py-4 px-6"></th>
 </tr>
 </thead>
-<tbody class="divide-y divide-surface-variant">
-<!-- Item 1 -->
-<tr class="hover:bg-surface-bright transition-colors group">
-<td class="py-4 px-6">
-<div class="flex items-center gap-4">
-<div class="w-16 h-16 rounded-lg bg-surface-container-lowest border border-outline-variant/50 overflow-hidden shrink-0">
-<img class="w-full h-full object-cover" data-alt="A clean, well-lit studio shot of a brand new automotive alternator. The metallic surface gleams under bright, neutral white lighting, showcasing the intricate copper windings and silver casing. The background is pure white, emphasizing the part's high quality and reliability. The overall aesthetic is professional, modern, and aligned with a premium auto parts catalog." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD6uK08hlBCa8zTmgcjbsDRKxl0WTJ3ojZpveiY7PoKSbNSN_mVWHXoP3bRc7uMr1l3Hd5HiwOTxsduwHHd30EWPGPuzTDgCDniEd-anQg6T2hD34QZxHycZfyT8y4bYrG6VOcQR9nRCZGRJ5pdPTECAe9G6BVIWW5RMHklg40M4ZQCxEBxg3ASOC_n7LxcQScq8xiy4eFPQc5AuhjNWy6NgvFGUmy5ccnQdfjabIUEAYSkVWLZJcVSzA">
-</div>
-<div>
-<h3 class="text-body-md font-body-md font-semibold text-on-secondary-fixed">Alternador 12V 90A</h3>
-<p class="text-caption font-caption text-on-surface-variant">Marca: Bosch | Cod: ALT-892</p>
-<span class="inline-block mt-1 px-2 py-0.5 rounded-full bg-[#E31B23]/15 text-[#E31B23] text-caption font-caption font-semibold border border-[#E31B23]/20">Disponible</span>
-</div>
-</div>
-</td>
-<td class="py-4 px-6">
-<div class="flex items-center justify-center gap-2">
-<button class="w-8 h-8 flex items-center justify-center rounded-full bg-surface-container-low hover:bg-surface-container-high text-on-surface transition-colors border border-outline-variant/50">
-<span class="material-symbols-outlined text-[18px]">remove</span>
-</button>
-<input class="w-12 text-center bg-transparent border-none p-0 text-body-md font-body-md focus:ring-0" readonly="" type="number" value="1">
-<button class="w-8 h-8 flex items-center justify-center rounded-full bg-surface-container-low hover:bg-surface-container-high text-on-surface transition-colors border border-outline-variant/50">
-<span class="material-symbols-outlined text-[18px]">add</span>
-</button>
-</div>
-</td>
-<td class="py-4 px-6 text-right">
-<div class="text-body-md font-body-md text-on-surface font-medium">$145.00</div>
-</td>
-<td class="py-4 px-6 text-right">
-<div class="text-body-md font-body-md text-primary font-semibold">$145.00</div>
-</td>
-<td class="py-4 px-6 text-right">
-<button aria-label="Eliminar" class="text-on-surface-variant hover:text-error transition-colors p-2">
-<span class="material-symbols-outlined">delete</span>
-</button>
-</td>
-</tr>
-<!-- Item 2 -->
-<tr class="hover:bg-surface-bright transition-colors group">
-<td class="py-4 px-6">
-<div class="flex items-center gap-4">
-<div class="w-16 h-16 rounded-lg bg-surface-container-lowest border border-outline-variant/50 overflow-hidden shrink-0">
-<img class="w-full h-full object-cover" data-alt="A professional studio product photo of a high-performance automotive brake pad set. The dark gray friction material contrasts with the bright silver backing plates. The lighting is crisp and even, highlighting the texture and quality of the materials. Set against a clean, white background, the image conveys safety, durability, and premium engineering suitable for a modern e-commerce platform." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA0IP5HgD41UhiVZnoxnhs8dyeQ9cg_sY2fR_Fu0aOIZa-fLl5red0n1JHwcmrgMzPR7nKhZ7IThHVj9idoe00ryC-yhGPRsRVJTN1YvVSc-GpNlfpVRrZAyrdX6xTykd1RZNGd6pY3pB4LooFLjOIzQBwEN_YlJwOdwQxSOvLbIVaOxmNHmEwGCfOXN-Z8mvUIo7KbcBhiaGHFZ1xCcC_34Apzekx1FVTZ1JWXJxxl21qMIPw_r_2m6g">
-</div>
-<div>
-<h3 class="text-body-md font-body-md font-semibold text-on-secondary-fixed">Pastillas de Freno Cerámicas</h3>
-<p class="text-caption font-caption text-on-surface-variant">Marca: Brembo | Cod: BRK-044</p>
-</div>
-</div>
-</td>
-<td class="py-4 px-6">
-<div class="flex items-center justify-center gap-2">
-<button class="w-8 h-8 flex items-center justify-center rounded-full bg-surface-container-low hover:bg-surface-container-high text-on-surface transition-colors border border-outline-variant/50">
-<span class="material-symbols-outlined text-[18px]">remove</span>
-</button>
-<input class="w-12 text-center bg-transparent border-none p-0 text-body-md font-body-md focus:ring-0" readonly="" type="number" value="2">
-<button class="w-8 h-8 flex items-center justify-center rounded-full bg-surface-container-low hover:bg-surface-container-high text-on-surface transition-colors border border-outline-variant/50">
-<span class="material-symbols-outlined text-[18px]">add</span>
-</button>
-</div>
-</td>
-<td class="py-4 px-6 text-right">
-<div class="text-body-md font-body-md text-on-surface font-medium">$45.00</div>
-</td>
-<td class="py-4 px-6 text-right">
-<div class="text-body-md font-body-md text-primary font-semibold">$90.00</div>
-</td>
-<td class="py-4 px-6 text-right">
-<button aria-label="Eliminar" class="text-on-surface-variant hover:text-error transition-colors p-2">
-<span class="material-symbols-outlined">delete</span>
-</button>
-</td>
-</tr>
-</tbody>
+<tbody id="cart-items-body" class="divide-y divide-surface-variant"></tbody>
 </table>
 </div>
 </div>
@@ -318,7 +253,7 @@
 <span class="material-symbols-outlined text-[18px]">arrow_back</span>
                         Continuar Comprando
                     </a>
-<button class="text-label-md font-label-md text-on-surface-variant hover:text-error transition-colors flex items-center gap-1">
+<button id="clear-cart-btn" class="text-label-md font-label-md text-on-surface-variant hover:text-error transition-colors flex items-center gap-1">
 <span class="material-symbols-outlined text-[18px]">remove_shopping_cart</span>
                         Vaciar Carrito
                     </button>
@@ -333,18 +268,18 @@
 <h2 class="text-headline-md font-headline-md text-on-secondary-fixed mb-6 relative z-10">Resumen de Pedido</h2>
 <div class="space-y-4 mb-6 relative z-10">
 <div class="flex justify-between items-center text-body-md font-body-md">
-<span class="text-on-surface-variant">Subtotal (3 artículos)</span>
-<span class="font-medium text-on-surface">$235.00</span>
+<span class="text-on-surface-variant">Subtotal (<span id="cart-item-count">0</span> artículos)</span>
+<span id="cart-subtotal" class="font-medium text-on-surface">$0.00</span>
 </div>
 <div class="flex justify-between items-center text-body-md font-body-md">
 <span class="text-on-surface-variant">IVA (16%)</span>
-<span class="font-medium text-on-surface">$37.60</span>
+<span id="cart-iva" class="font-medium text-on-surface">$0.00</span>
 </div>
 <!-- Shipping Calculator Dropdown (Simplified) -->
 <div class="pt-4 border-t border-surface-variant">
 <label class="block text-label-md font-label-md text-on-surface-variant mb-2">Destino de Envío</label>
 <div class="relative">
-<select class="w-full appearance-none bg-surface-container-lowest border border-outline-variant rounded-lg px-4 py-2 text-body-md font-body-md focus:outline-none focus:ring-2 focus:ring-secondary-fixed focus:border-secondary-fixed transition-all pr-10">
+<select id="shipping-select" class="w-full appearance-none bg-surface-container-lowest border border-outline-variant rounded-lg px-4 py-2 text-body-md font-body-md focus:outline-none focus:ring-2 focus:ring-secondary-fixed focus:border-secondary-fixed transition-all pr-10">
 <option value="0">Retiro en Tienda (Gratis)</option>
 <option value="5">Caracas - Delivery ($5.00)</option>
 <option value="15">Envío Nacional MRW/Zoom ($15.00)</option>
@@ -354,21 +289,21 @@
 </div>
 <div class="flex justify-between items-center text-body-md font-body-md">
 <span class="text-on-surface-variant">Costo de Envío</span>
-<span class="font-medium text-on-surface">$0.00</span>
+<span id="cart-shipping" class="font-medium text-on-surface">$0.00</span>
 </div>
 </div>
 <div class="border-t border-surface-variant pt-4 mb-6 relative z-10">
 <div class="flex justify-between items-end">
 <span class="text-body-lg font-body-lg font-semibold text-on-secondary-fixed">Total Estimado</span>
-<span class="text-headline-lg font-headline-lg font-bold text-primary">$272.60</span>
+<span id="cart-total" class="text-headline-lg font-headline-lg font-bold text-primary">$0.00</span>
 </div>
 <p class="text-caption font-caption text-on-surface-variant mt-1 text-right">Los precios están sujetos a verificación de inventario.</p>
 </div>
-<button class="w-full bg-[#E31B23] text-white py-3 px-6 rounded-lg text-label-md font-label-md font-bold shadow-level-1 hover:bg-[#c0151c] transition-colors focus:ring-2 focus:ring-offset-2 focus:ring-secondary-fixed flex items-center justify-center gap-2 btn-inner-glow relative z-10">
+<button id="quote-formal-btn" class="w-full bg-[#E31B23] text-white py-3 px-6 rounded-lg text-label-md font-label-md font-bold shadow-level-1 hover:bg-[#c0151c] transition-colors focus:ring-2 focus:ring-offset-2 focus:ring-secondary-fixed flex items-center justify-center gap-2 btn-inner-glow relative z-10">
 <span class="material-symbols-outlined">request_quote</span>
                         Solicitar Cotización Formal
                     </button>
-<button class="w-full mt-3 bg-[#25D366] text-white py-3 px-6 rounded-lg text-label-md font-label-md font-bold shadow-level-1 hover:bg-[#128C7E] transition-colors focus:ring-2 focus:ring-offset-2 focus:ring-[#25D366] flex items-center justify-center gap-2 btn-inner-glow relative z-10">
+<button id="quote-whatsapp-btn" class="w-full mt-3 bg-[#25D366] text-white py-3 px-6 rounded-lg text-label-md font-label-md font-bold shadow-level-1 hover:bg-[#128C7E] transition-colors focus:ring-2 focus:ring-offset-2 focus:ring-[#25D366] flex items-center justify-center gap-2 btn-inner-glow relative z-10">
 <span class="material-symbols-outlined">chat</span>
                         Cotizar por WhatsApp
                     </button>
@@ -399,8 +334,8 @@
 </div>
 <div class="flex flex-col gap-2">
 <h4 class="text-label-md font-label-md font-bold mb-2">Legal</h4>
-<a class="text-body-md font-body-md text-surface-variant dark:text-on-surface-variant hover:text-primary-fixed transition-colors hover:underline decoration-primary transition-all Focus: ring-2 ring-offset-2 ring-primary" href="#">Política de Privacidad</a>
-<a class="text-body-md font-body-md text-surface-variant dark:text-on-surface-variant hover:text-primary-fixed transition-colors hover:underline decoration-primary transition-all Focus: ring-2 ring-offset-2 ring-primary" href="#">Términos de Servicio</a>
+<a class="text-body-md font-body-md text-surface-variant dark:text-on-surface-variant hover:text-primary-fixed transition-colors hover:underline decoration-primary transition-all focus:ring-2 focus:ring-offset-2 focus:ring-primary" href="#">Política de Privacidad</a>
+<a class="text-body-md font-body-md text-surface-variant dark:text-on-surface-variant hover:text-primary-fixed transition-colors hover:underline decoration-primary transition-all focus:ring-2 focus:ring-offset-2 focus:ring-primary" href="#">Términos de Servicio</a>
 </div>
 <div class="w-full border-t border-surface-variant/30 pt-6 mt-4 flex flex-col md:flex-row justify-between items-center gap-4 text-caption font-caption text-surface-variant dark:text-on-surface-variant opacity-80 md:col-span-full">
 <p>© 2024 AUTOINSUMO 2000. Todos los derechos reservados.</p>
@@ -436,6 +371,12 @@
             overlay.addEventListener('click', toggleMenu);
         });
     </script>
+<script src="cart.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="autopartes-motion.js"></script>
 
 <!-- CACIQUE GLOBAL ESC MODAL CLOSER -->
 <script>

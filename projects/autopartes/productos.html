@@ -142,7 +142,7 @@
 <a class="text-on-surface" href="carrito.html">
 <span class="material-symbols-outlined">shopping_cart</span>
 </a>
-<button class="text-on-surface" id="mobile-menu-btn">
+<button class="text-on-surface p-2 -m-2" id="mobile-menu-btn">
 <span class="material-symbols-outlined">menu</span>
 </button>
 </div>
@@ -154,7 +154,7 @@
 <h2 class="text-headline-md font-headline-md font-extrabold text-primary">AUTOINSUMO 2000</h2>
 <p class="text-caption font-caption text-on-surface-variant">Repuestos y más</p>
 </div>
-<button class="text-on-surface-variant" id="close-menu-btn">
+<button class="text-on-surface-variant p-2 -m-2" id="close-menu-btn">
 <span class="material-symbols-outlined">close</span>
 </button>
 </div>
@@ -216,19 +216,19 @@
 <h3 class="text-label-md font-label-md text-secondary mb-3 uppercase tracking-wider">Categoría</h3>
 <div class="flex flex-col gap-2">
 <label class="flex items-center gap-3 cursor-pointer group">
-<input checked="" class="rounded border-outline-variant text-primary focus:ring-primary" type="checkbox">
+<input data-filter-category="suspension" class="rounded border-outline-variant text-primary focus:ring-primary" type="checkbox">
 <span class="text-body-md text-tertiary group-hover:text-secondary transition-colors">Suspensión</span>
 </label>
 <label class="flex items-center gap-3 cursor-pointer group">
-<input class="rounded border-outline-variant text-primary focus:ring-primary" type="checkbox">
+<input data-filter-category="frenos" class="rounded border-outline-variant text-primary focus:ring-primary" type="checkbox">
 <span class="text-body-md text-tertiary group-hover:text-secondary transition-colors">Frenos</span>
 </label>
 <label class="flex items-center gap-3 cursor-pointer group">
-<input class="rounded border-outline-variant text-primary focus:ring-primary" type="checkbox">
+<input data-filter-category="electricidad" class="rounded border-outline-variant text-primary focus:ring-primary" type="checkbox">
 <span class="text-body-md text-tertiary group-hover:text-secondary transition-colors">Electricidad</span>
 </label>
 <label class="flex items-center gap-3 cursor-pointer group">
-<input class="rounded border-outline-variant text-primary focus:ring-primary" type="checkbox">
+<input data-filter-category="motor" class="rounded border-outline-variant text-primary focus:ring-primary" type="checkbox">
 <span class="text-body-md text-tertiary group-hover:text-secondary transition-colors">Motor</span>
 </label>
 </div>
@@ -238,15 +238,15 @@
 <h3 class="text-label-md font-label-md text-secondary mb-3 uppercase tracking-wider">Marca</h3>
 <div class="flex flex-col gap-2">
 <label class="flex items-center gap-3 cursor-pointer group">
-<input class="rounded border-outline-variant text-primary focus:ring-primary" type="checkbox">
+<input data-filter-brand="Bosch" class="rounded border-outline-variant text-primary focus:ring-primary" type="checkbox">
 <span class="text-body-md text-tertiary group-hover:text-secondary transition-colors">Bosch</span>
 </label>
 <label class="flex items-center gap-3 cursor-pointer group">
-<input class="rounded border-outline-variant text-primary focus:ring-primary" type="checkbox">
+<input data-filter-brand="Monroe" class="rounded border-outline-variant text-primary focus:ring-primary" type="checkbox">
 <span class="text-body-md text-tertiary group-hover:text-secondary transition-colors">Monroe</span>
 </label>
 <label class="flex items-center gap-3 cursor-pointer group">
-<input class="rounded border-outline-variant text-primary focus:ring-primary" type="checkbox">
+<input data-filter-brand="Brembo" class="rounded border-outline-variant text-primary focus:ring-primary" type="checkbox">
 <span class="text-body-md text-tertiary group-hover:text-secondary transition-colors">Brembo</span>
 </label>
 </div>
@@ -254,27 +254,28 @@
 <!-- Price Filter -->
 <div>
 <h3 class="text-label-md font-label-md text-secondary mb-3 uppercase tracking-wider">Precio Máximo</h3>
-<input class="w-full accent-primary" max="500" min="0" type="range" value="250">
+<input id="price-filter" class="w-full accent-primary" max="150" min="0" type="range" value="150">
 <div class="flex justify-between text-caption font-caption text-tertiary mt-2">
 <span>$0</span>
-<span>$500</span>
+<span id="price-filter-label">$150.00</span>
 </div>
 </div>
-<button class="w-full mt-8 bg-surface border border-secondary text-secondary px-4 py-2 rounded-lg hover:bg-surface-container-low transition-colors text-label-md font-label-md focus:ring-2 focus:ring-offset-2 focus:ring-secondary">
+<button id="clear-filters-btn" class="w-full mt-8 bg-surface border border-secondary text-secondary px-4 py-2 rounded-lg hover:bg-surface-container-low transition-colors text-label-md font-label-md focus:ring-2 focus:ring-offset-2 focus:ring-secondary">
                         Limpiar Filtros
                     </button>
 </div>
 </aside>
 <!-- Product Grid -->
 <div class="flex-grow">
-<div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
+<p id="result-count" class="text-body-md font-body-md text-tertiary mb-4">Mostrando los 4 productos disponibles</p>
+<div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
 <!-- Product Card 1 -->
-<article class="bg-surface rounded-xl card-shadow hover:card-hover-shadow transition-shadow duration-300 overflow-hidden border border-surface-variant flex flex-col group relative">
+<article data-category="suspension" data-brand="Monroe" data-price="45.00" class="bg-surface rounded-xl card-shadow hover:card-hover-shadow transition-shadow duration-300 overflow-hidden border border-surface-variant flex flex-col group relative">
 <div class="absolute top-4 left-4 z-10 bg-primary/15 text-primary px-3 py-1 rounded-full text-caption font-caption font-bold backdrop-blur-sm">
                             Oferta
                         </div>
-<div class="aspect-w-4 aspect-h-3 bg-white p-4 flex items-center justify-center">
-<img alt="Amortiguador de Suspensión" class="object-contain w-full h-48 group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida/AP1WRLvh6eQ3Voo2PnI2SUCaOep-NIUy5tmtMSgZbEnqpZ4zMsrIdnBmfLmjqVm7DPZgosL9M_IkUfrlFj22tP3u2dz5q-Ay_3h9Ylvzb82GvF4YvCLDwttOGSMmMF33bFt16DWfKwIWySdeXcAr4Bgjv3d89gJnMiwe4luVIBNY-32ZOkN8qTHgkjNgS6L4tSF2NwLE6MViZYNxsKVw0mgLjbEuzYtfgT9rquqNnmUcdEHeP0Ya9vADR6XBvE4">
+<div class="bg-white p-4 h-48 flex items-center justify-center group-hover:scale-105 transition-transform duration-500">
+<span class="material-symbols-outlined text-primary" style="font-size: 72px;" aria-hidden="true">tune</span>
 </div>
 <div class="p-5 flex flex-col flex-grow bg-surface-bright border-t border-surface-variant">
 <span class="text-caption font-caption text-tertiary mb-1">Monroe • Suspensión</span>
@@ -284,19 +285,19 @@
 <p class="text-headline-md font-headline-md text-primary">$45.00</p>
 <p class="text-caption font-caption text-tertiary">Ref: Bs. 1,620.00</p>
 </div>
-<button onclick="window.location.href='carrito.html'" aria-label="Añadir al carrito" class="bg-surface border border-secondary text-secondary p-2 rounded-lg hover:bg-secondary hover:text-white transition-colors focus:ring-2 focus:ring-offset-2 focus:ring-secondary">
+<button data-add-to-cart="amortiguador-hilux" aria-label="Añadir al carrito" class="bg-surface border border-secondary text-secondary p-2 rounded-lg hover:bg-secondary hover:text-white transition-colors focus:ring-2 focus:ring-offset-2 focus:ring-secondary">
 <span class="material-symbols-outlined">add_shopping_cart</span>
 </button>
 </div>
 </div>
 </article>
 <!-- Product Card 2 -->
-<article class="bg-surface rounded-xl card-shadow hover:card-hover-shadow transition-shadow duration-300 overflow-hidden border border-surface-variant flex flex-col group relative">
+<article data-category="electricidad" data-brand="Bosch" data-price="85.00" class="bg-surface rounded-xl card-shadow hover:card-hover-shadow transition-shadow duration-300 overflow-hidden border border-surface-variant flex flex-col group relative">
 <div class="absolute top-4 left-4 z-10 bg-[#25D366]/15 text-[#0F8A3A] px-3 py-1 rounded-full text-caption font-caption font-bold backdrop-blur-sm">
                             Disponible
                         </div>
-<div class="aspect-w-4 aspect-h-3 bg-white p-4 flex items-center justify-center">
-<img alt="Batería 12V 70Ah" class="object-contain w-full h-48 group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida/AP1WRLu-vs-CJStaZ52lX1GyNmEx7t3wdtI-h9VTxI06m8YXgz48f2dpMsPlR4NY21ofWUxtpr_TMgh6SOGn3KHenUsz0v9aNlSu6Wly1RXEjjaxV7pfl5XGhduwfpxcHIAyI5eXnMpTZEgD_H-N5o_cI5E-C_5s7NvU8s3KvTOjkkKQMkJFQD5wstj52z6tJlGlU4CoppL6sqlssmgJeIKwb7xJBeMbIWOhOY92R761ddXFn1yuOWghsEKi0mI">
+<div class="bg-white p-4 h-48 flex items-center justify-center group-hover:scale-105 transition-transform duration-500">
+<span class="material-symbols-outlined text-primary" style="font-size: 72px;" aria-hidden="true">battery_full</span>
 </div>
 <div class="p-5 flex flex-col flex-grow bg-surface-bright border-t border-surface-variant">
 <span class="text-caption font-caption text-tertiary mb-1">Bosch • Electricidad</span>
@@ -306,16 +307,16 @@
 <p class="text-headline-md font-headline-md text-primary">$85.00</p>
 <p class="text-caption font-caption text-tertiary">Ref: Bs. 3,060.00</p>
 </div>
-<button onclick="window.location.href='carrito.html'" aria-label="Añadir al carrito" class="bg-surface border border-secondary text-secondary p-2 rounded-lg hover:bg-secondary hover:text-white transition-colors focus:ring-2 focus:ring-offset-2 focus:ring-secondary">
+<button data-add-to-cart="bateria-70ah" aria-label="Añadir al carrito" class="bg-surface border border-secondary text-secondary p-2 rounded-lg hover:bg-secondary hover:text-white transition-colors focus:ring-2 focus:ring-offset-2 focus:ring-secondary">
 <span class="material-symbols-outlined">add_shopping_cart</span>
 </button>
 </div>
 </div>
 </article>
 <!-- Product Card 3 -->
-<article class="bg-surface rounded-xl card-shadow hover:card-hover-shadow transition-shadow duration-300 overflow-hidden border border-surface-variant flex flex-col group">
-<div class="aspect-w-4 aspect-h-3 bg-white p-4 flex items-center justify-center">
-<img alt="Kit de Frenos" class="object-contain w-full h-48 group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida/AP1WRLvR-ht5NVEzOhE7Ze_LFl2jPiw165ynP9-zvEbDfpVxGjo8THXHjaspXzSvzYnckobnP0HQFv3Xeeuxmjtjb_PqXdagwt-XBfIbeBaJKSY2vDLvYGvTf1UjHcrOy2JjM4Z7oORznvgIeUn3_4wDj8tOjePTMNMvvAQ5GAN-h0O9aMNDnMk8N96hEUloi28im1iE8VXrAmD6wAPpt9LKjhITvucQmxb6gY5_s4BmQdplLyxngPWLzCz2KAI">
+<article data-category="frenos" data-brand="Brembo" data-price="120.00" class="bg-surface rounded-xl card-shadow hover:card-hover-shadow transition-shadow duration-300 overflow-hidden border border-surface-variant flex flex-col group">
+<div class="bg-white p-4 h-48 flex items-center justify-center group-hover:scale-105 transition-transform duration-500">
+<span class="material-symbols-outlined text-primary" style="font-size: 72px;" aria-hidden="true">tire_repair</span>
 </div>
 <div class="p-5 flex flex-col flex-grow bg-surface-bright border-t border-surface-variant">
 <span class="text-caption font-caption text-tertiary mb-1">Brembo • Frenos</span>
@@ -325,16 +326,16 @@
 <p class="text-headline-md font-headline-md text-primary">$120.00</p>
 <p class="text-caption font-caption text-tertiary">Ref: Bs. 4,320.00</p>
 </div>
-<button onclick="window.location.href='carrito.html'" aria-label="Añadir al carrito" class="bg-surface border border-secondary text-secondary p-2 rounded-lg hover:bg-secondary hover:text-white transition-colors focus:ring-2 focus:ring-offset-2 focus:ring-secondary">
+<button data-add-to-cart="kit-frenos-ceramicos" aria-label="Añadir al carrito" class="bg-surface border border-secondary text-secondary p-2 rounded-lg hover:bg-secondary hover:text-white transition-colors focus:ring-2 focus:ring-offset-2 focus:ring-secondary">
 <span class="material-symbols-outlined">add_shopping_cart</span>
 </button>
 </div>
 </div>
 </article>
 <!-- Product Card 4 -->
-<article class="bg-surface rounded-xl card-shadow hover:card-hover-shadow transition-shadow duration-300 overflow-hidden border border-surface-variant flex flex-col group">
-<div class="aspect-w-4 aspect-h-3 bg-white p-4 flex items-center justify-center">
-<img alt="Componente de Motor" class="object-contain w-full h-48 group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida/AP1WRLvoBFA8NRh-myFKNR6ghXGw0YnIfuXB1Fte-nKcXPfGY7NFvUpdefsXni7dLfjhQYyrU2k2ooa6YI0wRmiGxBeNXQmf0IAdh78dmFLDZTzMytCxu28a12OesO4AJYZGNFP88d9fH_jKljAZhGhYdGlJrkHI3vgBOPAwetsEhCfI7vdDtFrHVw8mCccn505P4x8kERgSBZoyZCF92advo_4-3-3sOVzyeUAi-lVo5aNs6TWCP_5TFtmRtVfy">
+<article data-category="motor" data-brand="Genuino" data-price="65.00" class="bg-surface rounded-xl card-shadow hover:card-hover-shadow transition-shadow duration-300 overflow-hidden border border-surface-variant flex flex-col group">
+<div class="bg-white p-4 h-48 flex items-center justify-center group-hover:scale-105 transition-transform duration-500">
+<span class="material-symbols-outlined text-primary" style="font-size: 72px;" aria-hidden="true">precision_manufacturing</span>
 </div>
 <div class="p-5 flex flex-col flex-grow bg-surface-bright border-t border-surface-variant">
 <span class="text-caption font-caption text-tertiary mb-1">Genuino • Motor</span>
@@ -344,27 +345,15 @@
 <p class="text-headline-md font-headline-md text-primary">$65.00</p>
 <p class="text-caption font-caption text-tertiary">Ref: Bs. 2,340.00</p>
 </div>
-<button onclick="window.location.href='carrito.html'" aria-label="Añadir al carrito" class="bg-surface border border-secondary text-secondary p-2 rounded-lg hover:bg-secondary hover:text-white transition-colors focus:ring-2 focus:ring-offset-2 focus:ring-secondary">
+<button data-add-to-cart="bomba-aceite-v8" aria-label="Añadir al carrito" class="bg-surface border border-secondary text-secondary p-2 rounded-lg hover:bg-secondary hover:text-white transition-colors focus:ring-2 focus:ring-offset-2 focus:ring-secondary">
 <span class="material-symbols-outlined">add_shopping_cart</span>
 </button>
 </div>
 </div>
 </article>
 </div>
-<!-- Pagination (Placeholder) -->
-<div class="mt-stack-lg flex justify-center">
-<nav class="flex gap-2">
-<button class="w-10 h-10 flex items-center justify-center rounded-lg border border-outline-variant text-tertiary hover:bg-surface-container-low transition-colors disabled:opacity-50">
-<span class="material-symbols-outlined">chevron_left</span>
-</button>
-<button class="w-10 h-10 flex items-center justify-center rounded-lg bg-primary text-white font-bold">1</button>
-<button class="w-10 h-10 flex items-center justify-center rounded-lg border border-outline-variant text-secondary hover:bg-surface-container-low transition-colors">2</button>
-<button class="w-10 h-10 flex items-center justify-center rounded-lg border border-outline-variant text-secondary hover:bg-surface-container-low transition-colors">3</button>
-<button class="w-10 h-10 flex items-center justify-center rounded-lg border border-outline-variant text-tertiary hover:bg-surface-container-low transition-colors">
-<span class="material-symbols-outlined">chevron_right</span>
-</button>
-</nav>
-</div>
+<!-- Nota: catálogo de demo con 4 productos — sin paginación real porque cabe todo en una página -->
+<p class="mt-stack-lg text-center text-caption font-caption text-tertiary">¿Buscas algo que no ves aquí? <a href="contacto.html" class="text-primary font-semibold hover:underline">Contáctanos</a>, tenemos más de 50,000 repuestos en stock.</p>
 </div>
 </div>
 </main>
@@ -416,6 +405,12 @@
             overlay.addEventListener('click', toggleMenu);
         });
     </script>
+<script src="cart.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="autopartes-motion.js"></script>
 
 <!-- CACIQUE GLOBAL ESC MODAL CLOSER -->
 <script>

@@ -254,6 +254,7 @@
 <!-- Hero Section -->
 <section class="relative min-h-screen flex items-center pt-24 pb-16 overflow-hidden" id="home">
 <!-- Animation Background -->
+<canvas id="hero-3d-canvas" class="absolute inset-0 w-full h-full z-0 pointer-events-none" aria-hidden="true"></canvas>
 <div class="relative z-10 max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop w-full grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
 <div class="lg:col-span-8 flex flex-col items-start fade-in-up">
 <div class="inline-flex items-center space-x-2 bg-surface-container-high px-4 py-1.5 rounded-full border border-outline-variant/50 mb-6">
@@ -279,9 +280,9 @@
 </div>
 <div class="mt-12 flex items-center space-x-6 border-t border-outline-variant/30 pt-6">
 <div class="flex -space-x-3">
-<img class="w-10 h-10 rounded-full border-2 border-surface object-cover" data-alt="A portrait of a young professional in a modern, dark-themed office setting with subtle cyan backlighting, looking confident. High-quality corporate tech aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuABL13cC4ZMYfUxoDZdgANpCfB2OoWH4eq0uLUcYu-j81SPmSdzhix3q_4nrhD4-t7CkcGdDeKrNNb8F3tgSYRzhd6RqW16qVavx9UB9c7HBfRWIQ1Dp54hoRj1ws624pvWtQGerk2AxTOhgP2ktyijuvOSNbdWH4dz2hQZ8CPsWGfshUgSPcsVKty9B-Kigxv5aDiwYmzFxkL_dvS3w9WNqMyoZkAatqNV7mSNXd3N68up4y_sVjOfhQ"/>
-<img class="w-10 h-10 rounded-full border-2 border-surface object-cover" data-alt="A portrait of a female software engineer smiling in a sleek studio with deep blue and green neon accents. Cyber-premium style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfdxl1WJaZ1RCk9N2NjZunpvuN3ez7MiWucbDRCR9MGx55HhV3I5yXNpZmQoLRUuP479YBjiMJ-7wsppqYv50e59jaD0RIDPcz2CnFQ-ZLnAY_HDMtGCcHhPoHSZkkjbZh3HVm-MAsFnnpRpNTrWR-l0lpwjiho5urHYEyoYRl_4PZYPJMQVBFITJCtnF8t_vNFGuyUx8z0Lp-nHTstKdN6Gvx2bsF2W1agapUG-CA6o1cwejXKjfceg"/>
-<img class="w-10 h-10 rounded-full border-2 border-surface object-cover" data-alt="A close-up portrait of a diverse male developer against a dark minimalist background with soft architectural lighting. Professional and modern." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC0j3IN35f02SiQ7TDWT_DyrgHNSET3WWwMB8Ibw-V7myRQO5Bn2t-ulQv-qX1BaoXJmB13vZpRW6rdIq6H49wQP_Q9mDjWn0SdEwJ8o-93GeWbkPA5LlEDjrmlv0NWPScMKSvrMtI8_n8BLGv40EixnUifNCIVxjIJ32mGyfI99dTZs4HK6Fh02aYHIieQ4xduERM4TreA5aiSV2ZBZ1CY3Q4G3F3Lwq1TwgKr_kHs7IYy-s2D4hyGow"/>
+<img class="w-10 h-10 rounded-full border-2 border-surface object-cover" alt="A portrait of a young professional in a modern, dark-themed office setting with subtle cyan backlighting, looking confident. High-quality corporate tech aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuABL13cC4ZMYfUxoDZdgANpCfB2OoWH4eq0uLUcYu-j81SPmSdzhix3q_4nrhD4-t7CkcGdDeKrNNb8F3tgSYRzhd6RqW16qVavx9UB9c7HBfRWIQ1Dp54hoRj1ws624pvWtQGerk2AxTOhgP2ktyijuvOSNbdWH4dz2hQZ8CPsWGfshUgSPcsVKty9B-Kigxv5aDiwYmzFxkL_dvS3w9WNqMyoZkAatqNV7mSNXd3N68up4y_sVjOfhQ"/>
+<img class="w-10 h-10 rounded-full border-2 border-surface object-cover" alt="A portrait of a female software engineer smiling in a sleek studio with deep blue and green neon accents. Cyber-premium style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfdxl1WJaZ1RCk9N2NjZunpvuN3ez7MiWucbDRCR9MGx55HhV3I5yXNpZmQoLRUuP479YBjiMJ-7wsppqYv50e59jaD0RIDPcz2CnFQ-ZLnAY_HDMtGCcHhPoHSZkkjbZh3HVm-MAsFnnpRpNTrWR-l0lpwjiho5urHYEyoYRl_4PZYPJMQVBFITJCtnF8t_vNFGuyUx8z0Lp-nHTstKdN6Gvx2bsF2W1agapUG-CA6o1cwejXKjfceg"/>
+<img class="w-10 h-10 rounded-full border-2 border-surface object-cover" alt="A close-up portrait of a diverse male developer against a dark minimalist background with soft architectural lighting. Professional and modern." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC0j3IN35f02SiQ7TDWT_DyrgHNSET3WWwMB8Ibw-V7myRQO5Bn2t-ulQv-qX1BaoXJmB13vZpRW6rdIq6H49wQP_Q9mDjWn0SdEwJ8o-93GeWbkPA5LlEDjrmlv0NWPScMKSvrMtI8_n8BLGv40EixnUifNCIVxjIJ32mGyfI99dTZs4HK6Fh02aYHIieQ4xduERM4TreA5aiSV2ZBZ1CY3Q4G3F3Lwq1TwgKr_kHs7IYy-s2D4hyGow"/>
 <div class="w-10 h-10 rounded-full border-2 border-surface bg-surface-container-high flex items-center justify-center font-label-caps text-xs">
                                 +5k
                             </div>
@@ -446,28 +447,28 @@
 <div class="w-16 h-16 rounded-full bg-surface-container-high border border-outline-variant flex items-center justify-center mx-auto mb-4 text-primary-container">
 <span class="material-symbols-outlined text-3xl">model_training</span>
 </div>
-<h3 class="font-h3 text-xl text-on-background mb-2">Mentores 1 a 1</h3>
+<h3 class="font-h3 text-h3 text-on-background mb-2">Mentores 1 a 1</h3>
 <p class="font-body-sm text-on-surface-variant">Sesiones personalizadas con expertos de la industria para resolver tus dudas.</p>
 </div>
 <div class="surface_card rounded-xl p-6 transition-all duration-300 hover-border-light text-center fade-in-up" style="transition-delay: 0.1s">
 <div class="w-16 h-16 rounded-full bg-surface-container-high border border-outline-variant flex items-center justify-center mx-auto mb-4 text-secondary-fixed">
 <span class="material-symbols-outlined text-3xl">work</span>
 </div>
-<h3 class="font-h3 text-xl text-on-background mb-2">Bolsa de Empleo</h3>
+<h3 class="font-h3 text-h3 text-on-background mb-2">Bolsa de Empleo</h3>
 <p class="font-body-sm text-on-surface-variant">Conexión directa con empresas tech en búsqueda de nuevo talento.</p>
 </div>
 <div class="surface_card rounded-xl p-6 transition-all duration-300 hover-border-light text-center fade-in-up" style="transition-delay: 0.2s">
 <div class="w-16 h-16 rounded-full bg-surface-container-high border border-outline-variant flex items-center justify-center mx-auto mb-4 text-tertiary-container">
 <span class="material-symbols-outlined text-3xl">code_blocks</span>
 </div>
-<h3 class="font-h3 text-xl text-on-background mb-2">Proyectos Reales</h3>
+<h3 class="font-h3 text-h3 text-on-background mb-2">Proyectos Reales</h3>
 <p class="font-body-sm text-on-surface-variant">Aprende construyendo aplicaciones que podrás incluir en tu portafolio.</p>
 </div>
 <div class="surface_card rounded-xl p-6 transition-all duration-300 hover-border-light text-center fade-in-up" style="transition-delay: 0.3s">
 <div class="w-16 h-16 rounded-full bg-surface-container-high border border-outline-variant flex items-center justify-center mx-auto mb-4 text-primary">
 <span class="material-symbols-outlined text-3xl">schedule</span>
 </div>
-<h3 class="font-h3 text-xl text-on-background mb-2">Flexibilidad</h3>
+<h3 class="font-h3 text-h3 text-on-background mb-2">Flexibilidad</h3>
 <p class="font-body-sm text-on-surface-variant">Estudia a tu propio ritmo con acceso a los materiales 24/7.</p>
 </div>
 </div>
@@ -816,12 +817,25 @@
 
                     if (isValid) {
                         formError.classList.add('hidden');
-                        // Simulate submission
                         const btn = form.querySelector('button[type="submit"]');
                         const originalText = btn.innerHTML;
                         btn.innerHTML = '<span class="material-symbols-outlined animate-spin mr-2">refresh</span> Enviando...';
                         btn.disabled = true;
-                        
+
+                        // Envía el lead por WhatsApp en vez de simular un envío que no llega a ningún lado
+                        const courseLabels = {
+                            fullstack: 'Full Stack Web',
+                            data: 'Data Science & IA',
+                            mobile: 'Mobile App Development'
+                        };
+                        const text = `Hola CodeNova! Mi nombre es *${name}*.\n` +
+                            `Correo: ${email}\n` +
+                            `Teléfono: ${phone}\n` +
+                            `Curso de interés: ${courseLabels[course] || course}\n` +
+                            (message ? `Mensaje: ${message}\n` : '') +
+                            `Quisiera recibir más información.`;
+                        window.open(`https://wa.me/584124163681?text=${encodeURIComponent(text)}`, '_blank');
+
                         setTimeout(() => {
                             btn.innerHTML = originalText;
                             btn.disabled = false;
@@ -830,7 +844,7 @@
                             setTimeout(() => {
                                 formSuccess.classList.add('hidden');
                             }, 5000);
-                        }, 1500);
+                        }, 800);
                     } else {
                         formError.classList.remove('hidden');
                         formSuccess.classList.add('hidden');
@@ -839,6 +853,11 @@
             }
         });
     </script>
+
+<script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="codenova-motion.js"></script>
 
 <!-- CACIQUE GLOBAL ESC MODAL CLOSER -->
 <script>

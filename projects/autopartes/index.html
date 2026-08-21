@@ -156,7 +156,7 @@
 <a class="text-on-surface" href="carrito.html">
 <span class="material-symbols-outlined">shopping_cart</span>
 </a>
-<button class="text-on-surface" id="mobile-menu-btn">
+<button class="text-on-surface p-2 -m-2" id="mobile-menu-btn">
 <span class="material-symbols-outlined">menu</span>
 </button>
 </div>
@@ -168,7 +168,7 @@
 <h2 class="text-headline-md font-headline-md font-extrabold text-primary">AUTOINSUMO 2000</h2>
 <p class="text-caption font-caption text-on-surface-variant">Repuestos y más</p>
 </div>
-<button class="text-on-surface-variant" id="close-menu-btn">
+<button class="text-on-surface-variant p-2 -m-2" id="close-menu-btn">
 <span class="material-symbols-outlined">close</span>
 </button>
 </div>
@@ -216,9 +216,10 @@
 <!-- Hero Section -->
 <section class="relative w-full h-[600px] md:h-[700px] flex items-center justify-center px-margin-mobile md:px-margin-desktop overflow-hidden">
 <div class="absolute inset-0 w-full h-full bg-surface-dim z-0">
-<div class="absolute inset-0 w-full h-full bg-cover bg-center mix-blend-overlay opacity-60" data-alt="A highly detailed cinematic shot of a pristine modern automotive workshop. High-key lighting highlights metallic engine components and clean tools. The atmosphere is professional, reliable, and trustworthy, reflecting a premium commercial aesthetic with deep blacks, bright whites, and subtle navy and red accents." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCee2gLdKa9w4TjMmR4xMDQf4J34AmIrskeXDt0h35QhAavXXs7FgTggk9rkqPQkujvYLFEJKaj7A9TqUCdBX-rJGRPN-LW5Uy3n6RHaMhR1cEhe70Ie-HH-vuUJGlZHulB36_aR7BdUHZoikeE7UySoNMtb9-y9VgHHWuqMc_fDTzJEg5YxN7v2I-QQTzZL4RGknjSctwsLHj2CbyL1P-R4yRGsl4kLySRZfTPhrrKuhUsbyVisBClGg')"></div>
+<div class="absolute inset-0 w-full h-full bg-cover bg-center mix-blend-overlay opacity-60" alt="A highly detailed cinematic shot of a pristine modern automotive workshop. High-key lighting highlights metallic engine components and clean tools. The atmosphere is professional, reliable, and trustworthy, reflecting a premium commercial aesthetic with deep blacks, bright whites, and subtle navy and red accents." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCee2gLdKa9w4TjMmR4xMDQf4J34AmIrskeXDt0h35QhAavXXs7FgTggk9rkqPQkujvYLFEJKaj7A9TqUCdBX-rJGRPN-LW5Uy3n6RHaMhR1cEhe70Ie-HH-vuUJGlZHulB36_aR7BdUHZoikeE7UySoNMtb9-y9VgHHWuqMc_fDTzJEg5YxN7v2I-QQTzZL4RGknjSctwsLHj2CbyL1P-R4yRGsl4kLySRZfTPhrrKuhUsbyVisBClGg')"></div>
 <div class="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-transparent"></div>
 </div>
+<canvas id="hero-3d-canvas" class="absolute inset-0 w-full h-full z-[1] pointer-events-none" aria-hidden="true"></canvas>
 <div class="relative z-10 w-full max-w-container-max mx-auto flex flex-col items-center text-center mt-8">
 <h1 class="text-display-lg-mobile md:text-display-lg font-display-lg-mobile md:font-display-lg text-on-surface mb-stack-md max-w-3xl">
                     El corazón de tu vehículo merece lo <span class="text-primary">mejor</span>.
@@ -231,7 +232,7 @@
 <form class="flex flex-col md:flex-row gap-4 items-end" action="productos.html" onsubmit="window.location.href='productos.html'; return false;">
 <div class="w-full md:w-1/3 text-left">
 <label class="block text-label-md font-label-md text-on-surface-variant mb-2">Vehículo / Marca</label>
-<select class="w-full bg-surface border border-outline-variant rounded-lg px-4 py-3 text-body-md font-body-md focus:border-secondary focus:ring-2 focus:ring-secondary/20 transition-all outline-none">
+<select class="w-full bg-surface border border-outline-variant rounded-lg px-4 py-3 text-body-md font-body-md focus:border-secondary focus:ring-2 focus:ring-secondary/20 transition-all outline-none" id="marca-select">
 <option>Seleccionar Marca</option>
 <option>Toyota</option>
 <option>Ford</option>
@@ -241,7 +242,7 @@
 </div>
 <div class="w-full md:w-1/3 text-left">
 <label class="block text-label-md font-label-md text-on-surface-variant mb-2">Modelo / Año</label>
-<select class="w-full bg-surface border border-outline-variant rounded-lg px-4 py-3 text-body-md font-body-md focus:border-secondary focus:ring-2 focus:ring-secondary/20 transition-all outline-none disabled:opacity-50" disabled="">
+<select class="w-full bg-surface border border-outline-variant rounded-lg px-4 py-3 text-body-md font-body-md focus:border-secondary focus:ring-2 focus:ring-secondary/20 transition-all outline-none disabled:opacity-50" id="modelo-select" disabled="">
 <option>Seleccionar Modelo</option>
 </select>
 </div>
@@ -300,19 +301,19 @@
 <h2 class="text-headline-md font-headline-md text-on-surface text-center mb-stack-lg">Marcas de Confianza</h2>
 <div class="grid grid-cols-2 md:grid-cols-5 gap-4">
 <div class="bg-surface rounded-lg p-4 shadow-sm border border-outline-variant/50 flex items-center justify-center h-24 grayscale hover:grayscale-0 transition-all opacity-70 hover:opacity-100">
-<img class="max-h-12 object-contain" data-alt="A clean, high-contrast, minimalist rendering of the Toyota brand logo in solid navy blue on a pure white background. The aesthetic is corporate and modern." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCQpRg-Cf1OA-ei2OcoYYabvj3RJ_A93sEQd-yECYK_TjCquy5sIcLFNlzjlpKt4OjOO9YVfqTxxDpN5JU1goGFfp7NP1rffyZRJclMCmKvT2oJHtXaobpey32Y62f-jZkg-GEbvYOiwI8W75xMeDzv0a19OOJafSzqQjhIWPiMU-R36KnRkeQ7AeOStqDX9CO3mLWeJTjXnht4f8xDMMiU1DKQ6kcLC0cFtbhaFOwFi35pWhZmn2Wbrg">
+<img class="max-h-12 object-contain" alt="A clean, high-contrast, minimalist rendering of the Toyota brand logo in solid navy blue on a pure white background. The aesthetic is corporate and modern." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCQpRg-Cf1OA-ei2OcoYYabvj3RJ_A93sEQd-yECYK_TjCquy5sIcLFNlzjlpKt4OjOO9YVfqTxxDpN5JU1goGFfp7NP1rffyZRJclMCmKvT2oJHtXaobpey32Y62f-jZkg-GEbvYOiwI8W75xMeDzv0a19OOJafSzqQjhIWPiMU-R36KnRkeQ7AeOStqDX9CO3mLWeJTjXnht4f8xDMMiU1DKQ6kcLC0cFtbhaFOwFi35pWhZmn2Wbrg">
 </div>
 <div class="bg-surface rounded-lg p-4 shadow-sm border border-outline-variant/50 flex items-center justify-center h-24 grayscale hover:grayscale-0 transition-all opacity-70 hover:opacity-100">
-<img class="max-h-12 object-contain" data-alt="A clean, high-contrast, minimalist rendering of the Ford brand logo in solid navy blue on a pure white background. The aesthetic is corporate and modern." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBNH3E1IQQSs6Yfj5JD95nV1ueYzJmz_aZ02FABj3sNYoeIgATlASz0WgpUWil4TYOUFAn_yfIwO4FIMldbS_iFAJCdnnZAax__WBeQqtHsLTfJbGBCChNQ3qAOCvRQO-JfjHE2MqBT-pGXinkRf8S1Qd--LHtcTtmOfGbECAWlm0MFbb80bf5fcpJeMOU8HIhGvWR9ml9mtmH8hVI-9fd2OcS-Io20Bxf185j2eWoeaFLUe4knGUo5JQ">
+<img class="max-h-12 object-contain" alt="A clean, high-contrast, minimalist rendering of the Ford brand logo in solid navy blue on a pure white background. The aesthetic is corporate and modern." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBNH3E1IQQSs6Yfj5JD95nV1ueYzJmz_aZ02FABj3sNYoeIgATlASz0WgpUWil4TYOUFAn_yfIwO4FIMldbS_iFAJCdnnZAax__WBeQqtHsLTfJbGBCChNQ3qAOCvRQO-JfjHE2MqBT-pGXinkRf8S1Qd--LHtcTtmOfGbECAWlm0MFbb80bf5fcpJeMOU8HIhGvWR9ml9mtmH8hVI-9fd2OcS-Io20Bxf185j2eWoeaFLUe4knGUo5JQ">
 </div>
 <div class="bg-surface rounded-lg p-4 shadow-sm border border-outline-variant/50 flex items-center justify-center h-24 grayscale hover:grayscale-0 transition-all opacity-70 hover:opacity-100">
-<img class="max-h-12 object-contain" data-alt="A clean, high-contrast, minimalist rendering of the Chevrolet brand logo in solid navy blue on a pure white background. The aesthetic is corporate and modern." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD8UyGSktywaHh4lWC3bVzgYjwWAHS2rwu76CW86dc88bdnfM9ceKQTso6ob8ThB3LHQDf4z-utYAnKwrd2w6JqF3Vc3knEPJAF8ax1KvFfKaqbxTutryA3MvFjLnQ-aqOMaCfW5aVJ3BkJDox_8QIInT-Q3faY-lzVAmQYwQilqEpDHPjMO8sxEXgUU-baaattEdEyjT-hpnfrp2z_VS5Lj-rN56SJjJRPci2GzLEYfPQtWU0_YvsTyQ">
+<img class="max-h-12 object-contain" alt="A clean, high-contrast, minimalist rendering of the Chevrolet brand logo in solid navy blue on a pure white background. The aesthetic is corporate and modern." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD8UyGSktywaHh4lWC3bVzgYjwWAHS2rwu76CW86dc88bdnfM9ceKQTso6ob8ThB3LHQDf4z-utYAnKwrd2w6JqF3Vc3knEPJAF8ax1KvFfKaqbxTutryA3MvFjLnQ-aqOMaCfW5aVJ3BkJDox_8QIInT-Q3faY-lzVAmQYwQilqEpDHPjMO8sxEXgUU-baaattEdEyjT-hpnfrp2z_VS5Lj-rN56SJjJRPci2GzLEYfPQtWU0_YvsTyQ">
 </div>
 <div class="bg-surface rounded-lg p-4 shadow-sm border border-outline-variant/50 flex items-center justify-center h-24 grayscale hover:grayscale-0 transition-all opacity-70 hover:opacity-100">
-<img class="max-h-12 object-contain" data-alt="A clean, high-contrast, minimalist rendering of the Hyundai brand logo in solid navy blue on a pure white background. The aesthetic is corporate and modern." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB7AHOVDYXnDDNE8F4ojFwTP94DarSpmF5ZEWpZYIhiutvvjPGPIC6IGtLzHiQh48rgCrnQy02MNEjpOduecBDdmok6rwueTK8da_JZ3yhKROtBVGmdQdl6KmqU_jplKgx-8EZpERc2g_zq1cn9oyh0pV5wDatWzAyNNC_oYNGwX37MZ-uUPnb56aca34azLjh_Gr3_X78eaFY_lg848tKEeINZPIgX5RCMgcniTGiT5gKK83FylC3ZxQ">
+<img class="max-h-12 object-contain" alt="A clean, high-contrast, minimalist rendering of the Hyundai brand logo in solid navy blue on a pure white background. The aesthetic is corporate and modern." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB7AHOVDYXnDDNE8F4ojFwTP94DarSpmF5ZEWpZYIhiutvvjPGPIC6IGtLzHiQh48rgCrnQy02MNEjpOduecBDdmok6rwueTK8da_JZ3yhKROtBVGmdQdl6KmqU_jplKgx-8EZpERc2g_zq1cn9oyh0pV5wDatWzAyNNC_oYNGwX37MZ-uUPnb56aca34azLjh_Gr3_X78eaFY_lg848tKEeINZPIgX5RCMgcniTGiT5gKK83FylC3ZxQ">
 </div>
 <div class="col-span-2 md:col-span-1 bg-surface rounded-lg p-4 shadow-sm border border-outline-variant/50 flex items-center justify-center h-24 grayscale hover:grayscale-0 transition-all opacity-70 hover:opacity-100">
-<img class="max-h-12 object-contain" data-alt="A clean, high-contrast, minimalist rendering of the Jeep brand logo in solid navy blue on a pure white background. The aesthetic is corporate and modern." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfmujYQOFY8ozo5zmsnTg8qSK7XMsMESlRhJxLZBjkt4SMXOlJvHjicfQQriGf-dWRZYk4mlEEX7AoidJCGvm8w8AAWn982pxfmrXCpXtEtQAfbSpdpRuBMiXawa4Q4HG0jUFH142UkL9QHIjD34W_hL__gx8aflQ2UiwzNW31YcSoxCLg5hzzkfOymIZpy9sIkLr0X7AePeZRhyTgnv0EpayiZByyJ-aWvuW33BKlgxL1XA3866nXRg">
+<img class="max-h-12 object-contain" alt="A clean, high-contrast, minimalist rendering of the Jeep brand logo in solid navy blue on a pure white background. The aesthetic is corporate and modern." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfmujYQOFY8ozo5zmsnTg8qSK7XMsMESlRhJxLZBjkt4SMXOlJvHjicfQQriGf-dWRZYk4mlEEX7AoidJCGvm8w8AAWn982pxfmrXCpXtEtQAfbSpdpRuBMiXawa4Q4HG0jUFH142UkL9QHIjD34W_hL__gx8aflQ2UiwzNW31YcSoxCLg5hzzkfOymIZpy9sIkLr0X7AePeZRhyTgnv0EpayiZByyJ-aWvuW33BKlgxL1XA3866nXRg">
 </div>
 </div>
 </div>
@@ -418,6 +419,36 @@
 </div>
 </footer>
 <script>
+        // Modelo/Año Select: se habilita y llena según la marca elegida
+        document.addEventListener('DOMContentLoaded', () => {
+            const MODELOS_POR_MARCA = {
+                'Toyota': ['Corolla', 'Hilux', 'Yaris', 'RAV4'],
+                'Ford': ['Fiesta', 'Explorer', 'Ranger', 'Escape'],
+                'Chevrolet': ['Aveo', 'Spark', 'Silverado', 'Tracker'],
+                'Hyundai': ['Accent', 'Tucson', 'Elantra', 'Santa Fe']
+            };
+
+            const marcaSelect = document.getElementById('marca-select');
+            const modeloSelect = document.getElementById('modelo-select');
+
+            if (marcaSelect && modeloSelect) {
+                marcaSelect.addEventListener('change', () => {
+                    const modelos = MODELOS_POR_MARCA[marcaSelect.value];
+                    modeloSelect.innerHTML = '';
+
+                    if (!modelos) {
+                        modeloSelect.appendChild(new Option('Seleccionar Modelo'));
+                        modeloSelect.disabled = true;
+                        return;
+                    }
+
+                    modeloSelect.appendChild(new Option('Seleccionar Modelo'));
+                    modelos.forEach(modelo => modeloSelect.appendChild(new Option(modelo)));
+                    modeloSelect.disabled = false;
+                });
+            }
+        });
+
         // Mobile Sidebar Toggle Logic
         document.addEventListener('DOMContentLoaded', () => {
             const menuBtn = document.getElementById('mobile-menu-btn');
@@ -443,6 +474,11 @@
             overlay.addEventListener('click', toggleMenu);
         });
     </script>
+
+<script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="autopartes-motion.js"></script>
 
 <!-- CACIQUE GLOBAL ESC MODAL CLOSER -->
 <script>
