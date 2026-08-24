@@ -104,6 +104,79 @@
       opacity: 1;
       transform: translateY(0);
     }
+
+    /* Mobile Menu */
+    .mobile-menu-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.6);
+      z-index: 49;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+    .mobile-menu-overlay.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .mobile-menu {
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: 280px;
+      max-width: 85vw;
+      height: 100vh;
+      background: #0A0A0A;
+      z-index: 50;
+      transform: translateX(100%);
+      transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+      display: flex;
+      flex-direction: column;
+      border-left: 2px solid #222;
+    }
+    .mobile-menu.active {
+      transform: translateX(0);
+    }
+
+    /* Project screenshot preview */
+    .project-screenshot {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      object-position: top;
+      border-radius: 4px;
+      border: 1px solid #222;
+      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .project-card:hover .project-screenshot {
+      transform: scale(1.03);
+    }
+    .screenshot-wrapper {
+      overflow: hidden;
+      border-radius: 4px;
+      margin-bottom: 1rem;
+    }
+
+    /* Hero project card */
+    .project-card-hero .project-screenshot {
+      height: 240px;
+    }
+
+    /* WhatsApp button responsive */
+    @media (max-width: 640px) {
+      .whatsapp-float {
+        padding: 0.5rem 0.75rem !important;
+        font-size: 0 !important;
+        gap: 0 !important;
+      }
+      .whatsapp-float svg {
+        width: 24px !important;
+        height: 24px !important;
+      }
+      .whatsapp-float span {
+        display: none;
+      }
+    }
   </style>
 </head>
 <body class="selection:bg-[#0A0A0A] selection:text-[#F5F5F5]">
@@ -129,7 +202,7 @@
         </span>
       </a>
 
-      <!-- NAV LINKS -->
+      <!-- NAV LINKS (Desktop) -->
       <nav class="hidden md:flex items-center space-x-8 font-mono text-xs font-bold uppercase tracking-wider">
         <a href="#proyectos" class="hover:underline underline-offset-4 decoration-2">01. PROYECTOS</a>
         <a href="#servicios" class="hover:underline underline-offset-4 decoration-2">02. SERVICIOS</a>
@@ -137,15 +210,47 @@
         <a href="#oferta" class="hover:underline underline-offset-4 decoration-2">04. OFERTA LÍDER</a>
       </nav>
 
-      <!-- CTA BUTTON -->
+      <!-- CTA + HAMBURGER -->
       <div class="flex items-center gap-3">
-        <button onclick="openContactModal()" class="bg-[#0A0A0A] text-[#F5F5F5] text-xs md:text-sm font-bold uppercase px-4 py-2.5 rounded-[6px] hard-shadow-dark hover:-translate-x-0.5 hover:-translate-y-0.5 transition-all">
+        <button onclick="openContactModal()" class="hidden sm:inline-block bg-[#0A0A0A] text-[#F5F5F5] text-xs md:text-sm font-bold uppercase px-4 py-2.5 rounded-[6px] hard-shadow-dark hover:-translate-x-0.5 hover:-translate-y-0.5 transition-all">
           HABLAR CON UN EXPERTO
+        </button>
+        <!-- HAMBURGER BUTTON (Mobile) -->
+        <button onclick="toggleMobileMenu()" class="md:hidden flex flex-col justify-center items-center w-10 h-10 gap-[5px]" aria-label="Abrir menú" id="hamburger-btn">
+          <span class="hamburger-line block w-6 h-[2.5px] bg-[#0A0A0A] rounded transition-all duration-300"></span>
+          <span class="hamburger-line block w-6 h-[2.5px] bg-[#0A0A0A] rounded transition-all duration-300"></span>
+          <span class="hamburger-line block w-4 h-[2.5px] bg-[#0A0A0A] rounded transition-all duration-300 self-start ml-[2px]"></span>
         </button>
       </div>
 
     </div>
   </header>
+
+  <!-- MOBILE MENU OVERLAY -->
+  <div class="mobile-menu-overlay" id="mobile-menu-overlay" onclick="closeMobileMenu()"></div>
+
+  <!-- MOBILE SLIDE-IN MENU -->
+  <nav class="mobile-menu" id="mobile-menu">
+    <div class="flex justify-between items-center p-6 border-b border-[#222]">
+      <span class="font-display text-2xl font-extrabold text-white">CACIQUE</span>
+      <button onclick="closeMobileMenu()" class="text-white text-2xl font-bold hover:text-gray-400" aria-label="Cerrar menú">✕</button>
+    </div>
+    <div class="flex flex-col p-6 gap-1">
+      <a href="#proyectos" onclick="closeMobileMenu()" class="text-white font-mono text-sm font-bold uppercase tracking-wider py-4 border-b border-[#1A1A1A] hover:text-[#AAAAAA] transition-colors">01. PROYECTOS</a>
+      <a href="#servicios" onclick="closeMobileMenu()" class="text-white font-mono text-sm font-bold uppercase tracking-wider py-4 border-b border-[#1A1A1A] hover:text-[#AAAAAA] transition-colors">02. SERVICIOS</a>
+      <a href="#filosofia" onclick="closeMobileMenu()" class="text-white font-mono text-sm font-bold uppercase tracking-wider py-4 border-b border-[#1A1A1A] hover:text-[#AAAAAA] transition-colors">03. FILOSOFÍA</a>
+      <a href="#oferta" onclick="closeMobileMenu()" class="text-white font-mono text-sm font-bold uppercase tracking-wider py-4 border-b border-[#1A1A1A] hover:text-[#AAAAAA] transition-colors">04. OFERTA LÍDER</a>
+    </div>
+    <div class="mt-auto p-6 border-t border-[#222]">
+      <button onclick="openContactModal(); closeMobileMenu();" class="w-full bg-white text-black font-extrabold text-sm uppercase py-4 rounded-[6px] hard-shadow-dark hover:bg-neutral-200 transition-colors">
+        HABLAR CON UN EXPERTO
+      </button>
+      <a href="https://wa.me/584124163681?text=Hola%20Cacique%2C%20quisiera%20recibir%20informaci%C3%B3n%20sobre%20sus%20servicios" target="_blank" class="flex items-center justify-center gap-2 mt-4 text-[#25D366] font-mono text-xs font-bold uppercase hover:underline">
+        <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+        WhatsApp Directo
+      </a>
+    </div>
+  </nav>
 
   <main>
 
@@ -232,62 +337,64 @@
       <!-- PROJECTS GRID -->
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8" id="projects-grid">
         
+        <!-- ============================================= -->
+        <!-- HERO PROJECT (Full Width): AUTOINSUMO 2000    -->
+        <!-- ============================================= -->
+        
         <!-- PROJECT 1: AUTOINSUMO 2000 -->
-        <div onclick="openDemoModal('AutoInsumo 2000 — Portal Automotriz', './projects/autopartes/index.html')" class="project-card reveal-on-scroll border-2 border-[#0A0A0A] bg-white p-6 rounded-[6px] hard-shadow-dark hard-card-hover flex flex-col justify-between cursor-pointer group" data-category="webapps">
-          <div>
-            <div class="bg-[#0A0A0A] text-white p-6 rounded-[4px] mb-6 border border-[#222] relative group">
-              <div class="flex justify-between items-center mb-6">
-                <span class="font-mono text-[10px] uppercase text-[#888888] tracking-widest">// SECTOR AUTOMOTRIZ</span>
-                <span class="bg-white text-black text-[10px] font-mono px-2 py-0.5 rounded font-bold">PORTAL E-COMMERCE</span>
-              </div>
-              <h3 class="font-display text-3xl sm:text-4xl font-extrabold uppercase text-white mb-2">AUTOINSUMO 2000</h3>
-              <p class="text-xs text-[#AAAAAA] font-mono">Catálogo interactivo y búsqueda de repuestos</p>
+        <div onclick="openDemoModal('AutoInsumo 2000 — Portal Automotriz', './projects/autopartes/index.html')" class="project-card project-card-hero reveal-on-scroll border-2 border-[#0A0A0A] bg-white p-6 rounded-[6px] hard-shadow-dark hard-card-hover flex flex-col md:flex-row cursor-pointer group md:col-span-2" data-category="webapps">
+          <!-- Screenshot side -->
+          <div class="md:w-1/2 mb-4 md:mb-0 md:mr-6 flex-shrink-0">
+            <div class="screenshot-wrapper h-full">
+              <img src="./screenshots/autopartes.png" alt="AutoInsumo 2000 Preview" class="project-screenshot w-full !h-full object-cover" loading="lazy">
             </div>
-
-            <div class="flex flex-wrap gap-2 mb-4">
-              <span class="pill-badge">E-COMMERCE</span>
-              <span class="pill-badge">CATÁLOGO WEB</span>
-              <span class="pill-badge">CARRITO DE COMPRAS</span>
-            </div>
-
-            <h4 class="font-display text-2xl font-bold uppercase mb-2">PORTAL DE REPUESTOS Y AUTOINSUMOS</h4>
-            <p class="text-[#555555] text-sm mb-6 leading-relaxed">
-              Plataforma digital optimizada para la venta y distribución de autopartes, accesorios y repuestos automotrices con navegación por categorías y cotización directa.
-            </p>
           </div>
-
-          <div class="pt-4 border-t border-[#E5E5E5] flex justify-between items-center">
-            <span class="text-xs font-mono font-bold text-[#555555] uppercase">ENTREGA: 3 DÍAS</span>
-            <button onclick="event.stopPropagation(); openDemoModal('AutoInsumo 2000 — Portal Automotriz', './projects/autopartes/index.html')" class="bg-[#0A0A0A] text-white text-xs font-bold uppercase px-5 py-2.5 rounded-[6px] hover:bg-[#222222] transition-colors flex items-center gap-2">
-              VER DEMO EN VIVO <span>→</span>
-            </button>
+          <!-- Content side -->
+          <div class="flex flex-col justify-between flex-1">
+            <div>
+              <div class="flex justify-between items-center mb-4">
+                <span class="font-mono text-[10px] uppercase text-[#888888] tracking-widest">// SECTOR AUTOMOTRIZ</span>
+                <span class="bg-[#0A0A0A] text-white text-[10px] font-mono px-2 py-0.5 rounded font-bold">★ PROYECTO DESTACADO</span>
+              </div>
+              <h3 class="font-display text-3xl sm:text-4xl font-extrabold uppercase text-[#0A0A0A] mb-2">AUTOINSUMO 2000</h3>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span class="pill-badge">E-COMMERCE</span>
+                <span class="pill-badge">CATÁLOGO WEB</span>
+                <span class="pill-badge">CARRITO DE COMPRAS</span>
+              </div>
+              <p class="text-[#555555] text-sm mb-4 leading-relaxed">
+                Plataforma digital optimizada para la venta y distribución de autopartes, accesorios y repuestos automotrices con navegación por categorías y cotización directa.
+              </p>
+            </div>
+            <div class="pt-4 border-t border-[#E5E5E5] flex justify-between items-center">
+              <span class="text-xs font-mono font-bold text-[#555555] uppercase">ENTREGA: 3 DÍAS</span>
+              <button onclick="event.stopPropagation(); openDemoModal('AutoInsumo 2000 — Portal Automotriz', './projects/autopartes/index.html')" class="bg-[#0A0A0A] text-white text-xs font-bold uppercase px-5 py-2.5 rounded-[6px] hover:bg-[#222222] transition-colors flex items-center gap-2">
+                VER DEMO EN VIVO <span>→</span>
+              </button>
+            </div>
           </div>
         </div>
 
         <!-- PROJECT 2: CODENOVA ACADEMY -->
         <div onclick="openDemoModal('CodeNova Academy', './projects/codenova/index.html')" class="project-card reveal-on-scroll border-2 border-[#0A0A0A] bg-white p-6 rounded-[6px] hard-shadow-dark hard-card-hover flex flex-col justify-between cursor-pointer group" data-category="landings">
           <div>
-            <div class="bg-[#0A0A0A] text-white p-6 rounded-[4px] mb-6 border border-[#222] relative group">
-              <div class="flex justify-between items-center mb-6">
-                <span class="font-mono text-[10px] uppercase text-[#888888] tracking-widest">// EDTECH & ACADEMIA</span>
-                <span class="bg-emerald-500/20 text-emerald-300 text-[10px] font-mono px-2 py-0.5 rounded border border-emerald-500/30">ALTA CONVERSIÓN</span>
-              </div>
-              <h3 class="font-display text-3xl sm:text-4xl font-extrabold uppercase text-white mb-2">CODENOVA ACADEMY</h3>
-              <p class="text-xs text-[#AAAAAA] font-mono">Domina el código. Construye tu futuro.</p>
+            <div class="screenshot-wrapper">
+              <img src="./screenshots/codenova.png" alt="CodeNova Academy Preview" class="project-screenshot" loading="lazy">
             </div>
-
+            <div class="flex justify-between items-center mb-3">
+              <span class="font-mono text-[10px] uppercase text-[#888888] tracking-widest">// EDTECH & ACADEMIA</span>
+              <span class="bg-emerald-500/20 text-emerald-400 text-[10px] font-mono px-2 py-0.5 rounded border border-emerald-500/30">ALTA CONVERSIÓN</span>
+            </div>
             <div class="flex flex-wrap gap-2 mb-4">
               <span class="pill-badge">LANDING PAGE</span>
               <span class="pill-badge">ACADEMIA TECH</span>
               <span class="pill-badge">CAPTACIÓN LEADS</span>
             </div>
-
-            <h4 class="font-display text-2xl font-bold uppercase mb-2">PLATAFORMA EDUCATIVA DE PROGRAMACIÓN</h4>
+            <h4 class="font-display text-2xl font-bold uppercase mb-2">CODENOVA ACADEMY</h4>
             <p class="text-[#555555] text-sm mb-6 leading-relaxed">
               Landing page moderna para la venta de cursos de desarrollo web, bootcamp de software y formación profesional con inscripción directa.
             </p>
           </div>
-
           <div class="pt-4 border-t border-[#E5E5E5] flex justify-between items-center">
             <span class="text-xs font-mono font-bold text-[#555555] uppercase">ENTREGA: 3 DÍAS</span>
             <button onclick="event.stopPropagation(); openDemoModal('CodeNova Academy', './projects/codenova/index.html')" class="bg-[#0A0A0A] text-white text-xs font-bold uppercase px-5 py-2.5 rounded-[6px] hover:bg-[#222222] transition-colors flex items-center gap-2">
@@ -299,27 +406,23 @@
         <!-- PROJECT 3: DENTAL PREMIUM UI SYSTEM -->
         <div onclick="openDemoModal('Dental Premium UI System', './projects/dental/index.html')" class="project-card reveal-on-scroll border-2 border-[#0A0A0A] bg-white p-6 rounded-[6px] hard-shadow-dark hard-card-hover flex flex-col justify-between cursor-pointer group" data-category="salud webapps">
           <div>
-            <div class="bg-[#0A0A0A] text-white p-6 rounded-[4px] mb-6 border border-[#222] relative group">
-              <div class="flex justify-between items-center mb-6">
-                <span class="font-mono text-[10px] uppercase text-[#888888] tracking-widest">// SALUD & CLÍNICA</span>
-                <span class="bg-white text-black text-[10px] font-mono px-2 py-0.5 rounded font-bold">SISTEMA UI PREMIUM</span>
-              </div>
-              <h3 class="font-display text-3xl sm:text-4xl font-extrabold uppercase text-white mb-2">DENTAL PREMIUM</h3>
-              <p class="text-xs text-[#AAAAAA] font-mono">Tu sonrisa, nuestra máxima precisión</p>
+            <div class="screenshot-wrapper">
+              <img src="./screenshots/dental.png" alt="Dental Premium Preview" class="project-screenshot" loading="lazy">
             </div>
-
+            <div class="flex justify-between items-center mb-3">
+              <span class="font-mono text-[10px] uppercase text-[#888888] tracking-widest">// SALUD & CLÍNICA</span>
+              <span class="bg-[#0A0A0A] text-white text-[10px] font-mono px-2 py-0.5 rounded font-bold">SISTEMA UI PREMIUM</span>
+            </div>
             <div class="flex flex-wrap gap-2 mb-4">
               <span class="pill-badge">CLÍNICA MÉDICA</span>
               <span class="pill-badge">AGENDAMIENTO</span>
               <span class="pill-badge">PANEL PACIENTE</span>
             </div>
-
-            <h4 class="font-display text-2xl font-bold uppercase mb-2">SISTEMA WEB DE ATENCIÓN ODONTOLÓGICA</h4>
+            <h4 class="font-display text-2xl font-bold uppercase mb-2">DENTAL PREMIUM</h4>
             <p class="text-[#555555] text-sm mb-6 leading-relaxed">
               Plataforma digital para centro médico odontológico con reservación de citas en línea, equipo médico, galería de casos de éxito y área de pacientes.
             </p>
           </div>
-
           <div class="pt-4 border-t border-[#E5E5E5] flex justify-between items-center">
             <span class="text-xs font-mono font-bold text-[#555555] uppercase">ENTREGA: 4 DÍAS</span>
             <button onclick="event.stopPropagation(); openDemoModal('Dental Premium UI System', './projects/dental/index.html')" class="bg-[#0A0A0A] text-white text-xs font-bold uppercase px-5 py-2.5 rounded-[6px] hover:bg-[#222222] transition-colors flex items-center gap-2">
@@ -331,27 +434,23 @@
         <!-- PROJECT 4: VENAVENTURA VIAJES -->
         <div onclick="openDemoModal('VenAventura — Turismo Venezuela', './projects/viajes/index.html')" class="project-card reveal-on-scroll border-2 border-[#0A0A0A] bg-white p-6 rounded-[6px] hard-shadow-dark hard-card-hover flex flex-col justify-between cursor-pointer group" data-category="landings">
           <div>
-            <div class="bg-[#0A0A0A] text-white p-6 rounded-[4px] mb-6 border border-[#222] relative group">
-              <div class="flex justify-between items-center mb-6">
-                <span class="font-mono text-[10px] uppercase text-[#888888] tracking-widest">// TURISMO & EXPEDICIONES</span>
-                <span class="bg-white text-black text-[10px] font-mono px-2 py-0.5 rounded font-bold">PORTAL DESTINOS</span>
-              </div>
-              <h3 class="font-display text-3xl sm:text-4xl font-extrabold uppercase text-white mb-2">VENAVENTURA</h3>
-              <p class="text-xs text-[#AAAAAA] font-mono">Descubre la majestuosidad de Venezuela</p>
+            <div class="screenshot-wrapper">
+              <img src="./screenshots/viajes.png" alt="VenAventura Preview" class="project-screenshot" loading="lazy">
             </div>
-
+            <div class="flex justify-between items-center mb-3">
+              <span class="font-mono text-[10px] uppercase text-[#888888] tracking-widest">// TURISMO & EXPEDICIONES</span>
+              <span class="bg-[#0A0A0A] text-white text-[10px] font-mono px-2 py-0.5 rounded font-bold">PORTAL DESTINOS</span>
+            </div>
             <div class="flex flex-wrap gap-2 mb-4">
               <span class="pill-badge">TURISMO</span>
               <span class="pill-badge">AGENCIA DE VIAJES</span>
               <span class="pill-badge">RESERVAS EN LÍNEA</span>
             </div>
-
-            <h4 class="font-display text-2xl font-bold uppercase mb-2">PLATAFORMA DE TURISMO NACIONAL</h4>
+            <h4 class="font-display text-2xl font-bold uppercase mb-2">VENAVENTURA</h4>
             <p class="text-[#555555] text-sm mb-6 leading-relaxed">
               Sitio web de impacto para agencia de expediciones turísticas por Venezuela (Canaima, Los Roques, Roraima) con paquetes y cotizaciones rápidas.
             </p>
           </div>
-
           <div class="pt-4 border-t border-[#E5E5E5] flex justify-between items-center">
             <span class="text-xs font-mono font-bold text-[#555555] uppercase">ENTREGA: 3 DÍAS</span>
             <button onclick="event.stopPropagation(); openDemoModal('VenAventura — Turismo Venezuela', './projects/viajes/index.html')" class="bg-[#0A0A0A] text-white text-xs font-bold uppercase px-5 py-2.5 rounded-[6px] hover:bg-[#222222] transition-colors flex items-center gap-2">
@@ -363,27 +462,23 @@
         <!-- PROJECT 5: CACIQUE CRM WHATSAPP -->
         <div onclick="openDemoModal('Cacique CRM WhatsApp System', './projects/crm-whatsapp/index.html')" class="project-card reveal-on-scroll border-2 border-[#0A0A0A] bg-white p-6 rounded-[6px] hard-shadow-dark hard-card-hover flex flex-col justify-between cursor-pointer group" data-category="automation">
           <div>
-            <div class="bg-[#0A0A0A] text-white p-6 rounded-[4px] mb-6 border border-[#222] relative group">
-              <div class="flex justify-between items-center mb-6">
-                <span class="font-mono text-[10px] uppercase text-[#888888] tracking-widest">// SOFTWARE DE AUTOMATIZACIÓN</span>
-                <span class="bg-emerald-500/20 text-emerald-400 text-[10px] font-mono px-2 py-0.5 rounded border border-emerald-500/30">IA CONVERSACIONAL</span>
-              </div>
-              <h3 class="font-display text-3xl sm:text-4xl font-extrabold uppercase text-white mb-2">CACIQUE CRM WHATSAPP</h3>
-              <p class="text-xs text-[#AAAAAA] font-mono">Gestión masiva y calificación con Inteligencia Artificial</p>
+            <div class="screenshot-wrapper">
+              <img src="./screenshots/crm-whatsapp.png" alt="CRM WhatsApp Preview" class="project-screenshot" loading="lazy">
             </div>
-
+            <div class="flex justify-between items-center mb-3">
+              <span class="font-mono text-[10px] uppercase text-[#888888] tracking-widest">// SOFTWARE DE AUTOMATIZACIÓN</span>
+              <span class="bg-emerald-500/20 text-emerald-400 text-[10px] font-mono px-2 py-0.5 rounded border border-emerald-500/30">IA CONVERSACIONAL</span>
+            </div>
             <div class="flex flex-wrap gap-2 mb-4">
               <span class="pill-badge">WHATSAPP API</span>
               <span class="pill-badge">OPENAI GPT-4</span>
               <span class="pill-badge">AUTOMATIZACIÓN</span>
             </div>
-
-            <h4 class="font-display text-2xl font-bold uppercase mb-2">GESTIÓN INTELIGENTE DE MENSAJES</h4>
+            <h4 class="font-display text-2xl font-bold uppercase mb-2">CACIQUE CRM WHATSAPP</h4>
             <p class="text-[#555555] text-sm mb-6 leading-relaxed">
               Plataforma centralizada para negocios que convierte chats entrantes en prospectos calificados automáticamente 24/7 sin demora humana.
             </p>
           </div>
-
           <div class="pt-4 border-t border-[#E5E5E5] flex justify-between items-center">
             <span class="text-xs font-mono font-bold text-[#555555] uppercase">ENTREGA: 4 DÍAS</span>
             <button onclick="event.stopPropagation(); openDemoModal('Cacique CRM WhatsApp System', './projects/crm-whatsapp/index.html')" class="bg-[#0A0A0A] text-white text-xs font-bold uppercase px-5 py-2.5 rounded-[6px] hover:bg-[#222222] transition-colors flex items-center gap-2">
@@ -395,27 +490,23 @@
         <!-- PROJECT 6: LANDINGS EXPRESS -->
         <div onclick="openDemoModal('Landings Express — Agencia Web', './projects/landings-express/index.html')" class="project-card reveal-on-scroll border-2 border-[#0A0A0A] bg-white p-6 rounded-[6px] hard-shadow-dark hard-card-hover flex flex-col justify-between cursor-pointer group" data-category="landings">
           <div>
-            <div class="bg-[#0A0A0A] text-white p-6 rounded-[4px] mb-6 border border-[#222] relative group">
-              <div class="flex justify-between items-center mb-6">
-                <span class="font-mono text-[10px] uppercase text-[#888888] tracking-widest">// SERVICIOS DIGITALES</span>
-                <span class="bg-white text-black text-[10px] font-mono px-2 py-0.5 rounded font-bold">DESPLIEGUE EXPRESS</span>
-              </div>
-              <h3 class="font-display text-3xl sm:text-4xl font-extrabold uppercase text-white mb-2">LANDINGS EXPRESS</h3>
-              <p class="text-xs text-[#AAAAAA] font-mono">Presencia web profesional en tiempo récord</p>
+            <div class="screenshot-wrapper">
+              <img src="./screenshots/landings-express.png" alt="Landings Express Preview" class="project-screenshot" loading="lazy">
             </div>
-
+            <div class="flex justify-between items-center mb-3">
+              <span class="font-mono text-[10px] uppercase text-[#888888] tracking-widest">// SERVICIOS DIGITALES</span>
+              <span class="bg-[#0A0A0A] text-white text-[10px] font-mono px-2 py-0.5 rounded font-bold">DESPLIEGUE EXPRESS</span>
+            </div>
             <div class="flex flex-wrap gap-2 mb-4">
               <span class="pill-badge">LANDING PAGE</span>
               <span class="pill-badge">ALTA CONVERSIÓN</span>
               <span class="pill-badge">SWISS DESIGN</span>
             </div>
-
-            <h4 class="font-display text-2xl font-bold uppercase mb-2">PLATAFORMA DE PÁGINAS DE ATERRIZAJE</h4>
+            <h4 class="font-display text-2xl font-bold uppercase mb-2">LANDINGS EXPRESS</h4>
             <p class="text-[#555555] text-sm mb-6 leading-relaxed">
               Solución web optimizada para empresas y profesionales que buscan captar prospectos rápidamente con diseño tipográfico suizo y rendimiento ultra-rápido.
             </p>
           </div>
-
           <div class="pt-4 border-t border-[#E5E5E5] flex justify-between items-center">
             <span class="text-xs font-mono font-bold text-[#555555] uppercase">ENTREGA: 2 DÍAS</span>
             <button onclick="event.stopPropagation(); openDemoModal('Landings Express — Agencia Web', './projects/landings-express/index.html')" class="bg-[#0A0A0A] text-white text-xs font-bold uppercase px-5 py-2.5 rounded-[6px] hover:bg-[#222222] transition-colors flex items-center gap-2">
@@ -774,6 +865,29 @@
       modal.classList.remove('flex');
     }
 
+    // Mobile Menu Handlers
+    function toggleMobileMenu() {
+      const menu = document.getElementById('mobile-menu');
+      const overlay = document.getElementById('mobile-menu-overlay');
+      const isExpanded = menu.classList.contains('active');
+      
+      if (isExpanded) {
+        closeMobileMenu();
+      } else {
+        menu.classList.add('active');
+        overlay.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+    }
+
+    function closeMobileMenu() {
+      const menu = document.getElementById('mobile-menu');
+      const overlay = document.getElementById('mobile-menu-overlay');
+      menu.classList.remove('active');
+      overlay.classList.remove('active');
+      document.body.style.overflow = 'auto';
+    }
+
     function handleFormSubmit(e) {
       e.preventDefault();
       const form = e.target;
@@ -857,7 +971,7 @@
   </script>
 
   <!-- FLOATING BOTÓN WHATSAPP -->
-  <a href="https://wa.me/584124163681?text=Hola%20Cacique%2C%20quisiera%20consultar%20por%20sus%20servicios" target="_blank" aria-label="Contactar por WhatsApp" class="fixed bottom-6 right-6 z-40 bg-[#25D366] text-black font-mono font-bold text-xs px-4 py-3 rounded-full flex items-center gap-2 shadow-2xl hover:scale-105 active:scale-95 transition-all border-2 border-black">
+  <a href="https://wa.me/584124163681?text=Hola%20Cacique%2C%20quisiera%20consultar%20por%20sus%20servicios" target="_blank" aria-label="Contactar por WhatsApp" class="whatsapp-float fixed bottom-6 right-6 z-40 bg-[#25D366] text-black font-mono font-bold text-xs px-4 py-3 rounded-full flex items-center gap-2 shadow-2xl hover:scale-105 active:scale-95 transition-all border-2 border-black">
     <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
     <span>WhatsApp Directo</span>
   </a>
